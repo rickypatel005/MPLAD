@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "person-risk-pipeline"
+version = "0.1.0"
+description = "Contract-first project risk and anomaly detection pipeline"
+requires-python = ">=3.11"
+dependencies = ["scikit-learn>=1.4", "joblib>=1.3"]
+
+[project.optional-dependencies]
+api = ["fastapi>=0.110", "uvicorn>=0.29", "httpx>=0.27"]
+test = ["pytest>=8.0"]
+xgboost = ["xgboost>=2.0"]
+
+[tool.setuptools.packages.find]
+include = ["risk_pipeline*"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]

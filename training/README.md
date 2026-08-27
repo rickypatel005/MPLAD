@@ -1,0 +1,1 @@
+Training jobs belong here. A future job should read a versioned dataset snapshot, fit a model, validate it, and write an artifact plus metadata under models/<model-name>/<version>/. It must not be imported by the online pipeline.
