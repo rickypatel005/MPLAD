@@ -1,0 +1,8 @@
+{
+  "pipeline": {"name": "person-risk", "version": "0.1.0"},
+  "source": {"kind": "synthetic", "record_count": 25, "seed": 7},
+  "thresholds": {"rule_risk": 0.5, "anomaly_risk": 0.7, "high_risk": 0.75},
+  "aggregation": {"financial_weight": 0.3, "timeline_weight": 0.2, "compliance_weight": 0.2, "anomaly_weight": 0.2, "prediction_weight": 0.1, "medium_threshold": 0.33},
+  "models": {"isolation_forest_artifact_dir": "models/isolation_forest/v1"},
+  "logging": {"level": "INFO"}
+}

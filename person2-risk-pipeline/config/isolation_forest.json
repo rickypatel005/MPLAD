@@ -1,0 +1,19 @@
+{
+  "model_version": "v1",
+  "project_count": 60,
+  "seed": 7,
+  "parameters": {
+    "n_estimators": 200,
+    "contamination": 0.1,
+    "max_samples": "auto",
+    "max_features": 1.0,
+    "random_state": 42
+  },
+  "reasoning": {
+    "n_estimators": "200 provides stable ensemble averaging for this small development dataset",
+    "contamination": "0.10 is an operating-point assumption for unsupervised screening, not a measured prevalence",
+    "max_samples": "auto uses the estimator's sample-size-aware default",
+    "max_features": "1.0 retains all approved numeric features",
+    "random_state": "42 makes training reproducible"
+  }
+}
