@@ -20,14 +20,13 @@ function BrandMark() {
   return (
     <span
       aria-hidden="true"
-      className="flex h-9 w-9 shrink-0 items-center justify-center rounded-card bg-gov-500/90 ring-1 ring-inset ring-white/20"
+      className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-slate-800 ring-1 ring-inset ring-amber-500/40 shadow-sm"
     >
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        {/* Bars under a magnifier: analysis over a record. */}
-        <path d="M4 20h16" stroke="white" strokeWidth="1.75" strokeLinecap="round" />
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M4 20h16" stroke="#F59E0B" strokeWidth="2" strokeLinecap="round" />
         <path d="M6.5 20v-4.5" stroke="white" strokeWidth="1.75" strokeLinecap="round" />
         <path d="M10 20v-7.5" stroke="white" strokeWidth="1.75" strokeLinecap="round" />
-        <circle cx="15" cy="9" r="4.4" stroke="white" strokeWidth="1.75" />
+        <circle cx="15" cy="9" r="4.4" stroke="#F59E0B" strokeWidth="2" />
         <path d="m18.3 12.3 2.4 2.4" stroke="white" strokeWidth="1.75" strokeLinecap="round" />
       </svg>
     </span>
@@ -36,25 +35,26 @@ function BrandMark() {
 
 export function AppHeader() {
   return (
-    <header className="bg-surface-header text-white">
-      <div className="mx-auto flex max-w-shell items-center gap-4 px-6 py-3">
-        <Link href="/" className="flex items-center gap-3 rounded-control" title={PRODUCT_TAGLINE}>
+    <header className="bg-slate-900 text-white shadow-md">
+      <div className="tricolor-stripe" />
+      <div className="mx-auto flex max-w-shell items-center gap-4 px-6 py-3.5">
+        <Link href="/" className="flex items-center gap-3 rounded-lg group" title={PRODUCT_TAGLINE}>
           <BrandMark />
           <span className="flex flex-col leading-tight">
-            <span className="text-section font-semibold tracking-tight text-white">
+            <span className="font-display text-xl font-bold tracking-wide text-white group-hover:text-amber-400 transition-colors">
               {PRODUCT_NAME}
             </span>
-            <span className="text-meta uppercase tracking-wider text-gov-200">
-              {PRODUCT_OWNER}
+            <span className="text-[0.65rem] font-bold uppercase tracking-widest text-amber-500 font-sans">
+              EMPOWERED INDIAN &bull; {PRODUCT_OWNER}
             </span>
           </span>
         </Link>
 
-        <p className="ml-2 hidden max-w-sm border-l border-white/15 pl-4 text-caption leading-snug text-gov-100 xl:block">
+        <p className="ml-3 hidden max-w-md border-l border-slate-800 pl-4 text-xs leading-relaxed text-slate-300 xl:block font-sans">
           {PRODUCT_TAGLINE}
         </p>
 
-        <div className="ml-auto flex items-center gap-2.5">
+        <div className="ml-auto flex items-center gap-3">
           <DataProvenanceBadge />
           <AnonymizeToggle />
         </div>
@@ -65,18 +65,14 @@ export function AppHeader() {
 
 /**
  * Standing statement of what the numbers on screen are.
- *
- * Present because the demo runs on a synthetic dataset calibrated to published
- * MPLADS patterns. Saying so plainly and permanently is both honest and, for a
- * government audience, a credibility gain rather than a weakness.
  */
 function DataProvenanceBadge() {
   return (
     <span
-      className="hidden items-center gap-1.5 rounded-control border border-white/15 bg-white/5 px-2.5 py-1.5 text-meta uppercase tracking-wider text-gov-100 lg:inline-flex"
+      className="hidden items-center gap-2 rounded-lg border border-slate-700/80 bg-slate-800/90 px-3 py-1.5 text-[0.7rem] font-semibold uppercase tracking-wider text-slate-300 shadow-inner lg:inline-flex"
       title="Risk scores are computed by the analysis engine over a synthetic dataset calibrated to published MPLADS patterns. No live government records are used."
     >
-      <span aria-hidden="true" className="h-1.5 w-1.5 rounded-full bg-gov-300" />
+      <span aria-hidden="true" className="h-2 w-2 rounded-full bg-amber-500 animate-pulse" />
       Synthetic demonstration data
     </span>
   );

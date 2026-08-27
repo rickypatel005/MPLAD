@@ -71,32 +71,29 @@ export function EvidenceCard({
   return (
     <article
       className={cn(
-        'panel flex flex-col',
-        // The tint is an accent on the header strip only. Tinting the whole card would put
-        // four saturated blocks on one screen and make the page feel alarmist rather than
-        // analytical.
-        isTopContributor && 'ring-1 ring-gov-200',
+        'panel flex flex-col transition-all duration-200 hover:shadow-lg',
+        isTopContributor && 'ring-2 ring-amber-500/80 shadow-md',
         className,
       )}
       aria-labelledby={`dimension-${detail.dimension}`}
     >
       <header
         className={cn(
-          'flex items-center justify-between gap-3 rounded-t-card border-b px-4 py-2.5',
+          'flex items-center justify-between gap-3 rounded-t-xl border-b px-5 py-3',
           level.surfaceClass,
           level.borderClass,
         )}
       >
         <h3
           id={`dimension-${detail.dimension}`}
-          className="flex items-center gap-2 text-card-title font-semibold text-ink"
+          className="flex items-center gap-2 font-display text-lg font-bold text-slate-900"
         >
-          <Icon size={15} className={level.textClass} aria-hidden="true" />
+          <Icon size={16} className={level.textClass} aria-hidden="true" />
           {meta.label}
         </h3>
         <div className="flex items-center gap-2">
           {isTopContributor ? (
-            <span className="eyebrow whitespace-nowrap text-gov-700">Largest contributor</span>
+            <span className="eyebrow whitespace-nowrap text-amber-700 bg-amber-100/80 px-2 py-0.5 rounded-md border border-amber-300">Largest contributor</span>
           ) : null}
           <RiskBadge level={detail.severity} score={detail.score} size="sm" />
         </div>

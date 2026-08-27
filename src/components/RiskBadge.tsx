@@ -28,9 +28,9 @@ export interface RiskBadgeProps {
 }
 
 const SIZE_CLASSES: Record<RiskBadgeSize, { wrapper: string; glyph: number }> = {
-  sm: { wrapper: 'h-5 gap-1 px-1.5 text-meta', glyph: 8 },
-  md: { wrapper: 'h-6 gap-1.5 px-2 text-caption', glyph: 10 },
-  lg: { wrapper: 'h-8 gap-2 px-2.5 text-body', glyph: 12 },
+  sm: { wrapper: 'h-5 gap-1 px-2 text-[0.65rem]', glyph: 8 },
+  md: { wrapper: 'h-6 gap-1.5 px-2.5 text-xs', glyph: 10 },
+  lg: { wrapper: 'h-8 gap-2 px-3 text-sm', glyph: 12 },
 };
 
 export function RiskBadge({ level, score, size = 'md', className }: RiskBadgeProps) {
@@ -41,17 +41,17 @@ export function RiskBadge({ level, score, size = 'md', className }: RiskBadgePro
   return (
     <span
       className={cn(
-        'inline-flex items-center whitespace-nowrap rounded-control border font-semibold uppercase tracking-wide',
+        'inline-flex items-center whitespace-nowrap rounded-full border font-bold uppercase tracking-wider font-sans shadow-sm transition-transform duration-100 hover:scale-[1.02]',
         meta.badgeClass,
         sizing.wrapper,
         className,
       )}
       title={`${meta.label} risk (${meta.range}) — ${meta.meaning}`}
     >
-      <Glyph size={sizing.glyph} />
+      <Glyph size={sizing.glyph} className="shrink-0" />
       {meta.label}
       {score !== null && score !== undefined ? (
-        <span className="tabular font-normal normal-case opacity-80">{formatScore(score)}</span>
+        <span className="tabular font-medium normal-case ml-0.5 opacity-90">{formatScore(score)}</span>
       ) : null}
     </span>
   );

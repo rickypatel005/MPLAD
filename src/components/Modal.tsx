@@ -140,11 +140,8 @@ export function Modal({
 
   return createPortal(
     <div
-      className="fixed inset-0 z-50 flex items-start justify-center overflow-y-auto bg-ink/40 px-6 py-10"
+      className="fixed inset-0 z-50 flex items-start justify-center overflow-y-auto bg-slate-900/70 backdrop-blur-sm px-6 py-10"
       onMouseDown={(event) => {
-        // Only a press that starts on the backdrop closes it. Testing the target on click
-        // would also dismiss the dialog when a drag inside it — selecting a description to
-        // copy into a note — happens to end on the overlay.
         if (event.target === event.currentTarget) onClose();
       }}
     >
@@ -157,18 +154,18 @@ export function Modal({
         tabIndex={-1}
         onKeyDown={onKeyDown}
         className={cn(
-          'w-full rounded-card border border-line-strong bg-surface shadow-overlay outline-none',
+          'w-full rounded-2xl border border-slate-300 bg-white shadow-2xl outline-none overflow-hidden animate-fade-in',
           SIZE_CLASS[size],
           className,
         )}
       >
-        <header className="flex items-start justify-between gap-4 border-b border-line px-5 py-3.5">
+        <header className="flex items-start justify-between gap-4 border-b border-slate-200 bg-slate-50/80 px-6 py-4">
           <div>
-            <h2 id={titleId} className="text-section font-semibold text-ink">
+            <h2 id={titleId} className="font-display text-xl font-bold text-slate-900">
               {title}
             </h2>
             {description === undefined ? null : (
-              <p id={descriptionId} className="mt-1 text-caption text-ink-muted">
+              <p id={descriptionId} className="mt-1 text-xs text-slate-600 font-sans">
                 {description}
               </p>
             )}
@@ -176,17 +173,17 @@ export function Modal({
           <button
             type="button"
             onClick={onClose}
-            className="btn-ghost -mr-1.5 -mt-1 h-8 w-8 shrink-0 p-0"
+            className="btn-ghost -mr-2 -mt-1 h-8 w-8 shrink-0 p-0 text-slate-500 hover:text-slate-900 hover:bg-slate-200/60 rounded-lg"
             aria-label="Close dialog"
           >
-            <CloseIcon size={16} aria-hidden="true" />
+            <CloseIcon size={18} aria-hidden="true" />
           </button>
         </header>
 
-        <div className="px-5 py-4">{children}</div>
+        <div className="px-6 py-5 font-sans text-slate-800">{children}</div>
 
         {footer ? (
-          <footer className="flex items-center justify-end gap-2 border-t border-line bg-surface-sunken px-5 py-3">
+          <footer className="flex items-center justify-end gap-3 border-t border-slate-200 bg-slate-50 px-6 py-3.5 font-sans">
             {footer}
           </footer>
         ) : null}

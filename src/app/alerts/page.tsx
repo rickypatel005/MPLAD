@@ -113,15 +113,15 @@ function AlertsContent() {
         )}
 
         {/* Filter Bar */}
-        <div className="panel px-4 py-3">
-          <div className="flex flex-wrap items-center gap-3">
+        <div className="panel p-4 font-sans">
+          <div className="flex flex-wrap items-center gap-4">
             <div className="flex items-center gap-2">
               <label htmlFor="alert-status" className="eyebrow">Status</label>
               <select
                 id="alert-status"
                 value={query.acknowledged ?? ''}
                 onChange={(e) => urlState.set({ acknowledged: e.target.value || undefined })}
-                className="rounded-control border border-line bg-surface px-3 py-1.5 text-body-sm text-ink"
+                className="control font-medium shadow-sm"
               >
                 <option value="">All Alerts</option>
                 <option value="false">Unacknowledged Only</option>
@@ -135,7 +135,7 @@ function AlertsContent() {
                 id="alert-type"
                 value={query.alert_type ?? ''}
                 onChange={(e) => urlState.set({ alert_type: e.target.value || undefined })}
-                className="rounded-control border border-line bg-surface px-3 py-1.5 text-body-sm text-ink"
+                className="control font-medium shadow-sm"
               >
                 <option value="">All Alert Types</option>
                 {facets?.alert_types.map((at) => (
@@ -152,7 +152,7 @@ function AlertsContent() {
                 id="alert-state"
                 value={query.state ?? ''}
                 onChange={(e) => urlState.set({ state: e.target.value || undefined })}
-                className="rounded-control border border-line bg-surface px-3 py-1.5 text-body-sm text-ink"
+                className="control font-medium shadow-sm"
               >
                 <option value="">All States</option>
                 {facets?.states.map((st) => (
@@ -167,7 +167,7 @@ function AlertsContent() {
               <button
                 type="button"
                 onClick={() => urlState.clearFilters()}
-                className="ml-auto text-caption font-medium text-gov-600 hover:text-gov-800"
+                className="ml-auto text-xs font-bold text-amber-700 hover:text-amber-900 hover:underline"
               >
                 Clear Filters
               </button>
@@ -177,12 +177,12 @@ function AlertsContent() {
 
         {/* Alert List */}
         {alertsPage && (
-          <section aria-label="Alert feed listing" className="space-y-3">
+          <section aria-label="Alert feed listing" className="space-y-4 font-sans">
             <div className="flex items-center justify-between">
-              <h2 className="text-card-title font-semibold text-ink">
+              <h2 className="font-display text-xl font-bold text-slate-900">
                 Alert Items ({formatCount(alertsPage.page.total_items)})
               </h2>
-              <span className="text-caption text-ink-muted">
+              <span className="text-xs font-semibold text-slate-500 font-sans">
                 Page {alertsPage.page.page} of {alertsPage.page.total_pages}
               </span>
             </div>
@@ -195,49 +195,49 @@ function AlertsContent() {
                 onAction={() => urlState.clearFilters()}
               />
             ) : (
-              <div className="space-y-3">
+              <div className="space-y-3.5">
                 {alertsPage.items.map((alert: AlertRow) => (
                   <div
                     key={alert.alert_id}
-                    className={`panel p-4 transition-colors ${
-                      !alert.is_acknowledged ? 'border-l-4 border-l-risk-critical' : 'opacity-85'
+                    className={`panel p-5 transition-all duration-200 hover:shadow-md ${
+                      !alert.is_acknowledged ? 'border-l-4 border-l-red-600 bg-white' : 'opacity-90 bg-slate-50/50'
                     }`}
                   >
-                    <div className="flex flex-wrap items-start justify-between gap-3">
-                      <div className="space-y-1 min-w-0 flex-1">
-                        <div className="flex flex-wrap items-center gap-2">
+                    <div className="flex flex-wrap items-start justify-between gap-4">
+                      <div className="space-y-1.5 min-w-0 flex-1">
+                        <div className="flex flex-wrap items-center gap-2.5">
                           <RiskBadge level={alert.alert_level} score={alert.overall_risk} size="sm" />
-                          <span className="eyebrow rounded-control bg-surface-sunken px-2 py-0.5 border border-line">
+                          <span className="eyebrow rounded-full bg-slate-100 px-2.5 py-0.5 border border-slate-200">
                             {humanizeEnum(alert.alert_type)}
                           </span>
-                          <span className="text-caption text-ink-muted">
+                          <span className="text-xs text-slate-500 font-sans font-medium">
                             {formatRelativeTime(alert.created_at)}
                           </span>
                         </div>
 
-                        <p className="text-body font-medium leading-relaxed text-ink mt-1">
+                        <p className="text-sm font-semibold leading-relaxed text-slate-900 mt-1 font-sans">
                           {alert.alert_message}
                         </p>
 
-                        <div className="flex flex-wrap items-center gap-3 text-caption text-ink-muted pt-1">
+                        <div className="flex flex-wrap items-center gap-3 text-xs text-slate-500 font-sans pt-1">
                           <Link
                             href={`/project/${encodeURIComponent(alert.project_id)}`}
-                            className="tabular font-bold text-gov-700 hover:underline flex items-center gap-1"
+                            className="font-mono font-bold text-amber-700 hover:underline flex items-center gap-1"
                           >
                             Project {alert.project_id} <ExternalLinkIcon size={12} />
                           </Link>
-                          <span>·</span>
-                          <span>{alert.district_name}, {alert.state_name}</span>
-                          <span>·</span>
-                          <span>MP: {mpLabel({ mp_id: alert.mp_id })}</span>
+                          <span>&bull;</span>
+                          <span className="font-medium text-slate-700">{alert.district_name}, {alert.state_name}</span>
+                          <span>&bull;</span>
+                          <span className="font-medium text-slate-700">MP: {mpLabel({ mp_id: alert.mp_id })}</span>
                         </div>
                       </div>
 
                       <div className="shrink-0 space-y-2 text-right">
                         {alert.is_acknowledged ? (
-                          <div className="rounded-control bg-risk-low-surface border border-risk-low-border px-3 py-1.5 text-caption text-risk-low-text">
-                            <span className="font-bold block">✓ Acknowledged</span>
-                            <span className="text-meta opacity-90">{alert.acknowledged_by}</span>
+                          <div className="rounded-xl bg-emerald-50 border border-emerald-300 px-3.5 py-2 text-xs text-emerald-900 font-sans shadow-sm">
+                            <span className="font-bold block text-emerald-800">✓ Acknowledged</span>
+                            <span className="text-[0.65rem] font-semibold text-emerald-700">{alert.acknowledged_by}</span>
                           </div>
                         ) : (
                           <div className="flex items-center gap-2">
@@ -248,15 +248,15 @@ function AlertsContent() {
                               onChange={(e) =>
                                 setAckActionText({ ...ackActionText, [alert.alert_id]: e.target.value })
                               }
-                              className="w-40 rounded-control border border-line bg-surface px-2.5 py-1 text-caption text-ink focus:outline-none focus:border-gov-500"
+                              className="control h-9 w-44 text-xs font-medium shadow-sm"
                             />
                             <button
                               type="button"
                               onClick={() => handleAcknowledge(alert.alert_id)}
                               disabled={ackMutation.isPending}
-                              className="btn-primary text-caption whitespace-nowrap"
+                              className="btn-primary h-9 text-xs whitespace-nowrap"
                             >
-                              <CheckIcon size={13} />
+                              <CheckIcon size={14} />
                               Acknowledge
                             </button>
                           </div>

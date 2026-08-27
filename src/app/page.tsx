@@ -137,24 +137,24 @@ function DashboardContent() {
           <section className="panel lg:col-span-1" aria-label="Top 10 highest-risk works">
             <div className="panel-header">
               <h2 className="panel-title">Top-10 Highest Risk Works</h2>
-              <span className="eyebrow text-risk-critical-text">Action Priority</span>
+              <span className="eyebrow text-amber-700 bg-amber-100/80 px-2 py-0.5 rounded border border-amber-300">Action Priority</span>
             </div>
-            <div className="divide-y divide-line">
+            <div className="divide-y divide-slate-100 font-sans">
               {topProjects.slice(0, 10).map((proj: RankedProject, idx) => (
                 <Link
                   key={proj.project_id}
                   href={`/project/${encodeURIComponent(proj.project_id)}`}
-                  className="group flex items-start justify-between gap-3 px-4 py-3 transition-colors hover:bg-surface-sunken"
+                  className="group flex items-start justify-between gap-3 px-5 py-3.5 transition-all duration-150 hover:bg-amber-500/10"
                 >
                   <div className="min-w-0 flex-1">
                     <div className="flex items-center gap-2">
-                      <span className="tabular text-meta font-bold text-ink-muted">#{idx + 1}</span>
-                      <span className="tabular text-caption font-semibold text-gov-700 group-hover:underline">
+                      <span className="font-mono text-xs font-bold text-amber-600 bg-amber-100/60 px-1.5 py-0.5 rounded">#{idx + 1}</span>
+                      <span className="font-mono text-xs font-bold text-slate-800 group-hover:text-amber-700 group-hover:underline">
                         {proj.project_id}
                       </span>
                     </div>
-                    <p className="mt-0.5 truncate text-caption font-medium text-ink">{proj.work_type}</p>
-                    <p className="mt-0.5 text-meta text-ink-muted">
+                    <p className="mt-1 truncate text-xs font-medium text-slate-900">{proj.work_type}</p>
+                    <p className="mt-0.5 text-[0.7rem] text-slate-500 font-sans">
                       {proj.district_name}, {proj.state_name}
                     </p>
                   </div>
@@ -169,14 +169,14 @@ function DashboardContent() {
             <div className="panel-header">
               <div>
                 <h2 className="panel-title">Risk Distribution</h2>
-                <p className="panel-hint">Aggregated risk across states and sectors</p>
+                <p className="panel-hint font-sans">Aggregated risk across states and sectors</p>
               </div>
-              <div className="flex items-center gap-1 rounded-control border border-line bg-surface-sunken p-0.5">
+              <div className="flex items-center gap-1 rounded-lg border border-slate-200 bg-slate-100 p-1 font-sans">
                 <button
                   type="button"
                   onClick={() => setActiveView('state')}
-                  className={`rounded-control px-2.5 py-1 text-caption font-medium ${
-                    activeView === 'state' ? 'bg-surface text-ink shadow-flat' : 'text-ink-muted hover:text-ink'
+                  className={`rounded-md px-3 py-1 text-xs font-semibold transition-all ${
+                    activeView === 'state' ? 'bg-white text-slate-900 shadow-sm border border-slate-200' : 'text-slate-600 hover:text-slate-900'
                   }`}
                 >
                   By State
@@ -184,8 +184,8 @@ function DashboardContent() {
                 <button
                   type="button"
                   onClick={() => setActiveView('treemap')}
-                  className={`rounded-control px-2.5 py-1 text-caption font-medium ${
-                    activeView === 'treemap' ? 'bg-surface text-ink shadow-flat' : 'text-ink-muted hover:text-ink'
+                  className={`rounded-md px-3 py-1 text-xs font-semibold transition-all ${
+                    activeView === 'treemap' ? 'bg-white text-slate-900 shadow-sm border border-slate-200' : 'text-slate-600 hover:text-slate-900'
                   }`}
                 >
                   Sector Treemap
@@ -193,7 +193,7 @@ function DashboardContent() {
               </div>
             </div>
 
-            <div className="flex-1 min-h-[300px] px-4 py-3">
+            <div className="flex-1 min-h-[300px] p-5">
               {activeView === 'treemap' && data?.work_type_risk ? (
                 <div className="h-[320px] w-full">
                   <ResponsiveContainer width="100%" height="100%">
@@ -213,21 +213,21 @@ function DashboardContent() {
                   </ResponsiveContainer>
                 </div>
               ) : (
-                <div className="grid grid-cols-2 gap-3 md:grid-cols-3">
+                <div className="grid grid-cols-2 gap-3.5 md:grid-cols-3">
                   {(data?.state_risk ?? []).slice(0, 9).map((sr) => (
                     <button
                       key={sr.state_id}
                       type="button"
                       onClick={() => urlState.set({ state: sr.state_id })}
-                      className="flex flex-col justify-between rounded-card border border-line p-3 text-left transition-colors hover:border-gov-300 hover:bg-surface-sunken"
+                      className="flex flex-col justify-between rounded-xl border border-slate-200 p-4 text-left font-sans transition-all duration-150 hover:border-amber-400 hover:shadow-md bg-white hover:bg-amber-500/10"
                     >
                       <div className="flex items-center justify-between">
-                        <span className="text-body-sm font-semibold text-ink">{sr.state_name}</span>
+                        <span className="text-sm font-bold text-slate-900">{sr.state_name}</span>
                         <RiskBadge level={sr.risk_level} size="sm" />
                       </div>
-                      <div className="mt-3 flex items-center justify-between text-caption text-ink-muted">
-                        <span>{formatCount(sr.project_count)} works</span>
-                        <span className="tabular font-semibold text-risk-critical-text">
+                      <div className="mt-4 flex items-center justify-between text-xs text-slate-500 font-sans">
+                        <span className="font-semibold text-slate-700">{formatCount(sr.project_count)} works</span>
+                        <span className="font-mono font-bold text-red-600">
                           {sr.counts_by_risk_level.CRITICAL} critical
                         </span>
                       </div>
@@ -240,12 +240,12 @@ function DashboardContent() {
         </div>
 
         {/* Filter Bar */}
-        <div className="panel px-4 py-3">
-          <div className="flex flex-wrap items-center justify-between gap-3 border-b border-line pb-3">
-            <div className="flex items-center gap-2 text-body-sm font-semibold text-ink">
-              <span>Filter & Search Works</span>
+        <div className="panel p-5 font-sans">
+          <div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-200 pb-3.5">
+            <div className="flex items-center gap-2.5 text-sm font-bold text-slate-900">
+              <span className="font-display text-lg">Filter & Search Works</span>
               {urlState.activeFilterCount > 0 && (
-                <span className="eyebrow rounded-control bg-gov-50 px-2 py-0.5 text-gov-700">
+                <span className="eyebrow rounded-full bg-amber-100 px-2.5 py-0.5 text-amber-800 border border-amber-300">
                   {urlState.activeFilterCount} active
                 </span>
               )}
@@ -254,27 +254,27 @@ function DashboardContent() {
               <button
                 type="button"
                 onClick={() => urlState.clearFilters()}
-                className="text-caption font-medium text-gov-600 hover:text-gov-800"
+                className="text-xs font-bold text-amber-700 hover:text-amber-900 hover:underline"
               >
-                Clear all
+                Clear all filters
               </button>
             )}
           </div>
 
-          <div className="mt-3 flex flex-wrap items-center gap-3">
-            <div className="flex-1 min-w-[240px]">
+          <div className="mt-4 flex flex-wrap items-center gap-3">
+            <div className="flex-1 min-w-[260px]">
               <input
                 type="text"
                 placeholder="Search by Project ID, description, MP or IA…"
                 value={searchValue}
                 onChange={(e) => setSearchValue(e.target.value)}
-                className="w-full rounded-control border border-line bg-surface px-3 py-1.5 text-body-sm text-ink placeholder:text-ink-muted focus:border-gov-500 focus:outline-none"
+                className="w-full control shadow-sm"
               />
             </div>
             <select
               value={currentRisk ?? ''}
               onChange={(e) => urlState.set({ risk: e.target.value || undefined })}
-              className="rounded-control border border-line bg-surface px-3 py-1.5 text-body-sm text-ink"
+              className="control shadow-sm font-medium"
             >
               <option value="">All Risk Levels</option>
               <option value="CRITICAL">Critical</option>
@@ -285,7 +285,7 @@ function DashboardContent() {
             <select
               value={currentState ?? ''}
               onChange={(e) => urlState.set({ state: e.target.value || undefined })}
-              className="rounded-control border border-line bg-surface px-3 py-1.5 text-body-sm text-ink"
+              className="control shadow-sm font-medium"
             >
               <option value="">All States</option>
               {facets?.states.map((st) => (
@@ -297,7 +297,7 @@ function DashboardContent() {
             <select
               value={currentWorkType ?? ''}
               onChange={(e) => urlState.set({ work_type: e.target.value || undefined })}
-              className="rounded-control border border-line bg-surface px-3 py-1.5 text-body-sm text-ink"
+              className="control shadow-sm font-medium"
             >
               <option value="">All Work Types</option>
               {facets?.work_types.map((wt) => (
@@ -311,12 +311,12 @@ function DashboardContent() {
 
         {/* Main Ranked Project Table */}
         {projectsPage && (
-          <section aria-label="Project listing" className="space-y-3">
+          <section aria-label="Project listing" className="space-y-4 font-sans">
             <div className="flex items-center justify-between">
-              <h2 className="text-card-title font-semibold text-ink">
+              <h2 className="font-display text-xl font-bold text-slate-900">
                 Analyzed Works ({formatCount(projectsPage.page.total_items)})
               </h2>
-              <span className="text-caption text-ink-muted">
+              <span className="text-xs font-semibold text-slate-500 font-sans">
                 Page {projectsPage.page.page} of {projectsPage.page.total_pages}
               </span>
             </div>

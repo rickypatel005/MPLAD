@@ -69,7 +69,7 @@ export function ScoreMeter({
       </div>
 
       <div
-        className="relative mt-1.5 h-2.5 w-full overflow-hidden rounded-control border border-line"
+        className="relative mt-2 h-3 w-full overflow-hidden rounded-full border border-slate-200 shadow-inner"
         role="img"
         aria-label={`${label ? `${label}: ` : ''}${meta.label} risk, ${formatScore(score)} of 1.00, in the ${meta.range} band`}
         title={`${meta.label} — ${meta.range}. ${meta.meaning}`}
@@ -84,26 +84,26 @@ export function ScoreMeter({
           ))}
         </div>
 
-        {/* The needle. Dark rather than tinted, so it stays visible over any band. */}
+        {/* The needle. Dark slate with gold contrast ring so it pops. */}
         <span
           aria-hidden="true"
-          className="absolute top-0 h-full w-0.5 -translate-x-1/2 bg-ink"
+          className="absolute top-0 h-full w-1 -translate-x-1/2 bg-slate-900 ring-1 ring-amber-400 shadow-md"
           style={{ left: `${position}%` }}
         />
       </div>
 
       {showBands ? (
-        <div className="mt-1 flex w-full">
+        <div className="mt-1.5 flex w-full">
           {RISK_LEVEL_BANDS.map((band) => (
             <span
               key={band.level}
-              className="tabular text-meta text-ink-faint"
+              className="tabular text-[0.65rem] font-semibold text-slate-400 font-sans"
               style={{ width: `${(band.max - band.min) * 100}%` }}
             >
               {band.min.toFixed(2)}
             </span>
           ))}
-          <span className="tabular text-meta text-ink-faint">1.00</span>
+          <span className="tabular text-[0.65rem] font-semibold text-slate-400 font-sans">1.00</span>
         </div>
       ) : null}
     </div>

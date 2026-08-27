@@ -112,12 +112,12 @@ function DuplicatesContent() {
         )}
 
         {/* Filter Bar */}
-        <div className="panel px-4 py-3">
-          <div className="flex flex-wrap items-center justify-between gap-3 border-b border-line pb-3">
-            <div className="flex items-center gap-2 text-body-sm font-semibold text-ink">
-              <span>Filter Candidate Pairs</span>
+        <div className="panel p-4 font-sans">
+          <div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-200 pb-3.5">
+            <div className="flex items-center gap-2.5 text-sm font-bold text-slate-900">
+              <span className="font-display text-lg">Filter Candidate Pairs</span>
               {urlState.activeFilterCount > 0 && (
-                <span className="eyebrow rounded-control bg-gov-50 px-2 py-0.5 text-gov-700">
+                <span className="eyebrow rounded-full bg-amber-100 px-2.5 py-0.5 text-amber-800 border border-amber-300">
                   {urlState.activeFilterCount} active
                 </span>
               )}
@@ -126,18 +126,18 @@ function DuplicatesContent() {
               <button
                 type="button"
                 onClick={() => urlState.clearFilters()}
-                className="text-caption font-medium text-gov-600 hover:text-gov-800"
+                className="text-xs font-bold text-amber-700 hover:text-amber-900 hover:underline"
               >
-                Clear all
+                Clear all filters
               </button>
             )}
           </div>
 
-          <div className="mt-3 flex flex-wrap items-center gap-3">
+          <div className="mt-4 flex flex-wrap items-center gap-3">
             <select
               value={query.review_status ?? ''}
               onChange={(e) => urlState.set({ review_status: e.target.value || undefined })}
-              className="rounded-control border border-line bg-surface px-3 py-1.5 text-body-sm text-ink"
+              className="control font-medium shadow-sm"
             >
               <option value="">All Review Statuses</option>
               <option value="PENDING_REVIEW">Pending Review</option>
@@ -148,7 +148,7 @@ function DuplicatesContent() {
             <select
               value={query.detection_method ?? ''}
               onChange={(e) => urlState.set({ detection_method: e.target.value || undefined })}
-              className="rounded-control border border-line bg-surface px-3 py-1.5 text-body-sm text-ink"
+              className="control font-medium shadow-sm"
             >
               <option value="">All Detection Methods</option>
               {facets?.detection_methods.map((dm) => (
@@ -161,7 +161,7 @@ function DuplicatesContent() {
             <select
               value={query.state ?? ''}
               onChange={(e) => urlState.set({ state: e.target.value || undefined })}
-              className="rounded-control border border-line bg-surface px-3 py-1.5 text-body-sm text-ink"
+              className="control font-medium shadow-sm"
             >
               <option value="">All States</option>
               {facets?.states.map((st) => (
@@ -175,12 +175,12 @@ function DuplicatesContent() {
 
         {/* Duplicates Table */}
         {pairsPage && (
-          <section aria-label="Duplicate pairs listing" className="space-y-3">
+          <section aria-label="Duplicate pairs listing" className="space-y-4 font-sans">
             <div className="flex items-center justify-between">
-              <h2 className="text-card-title font-semibold text-ink">
+              <h2 className="font-display text-xl font-bold text-slate-900">
                 Surfaced Pairs ({formatCount(pairsPage.page.total_items)})
               </h2>
-              <span className="text-caption text-ink-muted">
+              <span className="text-xs font-semibold text-slate-500 font-sans">
                 Page {pairsPage.page.page} of {pairsPage.page.total_pages}
               </span>
             </div>
@@ -209,18 +209,18 @@ function DuplicatesContent() {
                   <tbody>
                     {pairsPage.items.map((pair) => (
                       <tr key={pair.pair_id}>
-                        <td className="tabular font-semibold">#{pair.pair_id}</td>
+                        <td className="font-mono font-bold text-slate-700">#{pair.pair_id}</td>
                         <td>
                           <div className="space-y-0.5">
                             <Link
                               href={`/project/${encodeURIComponent(pair.project_a.project_id)}`}
-                              className="tabular text-caption font-bold text-gov-700 hover:underline"
+                              className="font-mono text-xs font-bold text-amber-700 hover:underline"
                             >
                               {pair.project_a.project_id}
                             </Link>
-                            <p className="text-caption text-ink line-clamp-1">{pair.project_a.work_description}</p>
-                            <p className="text-meta text-ink-muted">
-                              {pair.project_a.district_name} · {mpLabel({ mp_id: pair.project_a.mp_id })}
+                            <p className="text-xs font-medium text-slate-900 line-clamp-1">{pair.project_a.work_description}</p>
+                            <p className="text-[0.65rem] text-slate-500 font-sans">
+                              {pair.project_a.district_name} &bull; {mpLabel({ mp_id: pair.project_a.mp_id })}
                             </p>
                           </div>
                         </td>
@@ -228,33 +228,33 @@ function DuplicatesContent() {
                           <div className="space-y-0.5">
                             <Link
                               href={`/project/${encodeURIComponent(pair.project_b.project_id)}`}
-                              className="tabular text-caption font-bold text-gov-700 hover:underline"
+                              className="font-mono text-xs font-bold text-amber-700 hover:underline"
                             >
                               {pair.project_b.project_id}
                             </Link>
-                            <p className="text-caption text-ink line-clamp-1">{pair.project_b.work_description}</p>
-                            <p className="text-meta text-ink-muted">
-                              {pair.project_b.district_name} · {mpLabel({ mp_id: pair.project_b.mp_id })}
+                            <p className="text-xs font-medium text-slate-900 line-clamp-1">{pair.project_b.work_description}</p>
+                            <p className="text-[0.65rem] text-slate-500 font-sans">
+                              {pair.project_b.district_name} &bull; {mpLabel({ mp_id: pair.project_b.mp_id })}
                             </p>
                           </div>
                         </td>
                         <td>
-                          <span className="tabular font-bold text-risk-critical-text">
+                          <span className="font-mono font-bold text-red-600">
                             {formatSimilarity(pair.similarity_score)}
                           </span>
                         </td>
                         <td>
-                          <span className="tabular text-body-sm">
+                          <span className="font-mono text-xs font-semibold text-slate-700">
                             {formatDistanceKm(pair.geo_distance_km)}
                           </span>
                         </td>
                         <td>
-                          <span className={`inline-flex items-center rounded-control border px-2 py-0.5 text-meta font-semibold uppercase ${
+                          <span className={`inline-flex items-center rounded-full border px-2.5 py-0.5 text-[0.65rem] font-bold uppercase tracking-wider font-sans shadow-sm ${
                             pair.review_status === 'CONFIRMED_DUPLICATE'
-                              ? 'bg-risk-critical-surface border-risk-critical-border text-risk-critical-text'
+                              ? 'bg-red-50 border-red-300 text-red-800'
                               : pair.review_status === 'NOT_A_DUPLICATE'
-                              ? 'bg-risk-low-surface border-risk-low-border text-risk-low-text'
-                              : 'bg-risk-high-surface border-risk-high-border text-risk-high-text'
+                              ? 'bg-emerald-50 border-emerald-300 text-emerald-800'
+                              : 'bg-amber-50 border-amber-300 text-amber-900'
                           }`}>
                             {humanizeEnum(pair.review_status)}
                           </span>
@@ -263,7 +263,7 @@ function DuplicatesContent() {
                           <button
                             type="button"
                             onClick={() => setSelectedPair(pair)}
-                            className="btn-primary text-caption"
+                            className="btn-primary h-8 px-3 text-xs"
                           >
                             Compare
                           </button>

@@ -30,28 +30,28 @@ export function AnonymizeToggle({ className }: { className?: string }) {
           : 'MP identities are visible. Click to mask.'
       }
       className={cn(
-        'group inline-flex h-8 items-center gap-2 rounded-control border px-2.5 text-body-sm font-medium transition-colors',
+        'group inline-flex h-8 items-center gap-2 rounded-lg border px-3 text-xs font-semibold font-sans transition-all duration-150 shadow-sm',
         anonymized
-          ? 'border-gov-700 bg-gov-800/60 text-gov-100 hover:bg-gov-800'
-          : 'border-risk-high-border bg-risk-high-surface text-risk-high-text hover:bg-risk-high-surface/80',
+          ? 'border-slate-700 bg-slate-800 text-slate-200 hover:bg-slate-750'
+          : 'border-amber-400 bg-amber-500/20 text-amber-300 hover:bg-amber-500/30',
         className,
       )}
     >
-      {anonymized ? <EyeOffIcon size={15} /> : <EyeIcon size={15} />}
+      {anonymized ? <EyeOffIcon size={14} className="text-amber-400" /> : <EyeIcon size={14} className="text-amber-300" />}
       <span className="whitespace-nowrap">
-        MP identities: <span className="font-semibold">{anonymized ? 'masked' : 'visible'}</span>
+        MP identities: <span className="font-bold text-amber-400">{anonymized ? 'masked' : 'visible'}</span>
       </span>
       <span
         aria-hidden="true"
         className={cn(
-          'relative h-3.5 w-7 shrink-0 rounded-full transition-colors',
-          anonymized ? 'bg-gov-400' : 'bg-risk-high',
+          'relative h-4 w-8 shrink-0 rounded-full transition-colors',
+          anonymized ? 'bg-amber-500' : 'bg-amber-600/50',
         )}
       >
         <span
           className={cn(
-            'absolute top-0.5 h-2.5 w-2.5 rounded-full bg-white transition-all',
-            anonymized ? 'left-[0.875rem]' : 'left-0.5',
+            'absolute top-0.5 h-3 w-3 rounded-full bg-slate-900 shadow transition-all',
+            anonymized ? 'left-[1.125rem]' : 'left-0.5',
           )}
         />
       </span>

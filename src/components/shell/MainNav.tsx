@@ -22,8 +22,8 @@ export function MainNav() {
   const pathname = usePathname();
 
   return (
-    <nav aria-label="Primary" className="border-b border-line bg-surface">
-      <ul className="mx-auto flex max-w-shell items-stretch gap-0.5 px-6">
+    <nav aria-label="Primary" className="border-b border-slate-200 bg-white shadow-sm sticky top-0 z-30">
+      <ul className="mx-auto flex max-w-shell items-stretch gap-1 px-6">
         {NAV_ITEMS.map((item) => {
           const active = isNavItemActive(item, pathname);
           const Icon = NAV_ICONS[item.icon];
@@ -34,13 +34,13 @@ export function MainNav() {
                 aria-current={active ? 'page' : undefined}
                 title={item.description}
                 className={cn(
-                  'flex items-center gap-2 border-b-2 px-3.5 py-2.5 text-body-sm font-medium transition-colors',
+                  'flex items-center gap-2 border-b-2 px-4 py-3 text-sm font-semibold font-sans transition-all duration-150',
                   active
-                    ? 'border-gov-600 text-gov-700'
-                    : 'border-transparent text-ink-muted hover:border-line-strong hover:text-ink',
+                    ? 'border-amber-500 text-slate-900 bg-amber-500/10'
+                    : 'border-transparent text-slate-600 hover:border-slate-300 hover:text-slate-900 hover:bg-slate-50',
                 )}
               >
-                <Icon size={15} className={active ? 'text-gov-600' : 'text-ink-faint'} />
+                <Icon size={16} className={active ? 'text-amber-600' : 'text-slate-400'} />
                 {item.label}
               </Link>
             </li>

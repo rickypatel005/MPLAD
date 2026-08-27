@@ -15,10 +15,10 @@ import { RefreshIcon, AlertTriangleIcon } from '@/components/icons';
 
 function StatusBadge({ status }: { status: ComplianceStatus }) {
   const styles: Record<ComplianceStatus, string> = {
-    COMPLIANT: 'bg-risk-low-surface border-risk-low-border text-risk-low-text',
-    AT_RISK: 'bg-risk-medium-surface border-risk-medium-border text-risk-medium-text',
-    NON_COMPLIANT: 'bg-risk-critical-surface border-risk-critical-border text-risk-critical-text',
-    NO_DATA: 'bg-surface-sunken border-line text-ink-muted',
+    COMPLIANT: 'bg-emerald-50 border-emerald-300 text-emerald-800',
+    AT_RISK: 'bg-amber-50 border-amber-300 text-amber-900',
+    NON_COMPLIANT: 'bg-red-50 border-red-300 text-red-800',
+    NO_DATA: 'bg-slate-100 border-slate-300 text-slate-500',
   };
 
   const labels: Record<ComplianceStatus, string> = {
@@ -29,7 +29,7 @@ function StatusBadge({ status }: { status: ComplianceStatus }) {
   };
 
   return (
-    <span className={`inline-flex items-center rounded-control border px-2 py-0.5 text-meta font-semibold uppercase tracking-wide ${styles[status]}`}>
+    <span className={`inline-flex items-center rounded-full border px-2.5 py-0.5 text-[0.65rem] font-bold uppercase tracking-wider font-sans shadow-sm ${styles[status]}`}>
       {labels[status]}
     </span>
   );

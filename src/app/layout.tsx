@@ -1,6 +1,8 @@
 import type { Metadata, Viewport } from 'next';
 import type { ReactNode } from 'react';
 
+import { Outfit, Cormorant_Garamond, JetBrains_Mono } from 'next/font/google';
+
 import '@/app/globals.css';
 
 import { DisclaimerFooter } from '@/components/DisclaimerFooter';
@@ -9,6 +11,28 @@ import { QueryProvider } from '@/components/providers/QueryProvider';
 import { AppHeader } from '@/components/shell/AppHeader';
 import { MainNav } from '@/components/shell/MainNav';
 import { PRODUCT_NAME, PRODUCT_TAGLINE } from '@/lib/copy';
+
+const outfit = Outfit({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700', '800'],
+  variable: '--font-outfit',
+  display: 'swap',
+});
+
+const cormorant = Cormorant_Garamond({
+  subsets: ['latin'],
+  weight: ['400', '600', '700'],
+  style: ['normal', 'italic'],
+  variable: '--font-cormorant',
+  display: 'swap',
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ['latin'],
+  weight: ['400', '600'],
+  variable: '--font-jetbrains',
+  display: 'swap',
+});
 
 export const metadata: Metadata = {
   title: {
@@ -44,8 +68,11 @@ export const viewport: Viewport = {
  */
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en-IN">
-      <body className="flex min-h-screen flex-col">
+    <html
+      lang="en-IN"
+      className={`${outfit.variable} ${cormorant.variable} ${jetbrainsMono.variable}`}
+    >
+      <body className="flex min-h-screen flex-col font-sans bg-surface-page text-ink antialiased">
         <QueryProvider>
           <AnonymizeProvider>
             <a

@@ -114,95 +114,95 @@ export default function ProjectInvestigationPage() {
         </div>
       </PageHeader>
 
-      <div className="mx-auto max-w-shell space-y-6 px-6 py-6 pb-20">
+      <div className="mx-auto max-w-shell space-y-6 px-6 py-6 pb-20 font-sans">
         {/* Project Metadata Card */}
-        <div className="panel px-5 py-4">
-          <div className="space-y-1 mb-4">
+        <div className="panel p-6 bg-white shadow-sm">
+          <div className="space-y-2 mb-5">
             <div className="flex flex-wrap items-center gap-3">
-              <span className="tabular eyebrow rounded-control bg-gov-50 px-2 py-0.5 text-gov-700 border border-gov-200">
+              <span className="font-mono text-xs font-bold text-amber-700 bg-amber-100 px-2.5 py-1 rounded-md border border-amber-300">
                 {project.project_id}
               </span>
-              <span className="eyebrow text-ink-muted">FY {project.fy}</span>
-              <span className="eyebrow">{project.work_type}</span>
+              <span className="eyebrow text-slate-500">FY {project.fy}</span>
+              <span className="eyebrow text-slate-700 font-bold">{project.work_type}</span>
               {project.is_sc_area && (
-                <span className="eyebrow rounded-control bg-blue-50 text-blue-700 border border-blue-200 px-2 py-0.5">
+                <span className="eyebrow rounded-full bg-blue-50 text-blue-800 border border-blue-200 px-2.5 py-0.5">
                   SC Area
                 </span>
               )}
               {project.is_st_area && (
-                <span className="eyebrow rounded-control bg-purple-50 text-purple-700 border border-purple-200 px-2 py-0.5">
+                <span className="eyebrow rounded-full bg-purple-50 text-purple-800 border border-purple-200 px-2.5 py-0.5">
                   ST Area
                 </span>
               )}
             </div>
-            <h2 className="text-section font-semibold text-ink">{project.work_description}</h2>
+            <h2 className="font-display text-2xl font-bold text-slate-900 leading-snug">{project.work_description}</h2>
           </div>
 
-          <div className="grid grid-cols-2 gap-4 border-t border-line pt-4 sm:grid-cols-4">
+          <div className="grid grid-cols-2 gap-5 border-t border-slate-200 pt-5 sm:grid-cols-4 font-sans">
             <div>
               <span className="eyebrow">Member of Parliament</span>
-              <p className="mt-0.5 text-body-sm font-semibold text-ink">{mpLabel(mp)}</p>
-              <p className="text-caption text-ink-muted">{constituencyLabel(mp)} ({humanizeEnum(mp.mp_house)})</p>
+              <p className="mt-1 text-sm font-bold text-slate-900">{mpLabel(mp)}</p>
+              <p className="text-xs text-slate-500 font-medium">{constituencyLabel(mp)} ({humanizeEnum(mp.mp_house)})</p>
             </div>
             <div>
               <span className="eyebrow">Implementing Agency</span>
-              <p className="mt-0.5 text-body-sm font-semibold text-ink">{implementing_agency.ia_name}</p>
-              <p className="text-caption text-ink-muted">Type: {humanizeEnum(implementing_agency.ia_type)}</p>
+              <p className="mt-1 text-sm font-bold text-slate-900">{implementing_agency.ia_name}</p>
+              <p className="text-xs text-slate-500 font-medium">Type: {humanizeEnum(implementing_agency.ia_type)}</p>
               {has_network_relationship && (
                 <Link
                   href={DEEP_LINKS.networkForIA(implementing_agency.ia_id)}
-                  className="mt-1 inline-flex items-center gap-1 text-caption font-medium text-gov-600 hover:underline"
+                  className="mt-1.5 inline-flex items-center gap-1 text-xs font-bold text-amber-700 hover:underline"
                 >
-                  View in Network Graph <ExternalLinkIcon size={11} />
+                  View in Network Graph <ExternalLinkIcon size={12} />
                 </Link>
               )}
             </div>
             <div>
-              <span className="eyebrow">Location</span>
-              <p className="mt-0.5 text-body-sm font-semibold text-ink">
+              <span className="eyebrow">Location & Cost</span>
+              <p className="mt-1 text-sm font-bold text-slate-900">
                 {district.district_name}, {state.state_name}
               </p>
-              <p className="tabular text-caption text-ink-muted">
-                Cost: {formatLakhs(project.estimated_cost_lakhs)}
+              <p className="font-mono text-xs font-semibold text-slate-600">
+                Outlay: {formatLakhs(project.estimated_cost_lakhs)}
               </p>
             </div>
             <div>
               <span className="eyebrow">Status & Sanction Date</span>
-              <p className="mt-0.5 text-body-sm font-semibold text-ink">{humanizeEnum(project.sanction_status)}</p>
-              <p className="text-caption text-ink-muted">{project.sanction_date ? formatDate(project.sanction_date) : 'Pending'}</p>
+              <p className="mt-1 text-sm font-bold text-slate-900">{humanizeEnum(project.sanction_status)}</p>
+              <p className="text-xs text-slate-500 font-medium">{project.sanction_date ? formatDate(project.sanction_date) : 'Pending'}</p>
             </div>
           </div>
         </div>
 
         {/* Recommended Action Banner */}
         {recommended_action && (
-          <div className="panel flex items-start gap-3 border-risk-high-border bg-risk-high-surface px-4 py-3">
-            <AlertTriangleIcon size={18} className="shrink-0 mt-0.5 text-risk-high-text" />
+          <div className="panel flex items-start gap-3.5 border-amber-300 bg-amber-50/90 p-4 shadow-sm">
+            <AlertTriangleIcon size={20} className="shrink-0 mt-0.5 text-amber-700" />
             <div className="flex-1">
               <div className="flex items-center justify-between gap-2">
-                <h3 className="text-body-sm font-bold text-ink">{recommended_action.action}</h3>
-                <span className="eyebrow text-risk-high-text">
+                <h3 className="text-sm font-bold text-amber-950 font-sans">{recommended_action.action}</h3>
+                <span className="eyebrow text-amber-800 bg-amber-200/80 px-2 py-0.5 rounded border border-amber-400">
                   Refer to: {recommended_action.refer_to}
                 </span>
               </div>
-              <p className="text-caption text-ink-muted">{recommended_action.rationale}</p>
+              <p className="text-xs font-medium text-amber-900/90 mt-1 leading-relaxed">{recommended_action.rationale}</p>
             </div>
           </div>
         )}
 
         {/* Duplicate Warning */}
         {duplicate_pairs.length > 0 && (
-          <div className="panel flex items-center justify-between border-risk-critical-border bg-risk-critical-surface px-4 py-3">
+          <div className="panel flex items-center justify-between border-red-300 bg-red-50 p-4 shadow-sm">
             <div className="flex items-center gap-3">
-              <AlertTriangleIcon size={18} className="text-risk-critical-text" />
+              <AlertTriangleIcon size={20} className="text-red-700 shrink-0" />
               <div>
-                <p className="text-body-sm font-bold text-risk-critical-text">
-                  Duplicate Work Flagged — {formatPercent(duplicate_pairs[0].similarity_score)} Similarity
+                <p className="text-sm font-bold text-red-900 font-sans">
+                  Duplicate Work Flagged &mdash; {formatPercent(duplicate_pairs[0].similarity_score)} Similarity
                 </p>
-                <p className="text-caption text-ink-muted">{duplicate_pairs[0].note}</p>
+                <p className="text-xs font-medium text-red-800/90 mt-0.5">{duplicate_pairs[0].note}</p>
               </div>
             </div>
-            <Link href={DEEP_LINKS.duplicatePair(duplicate_pairs[0].pair_id)} className="btn-primary text-caption">
+            <Link href={DEEP_LINKS.duplicatePair(duplicate_pairs[0].pair_id)} className="btn-primary h-9 text-xs">
               Compare Side-by-Side
             </Link>
           </div>

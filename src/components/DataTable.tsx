@@ -184,9 +184,9 @@ export function DataTable<T>({
                             onSort(sortField, nextOrder(isActive, order, column?.numeric ?? false))
                           }
                           className={cn(
-                            'group inline-flex items-center gap-1 uppercase tracking-wider hover:text-gov-600',
+                            'group inline-flex items-center gap-1.5 uppercase tracking-wider hover:text-amber-700 font-sans transition-colors',
                             column?.numeric && 'flex-row-reverse',
-                            isActive && 'text-gov-700',
+                            isActive && 'text-amber-800 font-bold',
                           )}
                         >
                           {label}
@@ -211,24 +211,19 @@ export function DataTable<T>({
                 <tr
                   key={row.id}
                   className={cn(
-                    emphasised && 'bg-gov-50/70',
+                    'transition-colors duration-150',
+                    emphasised ? 'bg-amber-50/75 border-l-4 border-l-amber-500' : 'hover:bg-slate-50/80',
                     href !== undefined && 'cursor-pointer',
                   )}
-                  // Mouse convenience only. The row is not focusable and carries no link
-                  // role: the first cell holds a real anchor, so keyboard and screen-reader
-                  // users get one unambiguous target instead of a second, silent tab stop.
                   onClick={
                     href === undefined
                       ? undefined
                       : (event) => {
                           if (event.defaultPrevented) return;
                           const target = event.target;
-                          // Let genuine controls inside the row handle their own clicks.
                           if (target instanceof HTMLElement && target.closest('a,button,input')) {
                             return;
                           }
-                          // Client-side navigation: a full page load here would throw away
-                          // the query cache and re-fetch the dashboard behind the drill-down.
                           router.push(href);
                         }
                   }
@@ -250,9 +245,9 @@ export function DataTable<T>({
 
             {table.getRowModel().rows.length === 0 ? (
               <tr>
-                <td colSpan={columns.length} className="px-3 py-10 text-center">
+                <td colSpan={columns.length} className="px-4 py-12 text-center">
                   {emptyState ?? (
-                    <span className="text-body-sm text-ink-muted">
+                    <span className="text-sm font-medium text-slate-500 font-sans">
                       No {unitLabel} match the current filters. Widen the date range or remove a
                       filter to see more.
                     </span>
@@ -276,13 +271,6 @@ export function DataTable<T>({
   );
 }
 
-/**
- * Which direction a fresh click should sort.
- *
- * Clicking the active column flips it. Clicking a new one starts descending for numbers —
- * on this product every numeric column is a severity, a cost or a score, and the interesting
- * end is the top — and ascending for text, where alphabetical is what a reader expects.
- */
 function nextOrder(isActive: boolean, current: SortOrder, numeric: boolean): SortOrder {
   if (isActive) return current === 'asc' ? 'desc' : 'asc';
   return numeric ? 'desc' : 'asc';
@@ -291,25 +279,18 @@ function nextOrder(isActive: boolean, current: SortOrder, numeric: boolean): Sor
 function SortIndicator({ active, order }: { active: boolean; order: SortOrder }) {
   if (!active) {
     return (
-      <span aria-hidden="true" className="text-ink-faint opacity-0 transition-opacity group-hover:opacity-100">
-        <ArrowDownIcon size={11} />
+      <span aria-hidden="true" className="text-slate-400 opacity-0 transition-opacity group-hover:opacity-100">
+        <ArrowDownIcon size={12} />
       </span>
     );
   }
   return (
-    <span aria-hidden="true" className="text-gov-600">
-      {order === 'asc' ? <ArrowUpIcon size={11} /> : <ArrowDownIcon size={11} />}
+    <span aria-hidden="true" className="text-amber-600 font-bold">
+      {order === 'asc' ? <ArrowUpIcon size={12} /> : <ArrowDownIcon size={12} />}
     </span>
   );
 }
 
-/**
- * Server-side pager.
- *
- * Always states the range against the total — "26–50 of 1,847 works" — because a page number
- * on its own tells a reviewer nothing about how much they have not looked at. The total is
- * the count *after* filtering, which is the number they actually need.
- */
 export function Pagination({
   page,
   unitLabel = 'rows',
@@ -331,28 +312,28 @@ export function Pagination({
   return (
     <nav
       className={cn(
-        'flex items-center justify-between gap-4 border-t border-line px-3 py-2',
+        'flex items-center justify-between gap-4 border-t border-slate-200 bg-slate-50/60 px-4 py-3 font-sans',
         className,
       )}
       aria-label="Pagination"
     >
-      <p className="tabular text-caption text-ink-muted" aria-live="polite">
+      <p className="tabular text-xs font-semibold text-slate-600" aria-live="polite">
         {page.total_items === 0 ? (
           `No ${unitLabel} match the current filters`
         ) : (
           <>
-            Showing {formatCount(first)}–{formatCount(last)} of {formatCount(page.total_items)}{' '}
-            {unitLabel}
+            Showing <span className="font-bold text-slate-900">{formatCount(first)}</span>–<span className="font-bold text-slate-900">{formatCount(last)}</span> of{' '}
+            <span className="font-bold text-slate-900">{formatCount(page.total_items)}</span> {unitLabel}
           </>
         )}
       </p>
 
       <div className="flex items-center gap-3">
         {onPageSizeChange ? (
-          <label className="flex items-center gap-1.5 text-caption text-ink-muted">
+          <label className="flex items-center gap-2 text-xs font-medium text-slate-600">
             Rows
             <select
-              className="control h-7 py-0 pr-6 text-caption"
+              className="control h-8 py-0 pr-6 text-xs font-semibold"
               value={page.page_size}
               onChange={(event) => onPageSizeChange(Number(event.target.value))}
             >
@@ -365,10 +346,10 @@ export function Pagination({
           </label>
         ) : null}
 
-        <div className="flex items-center gap-1">
+        <div className="flex items-center gap-1.5">
           <button
             type="button"
-            className="btn-secondary h-7 px-2 text-caption"
+            className="btn-secondary h-8 px-2.5 text-xs font-semibold"
             onClick={() => onPageChange(1)}
             disabled={!canPrevious}
           >
@@ -376,18 +357,18 @@ export function Pagination({
           </button>
           <button
             type="button"
-            className="btn-secondary h-7 px-2 text-caption"
+            className="btn-secondary h-8 px-2.5 text-xs font-semibold"
             onClick={() => onPageChange(page.page - 1)}
             disabled={!canPrevious}
           >
             Previous
           </button>
-          <span className="tabular px-2 text-caption text-ink-muted">
+          <span className="tabular px-2.5 text-xs font-semibold text-slate-700">
             Page {formatCount(page.page)} of {formatCount(page.total_pages)}
           </span>
           <button
             type="button"
-            className="btn-secondary h-7 px-2 text-caption"
+            className="btn-secondary h-8 px-2.5 text-xs font-semibold"
             onClick={() => onPageChange(page.page + 1)}
             disabled={!canNext}
           >
@@ -395,7 +376,7 @@ export function Pagination({
           </button>
           <button
             type="button"
-            className="btn-secondary h-7 px-2 text-caption"
+            className="btn-secondary h-8 px-2.5 text-xs font-semibold"
             onClick={() => onPageChange(page.total_pages)}
             disabled={!canNext}
           >

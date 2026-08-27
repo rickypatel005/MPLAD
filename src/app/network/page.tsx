@@ -76,14 +76,14 @@ function NetworkContent() {
 
       <div className="mx-auto max-w-shell px-6 py-6">
         {/* Filter Toolbar */}
-        <div className="mb-4 flex flex-wrap items-center gap-3 panel px-4 py-3">
+        <div className="mb-4 flex flex-wrap items-center gap-4 panel p-4 font-sans">
           <div className="flex items-center gap-2">
             <label className="eyebrow" htmlFor="net-state">State filter</label>
             <select
               id="net-state"
               value={query.state ?? ''}
               onChange={(e) => urlState.set({ state: e.target.value || undefined })}
-              className="rounded-control border border-line bg-surface px-3 py-1.5 text-body-sm text-ink"
+              className="control font-medium shadow-sm"
             >
               <option value="">All States</option>
               <option value="UP">Uttar Pradesh</option>
@@ -103,11 +103,11 @@ function NetworkContent() {
               placeholder="3"
               value={query.min_weight ?? ''}
               onChange={(e) => urlState.set({ min_weight: e.target.value || undefined })}
-              className="w-20 rounded-control border border-line bg-surface px-3 py-1.5 text-body-sm text-ink tabular"
+              className="w-20 control font-mono font-bold shadow-sm"
             />
           </div>
-          <div className="ml-auto text-caption text-ink-muted">
-            {data.nodes.length} nodes · {data.edges.length} edges
+          <div className="ml-auto text-xs font-semibold text-slate-500 font-mono">
+            {data.nodes.length} nodes &bull; {data.edges.length} edges
           </div>
         </div>
 
@@ -124,12 +124,12 @@ function NetworkContent() {
             {selectedNodeId ? (
               <NodeDetailPanel detail={selectedDetail} onClose={handleClose} />
             ) : (
-              <div className="panel flex flex-col items-center justify-center px-4 py-16 text-center">
-                <div className="mb-3 h-16 w-16 rounded-full bg-gov-50 flex items-center justify-center">
-                  <span className="text-section">🔍</span>
+              <div className="panel flex flex-col items-center justify-center p-8 text-center bg-white font-sans shadow-sm">
+                <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-amber-100/70 border border-amber-300 text-amber-700 shadow-sm">
+                  <span className="text-xl">🔍</span>
                 </div>
-                <p className="text-card-title font-semibold text-ink">Select a node</p>
-                <p className="mt-1 max-w-xs text-caption text-ink-muted">
+                <p className="font-display text-lg font-bold text-slate-900">Select a Node</p>
+                <p className="mt-1.5 max-w-xs text-xs font-medium text-slate-500 leading-relaxed">
                   Click any node in the graph to inspect the MP–agency relationship and see associated works.
                 </p>
               </div>

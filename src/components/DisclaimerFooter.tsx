@@ -24,12 +24,12 @@ export function DisclaimerFooter({
     return (
       <div
         className={cn(
-          'flex items-start gap-2.5 rounded-card border border-risk-high-border bg-risk-high-surface px-3.5 py-3',
+          'flex items-start gap-3 rounded-xl border border-amber-300 bg-amber-50/80 p-4 shadow-sm',
           className,
         )}
       >
-        <AlertTriangleIcon size={16} className="mt-0.5 shrink-0 text-risk-high" />
-        <p className="text-caption font-medium leading-relaxed text-risk-high-text">
+        <AlertTriangleIcon size={18} className="mt-0.5 shrink-0 text-amber-600" />
+        <p className="text-xs font-semibold leading-relaxed text-amber-900 font-sans">
           {DISCLAIMER_TEXT}
         </p>
       </div>
@@ -37,16 +37,21 @@ export function DisclaimerFooter({
   }
 
   return (
-    <div
+    <footer
       className={cn(
-        'flex items-center justify-center gap-2 border-t border-line bg-surface px-6 py-2.5',
+        'flex flex-col sm:flex-row items-center justify-between gap-3 border-t border-slate-200 bg-slate-900 px-6 py-4 text-slate-300',
         className,
       )}
     >
-      <AlertTriangleIcon size={13} className="shrink-0 text-ink-faint" />
-      <p className="text-meta font-medium uppercase tracking-wider text-ink-subtle">
-        {DISCLAIMER_TEXT}
+      <div className="flex items-center gap-2">
+        <AlertTriangleIcon size={14} className="shrink-0 text-amber-500" />
+        <p className="text-[0.7rem] font-bold uppercase tracking-wider text-slate-300 font-sans">
+          {DISCLAIMER_TEXT}
+        </p>
+      </div>
+      <p className="text-[0.7rem] text-slate-400 font-sans">
+        Empowered Indian &bull; Ministry of Statistics and Programme Implementation (MoSPI)
       </p>
-    </div>
+    </footer>
   );
 }

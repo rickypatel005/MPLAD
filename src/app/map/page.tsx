@@ -93,15 +93,15 @@ function MapContent() {
         )}
 
         {/* Filter Controls */}
-        <div className="panel px-4 py-3">
-          <div className="flex flex-wrap items-center gap-3">
+        <div className="panel p-4 font-sans">
+          <div className="flex flex-wrap items-center gap-4">
             <div className="flex items-center gap-2">
               <label htmlFor="map-state" className="eyebrow">State</label>
               <select
                 id="map-state"
                 value={query.state ?? ''}
                 onChange={(e) => urlState.set({ state: e.target.value || undefined })}
-                className="rounded-control border border-line bg-surface px-3 py-1.5 text-body-sm text-ink"
+                className="control font-medium shadow-sm"
               >
                 <option value="">All States</option>
                 <option value="UP">Uttar Pradesh</option>
@@ -118,7 +118,7 @@ function MapContent() {
                 id="map-risk"
                 value={query.risk_level ?? ''}
                 onChange={(e) => urlState.set({ risk_level: e.target.value || undefined })}
-                className="rounded-control border border-line bg-surface px-3 py-1.5 text-body-sm text-ink"
+                className="control font-medium shadow-sm"
               >
                 <option value="">All Risk Levels</option>
                 <option value="CRITICAL">Critical</option>
@@ -132,7 +132,7 @@ function MapContent() {
               <button
                 type="button"
                 onClick={() => urlState.clearFilters()}
-                className="ml-auto text-caption font-medium text-gov-600 hover:text-gov-800"
+                className="ml-auto text-xs font-bold text-amber-700 hover:text-amber-900 hover:underline"
               >
                 Clear Filters
               </button>

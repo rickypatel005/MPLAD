@@ -22,13 +22,13 @@
     --risk-critical: #dc2626;
 
     /* Institutional neutrals */
-    --ink: #1b2430;
-    --ink-muted: #4a5568;
-    --surface-page: #f4f5f7;
-    --line: #e2e5ea;
+    --ink: #0f172a;
+    --ink-muted: #475569;
+    --surface-page: #f8fafc;
+    --line: #e2e8f0;
 
     /* Single restrained accent */
-    --gov-accent: #2c5a96;
+    --gov-accent: #1e40af;
   }
 
   html {
@@ -36,15 +36,29 @@
   }
 
   body {
-    @apply bg-surface-page text-ink antialiased;
+    @apply bg-surface-page text-ink antialiased font-sans;
     font-size: 0.875rem;
     line-height: 1.375rem;
     /* Desktop-first: primary target 1280–1920px, must not break below ~1024px. */
     min-width: 1024px;
   }
 
+  /* Font utility classes */
+  .font-display {
+    font-family: var(--font-cormorant), 'Cormorant Garamond', Georgia, serif;
+  }
+
+  .font-sans {
+    font-family: var(--font-outfit), 'Outfit', system-ui, sans-serif;
+  }
+
+  .font-mono {
+    font-family: var(--font-jetbrains), 'JetBrains Mono', monospace;
+  }
+
   /* Numeric columns must align in dense tables (Design Doc §2.3). */
   .tabular {
+    font-family: var(--font-jetbrains), monospace;
     font-variant-numeric: tabular-nums;
     font-feature-settings: 'tnum' 1;
   }
@@ -55,9 +69,9 @@
 
   /* Visible, consistent focus ring for keyboard operation (Design Doc §7). */
   :focus-visible {
-    outline: 2px solid var(--gov-accent);
+    outline: 2px solid #f59e0b;
     outline-offset: 2px;
-    border-radius: 2px;
+    border-radius: 4px;
   }
 
   /* Respect reduced-motion preferences. */
@@ -75,75 +89,90 @@
 @layer components {
   /* ---- Structural primitives ---------------------------------------- */
 
+  /* Government Tricolor Top Bar Accent */
+  .tricolor-stripe {
+    background: linear-gradient(
+      90deg,
+      #f59e0b 0%,
+      #f59e0b 33.3%,
+      #ffffff 33.3%,
+      #ffffff 66.6%,
+      #16a34a 66.6%,
+      #16a34a 100%
+    );
+    height: 4px;
+    width: 100%;
+  }
+
   .panel {
-    @apply rounded-card border border-line bg-surface shadow-card;
+    @apply rounded-xl border border-slate-200 bg-white shadow-sm transition-all duration-200 hover:shadow-md;
   }
 
   .panel-header {
-    @apply flex items-baseline justify-between gap-4 border-b border-line px-4 py-3;
+    @apply flex items-baseline justify-between gap-4 border-b border-slate-200 bg-slate-50/50 px-5 py-3.5 rounded-t-xl;
   }
 
   .panel-title {
-    @apply text-card-title font-semibold text-ink;
+    @apply font-display text-lg font-bold text-slate-900 tracking-tight;
   }
 
   .panel-hint {
-    @apply text-caption text-ink-subtle;
+    @apply text-xs text-slate-500 font-sans;
   }
 
   /* Small uppercase label used for field names and column groups. */
   .eyebrow {
-    @apply text-meta font-semibold uppercase tracking-wider text-ink-subtle;
+    @apply text-[0.7rem] font-bold uppercase tracking-wider text-amber-700 font-sans;
   }
 
   /* ---- Controls ------------------------------------------------------ */
 
   .control {
-    @apply h-8 rounded-control border border-line-strong bg-surface px-2.5 text-body-sm text-ink
-      transition-colors hover:border-gov-300 focus:border-gov-500 focus:outline-none
-      focus:ring-1 focus:ring-gov-500 disabled:cursor-not-allowed disabled:bg-surface-sunken
-      disabled:text-ink-faint;
+    @apply h-9 rounded-lg border border-slate-300 bg-white px-3 text-sm text-slate-800 font-sans
+      transition-all hover:border-slate-400 focus:border-amber-500 focus:outline-none
+      focus:ring-2 focus:ring-amber-500/20 disabled:cursor-not-allowed disabled:bg-slate-100
+      disabled:text-slate-400;
   }
 
   .btn {
-    @apply inline-flex h-8 items-center justify-center gap-1.5 rounded-control border px-3
-      text-body-sm font-medium transition-colors disabled:cursor-not-allowed
+    @apply inline-flex h-9 items-center justify-center gap-2 rounded-lg border px-4
+      text-sm font-semibold font-sans transition-all duration-150 active:scale-[0.98] disabled:cursor-not-allowed
       disabled:opacity-50;
   }
 
   .btn-primary {
-    @apply btn border-gov-600 bg-gov-600 text-white hover:border-gov-700 hover:bg-gov-700;
+    @apply btn border-slate-900 bg-slate-900 text-white shadow-sm hover:bg-slate-800 hover:border-slate-800 focus:ring-2 focus:ring-amber-500/30;
   }
 
   .btn-secondary {
-    @apply btn border-line-strong bg-surface text-ink hover:border-gov-300 hover:bg-gov-50;
+    @apply btn border-slate-300 bg-white text-slate-800 shadow-sm hover:border-slate-400 hover:bg-slate-50;
   }
 
   .btn-ghost {
-    @apply btn border-transparent bg-transparent text-gov-600 hover:bg-gov-50;
+    @apply btn border-transparent bg-transparent text-slate-700 hover:bg-slate-100;
   }
 
   /* ---- Dense data tables -------------------------------------------- */
 
   .data-table {
-    @apply w-full border-collapse text-body-sm;
+    @apply w-full border-collapse text-sm font-sans;
   }
 
   .data-table thead th {
-    @apply sticky top-0 z-10 whitespace-nowrap border-b border-line-strong bg-surface-sunken
-      px-3 py-2 text-meta font-semibold uppercase tracking-wider text-ink-muted;
+    @apply sticky top-0 z-10 whitespace-nowrap border-b border-slate-200 bg-slate-100/90
+      px-4 py-2.5 text-[0.75rem] font-bold uppercase tracking-wider text-slate-700 backdrop-blur-sm;
   }
 
   .data-table tbody td {
-    @apply border-b border-line-subtle px-3 py-2 align-middle;
+    @apply border-b border-slate-100 px-4 py-2.5 align-middle text-slate-800;
   }
 
   .data-table tbody tr:hover {
-    @apply bg-gov-50/60;
+    @apply bg-slate-50/80;
   }
 
-  /* Skeleton block for loading states (Design Doc §6 — skeletons, not spinners). */
+  /* Skeleton block for loading states */
   .skeleton {
-    @apply animate-pulse rounded bg-line-subtle;
+    @apply animate-pulse rounded-md bg-slate-200/80;
   }
 }

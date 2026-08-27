@@ -52,27 +52,28 @@ export function KPISummaryCard({
 }: KPISummaryCardProps) {
   const body = (
     <>
-      <div className="flex items-start justify-between gap-2">
+      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-amber-500 via-amber-400 to-amber-600 rounded-t-xl" />
+      <div className="flex items-start justify-between gap-2 pt-1">
         <span className="eyebrow">{label}</span>
-        {Icon ? <Icon size={14} className="shrink-0 text-ink-faint" aria-hidden="true" /> : null}
+        {Icon ? <Icon size={16} className="shrink-0 text-slate-400" aria-hidden="true" /> : null}
       </div>
 
-      <div className="mt-2 flex items-baseline gap-1.5">
+      <div className="mt-2.5 flex items-baseline gap-1.5">
         <span
           className={cn(
-            'tabular text-stat font-semibold',
-            level ? riskMeta(level).textClass : 'text-ink',
+            'tabular text-3xl font-bold font-sans tracking-tight',
+            level ? riskMeta(level).textClass : 'text-slate-900',
           )}
         >
           {value}
         </span>
-        {unit ? <span className="text-body-sm text-ink-subtle">{unit}</span> : null}
+        {unit ? <span className="text-xs font-semibold text-slate-500 font-sans">{unit}</span> : null}
         {level ? <RiskBadge level={level} size="sm" className="ml-1 translate-y-[-2px]" /> : null}
       </div>
 
-      <p className="mt-1.5 text-caption leading-normal text-ink-muted">{context}</p>
+      <p className="mt-1.5 text-xs font-medium leading-relaxed text-slate-600 font-sans">{context}</p>
 
-      {footer ? <div className="mt-3">{footer}</div> : null}
+      {footer ? <div className="mt-3.5">{footer}</div> : null}
     </>
   );
 
@@ -81,20 +82,20 @@ export function KPISummaryCard({
       <Link
         href={href}
         className={cn(
-          'panel group block px-4 py-3.5 transition-colors hover:border-gov-300 hover:bg-gov-50/40',
+          'panel group relative block px-5 py-4 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg hover:border-amber-400/80 bg-white',
           className,
         )}
       >
         {body}
-        <span className="mt-2 inline-flex items-center gap-1 text-caption font-medium text-gov-600 group-hover:underline">
+        <span className="mt-3 inline-flex items-center gap-1.5 text-xs font-bold text-slate-900 group-hover:text-amber-700 font-sans group-hover:underline">
           View detail
-          <ArrowRightIcon size={12} aria-hidden="true" />
+          <ArrowRightIcon size={12} aria-hidden="true" className="transition-transform group-hover:translate-x-0.5" />
         </span>
       </Link>
     );
   }
 
-  return <div className={cn('panel px-4 py-3.5', className)}>{body}</div>;
+  return <div className={cn('panel relative px-5 py-4 bg-white', className)}>{body}</div>;
 }
 
 /** Equal-width row of tiles. Four across at the dashboard's target width. */
