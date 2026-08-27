@@ -1,0 +1,419 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "SIH26102 — MPLADS Audit Intelligence API",
+    "description": "Comprehensive REST API for forensic auditing of the Member of Parliament Local Area Development Scheme (MPLADS). Supports multi-dimensional risk scoring, duplicate detection, payment ledger tracking, and human-in-the-loop governance.",
+    "version": "2.6.0",
+    "contact": {
+      "name": "Person 1 (Data + Backend Lead)"
+    }
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3000",
+      "description": "Local Development Server"
+    }
+  ],
+  "components": {
+    "securitySchemes": {
+      "BearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "JWT",
+        "description": "Enter JWT token obtained from POST /api/auth/login"
+      }
+    },
+    "schemas": {
+      "ErrorResponse": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "object",
+            "properties": {
+              "code": { "type": "string", "example": "UNAUTHORIZED" },
+              "message": { "type": "string", "example": "Authentication required." }
+            },
+            "required": ["code", "message"]
+          }
+        },
+        "required": ["error"]
+      },
+      "LoginRequest": {
+        "type": "object",
+        "properties": {
+          "username": { "type": "string", "example": "auditor" },
+          "password": { "type": "string", "example": "audit123" }
+        },
+        "required": ["username", "password"]
+      },
+      "LoginResponse": {
+        "type": "object",
+        "properties": {
+          "token": { "type": "string", "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..." },
+          "user": {
+            "type": "object",
+            "properties": {
+              "user_id": { "type": "string", "example": "USR-002" },
+              "username": { "type": "string", "example": "auditor" },
+              "display_name": { "type": "string", "example": "Shri R. Sharma (CAG)" },
+              "role": { "type": "string", "enum": ["ADMIN", "AUDITOR", "REVIEWER", "VIEWER"], "example": "AUDITOR" }
+            }
+          },
+          "expires_in": { "type": "string", "example": "24h" }
+        }
+      },
+      "ReviewActionRequest": {
+        "type": "object",
+        "properties": {
+          "project_id": { "type": "string", "example": "P10342" },
+          "action": { "type": "string", "enum": ["ACKNOWLEDGE", "INVESTIGATE", "ESCALATE", "DISMISS"], "example": "INVESTIGATE" },
+          "comment": { "type": "string", "example": "Dispatched DVO for on-site physical measurement audit." }
+        },
+        "required": ["project_id", "action"]
+      },
+      "RiskScoreSubmission": {
+        "type": "object",
+        "properties": {
+          "project_id": { "type": "string", "example": "P10342" },
+          "overall_score": { "type": "number", "minimum": 0, "maximum": 1, "example": 0.88 },
+          "risk_level": { "type": "string", "enum": ["LOW", "MEDIUM", "HIGH", "CRITICAL"], "example": "CRITICAL" },
+          "financial_score": { "type": "number", "example": 0.95 },
+          "timeline_score": { "type": "number", "example": 0.40 },
+          "compliance_score": { "type": "number", "example": 0.80 },
+          "ia_score": { "type": "number", "example": 0.50 },
+          "geo_score": { "type": "number", "example": 0.20 },
+          "evidence_score": { "type": "number", "example": 0.90 },
+          "model_version": { "type": "string", "example": "ISOFOREST_V2.1" },
+          "reasons": { "type": "array", "items": { "type": "string" }, "example": ["Severe financial disbursement lead vs physical progress"] }
+        },
+        "required": ["project_id", "overall_score", "risk_level"]
+      }
+    }
+  },
+  "paths": {
+    "/api/auth/login": {
+      "post": {
+        "summary": "Authenticate User & Obtain JWT Token",
+        "tags": ["Authentication"],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/LoginRequest" }
+            }
+          }
+        },
+        "responses": {
+          "200": { "description": "Successful authentication", "content": { "application/json": { "schema": { "$ref": "#/components/schemas/LoginResponse" } } } },
+          "401": { "description": "Invalid credentials", "content": { "application/json": { "schema": { "$ref": "#/components/schemas/ErrorResponse" } } } }
+        }
+      }
+    },
+    "/api/health": {
+      "get": {
+        "summary": "Health Check & Database Metrics",
+        "tags": ["System"],
+        "responses": {
+          "200": { "description": "Service healthy" }
+        }
+      }
+    },
+    "/api/projects": {
+      "get": {
+        "summary": "List & Filter Civic Projects",
+        "tags": ["Projects"],
+        "parameters": [
+          { "name": "page", "in": "query", "schema": { "type": "integer", "default": 1 }, "description": "Page number" },
+          { "name": "page_size", "in": "query", "schema": { "type": "integer", "default": 50 }, "description": "Records per page" },
+          { "name": "state_id", "in": "query", "schema": { "type": "string" }, "description": "Filter by 2-letter state ID (e.g. MH, DL, UP)" },
+          { "name": "district_id", "in": "query", "schema": { "type": "string" }, "description": "Filter by district ID (e.g. DST-0101)" },
+          { "name": "agency", "in": "query", "schema": { "type": "string" }, "description": "Filter by implementing agency ID or agency name" },
+          { "name": "status", "in": "query", "schema": { "type": "string", "enum": ["NOT_STARTED", "IN_PROGRESS", "COMPLETED", "STALLED"] } },
+          { "name": "risk_level", "in": "query", "schema": { "type": "string", "enum": ["LOW", "MEDIUM", "HIGH", "CRITICAL"] } },
+          { "name": "scenario", "in": "query", "schema": { "type": "string" }, "description": "Filter by synthetic anomaly scenario" },
+          { "name": "search", "in": "query", "schema": { "type": "string" }, "description": "Search across project name, MP, IA, state, category" },
+          { "name": "date_from", "in": "query", "schema": { "type": "string", "format": "date" }, "description": "Filter projects sanctioned on or after date (YYYY-MM-DD)" },
+          { "name": "date_to", "in": "query", "schema": { "type": "string", "format": "date" }, "description": "Filter projects sanctioned on or before date (YYYY-MM-DD)" },
+          { "name": "sort_by", "in": "query", "schema": { "type": "string", "enum": ["risk", "amount", "date", "progress"] }, "description": "Sort criterion" },
+          { "name": "sort_order", "in": "query", "schema": { "type": "string", "enum": ["asc", "desc"] }, "description": "Sort direction" }
+        ],
+        "responses": {
+          "200": { "description": "Paginated list of projects with metadata" }
+        }
+      }
+    },
+    "/api/projects/spatial": {
+      "get": {
+        "summary": "PostGIS Spatial Proximity & Bounding Box Search",
+        "tags": ["Projects", "Geospatial Intelligence"],
+        "parameters": [
+          { "name": "lat", "in": "query", "required": true, "schema": { "type": "number" }, "description": "Latitude coordinate in WGS84 (e.g. 28.6139)" },
+          { "name": "lng", "in": "query", "required": true, "schema": { "type": "number" }, "description": "Longitude coordinate in WGS84 (e.g. 77.2090)" },
+          { "name": "radius_km", "in": "query", "schema": { "type": "number", "default": 50 }, "description": "Search radius in kilometers" },
+          { "name": "radius_meters", "in": "query", "schema": { "type": "number" }, "description": "Search radius in meters" },
+          { "name": "category", "in": "query", "schema": { "type": "string" }, "description": "Filter by project category" },
+          { "name": "limit", "in": "query", "schema": { "type": "integer", "default": 50 }, "description": "Maximum number of results" }
+        ],
+        "responses": {
+          "200": { "description": "List of nearby projects ordered by distance in meters" },
+          "400": { "description": "Invalid coordinates" }
+        }
+      }
+    },
+    "/api/projects/{id}": {
+      "get": {
+        "summary": "Get Single Project by ID",
+        "tags": ["Projects"],
+        "parameters": [
+          { "name": "id", "in": "path", "required": true, "schema": { "type": "string" } }
+        ],
+        "responses": {
+          "200": { "description": "Full project details with payments & risk score" },
+          "404": { "description": "Project not found", "content": { "application/json": { "schema": { "$ref": "#/components/schemas/ErrorResponse" } } } }
+        }
+      }
+    },
+    "/api/dashboard/summary": {
+      "get": {
+        "summary": "Get National Level Dashboard Summary",
+        "tags": ["Dashboard"],
+        "responses": {
+          "200": { "description": "National summary statistics & state aggregates" }
+        }
+      }
+    },
+    "/api/dashboard/state/{id}": {
+      "get": {
+        "summary": "Get State-Level Dashboard Breakdown",
+        "tags": ["Dashboard"],
+        "parameters": [
+          { "name": "id", "in": "path", "required": true, "schema": { "type": "string" } }
+        ],
+        "responses": {
+          "200": { "description": "State specific analytics, active MPs and IAs" }
+        }
+      }
+    },
+    "/api/risk/top": {
+      "get": {
+        "summary": "Get Top Flagged Risk Projects",
+        "tags": ["Risk & Forensic Intelligence"],
+        "parameters": [
+          { "name": "limit", "in": "query", "schema": { "type": "integer", "default": 25 } }
+        ],
+        "responses": {
+          "200": { "description": "Ranked projects ordered by composite risk score descending" }
+        }
+      }
+    },
+    "/api/risk/{id}": {
+      "get": {
+        "summary": "Get 6-Dimensional Risk Vector for Project",
+        "tags": ["Risk & Forensic Intelligence"],
+        "parameters": [
+          { "name": "id", "in": "path", "required": true, "schema": { "type": "string" } }
+        ],
+        "responses": {
+          "200": { "description": "Multi-dimensional risk score payload" }
+        }
+      }
+    },
+    "/api/risk/scores": {
+      "post": {
+        "summary": "Submit Model Risk Scores (Person 2 Integration)",
+        "tags": ["Person 2 ML Integration"],
+        "security": [{ "BearerAuth": [] }],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/RiskScoreSubmission" }
+            }
+          }
+        },
+        "responses": {
+          "200": { "description": "Risk score persisted" },
+          "401": { "description": "Unauthorized" },
+          "403": { "description": "Forbidden (Requires ADMIN or AUDITOR role)" }
+        }
+      }
+    },
+    "/api/risk/flags": {
+      "post": {
+        "summary": "Submit Model Anomaly Risk Flag (Person 2 Integration)",
+        "tags": ["Person 2 ML Integration"],
+        "security": [{ "BearerAuth": [] }],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "type": "object",
+              "properties": {
+                "project_id": { "type": "string", "example": "P10342" },
+                "flag_type": { "type": "string", "enum": ["FINANCIAL", "TIMELINE", "COMPLIANCE", "IA_CONCENTRATION", "DUPLICATE", "GEO_SPATIAL"] },
+                "severity": { "type": "string", "enum": ["LOW", "MEDIUM", "HIGH", "CRITICAL"] },
+                "rule_code": { "type": "string", "example": "RULE_ML_01" },
+                "message": { "type": "string", "example": "Discrepancy in expenditure vs progress" },
+                "evidence_json": { "type": "object" }
+              },
+              "required": ["project_id", "flag_type", "severity", "message"]
+            }
+          }
+        },
+        "responses": {
+          "200": { "description": "Risk flag recorded" },
+          "401": { "description": "Unauthorized" },
+          "403": { "description": "Forbidden (Requires ADMIN or AUDITOR role)" }
+        }
+      }
+    },
+    "/api/duplicates/{id}": {
+      "get": {
+        "summary": "Get Duplicate Findings for Project",
+        "tags": ["Person 3 NLP/Geo Integration"],
+        "parameters": [
+          { "name": "id", "in": "path", "required": true, "schema": { "type": "string" } }
+        ],
+        "responses": {
+          "200": { "description": "Duplicate cluster matches with physical distance & text similarity" }
+        }
+      }
+    },
+    "/api/duplicates/submit": {
+      "post": {
+        "summary": "Register Duplicate Project Cluster (Person 3 Integration)",
+        "tags": ["Person 3 NLP/Geo Integration"],
+        "security": [{ "BearerAuth": [] }],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "type": "object",
+              "properties": {
+                "primary_project_id": { "type": "string", "example": "P10701" },
+                "suspected_count": { "type": "integer", "example": 2 },
+                "max_similarity": { "type": "number", "example": 0.88 },
+                "total_suspect_amount": { "type": "integer", "example": 10000000 },
+                "matches": { "type": "array", "items": { "type": "object" } }
+              },
+              "required": ["primary_project_id", "matches"]
+            }
+          }
+        },
+        "responses": {
+          "200": { "description": "Duplicate cluster registered" },
+          "401": { "description": "Unauthorized" },
+          "403": { "description": "Forbidden (Requires ADMIN or AUDITOR role)" }
+        }
+      }
+    },
+    "/api/ia/{id}": {
+      "get": {
+        "summary": "Get Implementing Agency Workload & HHI Concentration",
+        "tags": ["Agencies"],
+        "parameters": [
+          { "name": "id", "in": "path", "required": true, "schema": { "type": "string" } }
+        ],
+        "responses": {
+          "200": { "description": "Agency details, HHI index score, and assigned projects" }
+        }
+      }
+    },
+    "/api/features/projects": {
+      "get": {
+        "summary": "Extract Feature-Ready Dataset for ML/NLP Pipelines (P2/P3)",
+        "tags": ["Person 2 ML Integration", "Person 3 NLP/Geo Integration"],
+        "parameters": [
+          { "name": "limit", "in": "query", "schema": { "type": "integer", "default": 1000 } }
+        ],
+        "responses": {
+          "200": { "description": "Array of feature vectors with financial, temporal, progress, and geographic signals" }
+        }
+      }
+    },
+    "/api/review/action": {
+      "post": {
+        "summary": "Register Auditor Review Action (Human-in-the-Loop)",
+        "tags": ["Governance & Audit"],
+        "security": [{ "BearerAuth": [] }],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/ReviewActionRequest" }
+            }
+          }
+        },
+        "responses": {
+          "200": { "description": "Review registered and audit trail updated" },
+          "401": { "description": "Unauthorized" },
+          "403": { "description": "Forbidden (Requires ADMIN, AUDITOR, or REVIEWER role)" }
+        }
+      }
+    },
+    "/api/audit/{id}": {
+      "get": {
+        "summary": "Get Immutable Audit Trail for Project",
+        "tags": ["Governance & Audit"],
+        "parameters": [
+          { "name": "id", "in": "path", "required": true, "schema": { "type": "string" } }
+        ],
+        "responses": {
+          "200": { "description": "Chronological audit event logs" }
+        }
+      }
+    },
+    "/api/projects/{id}/payments": {
+      "get": {
+        "summary": "Get a project's payment ledger",
+        "tags": ["Projects"],
+        "parameters": [
+          { "name": "id", "in": "path", "required": true, "schema": { "type": "string" } },
+          { "name": "page", "in": "query", "schema": { "type": "integer", "minimum": 1, "default": 1 } },
+          { "name": "page_size", "in": "query", "schema": { "type": "integer", "minimum": 1, "maximum": 100, "default": 50 } }
+        ],
+        "responses": { "200": { "description": "Payment ledger and pagination metadata" }, "400": { "description": "Invalid pagination" }, "404": { "description": "Project not found" } }
+      }
+    },
+    "/api/alerts": {
+      "get": {
+        "summary": "List high-risk project alerts",
+        "tags": ["Risk & Forensic Intelligence"],
+        "parameters": [{ "name": "limit", "in": "query", "schema": { "type": "integer", "minimum": 1, "maximum": 100, "default": 25 } }],
+        "responses": { "200": { "description": "High-risk alerts ordered by score" }, "400": { "description": "Invalid limit" } }
+      }
+    },
+    "/api/auth/me": {
+      "get": {
+        "summary": "Get authenticated user profile",
+        "tags": ["Authentication"],
+        "security": [{ "BearerAuth": [] }],
+        "responses": { "200": { "description": "Authenticated user" }, "401": { "description": "Unauthorized" } }
+      }
+    },
+    "/api/pipeline/status": {
+      "get": { "summary": "Get database pipeline status", "tags": ["System"], "responses": { "200": { "description": "Pipeline statistics" } } }
+    },
+    "/api/pipeline/run": {
+      "post": {
+        "summary": "Regenerate and seed the pipeline",
+        "tags": ["System"],
+        "security": [{ "BearerAuth": [] }],
+        "requestBody": { "content": { "application/json": { "schema": { "type": "object", "properties": { "project_count": { "type": "integer", "minimum": 1, "maximum": 100000, "default": 10000 }, "seed": { "type": "integer", "default": 26102 } } } } } },
+        "responses": { "200": { "description": "Pipeline completed" }, "401": { "description": "Unauthorized" }, "403": { "description": "Administrator role required" }, "500": { "description": "Pipeline failed" } }
+      }
+    },
+    "/api/evidence/{id}": {
+      "get": {
+        "summary": "Get Forensic Evidence Dossier for Project",
+        "tags": ["Risk & Forensic Intelligence"],
+        "parameters": [
+          { "name": "id", "in": "path", "required": true, "schema": { "type": "string" } }
+        ],
+        "responses": {
+          "200": { "description": "Complete evidence dossier with CPWD benchmarks & GFR violations" }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "_metadata": {
+    "exported_at": "2026-08-27T17:17:21.847Z",
+    "source": "SIH26102 MPLADS Audit Intelligence Pipeline",
+    "schema_version": "v2.6"
+  },
+  "pipeline_report": {
+    "raw_file_name": "Allocated Limit for Honble MPs.csv",
+    "raw_total_rows": 545,
+    "grand_total_row_detected": true,
+    "grand_total_value_inr": "27,150,000,000",
+    "operational_mp_records": 543,
+    "unique_states_raw": 36,
+    "unique_states_normalized": 36,
+    "unique_constituencies": 543,
+    "missing_amount_records": [
+      {
+        "row": 250,
+        "mp_name": "CHAVAN VASANTRAO BALWANTRAO",
+        "constituency": "NANDED",
+        "state": "MAHARASHTRA",
+        "action_taken": "Flagged with MISSING_SOURCE_VALUE & excluded from numeric sum inference"
+      }
+    ],
+    "synthetic_generation": {
+      "seed": 26102,
+      "target_projects": 10000,
+      "generated_projects": 10000,
+      "generated_payments": 26790,
+      "generated_ias": 252,
+      "injected_anomalies": {
+        "NORMAL_BENCHMARK": 9486,
+        "PAYMENT_PROGRESS_MISMATCH": 141,
+        "TIMELINE_DELAY_ANOMALY": 103,
+        "COMPLIANCE_ANOMALY": 85,
+        "IA_CONCENTRATION_ANOMALY": 87,
+        "HIGH_COST_ANOMALY": 96,
+        "DUPLICATE_PROJECT_PAIR": 2
+      }
+    },
+    "validation_suite": {
+      "checks_run": 12,
+      "checks_passed": 12,
+      "all_passed": true,
+      "validations": [
+        {
+          "check_name": "Project IDs Uniqueness & Primary Key Integrity",
+          "status": "PASSED",
+          "details": "Evaluated 10000 project IDs. Unique IDs: 10000."
+        },
+        {
+          "check_name": "Foreign Key Referential Integrity: projects -> states",
+          "status": "PASSED",
+          "details": "All 10000 projects reference valid master State/UT entities."
+        },
+        {
+          "check_name": "Foreign Key Referential Integrity: projects -> mps",
+          "status": "PASSED",
+          "details": "All 10000 projects linked to canonical 543 Hon'ble MPs."
+        },
+        {
+          "check_name": "Foreign Key Referential Integrity: projects -> implementing_agencies",
+          "status": "PASSED",
+          "details": "All 10000 projects mapped to registered executive divisions."
+        },
+        {
+          "check_name": "Payment Ledger Foreign Key Integrity: payments -> projects",
+          "status": "PASSED",
+          "details": "All 26790 payment disbursements reference existing valid projects."
+        },
+        {
+          "check_name": "Financial & Progress Numerical Domain Bounds [0, 100%]",
+          "status": "PASSED",
+          "details": "Sanction amounts strictly positive (>0) and percentage progress strictly bounded between 0% and 100%."
+        },
+        {
+          "check_name": "Chronological Temporal Logic (Sanction <= Start <= Expected Completion)",
+          "status": "PASSED",
+          "details": "All timestamps follow standard project lifecycle progression without chronological inversions."
+        },
+        {
+          "check_name": "Geospatial Bounding Box & PostGIS Coordinate Validation",
+          "status": "PASSED",
+          "details": "All project latitude and longitude coordinates reside strictly within the national territory bounding box."
+        },
+        {
+          "check_name": "Known Injected Anomaly Scenarios & Demo Key Identifiers",
+          "status": "PASSED",
+          "details": "All 7 key controlled demo anomalies (P10342 payment mismatch, P10101 high cost, P10701/02 duplicates, etc.) are seeded and queryable."
+        },
+        {
+          "check_name": "Canonical Geography Hierarchy: project.state_id == constituency.state_id",
+          "status": "PASSED",
+          "details": "Verified 10000 projects. No cross-state constituency misalignments."
+        },
+        {
+          "check_name": "Canonical Geography Hierarchy: project.district_id == constituency.district_id",
+          "status": "PASSED",
+          "details": "Verified 10000 projects. All projects mapped to canonical district IDs."
+        },
+        {
+          "check_name": "Canonical Representation: project.mp_id constituency alignment",
+          "status": "PASSED",
+          "details": "All 10000 projects belong to sponsoring MP's represented parliamentary constituency."
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "dataset_name": "SIH26102 MPLADS Audit Intelligence Master Dataset",
+  "version": "2.6.0",
+  "generated_at": "2026-08-27T17:17:21.847Z",
+  "seed": 26102,
+  "canonical_hierarchy": "state -> district -> constituency -> mp -> project",
+  "files": {
+    "parquet": [
+      "projects.parquet",
+      "payments.parquet",
+      "implementing_agencies.parquet",
+      "mps.parquet",
+      "constituencies.parquet",
+      "districts.parquet",
+      "states.parquet"
+    ],
+    "json": [
+      "projects.json",
+      "payments.json",
+      "implementing_agencies.json",
+      "mps.json",
+      "constituencies.json",
+      "districts.json",
+      "states.json",
+      "validation_report.json"
+    ],
+    "csv": [
+      "projects.csv",
+      "payments.csv",
+      "implementing_agencies.csv",
+      "mps.csv",
+      "constituencies.csv",
+      "districts.csv",
+      "states.csv"
+    ]
+  },
+  "metrics": {
+    "total_projects": 10000,
+    "total_payments": 26790,
+    "total_agencies": 252,
+    "total_mps": 543,
+    "total_constituencies": 543,
+    "total_districts": 478,
+    "total_states": 36,
+    "validation_passed": true
+  }
+}

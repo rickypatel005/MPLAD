@@ -1,0 +1,3811 @@
+{
+  "_metadata": {
+    "exported_at": "2026-08-27T17:17:21.844Z",
+    "source": "SIH26102 MPLADS Audit Intelligence Pipeline",
+    "total_records": 543,
+    "schema_version": "v2.6"
+  },
+  "records": [
+    {
+      "constituency_id": "C001",
+      "state_id": "ST01",
+      "district_id": "D001",
+      "name": "ANDAMAN AND NICOBAR ISLANDS",
+      "normalized_name": "Andaman And Nicobar Islands"
+    },
+    {
+      "constituency_id": "C002",
+      "state_id": "ST02",
+      "district_id": "D002",
+      "name": "VIZIANAGARAM",
+      "normalized_name": "Vizianagaram"
+    },
+    {
+      "constituency_id": "C003",
+      "state_id": "ST02",
+      "district_id": "D003",
+      "name": "MACHILIPATNAM",
+      "normalized_name": "Machilipatnam"
+    },
+    {
+      "constituency_id": "C004",
+      "state_id": "ST02",
+      "district_id": "D004",
+      "name": "NANDYAL",
+      "normalized_name": "Nandyal"
+    },
+    {
+      "constituency_id": "C005",
+      "state_id": "ST02",
+      "district_id": "D005",
+      "name": "GUNTUR",
+      "normalized_name": "Guntur"
+    },
+    {
+      "constituency_id": "C006",
+      "state_id": "ST02",
+      "district_id": "D006",
+      "name": "AMALAPURAM",
+      "normalized_name": "Amalapuram"
+    },
+    {
+      "constituency_id": "C007",
+      "state_id": "ST02",
+      "district_id": "D007",
+      "name": "CHITTOOR",
+      "normalized_name": "Chittoor"
+    },
+    {
+      "constituency_id": "C008",
+      "state_id": "ST02",
+      "district_id": "D006",
+      "name": "AMALAPURAM",
+      "normalized_name": "Amalapuram"
+    },
+    {
+      "constituency_id": "C009",
+      "state_id": "ST02",
+      "district_id": "D008",
+      "name": "KURNOOL",
+      "normalized_name": "Kurnool"
+    },
+    {
+      "constituency_id": "C010",
+      "state_id": "ST02",
+      "district_id": "D009",
+      "name": "VIJAYAWADA",
+      "normalized_name": "Vijayawada"
+    },
+    {
+      "constituency_id": "C011",
+      "state_id": "ST02",
+      "district_id": "D010",
+      "name": "SRIKAKULAM",
+      "normalized_name": "Srikakulam"
+    },
+    {
+      "constituency_id": "C012",
+      "state_id": "ST02",
+      "district_id": "D011",
+      "name": "ARAKU",
+      "normalized_name": "Araku"
+    },
+    {
+      "constituency_id": "C013",
+      "state_id": "ST02",
+      "district_id": "D012",
+      "name": "NARASARAOPET",
+      "normalized_name": "Narasaraopet"
+    },
+    {
+      "constituency_id": "C014",
+      "state_id": "ST02",
+      "district_id": "D013",
+      "name": "TIRUPATI",
+      "normalized_name": "Tirupati"
+    },
+    {
+      "constituency_id": "C015",
+      "state_id": "ST02",
+      "district_id": "D014",
+      "name": "ONGOLE",
+      "normalized_name": "Ongole"
+    },
+    {
+      "constituency_id": "C016",
+      "state_id": "ST02",
+      "district_id": "D015",
+      "name": "VISAKHAPATNAM",
+      "normalized_name": "Visakhapatnam"
+    },
+    {
+      "constituency_id": "C017",
+      "state_id": "ST02",
+      "district_id": "D016",
+      "name": "RAJAMPET",
+      "normalized_name": "Rajampet"
+    },
+    {
+      "constituency_id": "C018",
+      "state_id": "ST02",
+      "district_id": "D017",
+      "name": "RAJAHMUNDRY",
+      "normalized_name": "Rajahmundry"
+    },
+    {
+      "constituency_id": "C019",
+      "state_id": "ST02",
+      "district_id": "D018",
+      "name": "ELURU",
+      "normalized_name": "Eluru"
+    },
+    {
+      "constituency_id": "C020",
+      "state_id": "ST02",
+      "district_id": "D019",
+      "name": "NARASAPURAM",
+      "normalized_name": "Narasapuram"
+    },
+    {
+      "constituency_id": "C021",
+      "state_id": "ST02",
+      "district_id": "D020",
+      "name": "NANDIGAMA",
+      "normalized_name": "Nandigama"
+    },
+    {
+      "constituency_id": "C022",
+      "state_id": "ST02",
+      "district_id": "D021",
+      "name": "NELLORE",
+      "normalized_name": "Nellore"
+    },
+    {
+      "constituency_id": "C023",
+      "state_id": "ST02",
+      "district_id": "D022",
+      "name": "KADAPA",
+      "normalized_name": "Kadapa"
+    },
+    {
+      "constituency_id": "C024",
+      "state_id": "ST02",
+      "district_id": "D023",
+      "name": "HINDUPUR",
+      "normalized_name": "Hindupur"
+    },
+    {
+      "constituency_id": "C025",
+      "state_id": "ST02",
+      "district_id": "D024",
+      "name": "ANANTAPUR",
+      "normalized_name": "Anantapur"
+    },
+    {
+      "constituency_id": "C026",
+      "state_id": "ST03",
+      "district_id": "D025",
+      "name": "ARUNACHAL WEST",
+      "normalized_name": "Arunachal West"
+    },
+    {
+      "constituency_id": "C027",
+      "state_id": "ST03",
+      "district_id": "D026",
+      "name": "ARUNACHAL EAST",
+      "normalized_name": "Arunachal East"
+    },
+    {
+      "constituency_id": "C028",
+      "state_id": "ST04",
+      "district_id": "D027",
+      "name": "JORHAT",
+      "normalized_name": "Jorhat"
+    },
+    {
+      "constituency_id": "C029",
+      "state_id": "ST04",
+      "district_id": "D028",
+      "name": "DARRANG-UDALGURI",
+      "normalized_name": "Darrang-udalguri"
+    },
+    {
+      "constituency_id": "C030",
+      "state_id": "ST04",
+      "district_id": "D027",
+      "name": "JORHAT",
+      "normalized_name": "Jorhat"
+    },
+    {
+      "constituency_id": "C031",
+      "state_id": "ST04",
+      "district_id": "D029",
+      "name": "KARIMGANJ",
+      "normalized_name": "Karimganj"
+    },
+    {
+      "constituency_id": "C032",
+      "state_id": "ST04",
+      "district_id": "D030",
+      "name": "TEZPUR",
+      "normalized_name": "Tezpur"
+    },
+    {
+      "constituency_id": "C033",
+      "state_id": "ST04",
+      "district_id": "D031",
+      "name": "SILCHAR",
+      "normalized_name": "Silchar"
+    },
+    {
+      "constituency_id": "C034",
+      "state_id": "ST04",
+      "district_id": "D032",
+      "name": "NAGAON",
+      "normalized_name": "Nagaon"
+    },
+    {
+      "constituency_id": "C035",
+      "state_id": "ST04",
+      "district_id": "D033",
+      "name": "DHUBRI",
+      "normalized_name": "Dhubri"
+    },
+    {
+      "constituency_id": "C036",
+      "state_id": "ST04",
+      "district_id": "D034",
+      "name": "SONITPUR",
+      "normalized_name": "Sonitpur"
+    },
+    {
+      "constituency_id": "C037",
+      "state_id": "ST04",
+      "district_id": "D035",
+      "name": "DIBRUGARH",
+      "normalized_name": "Dibrugarh"
+    },
+    {
+      "constituency_id": "C038",
+      "state_id": "ST04",
+      "district_id": "D036",
+      "name": "DIPHU",
+      "normalized_name": "Diphu"
+    },
+    {
+      "constituency_id": "C039",
+      "state_id": "ST04",
+      "district_id": "D037",
+      "name": "GUWAHATI",
+      "normalized_name": "Guwahati"
+    },
+    {
+      "constituency_id": "C040",
+      "state_id": "ST04",
+      "district_id": "D038",
+      "name": "KOKRAJHAR",
+      "normalized_name": "Kokrajhar"
+    },
+    {
+      "constituency_id": "C041",
+      "state_id": "ST04",
+      "district_id": "D039",
+      "name": "BARPETA",
+      "normalized_name": "Barpeta"
+    },
+    {
+      "constituency_id": "C042",
+      "state_id": "ST05",
+      "district_id": "D040",
+      "name": "AURANGABAD",
+      "normalized_name": "Aurangabad"
+    },
+    {
+      "constituency_id": "C043",
+      "state_id": "ST05",
+      "district_id": "D041",
+      "name": "GOPALGANJ",
+      "normalized_name": "Gopalganj"
+    },
+    {
+      "constituency_id": "C044",
+      "state_id": "ST05",
+      "district_id": "D042",
+      "name": "MADHUBANI",
+      "normalized_name": "Madhubani"
+    },
+    {
+      "constituency_id": "C045",
+      "state_id": "ST05",
+      "district_id": "D043",
+      "name": "HAJIPUR",
+      "normalized_name": "Hajipur"
+    },
+    {
+      "constituency_id": "C046",
+      "state_id": "ST05",
+      "district_id": "D044",
+      "name": "SITAMARHI",
+      "normalized_name": "Sitamarhi"
+    },
+    {
+      "constituency_id": "C047",
+      "state_id": "ST05",
+      "district_id": "D045",
+      "name": "SUPAUL",
+      "normalized_name": "Supaul"
+    },
+    {
+      "constituency_id": "C048",
+      "state_id": "ST05",
+      "district_id": "D046",
+      "name": "MADHEPURA",
+      "normalized_name": "Madhepura"
+    },
+    {
+      "constituency_id": "C049",
+      "state_id": "ST05",
+      "district_id": "D047",
+      "name": "BEGUSARAI",
+      "normalized_name": "Begusarai"
+    },
+    {
+      "constituency_id": "C050",
+      "state_id": "ST05",
+      "district_id": "D048",
+      "name": "DARBHANGA",
+      "normalized_name": "Darbhanga"
+    },
+    {
+      "constituency_id": "C051",
+      "state_id": "ST05",
+      "district_id": "D049",
+      "name": "GAYA",
+      "normalized_name": "Gaya"
+    },
+    {
+      "constituency_id": "C052",
+      "state_id": "ST05",
+      "district_id": "D050",
+      "name": "MUNGER",
+      "normalized_name": "Munger"
+    },
+    {
+      "constituency_id": "C053",
+      "state_id": "ST05",
+      "district_id": "D051",
+      "name": "SHEOHAR",
+      "normalized_name": "Sheohar"
+    },
+    {
+      "constituency_id": "C054",
+      "state_id": "ST05",
+      "district_id": "D052",
+      "name": "PATLIPUTRA",
+      "normalized_name": "Patliputra"
+    },
+    {
+      "constituency_id": "C055",
+      "state_id": "ST05",
+      "district_id": "D053",
+      "name": "KISHANGANJ",
+      "normalized_name": "Kishanganj"
+    },
+    {
+      "constituency_id": "C056",
+      "state_id": "ST05",
+      "district_id": "D054",
+      "name": "KHAGARIA",
+      "normalized_name": "Khagaria"
+    },
+    {
+      "constituency_id": "C057",
+      "state_id": "ST05",
+      "district_id": "D055",
+      "name": "UJIARPUR",
+      "normalized_name": "Ujiarpur"
+    },
+    {
+      "constituency_id": "C058",
+      "state_id": "ST05",
+      "district_id": "D056",
+      "name": "PURNEA",
+      "normalized_name": "Purnea"
+    },
+    {
+      "constituency_id": "C059",
+      "state_id": "ST05",
+      "district_id": "D057",
+      "name": "ARARIA",
+      "normalized_name": "Araria"
+    },
+    {
+      "constituency_id": "C060",
+      "state_id": "ST05",
+      "district_id": "D058",
+      "name": "PURVI CHAMPARAN",
+      "normalized_name": "Purvi Champaran"
+    },
+    {
+      "constituency_id": "C061",
+      "state_id": "ST05",
+      "district_id": "D059",
+      "name": "MUZAFFARPUR",
+      "normalized_name": "Muzaffarpur"
+    },
+    {
+      "constituency_id": "C062",
+      "state_id": "ST05",
+      "district_id": "D060",
+      "name": "SARAN",
+      "normalized_name": "Saran"
+    },
+    {
+      "constituency_id": "C063",
+      "state_id": "ST05",
+      "district_id": "D052",
+      "name": "PATLIPUTRA",
+      "normalized_name": "Patliputra"
+    },
+    {
+      "constituency_id": "C064",
+      "state_id": "ST05",
+      "district_id": "D061",
+      "name": "JHANJHARPUR",
+      "normalized_name": "Jhanjharpur"
+    },
+    {
+      "constituency_id": "C065",
+      "state_id": "ST05",
+      "district_id": "D062",
+      "name": "PATNA SAHIB",
+      "normalized_name": "Patna Sahib"
+    },
+    {
+      "constituency_id": "C066",
+      "state_id": "ST05",
+      "district_id": "D063",
+      "name": "SAMASTIPUR",
+      "normalized_name": "Samastipur"
+    },
+    {
+      "constituency_id": "C067",
+      "state_id": "ST05",
+      "district_id": "D064",
+      "name": "PASCHIM CHAMPARAN",
+      "normalized_name": "Paschim Champaran"
+    },
+    {
+      "constituency_id": "C068",
+      "state_id": "ST05",
+      "district_id": "D056",
+      "name": "PURNEA",
+      "normalized_name": "Purnea"
+    },
+    {
+      "constituency_id": "C069",
+      "state_id": "ST05",
+      "district_id": "D063",
+      "name": "SAMASTIPUR",
+      "normalized_name": "Samastipur"
+    },
+    {
+      "constituency_id": "C070",
+      "state_id": "ST05",
+      "district_id": "D065",
+      "name": "ARRAH",
+      "normalized_name": "Arrah"
+    },
+    {
+      "constituency_id": "C071",
+      "state_id": "ST05",
+      "district_id": "D066",
+      "name": "BUXAR",
+      "normalized_name": "Buxar"
+    },
+    {
+      "constituency_id": "C072",
+      "state_id": "ST05",
+      "district_id": "D067",
+      "name": "JAHANABAD",
+      "normalized_name": "Jahanabad"
+    },
+    {
+      "constituency_id": "C073",
+      "state_id": "ST05",
+      "district_id": "D068",
+      "name": "KATIHAR",
+      "normalized_name": "Katihar"
+    },
+    {
+      "constituency_id": "C074",
+      "state_id": "ST05",
+      "district_id": "D069",
+      "name": "NAWADA",
+      "normalized_name": "Nawada"
+    },
+    {
+      "constituency_id": "C075",
+      "state_id": "ST05",
+      "district_id": "D068",
+      "name": "KATIHAR",
+      "normalized_name": "Katihar"
+    },
+    {
+      "constituency_id": "C076",
+      "state_id": "ST05",
+      "district_id": "D070",
+      "name": "VALMIKI NAGAR",
+      "normalized_name": "Valmiki Nagar"
+    },
+    {
+      "constituency_id": "C077",
+      "state_id": "ST05",
+      "district_id": "D071",
+      "name": "BHAGALPUR",
+      "normalized_name": "Bhagalpur"
+    },
+    {
+      "constituency_id": "C078",
+      "state_id": "ST05",
+      "district_id": "D072",
+      "name": "BANKA",
+      "normalized_name": "Banka"
+    },
+    {
+      "constituency_id": "C079",
+      "state_id": "ST05",
+      "district_id": "D073",
+      "name": "MAHARAJGANJ",
+      "normalized_name": "Maharajganj"
+    },
+    {
+      "constituency_id": "C080",
+      "state_id": "ST05",
+      "district_id": "D074",
+      "name": "SIWAN",
+      "normalized_name": "Siwan"
+    },
+    {
+      "constituency_id": "C081",
+      "state_id": "ST05",
+      "district_id": "D075",
+      "name": "VAISHALI",
+      "normalized_name": "Vaishali"
+    },
+    {
+      "constituency_id": "C082",
+      "state_id": "ST06",
+      "district_id": "D076",
+      "name": "CHANDIGARH",
+      "normalized_name": "Chandigarh"
+    },
+    {
+      "constituency_id": "C083",
+      "state_id": "ST07",
+      "district_id": "D077",
+      "name": "RAIPUR",
+      "normalized_name": "Raipur"
+    },
+    {
+      "constituency_id": "C084",
+      "state_id": "ST07",
+      "district_id": "D078",
+      "name": "SURGUJA",
+      "normalized_name": "Surguja"
+    },
+    {
+      "constituency_id": "C085",
+      "state_id": "ST07",
+      "district_id": "D079",
+      "name": "BILASPUR",
+      "normalized_name": "Bilaspur"
+    },
+    {
+      "constituency_id": "C086",
+      "state_id": "ST07",
+      "district_id": "D080",
+      "name": "KORBA",
+      "normalized_name": "Korba"
+    },
+    {
+      "constituency_id": "C087",
+      "state_id": "ST07",
+      "district_id": "D081",
+      "name": "JANJGIR-CHAMPA",
+      "normalized_name": "Janjgir-champa"
+    },
+    {
+      "constituency_id": "C088",
+      "state_id": "ST07",
+      "district_id": "D082",
+      "name": "BASTAR",
+      "normalized_name": "Bastar"
+    },
+    {
+      "constituency_id": "C089",
+      "state_id": "ST07",
+      "district_id": "D083",
+      "name": "RAIGARH",
+      "normalized_name": "Raigarh"
+    },
+    {
+      "constituency_id": "C090",
+      "state_id": "ST07",
+      "district_id": "D084",
+      "name": "MAHASAMUND",
+      "normalized_name": "Mahasamund"
+    },
+    {
+      "constituency_id": "C091",
+      "state_id": "ST07",
+      "district_id": "D085",
+      "name": "RAJNANDGAON",
+      "normalized_name": "Rajnandgaon"
+    },
+    {
+      "constituency_id": "C092",
+      "state_id": "ST07",
+      "district_id": "D079",
+      "name": "BILASPUR",
+      "normalized_name": "Bilaspur"
+    },
+    {
+      "constituency_id": "C093",
+      "state_id": "ST07",
+      "district_id": "D086",
+      "name": "DURG",
+      "normalized_name": "Durg"
+    },
+    {
+      "constituency_id": "C094",
+      "state_id": "ST08",
+      "district_id": "D087",
+      "name": "DADRA AND NAGAR HAVELI",
+      "normalized_name": "Dadra And Nagar Haveli"
+    },
+    {
+      "constituency_id": "C095",
+      "state_id": "ST08",
+      "district_id": "D088",
+      "name": "DAMAN AND DIU",
+      "normalized_name": "Daman And Diu"
+    },
+    {
+      "constituency_id": "C096",
+      "state_id": "ST09",
+      "district_id": "D089",
+      "name": "NEW DELHI",
+      "normalized_name": "New Delhi"
+    },
+    {
+      "constituency_id": "C097",
+      "state_id": "ST09",
+      "district_id": "D090",
+      "name": "EAST DELHI",
+      "normalized_name": "East Delhi"
+    },
+    {
+      "constituency_id": "C098",
+      "state_id": "ST09",
+      "district_id": "D091",
+      "name": "WEST DELHI",
+      "normalized_name": "West Delhi"
+    },
+    {
+      "constituency_id": "C099",
+      "state_id": "ST09",
+      "district_id": "D092",
+      "name": "NORTH EAST DELHI",
+      "normalized_name": "North East Delhi"
+    },
+    {
+      "constituency_id": "C100",
+      "state_id": "ST09",
+      "district_id": "D093",
+      "name": "CHANDNI CHOWK",
+      "normalized_name": "Chandni Chowk"
+    },
+    {
+      "constituency_id": "C101",
+      "state_id": "ST09",
+      "district_id": "D094",
+      "name": "SOUTH DELHI",
+      "normalized_name": "South Delhi"
+    },
+    {
+      "constituency_id": "C102",
+      "state_id": "ST09",
+      "district_id": "D095",
+      "name": "NORTH WEST DELHI",
+      "normalized_name": "North West Delhi"
+    },
+    {
+      "constituency_id": "C103",
+      "state_id": "ST10",
+      "district_id": "D096",
+      "name": "NORTH GOA",
+      "normalized_name": "North Goa"
+    },
+    {
+      "constituency_id": "C104",
+      "state_id": "ST10",
+      "district_id": "D097",
+      "name": "SOUTH GOA",
+      "normalized_name": "South Goa"
+    },
+    {
+      "constituency_id": "C105",
+      "state_id": "ST11",
+      "district_id": "D098",
+      "name": "GANDHINAGAR",
+      "normalized_name": "Gandhinagar"
+    },
+    {
+      "constituency_id": "C106",
+      "state_id": "ST11",
+      "district_id": "D099",
+      "name": "PATAN",
+      "normalized_name": "Patan"
+    },
+    {
+      "constituency_id": "C107",
+      "state_id": "ST11",
+      "district_id": "D100",
+      "name": "SURENDRANAGAR",
+      "normalized_name": "Surendranagar"
+    },
+    {
+      "constituency_id": "C108",
+      "state_id": "ST11",
+      "district_id": "D101",
+      "name": "NAVSARI",
+      "normalized_name": "Navsari"
+    },
+    {
+      "constituency_id": "C109",
+      "state_id": "ST11",
+      "district_id": "D102",
+      "name": "KHEDA",
+      "normalized_name": "Kheda"
+    },
+    {
+      "constituency_id": "C110",
+      "state_id": "ST11",
+      "district_id": "D103",
+      "name": "AHMEDABAD WEST",
+      "normalized_name": "Ahmedabad West"
+    },
+    {
+      "constituency_id": "C111",
+      "state_id": "ST11",
+      "district_id": "D104",
+      "name": "BANASKANTHA",
+      "normalized_name": "Banaskantha"
+    },
+    {
+      "constituency_id": "C112",
+      "state_id": "ST11",
+      "district_id": "D105",
+      "name": "AHMEDABAD EAST",
+      "normalized_name": "Ahmedabad East"
+    },
+    {
+      "constituency_id": "C113",
+      "state_id": "ST11",
+      "district_id": "D106",
+      "name": "VADODARA",
+      "normalized_name": "Vadodara"
+    },
+    {
+      "constituency_id": "C114",
+      "state_id": "ST11",
+      "district_id": "D107",
+      "name": "DAHOD",
+      "normalized_name": "Dahod"
+    },
+    {
+      "constituency_id": "C115",
+      "state_id": "ST11",
+      "district_id": "D108",
+      "name": "PORBANDAR",
+      "normalized_name": "Porbandar"
+    },
+    {
+      "constituency_id": "C116",
+      "state_id": "ST11",
+      "district_id": "D109",
+      "name": "SURAT",
+      "normalized_name": "Surat"
+    },
+    {
+      "constituency_id": "C117",
+      "state_id": "ST11",
+      "district_id": "D110",
+      "name": "BHAVNAGAR",
+      "normalized_name": "Bhavnagar"
+    },
+    {
+      "constituency_id": "C118",
+      "state_id": "ST11",
+      "district_id": "D111",
+      "name": "RAJKOT",
+      "normalized_name": "Rajkot"
+    },
+    {
+      "constituency_id": "C119",
+      "state_id": "ST11",
+      "district_id": "D112",
+      "name": "BARDOLI",
+      "normalized_name": "Bardoli"
+    },
+    {
+      "constituency_id": "C120",
+      "state_id": "ST11",
+      "district_id": "D113",
+      "name": "JAMNAGAR",
+      "normalized_name": "Jamnagar"
+    },
+    {
+      "constituency_id": "C121",
+      "state_id": "ST11",
+      "district_id": "D114",
+      "name": "JUNAGADH",
+      "normalized_name": "Junagadh"
+    },
+    {
+      "constituency_id": "C122",
+      "state_id": "ST11",
+      "district_id": "D108",
+      "name": "PORBANDAR",
+      "normalized_name": "Porbandar"
+    },
+    {
+      "constituency_id": "C123",
+      "state_id": "ST11",
+      "district_id": "D115",
+      "name": "SABARKANTHA",
+      "normalized_name": "Sabarkantha"
+    },
+    {
+      "constituency_id": "C124",
+      "state_id": "ST11",
+      "district_id": "D116",
+      "name": "KACHCHH",
+      "normalized_name": "Kachchh"
+    },
+    {
+      "constituency_id": "C125",
+      "state_id": "ST11",
+      "district_id": "D117",
+      "name": "ANAND",
+      "normalized_name": "Anand"
+    },
+    {
+      "constituency_id": "C126",
+      "state_id": "ST11",
+      "district_id": "D118",
+      "name": "VALSAD",
+      "normalized_name": "Valsad"
+    },
+    {
+      "constituency_id": "C127",
+      "state_id": "ST11",
+      "district_id": "D119",
+      "name": "BHARUCH",
+      "normalized_name": "Bharuch"
+    },
+    {
+      "constituency_id": "C128",
+      "state_id": "ST11",
+      "district_id": "D120",
+      "name": "PANCHMAHAL",
+      "normalized_name": "Panchmahal"
+    },
+    {
+      "constituency_id": "C129",
+      "state_id": "ST11",
+      "district_id": "D121",
+      "name": "MEHSANA",
+      "normalized_name": "Mehsana"
+    },
+    {
+      "constituency_id": "C130",
+      "state_id": "ST11",
+      "district_id": "D122",
+      "name": "AMRELI",
+      "normalized_name": "Amreli"
+    },
+    {
+      "constituency_id": "C131",
+      "state_id": "ST12",
+      "district_id": "D123",
+      "name": "ROHTAK",
+      "normalized_name": "Rohtak"
+    },
+    {
+      "constituency_id": "C132",
+      "state_id": "ST12",
+      "district_id": "D124",
+      "name": "BHIWANI-MAHENDRAGARH",
+      "normalized_name": "Bhiwani-mahendragarh"
+    },
+    {
+      "constituency_id": "C133",
+      "state_id": "ST12",
+      "district_id": "D125",
+      "name": "HISAR",
+      "normalized_name": "Hisar"
+    },
+    {
+      "constituency_id": "C134",
+      "state_id": "ST12",
+      "district_id": "D126",
+      "name": "FARIDABAD",
+      "normalized_name": "Faridabad"
+    },
+    {
+      "constituency_id": "C135",
+      "state_id": "ST12",
+      "district_id": "D127",
+      "name": "SIRSA",
+      "normalized_name": "Sirsa"
+    },
+    {
+      "constituency_id": "C136",
+      "state_id": "ST12",
+      "district_id": "D128",
+      "name": "KARNAL",
+      "normalized_name": "Karnal"
+    },
+    {
+      "constituency_id": "C137",
+      "state_id": "ST12",
+      "district_id": "D129",
+      "name": "KURUKSHETRA",
+      "normalized_name": "Kurukshetra"
+    },
+    {
+      "constituency_id": "C138",
+      "state_id": "ST12",
+      "district_id": "D130",
+      "name": "GURGAON",
+      "normalized_name": "Gurgaon"
+    },
+    {
+      "constituency_id": "C139",
+      "state_id": "ST12",
+      "district_id": "D131",
+      "name": "SONIPAT",
+      "normalized_name": "Sonipat"
+    },
+    {
+      "constituency_id": "C140",
+      "state_id": "ST12",
+      "district_id": "D132",
+      "name": "AMBALA",
+      "normalized_name": "Ambala"
+    },
+    {
+      "constituency_id": "C141",
+      "state_id": "ST13",
+      "district_id": "D133",
+      "name": "HAMIRPUR",
+      "normalized_name": "Hamirpur"
+    },
+    {
+      "constituency_id": "C142",
+      "state_id": "ST13",
+      "district_id": "D134",
+      "name": "MANDI",
+      "normalized_name": "Mandi"
+    },
+    {
+      "constituency_id": "C143",
+      "state_id": "ST13",
+      "district_id": "D135",
+      "name": "KANGRA",
+      "normalized_name": "Kangra"
+    },
+    {
+      "constituency_id": "C144",
+      "state_id": "ST13",
+      "district_id": "D136",
+      "name": "SHIMLA",
+      "normalized_name": "Shimla"
+    },
+    {
+      "constituency_id": "C145",
+      "state_id": "ST14",
+      "district_id": "D137",
+      "name": "SRINAGAR",
+      "normalized_name": "Srinagar"
+    },
+    {
+      "constituency_id": "C146",
+      "state_id": "ST14",
+      "district_id": "D138",
+      "name": "BARAMULLA",
+      "normalized_name": "Baramulla"
+    },
+    {
+      "constituency_id": "C147",
+      "state_id": "ST14",
+      "district_id": "D139",
+      "name": "UDHAMPUR",
+      "normalized_name": "Udhampur"
+    },
+    {
+      "constituency_id": "C148",
+      "state_id": "ST14",
+      "district_id": "D140",
+      "name": "JAMMU",
+      "normalized_name": "Jammu"
+    },
+    {
+      "constituency_id": "C149",
+      "state_id": "ST14",
+      "district_id": "D141",
+      "name": "ANANTNAG-RAJOURI",
+      "normalized_name": "Anantnag-rajouri"
+    },
+    {
+      "constituency_id": "C150",
+      "state_id": "ST15",
+      "district_id": "D142",
+      "name": "KODERMA",
+      "normalized_name": "Koderma"
+    },
+    {
+      "constituency_id": "C151",
+      "state_id": "ST15",
+      "district_id": "D143",
+      "name": "JAMSHEDPUR",
+      "normalized_name": "Jamshedpur"
+    },
+    {
+      "constituency_id": "C152",
+      "state_id": "ST15",
+      "district_id": "D144",
+      "name": "DHANBAD",
+      "normalized_name": "Dhanbad"
+    },
+    {
+      "constituency_id": "C153",
+      "state_id": "ST15",
+      "district_id": "D145",
+      "name": "SINGHBHUM",
+      "normalized_name": "Singhbhum"
+    },
+    {
+      "constituency_id": "C154",
+      "state_id": "ST15",
+      "district_id": "D146",
+      "name": "CHATRA",
+      "normalized_name": "Chatra"
+    },
+    {
+      "constituency_id": "C155",
+      "state_id": "ST15",
+      "district_id": "D147",
+      "name": "HAZARIBAGH",
+      "normalized_name": "Hazaribagh"
+    },
+    {
+      "constituency_id": "C156",
+      "state_id": "ST15",
+      "district_id": "D148",
+      "name": "DUMKA",
+      "normalized_name": "Dumka"
+    },
+    {
+      "constituency_id": "C157",
+      "state_id": "ST15",
+      "district_id": "D149",
+      "name": "GODDA",
+      "normalized_name": "Godda"
+    },
+    {
+      "constituency_id": "C158",
+      "state_id": "ST15",
+      "district_id": "D150",
+      "name": "RANCHI",
+      "normalized_name": "Ranchi"
+    },
+    {
+      "constituency_id": "C159",
+      "state_id": "ST15",
+      "district_id": "D151",
+      "name": "LOHARDAGA",
+      "normalized_name": "Lohardaga"
+    },
+    {
+      "constituency_id": "C160",
+      "state_id": "ST15",
+      "district_id": "D152",
+      "name": "RAJMAHAL",
+      "normalized_name": "Rajmahal"
+    },
+    {
+      "constituency_id": "C161",
+      "state_id": "ST15",
+      "district_id": "D153",
+      "name": "PALAMU",
+      "normalized_name": "Palamu"
+    },
+    {
+      "constituency_id": "C162",
+      "state_id": "ST15",
+      "district_id": "D154",
+      "name": "GIRIDIH",
+      "normalized_name": "Giridih"
+    },
+    {
+      "constituency_id": "C163",
+      "state_id": "ST15",
+      "district_id": "D155",
+      "name": "KHUNTI",
+      "normalized_name": "Khunti"
+    },
+    {
+      "constituency_id": "C164",
+      "state_id": "ST16",
+      "district_id": "D156",
+      "name": "HAVERI",
+      "normalized_name": "Haveri"
+    },
+    {
+      "constituency_id": "C165",
+      "state_id": "ST16",
+      "district_id": "D157",
+      "name": "SHIMOGA",
+      "normalized_name": "Shimoga"
+    },
+    {
+      "constituency_id": "C166",
+      "state_id": "ST16",
+      "district_id": "D158",
+      "name": "BANGALORE RURAL",
+      "normalized_name": "Bangalore Rural"
+    },
+    {
+      "constituency_id": "C167",
+      "state_id": "ST16",
+      "district_id": "D159",
+      "name": "GULBARGA",
+      "normalized_name": "Gulbarga"
+    },
+    {
+      "constituency_id": "C168",
+      "state_id": "ST16",
+      "district_id": "D160",
+      "name": "CHITRADURGA",
+      "normalized_name": "Chitradurga"
+    },
+    {
+      "constituency_id": "C169",
+      "state_id": "ST16",
+      "district_id": "D161",
+      "name": "MANDYA",
+      "normalized_name": "Mandya"
+    },
+    {
+      "constituency_id": "C170",
+      "state_id": "ST16",
+      "district_id": "D162",
+      "name": "BELGAUM",
+      "normalized_name": "Belgaum"
+    },
+    {
+      "constituency_id": "C171",
+      "state_id": "ST16",
+      "district_id": "D163",
+      "name": "CHIKKABALLAPUR",
+      "normalized_name": "Chikkaballapur"
+    },
+    {
+      "constituency_id": "C172",
+      "state_id": "ST16",
+      "district_id": "D159",
+      "name": "GULBARGA",
+      "normalized_name": "Gulbarga"
+    },
+    {
+      "constituency_id": "C173",
+      "state_id": "ST16",
+      "district_id": "D159",
+      "name": "GULBARGA",
+      "normalized_name": "Gulbarga"
+    },
+    {
+      "constituency_id": "C174",
+      "state_id": "ST16",
+      "district_id": "D164",
+      "name": "DHARWAD",
+      "normalized_name": "Dharwad"
+    },
+    {
+      "constituency_id": "C175",
+      "state_id": "ST16",
+      "district_id": "D159",
+      "name": "GULBARGA",
+      "normalized_name": "Gulbarga"
+    },
+    {
+      "constituency_id": "C176",
+      "state_id": "ST16",
+      "district_id": "D165",
+      "name": "KOLAR",
+      "normalized_name": "Kolar"
+    },
+    {
+      "constituency_id": "C177",
+      "state_id": "ST16",
+      "district_id": "D166",
+      "name": "BANGALORE NORTH",
+      "normalized_name": "Bangalore North"
+    },
+    {
+      "constituency_id": "C178",
+      "state_id": "ST16",
+      "district_id": "D167",
+      "name": "BANGALORE SOUTH",
+      "normalized_name": "Bangalore South"
+    },
+    {
+      "constituency_id": "C179",
+      "state_id": "ST16",
+      "district_id": "D168",
+      "name": "TUMKUR",
+      "normalized_name": "Tumkur"
+    },
+    {
+      "constituency_id": "C180",
+      "state_id": "ST16",
+      "district_id": "D169",
+      "name": "UTTARA KANNADA",
+      "normalized_name": "Uttara Kannada"
+    },
+    {
+      "constituency_id": "C181",
+      "state_id": "ST16",
+      "district_id": "D170",
+      "name": "MYSORE",
+      "normalized_name": "Mysore"
+    },
+    {
+      "constituency_id": "C182",
+      "state_id": "ST16",
+      "district_id": "D171",
+      "name": "DAVANAGERE",
+      "normalized_name": "Davanagere"
+    },
+    {
+      "constituency_id": "C183",
+      "state_id": "ST16",
+      "district_id": "D172",
+      "name": "CHIKKODI",
+      "normalized_name": "Chikkodi"
+    },
+    {
+      "constituency_id": "C184",
+      "state_id": "ST16",
+      "district_id": "D173",
+      "name": "BANGALORE CENTRAL",
+      "normalized_name": "Bangalore Central"
+    },
+    {
+      "constituency_id": "C185",
+      "state_id": "ST16",
+      "district_id": "D174",
+      "name": "BIJAPUR",
+      "normalized_name": "Bijapur"
+    },
+    {
+      "constituency_id": "C186",
+      "state_id": "ST16",
+      "district_id": "D157",
+      "name": "SHIMOGA",
+      "normalized_name": "Shimoga"
+    },
+    {
+      "constituency_id": "C187",
+      "state_id": "ST16",
+      "district_id": "D175",
+      "name": "UDUPI CHIKMAGALUR",
+      "normalized_name": "Udupi Chikmagalur"
+    },
+    {
+      "constituency_id": "C188",
+      "state_id": "ST16",
+      "district_id": "D176",
+      "name": "DAKSHINA KANNADA",
+      "normalized_name": "Dakshina Kannada"
+    },
+    {
+      "constituency_id": "C189",
+      "state_id": "ST16",
+      "district_id": "D177",
+      "name": "HASSAN",
+      "normalized_name": "Hassan"
+    },
+    {
+      "constituency_id": "C190",
+      "state_id": "ST16",
+      "district_id": "D178",
+      "name": "RAICHUR",
+      "normalized_name": "Raichur"
+    },
+    {
+      "constituency_id": "C191",
+      "state_id": "ST16",
+      "district_id": "D179",
+      "name": "BELLARY",
+      "normalized_name": "Bellary"
+    },
+    {
+      "constituency_id": "C192",
+      "state_id": "ST17",
+      "district_id": "D180",
+      "name": "ALAPPUZHA",
+      "normalized_name": "Alappuzha"
+    },
+    {
+      "constituency_id": "C193",
+      "state_id": "ST17",
+      "district_id": "D181",
+      "name": "PATHANAMTHITTA",
+      "normalized_name": "Pathanamthitta"
+    },
+    {
+      "constituency_id": "C194",
+      "state_id": "ST17",
+      "district_id": "D182",
+      "name": "IDUKKI",
+      "normalized_name": "Idukki"
+    },
+    {
+      "constituency_id": "C195",
+      "state_id": "ST17",
+      "district_id": "D183",
+      "name": "MALAPPURAM",
+      "normalized_name": "Malappuram"
+    },
+    {
+      "constituency_id": "C196",
+      "state_id": "ST17",
+      "district_id": "D184",
+      "name": "ERNAKULAM",
+      "normalized_name": "Ernakulam"
+    },
+    {
+      "constituency_id": "C197",
+      "state_id": "ST17",
+      "district_id": "D180",
+      "name": "ALAPPUZHA",
+      "normalized_name": "Alappuzha"
+    },
+    {
+      "constituency_id": "C198",
+      "state_id": "ST17",
+      "district_id": "D185",
+      "name": "KOTTAYAM",
+      "normalized_name": "Kottayam"
+    },
+    {
+      "constituency_id": "C199",
+      "state_id": "ST17",
+      "district_id": "D186",
+      "name": "THRISSUR",
+      "normalized_name": "Thrissur"
+    },
+    {
+      "constituency_id": "C200",
+      "state_id": "ST17",
+      "district_id": "D187",
+      "name": "ALATHUR",
+      "normalized_name": "Alathur"
+    },
+    {
+      "constituency_id": "C201",
+      "state_id": "ST17",
+      "district_id": "D188",
+      "name": "KANNUR",
+      "normalized_name": "Kannur"
+    },
+    {
+      "constituency_id": "C202",
+      "state_id": "ST17",
+      "district_id": "D189",
+      "name": "KOZHIKODE",
+      "normalized_name": "Kozhikode"
+    },
+    {
+      "constituency_id": "C203",
+      "state_id": "ST17",
+      "district_id": "D190",
+      "name": "KOLLAM",
+      "normalized_name": "Kollam"
+    },
+    {
+      "constituency_id": "C204",
+      "state_id": "ST17",
+      "district_id": "D191",
+      "name": "KASARAGOD",
+      "normalized_name": "Kasaragod"
+    },
+    {
+      "constituency_id": "C205",
+      "state_id": "ST17",
+      "district_id": "D192",
+      "name": "VADAKARA",
+      "normalized_name": "Vadakara"
+    },
+    {
+      "constituency_id": "C206",
+      "state_id": "ST17",
+      "district_id": "D193",
+      "name": "THIRUVANANTHAPURAM",
+      "normalized_name": "Thiruvananthapuram"
+    },
+    {
+      "constituency_id": "C207",
+      "state_id": "ST17",
+      "district_id": "D186",
+      "name": "THRISSUR",
+      "normalized_name": "Thrissur"
+    },
+    {
+      "constituency_id": "C208",
+      "state_id": "ST17",
+      "district_id": "D194",
+      "name": "PALAKKAD",
+      "normalized_name": "Palakkad"
+    },
+    {
+      "constituency_id": "C209",
+      "state_id": "ST17",
+      "district_id": "D195",
+      "name": "MAVELIKARA",
+      "normalized_name": "Mavelikara"
+    },
+    {
+      "constituency_id": "C210",
+      "state_id": "ST17",
+      "district_id": "D196",
+      "name": "PONNANI",
+      "normalized_name": "Ponnani"
+    },
+    {
+      "constituency_id": "C211",
+      "state_id": "ST17",
+      "district_id": "D197",
+      "name": "WAYANAD",
+      "normalized_name": "Wayanad"
+    },
+    {
+      "constituency_id": "C212",
+      "state_id": "ST18",
+      "district_id": "D198",
+      "name": "LADAKH",
+      "normalized_name": "Ladakh"
+    },
+    {
+      "constituency_id": "C213",
+      "state_id": "ST19",
+      "district_id": "D199",
+      "name": "LAKSHADWEEP",
+      "normalized_name": "Lakshadweep"
+    },
+    {
+      "constituency_id": "C214",
+      "state_id": "ST20",
+      "district_id": "D200",
+      "name": "BHOPAL",
+      "normalized_name": "Bhopal"
+    },
+    {
+      "constituency_id": "C215",
+      "state_id": "ST20",
+      "district_id": "D201",
+      "name": "UJJAIN",
+      "normalized_name": "Ujjain"
+    },
+    {
+      "constituency_id": "C216",
+      "state_id": "ST20",
+      "district_id": "D202",
+      "name": "JABALPUR",
+      "normalized_name": "Jabalpur"
+    },
+    {
+      "constituency_id": "C217",
+      "state_id": "ST20",
+      "district_id": "D203",
+      "name": "GWALIOR",
+      "normalized_name": "Gwalior"
+    },
+    {
+      "constituency_id": "C218",
+      "state_id": "ST20",
+      "district_id": "D204",
+      "name": "KHAJURAHO",
+      "normalized_name": "Khajuraho"
+    },
+    {
+      "constituency_id": "C219",
+      "state_id": "ST20",
+      "district_id": "D205",
+      "name": "KHARGONE",
+      "normalized_name": "Khargone"
+    },
+    {
+      "constituency_id": "C220",
+      "state_id": "ST20",
+      "district_id": "D206",
+      "name": "SHAHDOL",
+      "normalized_name": "Shahdol"
+    },
+    {
+      "constituency_id": "C221",
+      "state_id": "ST20",
+      "district_id": "D207",
+      "name": "GUNA",
+      "normalized_name": "Guna"
+    },
+    {
+      "constituency_id": "C222",
+      "state_id": "ST20",
+      "district_id": "D208",
+      "name": "MORENA",
+      "normalized_name": "Morena"
+    },
+    {
+      "constituency_id": "C223",
+      "state_id": "ST20",
+      "district_id": "D209",
+      "name": "SAGAR",
+      "normalized_name": "Sagar"
+    },
+    {
+      "constituency_id": "C224",
+      "state_id": "ST20",
+      "district_id": "D210",
+      "name": "DEWAS",
+      "normalized_name": "Dewas"
+    },
+    {
+      "constituency_id": "C225",
+      "state_id": "ST20",
+      "district_id": "D211",
+      "name": "RATLAM",
+      "normalized_name": "Ratlam"
+    },
+    {
+      "constituency_id": "C226",
+      "state_id": "ST20",
+      "district_id": "D202",
+      "name": "JABALPUR",
+      "normalized_name": "Jabalpur"
+    },
+    {
+      "constituency_id": "C227",
+      "state_id": "ST20",
+      "district_id": "D212",
+      "name": "RAJGARH",
+      "normalized_name": "Rajgarh"
+    },
+    {
+      "constituency_id": "C228",
+      "state_id": "ST20",
+      "district_id": "D213",
+      "name": "BHIND",
+      "normalized_name": "Bhind"
+    },
+    {
+      "constituency_id": "C229",
+      "state_id": "ST20",
+      "district_id": "D214",
+      "name": "DHAR",
+      "normalized_name": "Dhar"
+    },
+    {
+      "constituency_id": "C230",
+      "state_id": "ST20",
+      "district_id": "D215",
+      "name": "INDORE",
+      "normalized_name": "Indore"
+    },
+    {
+      "constituency_id": "C231",
+      "state_id": "ST20",
+      "district_id": "D216",
+      "name": "VIDISHA",
+      "normalized_name": "Vidisha"
+    },
+    {
+      "constituency_id": "C232",
+      "state_id": "ST20",
+      "district_id": "D217",
+      "name": "MANDSAUR",
+      "normalized_name": "Mandsaur"
+    },
+    {
+      "constituency_id": "C233",
+      "state_id": "ST20",
+      "district_id": "D218",
+      "name": "TIKAMGARH",
+      "normalized_name": "Tikamgarh"
+    },
+    {
+      "constituency_id": "C234",
+      "state_id": "ST20",
+      "district_id": "D204",
+      "name": "KHAJURAHO",
+      "normalized_name": "Khajuraho"
+    },
+    {
+      "constituency_id": "C235",
+      "state_id": "ST20",
+      "district_id": "D219",
+      "name": "BETUL",
+      "normalized_name": "Betul"
+    },
+    {
+      "constituency_id": "C236",
+      "state_id": "ST20",
+      "district_id": "D220",
+      "name": "MANDLA",
+      "normalized_name": "Mandla"
+    },
+    {
+      "constituency_id": "C237",
+      "state_id": "ST20",
+      "district_id": "D221",
+      "name": "REWA",
+      "normalized_name": "Rewa"
+    },
+    {
+      "constituency_id": "C238",
+      "state_id": "ST20",
+      "district_id": "D222",
+      "name": "SATNA",
+      "normalized_name": "Satna"
+    },
+    {
+      "constituency_id": "C239",
+      "state_id": "ST20",
+      "district_id": "D223",
+      "name": "SIDHI",
+      "normalized_name": "Sidhi"
+    },
+    {
+      "constituency_id": "C240",
+      "state_id": "ST20",
+      "district_id": "D224",
+      "name": "CHHINDWARA",
+      "normalized_name": "Chhindwara"
+    },
+    {
+      "constituency_id": "C241",
+      "state_id": "ST20",
+      "district_id": "D225",
+      "name": "BALAGHAT",
+      "normalized_name": "Balaghat"
+    },
+    {
+      "constituency_id": "C242",
+      "state_id": "ST20",
+      "district_id": "D226",
+      "name": "HOSHANGABAD",
+      "normalized_name": "Hoshangabad"
+    },
+    {
+      "constituency_id": "C243",
+      "state_id": "ST21",
+      "district_id": "D227",
+      "name": "MUMBAI NORTH WEST",
+      "normalized_name": "Mumbai North West"
+    },
+    {
+      "constituency_id": "C244",
+      "state_id": "ST21",
+      "district_id": "D228",
+      "name": "AKOLA",
+      "normalized_name": "Akola"
+    },
+    {
+      "constituency_id": "C245",
+      "state_id": "ST21",
+      "district_id": "D229",
+      "name": "MUMBAI SOUTH",
+      "normalized_name": "Mumbai South"
+    },
+    {
+      "constituency_id": "C246",
+      "state_id": "ST21",
+      "district_id": "D230",
+      "name": "AMRAVATI",
+      "normalized_name": "Amravati"
+    },
+    {
+      "constituency_id": "C247",
+      "state_id": "ST21",
+      "district_id": "D231",
+      "name": "SHIRDI",
+      "normalized_name": "Shirdi"
+    },
+    {
+      "constituency_id": "C248",
+      "state_id": "ST21",
+      "district_id": "D232",
+      "name": "CHHATRAPATI SAMBHAJINAGAR",
+      "normalized_name": "Chhatrapati Sambhajinagar"
+    },
+    {
+      "constituency_id": "C249",
+      "state_id": "ST21",
+      "district_id": "D233",
+      "name": "NANDED",
+      "normalized_name": "Nanded"
+    },
+    {
+      "constituency_id": "C250",
+      "state_id": "ST21",
+      "district_id": "D234",
+      "name": "KOLHAPUR",
+      "normalized_name": "Kolhapur"
+    },
+    {
+      "constituency_id": "C251",
+      "state_id": "ST21",
+      "district_id": "D235",
+      "name": "MADHA",
+      "normalized_name": "Madha"
+    },
+    {
+      "constituency_id": "C252",
+      "state_id": "ST21",
+      "district_id": "D236",
+      "name": "NANDURBAR",
+      "normalized_name": "Nandurbar"
+    },
+    {
+      "constituency_id": "C253",
+      "state_id": "ST21",
+      "district_id": "D237",
+      "name": "PALGHAR",
+      "normalized_name": "Palghar"
+    },
+    {
+      "constituency_id": "C254",
+      "state_id": "ST21",
+      "district_id": "D238",
+      "name": "OSMANABAD",
+      "normalized_name": "Osmanabad"
+    },
+    {
+      "constituency_id": "C255",
+      "state_id": "ST21",
+      "district_id": "D239",
+      "name": "BULDHANA",
+      "normalized_name": "Buldhana"
+    },
+    {
+      "constituency_id": "C256",
+      "state_id": "ST21",
+      "district_id": "D240",
+      "name": "PUNE",
+      "normalized_name": "Pune"
+    },
+    {
+      "constituency_id": "C257",
+      "state_id": "ST21",
+      "district_id": "D240",
+      "name": "PUNE",
+      "normalized_name": "Pune"
+    },
+    {
+      "constituency_id": "C258",
+      "state_id": "ST21",
+      "district_id": "D241",
+      "name": "BHANDARA-GONDIYA",
+      "normalized_name": "Bhandara-gondiya"
+    },
+    {
+      "constituency_id": "C259",
+      "state_id": "ST21",
+      "district_id": "D242",
+      "name": "THANE",
+      "normalized_name": "Thane"
+    },
+    {
+      "constituency_id": "C260",
+      "state_id": "ST21",
+      "district_id": "D243",
+      "name": "NAGPUR",
+      "normalized_name": "Nagpur"
+    },
+    {
+      "constituency_id": "C261",
+      "state_id": "ST21",
+      "district_id": "D244",
+      "name": "DHARASHIV",
+      "normalized_name": "Dharashiv"
+    },
+    {
+      "constituency_id": "C262",
+      "state_id": "ST21",
+      "district_id": "D245",
+      "name": "MUMBAI NORTH",
+      "normalized_name": "Mumbai North"
+    },
+    {
+      "constituency_id": "C263",
+      "state_id": "ST21",
+      "district_id": "D246",
+      "name": "SOLAPUR",
+      "normalized_name": "Solapur"
+    },
+    {
+      "constituency_id": "C264",
+      "state_id": "ST21",
+      "district_id": "D247",
+      "name": "CHANDRAPUR",
+      "normalized_name": "Chandrapur"
+    },
+    {
+      "constituency_id": "C265",
+      "state_id": "ST21",
+      "district_id": "D248",
+      "name": "WARDHA",
+      "normalized_name": "Wardha"
+    },
+    {
+      "constituency_id": "C266",
+      "state_id": "ST21",
+      "district_id": "D249",
+      "name": "MUMBAI SOUTH CENTRAL",
+      "normalized_name": "Mumbai South Central"
+    },
+    {
+      "constituency_id": "C267",
+      "state_id": "ST21",
+      "district_id": "D242",
+      "name": "THANE",
+      "normalized_name": "Thane"
+    },
+    {
+      "constituency_id": "C268",
+      "state_id": "ST21",
+      "district_id": "D250",
+      "name": "MUMBAI NORTH EAST",
+      "normalized_name": "Mumbai North East"
+    },
+    {
+      "constituency_id": "C269",
+      "state_id": "ST21",
+      "district_id": "D251",
+      "name": "SANGLI",
+      "normalized_name": "Sangli"
+    },
+    {
+      "constituency_id": "C270",
+      "state_id": "ST21",
+      "district_id": "D252",
+      "name": "YAVATMAL-WASHIM",
+      "normalized_name": "Yavatmal-washim"
+    },
+    {
+      "constituency_id": "C271",
+      "state_id": "ST21",
+      "district_id": "D253",
+      "name": "HINGOLI",
+      "normalized_name": "Hingoli"
+    },
+    {
+      "constituency_id": "C272",
+      "state_id": "ST21",
+      "district_id": "D254",
+      "name": "LATUR",
+      "normalized_name": "Latur"
+    },
+    {
+      "constituency_id": "C273",
+      "state_id": "ST21",
+      "district_id": "D255",
+      "name": "KALYAN",
+      "normalized_name": "Kalyan"
+    },
+    {
+      "constituency_id": "C274",
+      "state_id": "ST21",
+      "district_id": "D254",
+      "name": "LATUR",
+      "normalized_name": "Latur"
+    },
+    {
+      "constituency_id": "C275",
+      "state_id": "ST21",
+      "district_id": "D256",
+      "name": "JALGAON",
+      "normalized_name": "Jalgaon"
+    },
+    {
+      "constituency_id": "C276",
+      "state_id": "ST21",
+      "district_id": "D257",
+      "name": "RAIGAD",
+      "normalized_name": "Raigad"
+    },
+    {
+      "constituency_id": "C277",
+      "state_id": "ST21",
+      "district_id": "D258",
+      "name": "BARAMATI",
+      "normalized_name": "Baramati"
+    },
+    {
+      "constituency_id": "C278",
+      "state_id": "ST21",
+      "district_id": "D247",
+      "name": "CHANDRAPUR",
+      "normalized_name": "Chandrapur"
+    },
+    {
+      "constituency_id": "C279",
+      "state_id": "ST21",
+      "district_id": "D259",
+      "name": "SATARA",
+      "normalized_name": "Satara"
+    },
+    {
+      "constituency_id": "C280",
+      "state_id": "ST21",
+      "district_id": "D260",
+      "name": "MUMBAI NORTH CENTRAL",
+      "normalized_name": "Mumbai North Central"
+    },
+    {
+      "constituency_id": "C281",
+      "state_id": "ST21",
+      "district_id": "D243",
+      "name": "NAGPUR",
+      "normalized_name": "Nagpur"
+    },
+    {
+      "constituency_id": "C282",
+      "state_id": "ST21",
+      "district_id": "D251",
+      "name": "SANGLI",
+      "normalized_name": "Sangli"
+    },
+    {
+      "constituency_id": "C283",
+      "state_id": "ST21",
+      "district_id": "D249",
+      "name": "MUMBAI SOUTH CENTRAL",
+      "normalized_name": "Mumbai South Central"
+    },
+    {
+      "constituency_id": "C284",
+      "state_id": "ST21",
+      "district_id": "D261",
+      "name": "DINDORI",
+      "normalized_name": "Dindori"
+    },
+    {
+      "constituency_id": "C285",
+      "state_id": "ST21",
+      "district_id": "D262",
+      "name": "DHULE",
+      "normalized_name": "Dhule"
+    },
+    {
+      "constituency_id": "C286",
+      "state_id": "ST21",
+      "district_id": "D263",
+      "name": "NASHIK",
+      "normalized_name": "Nashik"
+    },
+    {
+      "constituency_id": "C287",
+      "state_id": "ST21",
+      "district_id": "D264",
+      "name": "JALNA",
+      "normalized_name": "Jalna"
+    },
+    {
+      "constituency_id": "C288",
+      "state_id": "ST21",
+      "district_id": "D253",
+      "name": "HINGOLI",
+      "normalized_name": "Hingoli"
+    },
+    {
+      "constituency_id": "C289",
+      "state_id": "ST21",
+      "district_id": "D265",
+      "name": "BEED",
+      "normalized_name": "Beed"
+    },
+    {
+      "constituency_id": "C290",
+      "state_id": "ST21",
+      "district_id": "D266",
+      "name": "AHMEDNAGAR",
+      "normalized_name": "Ahmednagar"
+    },
+    {
+      "constituency_id": "C291",
+      "state_id": "ST22",
+      "district_id": "D267",
+      "name": "OUTER MANIPUR",
+      "normalized_name": "Outer Manipur"
+    },
+    {
+      "constituency_id": "C292",
+      "state_id": "ST22",
+      "district_id": "D268",
+      "name": "INNER MANIPUR",
+      "normalized_name": "Inner Manipur"
+    },
+    {
+      "constituency_id": "C293",
+      "state_id": "ST23",
+      "district_id": "D269",
+      "name": "SHILLONG",
+      "normalized_name": "Shillong"
+    },
+    {
+      "constituency_id": "C294",
+      "state_id": "ST23",
+      "district_id": "D270",
+      "name": "TURA",
+      "normalized_name": "Tura"
+    },
+    {
+      "constituency_id": "C295",
+      "state_id": "ST24",
+      "district_id": "D271",
+      "name": "MIZORAM",
+      "normalized_name": "Mizoram"
+    },
+    {
+      "constituency_id": "C296",
+      "state_id": "ST25",
+      "district_id": "D272",
+      "name": "NAGALAND",
+      "normalized_name": "Nagaland"
+    },
+    {
+      "constituency_id": "C297",
+      "state_id": "ST26",
+      "district_id": "D273",
+      "name": "KEONJHAR",
+      "normalized_name": "Keonjhar"
+    },
+    {
+      "constituency_id": "C298",
+      "state_id": "ST26",
+      "district_id": "D274",
+      "name": "BHUBANESWAR",
+      "normalized_name": "Bhubaneswar"
+    },
+    {
+      "constituency_id": "C299",
+      "state_id": "ST26",
+      "district_id": "D275",
+      "name": "KENDRAPARA",
+      "normalized_name": "Kendrapara"
+    },
+    {
+      "constituency_id": "C300",
+      "state_id": "ST26",
+      "district_id": "D276",
+      "name": "NABARANGPUR",
+      "normalized_name": "Nabarangpur"
+    },
+    {
+      "constituency_id": "C301",
+      "state_id": "ST26",
+      "district_id": "D277",
+      "name": "CUTTACK",
+      "normalized_name": "Cuttack"
+    },
+    {
+      "constituency_id": "C302",
+      "state_id": "ST26",
+      "district_id": "D278",
+      "name": "JAGATSINGHPUR",
+      "normalized_name": "Jagatsinghpur"
+    },
+    {
+      "constituency_id": "C303",
+      "state_id": "ST26",
+      "district_id": "D279",
+      "name": "SAMBALPUR",
+      "normalized_name": "Sambalpur"
+    },
+    {
+      "constituency_id": "C304",
+      "state_id": "ST26",
+      "district_id": "D280",
+      "name": "SUNDARGARH",
+      "normalized_name": "Sundargarh"
+    },
+    {
+      "constituency_id": "C305",
+      "state_id": "ST26",
+      "district_id": "D281",
+      "name": "KALAHANDI",
+      "normalized_name": "Kalahandi"
+    },
+    {
+      "constituency_id": "C306",
+      "state_id": "ST26",
+      "district_id": "D282",
+      "name": "DHENKANAL",
+      "normalized_name": "Dhenkanal"
+    },
+    {
+      "constituency_id": "C307",
+      "state_id": "ST26",
+      "district_id": "D283",
+      "name": "BARGARH",
+      "normalized_name": "Bargarh"
+    },
+    {
+      "constituency_id": "C308",
+      "state_id": "ST26",
+      "district_id": "D284",
+      "name": "BALASORE",
+      "normalized_name": "Balasore"
+    },
+    {
+      "constituency_id": "C309",
+      "state_id": "ST26",
+      "district_id": "D285",
+      "name": "JAJPUR",
+      "normalized_name": "Jajpur"
+    },
+    {
+      "constituency_id": "C310",
+      "state_id": "ST26",
+      "district_id": "D282",
+      "name": "DHENKANAL",
+      "normalized_name": "Dhenkanal"
+    },
+    {
+      "constituency_id": "C311",
+      "state_id": "ST26",
+      "district_id": "D286",
+      "name": "PURI",
+      "normalized_name": "Puri"
+    },
+    {
+      "constituency_id": "C312",
+      "state_id": "ST26",
+      "district_id": "D287",
+      "name": "BOLANGIR",
+      "normalized_name": "Bolangir"
+    },
+    {
+      "constituency_id": "C313",
+      "state_id": "ST26",
+      "district_id": "D288",
+      "name": "KORAPUT",
+      "normalized_name": "Koraput"
+    },
+    {
+      "constituency_id": "C314",
+      "state_id": "ST26",
+      "district_id": "D289",
+      "name": "KANDHAMAL",
+      "normalized_name": "Kandhamal"
+    },
+    {
+      "constituency_id": "C315",
+      "state_id": "ST26",
+      "district_id": "D290",
+      "name": "ASKA",
+      "normalized_name": "Aska"
+    },
+    {
+      "constituency_id": "C316",
+      "state_id": "ST26",
+      "district_id": "D291",
+      "name": "BERHAMPUR",
+      "normalized_name": "Berhampur"
+    },
+    {
+      "constituency_id": "C317",
+      "state_id": "ST26",
+      "district_id": "D292",
+      "name": "BHADRAK",
+      "normalized_name": "Bhadrak"
+    },
+    {
+      "constituency_id": "C318",
+      "state_id": "ST27",
+      "district_id": "D293",
+      "name": "PUDUCHERRY",
+      "normalized_name": "Puducherry"
+    },
+    {
+      "constituency_id": "C319",
+      "state_id": "ST28",
+      "district_id": "D294",
+      "name": "FATEHGARH SAHIB",
+      "normalized_name": "Fatehgarh Sahib"
+    },
+    {
+      "constituency_id": "C320",
+      "state_id": "ST28",
+      "district_id": "D295",
+      "name": "KHADOOR SAHIB",
+      "normalized_name": "Khadoor Sahib"
+    },
+    {
+      "constituency_id": "C321",
+      "state_id": "ST28",
+      "district_id": "D296",
+      "name": "JALANDHAR",
+      "normalized_name": "Jalandhar"
+    },
+    {
+      "constituency_id": "C322",
+      "state_id": "ST28",
+      "district_id": "D297",
+      "name": "PATIALA",
+      "normalized_name": "Patiala"
+    },
+    {
+      "constituency_id": "C323",
+      "state_id": "ST28",
+      "district_id": "D298",
+      "name": "AMRITSAR",
+      "normalized_name": "Amritsar"
+    },
+    {
+      "constituency_id": "C324",
+      "state_id": "ST28",
+      "district_id": "D299",
+      "name": "BATHINDA",
+      "normalized_name": "Bathinda"
+    },
+    {
+      "constituency_id": "C325",
+      "state_id": "ST28",
+      "district_id": "D300",
+      "name": "ANANDPUR SAHIB",
+      "normalized_name": "Anandpur Sahib"
+    },
+    {
+      "constituency_id": "C326",
+      "state_id": "ST28",
+      "district_id": "D301",
+      "name": "SANGRUR",
+      "normalized_name": "Sangrur"
+    },
+    {
+      "constituency_id": "C327",
+      "state_id": "ST28",
+      "district_id": "D302",
+      "name": "LUDHIANA",
+      "normalized_name": "Ludhiana"
+    },
+    {
+      "constituency_id": "C328",
+      "state_id": "ST28",
+      "district_id": "D303",
+      "name": "HOSHIARPUR",
+      "normalized_name": "Hoshiarpur"
+    },
+    {
+      "constituency_id": "C329",
+      "state_id": "ST28",
+      "district_id": "D304",
+      "name": "FARIDKOT",
+      "normalized_name": "Faridkot"
+    },
+    {
+      "constituency_id": "C330",
+      "state_id": "ST28",
+      "district_id": "D305",
+      "name": "FIROZPUR",
+      "normalized_name": "Firozpur"
+    },
+    {
+      "constituency_id": "C331",
+      "state_id": "ST28",
+      "district_id": "D305",
+      "name": "FIROZPUR",
+      "normalized_name": "Firozpur"
+    },
+    {
+      "constituency_id": "C332",
+      "state_id": "ST29",
+      "district_id": "D306",
+      "name": "AJMER",
+      "normalized_name": "Ajmer"
+    },
+    {
+      "constituency_id": "C333",
+      "state_id": "ST29",
+      "district_id": "D307",
+      "name": "KARAULI-DHOLPUR",
+      "normalized_name": "Karauli-dholpur"
+    },
+    {
+      "constituency_id": "C334",
+      "state_id": "ST29",
+      "district_id": "D308",
+      "name": "JHUNJHUNU",
+      "normalized_name": "Jhunjhunu"
+    },
+    {
+      "constituency_id": "C335",
+      "state_id": "ST29",
+      "district_id": "D309",
+      "name": "CHITTORGARH",
+      "normalized_name": "Chittorgarh"
+    },
+    {
+      "constituency_id": "C336",
+      "state_id": "ST29",
+      "district_id": "D310",
+      "name": "TONK-SAWAI MADHOPUR",
+      "normalized_name": "Tonk-sawai Madhopur"
+    },
+    {
+      "constituency_id": "C337",
+      "state_id": "ST29",
+      "district_id": "D311",
+      "name": "JODHPUR",
+      "normalized_name": "Jodhpur"
+    },
+    {
+      "constituency_id": "C338",
+      "state_id": "ST29",
+      "district_id": "D312",
+      "name": "NAGAUR",
+      "normalized_name": "Nagaur"
+    },
+    {
+      "constituency_id": "C339",
+      "state_id": "ST29",
+      "district_id": "D310",
+      "name": "TONK-SAWAI MADHOPUR",
+      "normalized_name": "Tonk-sawai Madhopur"
+    },
+    {
+      "constituency_id": "C340",
+      "state_id": "ST29",
+      "district_id": "D313",
+      "name": "JALORE",
+      "normalized_name": "Jalore"
+    },
+    {
+      "constituency_id": "C341",
+      "state_id": "ST29",
+      "district_id": "D314",
+      "name": "RAJSAMAND",
+      "normalized_name": "Rajsamand"
+    },
+    {
+      "constituency_id": "C342",
+      "state_id": "ST29",
+      "district_id": "D315",
+      "name": "JAIPUR",
+      "normalized_name": "Jaipur"
+    },
+    {
+      "constituency_id": "C343",
+      "state_id": "ST29",
+      "district_id": "D316",
+      "name": "UDAIPUR",
+      "normalized_name": "Udaipur"
+    },
+    {
+      "constituency_id": "C344",
+      "state_id": "ST29",
+      "district_id": "D317",
+      "name": "DAUSA",
+      "normalized_name": "Dausa"
+    },
+    {
+      "constituency_id": "C345",
+      "state_id": "ST29",
+      "district_id": "D318",
+      "name": "KOTA",
+      "normalized_name": "Kota"
+    },
+    {
+      "constituency_id": "C346",
+      "state_id": "ST29",
+      "district_id": "D319",
+      "name": "PALI",
+      "normalized_name": "Pali"
+    },
+    {
+      "constituency_id": "C347",
+      "state_id": "ST29",
+      "district_id": "D320",
+      "name": "CHURU",
+      "normalized_name": "Churu"
+    },
+    {
+      "constituency_id": "C348",
+      "state_id": "ST29",
+      "district_id": "D321",
+      "name": "BANSWARA",
+      "normalized_name": "Banswara"
+    },
+    {
+      "constituency_id": "C349",
+      "state_id": "ST29",
+      "district_id": "D322",
+      "name": "BHARATPUR",
+      "normalized_name": "Bharatpur"
+    },
+    {
+      "constituency_id": "C350",
+      "state_id": "ST29",
+      "district_id": "D323",
+      "name": "BHILWARA",
+      "normalized_name": "Bhilwara"
+    },
+    {
+      "constituency_id": "C351",
+      "state_id": "ST29",
+      "district_id": "D324",
+      "name": "BARMER",
+      "normalized_name": "Barmer"
+    },
+    {
+      "constituency_id": "C352",
+      "state_id": "ST29",
+      "district_id": "D325",
+      "name": "BIKANER",
+      "normalized_name": "Bikaner"
+    },
+    {
+      "constituency_id": "C353",
+      "state_id": "ST29",
+      "district_id": "D326",
+      "name": "GANGANAGAR",
+      "normalized_name": "Ganganagar"
+    },
+    {
+      "constituency_id": "C354",
+      "state_id": "ST29",
+      "district_id": "D327",
+      "name": "SIKAR",
+      "normalized_name": "Sikar"
+    },
+    {
+      "constituency_id": "C355",
+      "state_id": "ST29",
+      "district_id": "D328",
+      "name": "ALWAR",
+      "normalized_name": "Alwar"
+    },
+    {
+      "constituency_id": "C356",
+      "state_id": "ST29",
+      "district_id": "D329",
+      "name": "JHALAWAR-BARAN",
+      "normalized_name": "Jhalawar-baran"
+    },
+    {
+      "constituency_id": "C357",
+      "state_id": "ST30",
+      "district_id": "D330",
+      "name": "SIKKIM",
+      "normalized_name": "Sikkim"
+    },
+    {
+      "constituency_id": "C358",
+      "state_id": "ST31",
+      "district_id": "D331",
+      "name": "NILGIRIS",
+      "normalized_name": "Nilgiris"
+    },
+    {
+      "constituency_id": "C359",
+      "state_id": "ST31",
+      "district_id": "D332",
+      "name": "TIRUNELVELI",
+      "normalized_name": "Tirunelveli"
+    },
+    {
+      "constituency_id": "C360",
+      "state_id": "ST31",
+      "district_id": "D333",
+      "name": "CHENNAI CENTRAL",
+      "normalized_name": "Chennai Central"
+    },
+    {
+      "constituency_id": "C361",
+      "state_id": "ST31",
+      "district_id": "D334",
+      "name": "VELLORE",
+      "normalized_name": "Vellore"
+    },
+    {
+      "constituency_id": "C362",
+      "state_id": "ST31",
+      "district_id": "D335",
+      "name": "TIRUCHIRAPPALLI",
+      "normalized_name": "Tiruchirappalli"
+    },
+    {
+      "constituency_id": "C363",
+      "state_id": "ST31",
+      "district_id": "D336",
+      "name": "COIMBATORE",
+      "normalized_name": "Coimbatore"
+    },
+    {
+      "constituency_id": "C364",
+      "state_id": "ST31",
+      "district_id": "D337",
+      "name": "KARUR",
+      "normalized_name": "Karur"
+    },
+    {
+      "constituency_id": "C365",
+      "state_id": "ST31",
+      "district_id": "D338",
+      "name": "SALEM",
+      "normalized_name": "Salem"
+    },
+    {
+      "constituency_id": "C366",
+      "state_id": "ST31",
+      "district_id": "D339",
+      "name": "THOOTHUKKUDI",
+      "normalized_name": "Thoothukkudi"
+    },
+    {
+      "constituency_id": "C367",
+      "state_id": "ST31",
+      "district_id": "D340",
+      "name": "SIVAGANGA",
+      "normalized_name": "Sivaganga"
+    },
+    {
+      "constituency_id": "C368",
+      "state_id": "ST31",
+      "district_id": "D341",
+      "name": "VIRUDHUNAGAR",
+      "normalized_name": "Virudhunagar"
+    },
+    {
+      "constituency_id": "C369",
+      "state_id": "ST31",
+      "district_id": "D336",
+      "name": "COIMBATORE",
+      "normalized_name": "Coimbatore"
+    },
+    {
+      "constituency_id": "C370",
+      "state_id": "ST31",
+      "district_id": "D342",
+      "name": "RAMANATHAPURAM",
+      "normalized_name": "Ramanathapuram"
+    },
+    {
+      "constituency_id": "C371",
+      "state_id": "ST31",
+      "district_id": "D343",
+      "name": "DINDIGUL",
+      "normalized_name": "Dindigul"
+    },
+    {
+      "constituency_id": "C372",
+      "state_id": "ST31",
+      "district_id": "D344",
+      "name": "CHENNAI NORTH",
+      "normalized_name": "Chennai North"
+    },
+    {
+      "constituency_id": "C373",
+      "state_id": "ST31",
+      "district_id": "D343",
+      "name": "DINDIGUL",
+      "normalized_name": "Dindigul"
+    },
+    {
+      "constituency_id": "C374",
+      "state_id": "ST31",
+      "district_id": "D345",
+      "name": "ARAKKONAM",
+      "normalized_name": "Arakkonam"
+    },
+    {
+      "constituency_id": "C375",
+      "state_id": "ST31",
+      "district_id": "D337",
+      "name": "KARUR",
+      "normalized_name": "Karur"
+    },
+    {
+      "constituency_id": "C376",
+      "state_id": "ST31",
+      "district_id": "D338",
+      "name": "SALEM",
+      "normalized_name": "Salem"
+    },
+    {
+      "constituency_id": "C377",
+      "state_id": "ST31",
+      "district_id": "D346",
+      "name": "MADURAI",
+      "normalized_name": "Madurai"
+    },
+    {
+      "constituency_id": "C378",
+      "state_id": "ST31",
+      "district_id": "D347",
+      "name": "TIRUVALLUR",
+      "normalized_name": "Tiruvallur"
+    },
+    {
+      "constituency_id": "C379",
+      "state_id": "ST31",
+      "district_id": "D348",
+      "name": "SRIPERUMBUDUR",
+      "normalized_name": "Sriperumbudur"
+    },
+    {
+      "constituency_id": "C380",
+      "state_id": "ST31",
+      "district_id": "D349",
+      "name": "CHENNAI SOUTH",
+      "normalized_name": "Chennai South"
+    },
+    {
+      "constituency_id": "C381",
+      "state_id": "ST31",
+      "district_id": "D350",
+      "name": "CHIDAMBARAM",
+      "normalized_name": "Chidambaram"
+    },
+    {
+      "constituency_id": "C382",
+      "state_id": "ST31",
+      "district_id": "D351",
+      "name": "KANNIYAKUMARI",
+      "normalized_name": "Kanniyakumari"
+    },
+    {
+      "constituency_id": "C383",
+      "state_id": "ST31",
+      "district_id": "D352",
+      "name": "KRISHNAGIRI",
+      "normalized_name": "Krishnagiri"
+    },
+    {
+      "constituency_id": "C384",
+      "state_id": "ST31",
+      "district_id": "D353",
+      "name": "DHARMAPURI",
+      "normalized_name": "Dharmapuri"
+    },
+    {
+      "constituency_id": "C385",
+      "state_id": "ST31",
+      "district_id": "D354",
+      "name": "ERODE",
+      "normalized_name": "Erode"
+    },
+    {
+      "constituency_id": "C386",
+      "state_id": "ST31",
+      "district_id": "D355",
+      "name": "TIRUPPUR",
+      "normalized_name": "Tiruppur"
+    },
+    {
+      "constituency_id": "C387",
+      "state_id": "ST31",
+      "district_id": "D356",
+      "name": "TIRUVANNAMALAI",
+      "normalized_name": "Tiruvannamalai"
+    },
+    {
+      "constituency_id": "C388",
+      "state_id": "ST31",
+      "district_id": "D334",
+      "name": "VELLORE",
+      "normalized_name": "Vellore"
+    },
+    {
+      "constituency_id": "C389",
+      "state_id": "ST31",
+      "district_id": "D357",
+      "name": "KALLAKURICHI",
+      "normalized_name": "Kallakurichi"
+    },
+    {
+      "constituency_id": "C390",
+      "state_id": "ST31",
+      "district_id": "D358",
+      "name": "ARANI",
+      "normalized_name": "Arani"
+    },
+    {
+      "constituency_id": "C391",
+      "state_id": "ST31",
+      "district_id": "D335",
+      "name": "TIRUCHIRAPPALLI",
+      "normalized_name": "Tiruchirappalli"
+    },
+    {
+      "constituency_id": "C392",
+      "state_id": "ST31",
+      "district_id": "D359",
+      "name": "CUDDALORE",
+      "normalized_name": "Cuddalore"
+    },
+    {
+      "constituency_id": "C393",
+      "state_id": "ST31",
+      "district_id": "D360",
+      "name": "THANJAVUR",
+      "normalized_name": "Thanjavur"
+    },
+    {
+      "constituency_id": "C394",
+      "state_id": "ST31",
+      "district_id": "D361",
+      "name": "MAYILADUTHURAI",
+      "normalized_name": "Mayiladuthurai"
+    },
+    {
+      "constituency_id": "C395",
+      "state_id": "ST31",
+      "district_id": "D362",
+      "name": "NAGAPATTINAM",
+      "normalized_name": "Nagapattinam"
+    },
+    {
+      "constituency_id": "C396",
+      "state_id": "ST31",
+      "district_id": "D363",
+      "name": "VILUPPURAM",
+      "normalized_name": "Viluppuram"
+    },
+    {
+      "constituency_id": "C397",
+      "state_id": "ST32",
+      "district_id": "D364",
+      "name": "HYDERABAD",
+      "normalized_name": "Hyderabad"
+    },
+    {
+      "constituency_id": "C398",
+      "state_id": "ST32",
+      "district_id": "D365",
+      "name": "KARIMNAGAR",
+      "normalized_name": "Karimnagar"
+    },
+    {
+      "constituency_id": "C399",
+      "state_id": "ST32",
+      "district_id": "D366",
+      "name": "BHONGIR",
+      "normalized_name": "Bhongir"
+    },
+    {
+      "constituency_id": "C400",
+      "state_id": "ST32",
+      "district_id": "D367",
+      "name": "MAHBUBNAGAR",
+      "normalized_name": "Mahbubnagar"
+    },
+    {
+      "constituency_id": "C401",
+      "state_id": "ST32",
+      "district_id": "D368",
+      "name": "MAHABUBABAD",
+      "normalized_name": "Mahabubabad"
+    },
+    {
+      "constituency_id": "C402",
+      "state_id": "ST32",
+      "district_id": "D369",
+      "name": "MALKAJGIRI",
+      "normalized_name": "Malkajgiri"
+    },
+    {
+      "constituency_id": "C403",
+      "state_id": "ST32",
+      "district_id": "D370",
+      "name": "SECUNDERABAD",
+      "normalized_name": "Secunderabad"
+    },
+    {
+      "constituency_id": "C404",
+      "state_id": "ST32",
+      "district_id": "D371",
+      "name": "WARANGAL",
+      "normalized_name": "Warangal"
+    },
+    {
+      "constituency_id": "C405",
+      "state_id": "ST32",
+      "district_id": "D372",
+      "name": "CHEVALLA",
+      "normalized_name": "Chevalla"
+    },
+    {
+      "constituency_id": "C406",
+      "state_id": "ST32",
+      "district_id": "D373",
+      "name": "NALGONDA",
+      "normalized_name": "Nalgonda"
+    },
+    {
+      "constituency_id": "C407",
+      "state_id": "ST32",
+      "district_id": "D374",
+      "name": "MEDAK",
+      "normalized_name": "Medak"
+    },
+    {
+      "constituency_id": "C408",
+      "state_id": "ST32",
+      "district_id": "D368",
+      "name": "MAHABUBABAD",
+      "normalized_name": "Mahabubabad"
+    },
+    {
+      "constituency_id": "C409",
+      "state_id": "ST32",
+      "district_id": "D375",
+      "name": "KHAMMAM",
+      "normalized_name": "Khammam"
+    },
+    {
+      "constituency_id": "C410",
+      "state_id": "ST32",
+      "district_id": "D375",
+      "name": "KHAMMAM",
+      "normalized_name": "Khammam"
+    },
+    {
+      "constituency_id": "C411",
+      "state_id": "ST32",
+      "district_id": "D376",
+      "name": "ADILABAD",
+      "normalized_name": "Adilabad"
+    },
+    {
+      "constituency_id": "C412",
+      "state_id": "ST32",
+      "district_id": "D377",
+      "name": "PEDDAPALLE",
+      "normalized_name": "Peddapalle"
+    },
+    {
+      "constituency_id": "C413",
+      "state_id": "ST32",
+      "district_id": "D378",
+      "name": "NIZAMABAD",
+      "normalized_name": "Nizamabad"
+    },
+    {
+      "constituency_id": "C414",
+      "state_id": "ST33",
+      "district_id": "D379",
+      "name": "TRIPURA EAST",
+      "normalized_name": "Tripura East"
+    },
+    {
+      "constituency_id": "C415",
+      "state_id": "ST33",
+      "district_id": "D380",
+      "name": "TRIPURA WEST",
+      "normalized_name": "Tripura West"
+    },
+    {
+      "constituency_id": "C416",
+      "state_id": "ST34",
+      "district_id": "D381",
+      "name": "GHAZIPUR",
+      "normalized_name": "Ghazipur"
+    },
+    {
+      "constituency_id": "C417",
+      "state_id": "ST34",
+      "district_id": "D382",
+      "name": "VARANASI",
+      "normalized_name": "Varanasi"
+    },
+    {
+      "constituency_id": "C418",
+      "state_id": "ST34",
+      "district_id": "D383",
+      "name": "KANNAUJ",
+      "normalized_name": "Kannauj"
+    },
+    {
+      "constituency_id": "C419",
+      "state_id": "ST34",
+      "district_id": "D384",
+      "name": "DHAURAHRA",
+      "normalized_name": "Dhaurahra"
+    },
+    {
+      "constituency_id": "C420",
+      "state_id": "ST34",
+      "district_id": "D385",
+      "name": "MIRZAPUR",
+      "normalized_name": "Mirzapur"
+    },
+    {
+      "constituency_id": "C421",
+      "state_id": "ST34",
+      "district_id": "D386",
+      "name": "AMBEDKAR NAGAR",
+      "normalized_name": "Ambedkar Nagar"
+    },
+    {
+      "constituency_id": "C422",
+      "state_id": "ST34",
+      "district_id": "D387",
+      "name": "MEERUT",
+      "normalized_name": "Meerut"
+    },
+    {
+      "constituency_id": "C423",
+      "state_id": "ST34",
+      "district_id": "D388",
+      "name": "FAIZABAD",
+      "normalized_name": "Faizabad"
+    },
+    {
+      "constituency_id": "C424",
+      "state_id": "ST34",
+      "district_id": "D389",
+      "name": "JAUNPUR",
+      "normalized_name": "Jaunpur"
+    },
+    {
+      "constituency_id": "C425",
+      "state_id": "ST34",
+      "district_id": "D390",
+      "name": "NAGINA",
+      "normalized_name": "Nagina"
+    },
+    {
+      "constituency_id": "C426",
+      "state_id": "ST34",
+      "district_id": "D391",
+      "name": "ROBERTSGANJ",
+      "normalized_name": "Robertsganj"
+    },
+    {
+      "constituency_id": "C427",
+      "state_id": "ST34",
+      "district_id": "D392",
+      "name": "AKBARPUR",
+      "normalized_name": "Akbarpur"
+    },
+    {
+      "constituency_id": "C428",
+      "state_id": "ST34",
+      "district_id": "D393",
+      "name": "AZAMGARH",
+      "normalized_name": "Azamgarh"
+    },
+    {
+      "constituency_id": "C429",
+      "state_id": "ST34",
+      "district_id": "D394",
+      "name": "MAINPURI",
+      "normalized_name": "Mainpuri"
+    },
+    {
+      "constituency_id": "C430",
+      "state_id": "ST34",
+      "district_id": "D395",
+      "name": "RAE BARELI",
+      "normalized_name": "Rae Bareli"
+    },
+    {
+      "constituency_id": "C431",
+      "state_id": "ST34",
+      "district_id": "D396",
+      "name": "MATHURA",
+      "normalized_name": "Mathura"
+    },
+    {
+      "constituency_id": "C432",
+      "state_id": "ST34",
+      "district_id": "D397",
+      "name": "SAHARANPUR",
+      "normalized_name": "Saharanpur"
+    },
+    {
+      "constituency_id": "C433",
+      "state_id": "ST34",
+      "district_id": "D398",
+      "name": "KAIRANA",
+      "normalized_name": "Kairana"
+    },
+    {
+      "constituency_id": "C434",
+      "state_id": "ST34",
+      "district_id": "D399",
+      "name": "DOMARIYAGANJ",
+      "normalized_name": "Domariyaganj"
+    },
+    {
+      "constituency_id": "C435",
+      "state_id": "ST34",
+      "district_id": "D394",
+      "name": "MAINPURI",
+      "normalized_name": "Mainpuri"
+    },
+    {
+      "constituency_id": "C436",
+      "state_id": "ST34",
+      "district_id": "D400",
+      "name": "PILIBHIT",
+      "normalized_name": "Pilibhit"
+    },
+    {
+      "constituency_id": "C437",
+      "state_id": "ST34",
+      "district_id": "D401",
+      "name": "BANSRGAON",
+      "normalized_name": "Bansrgaon"
+    },
+    {
+      "constituency_id": "C438",
+      "state_id": "ST34",
+      "district_id": "D402",
+      "name": "AMROHA",
+      "normalized_name": "Amroha"
+    },
+    {
+      "constituency_id": "C439",
+      "state_id": "ST34",
+      "district_id": "D403",
+      "name": "ETAWAH",
+      "normalized_name": "Etawah"
+    },
+    {
+      "constituency_id": "C440",
+      "state_id": "ST34",
+      "district_id": "D404",
+      "name": "AMETHI",
+      "normalized_name": "Amethi"
+    },
+    {
+      "constituency_id": "C441",
+      "state_id": "ST34",
+      "district_id": "D386",
+      "name": "AMBEDKAR NAGAR",
+      "normalized_name": "Ambedkar Nagar"
+    },
+    {
+      "constituency_id": "C442",
+      "state_id": "ST34",
+      "district_id": "D405",
+      "name": "GAUTAM BUDDHA NAGAR",
+      "normalized_name": "Gautam Buddha Nagar"
+    },
+    {
+      "constituency_id": "C443",
+      "state_id": "ST34",
+      "district_id": "D406",
+      "name": "SULTANPUR",
+      "normalized_name": "Sultanpur"
+    },
+    {
+      "constituency_id": "C444",
+      "state_id": "ST34",
+      "district_id": "D407",
+      "name": "NORTH EAST DELHI",
+      "normalized_name": "North East Delhi"
+    },
+    {
+      "constituency_id": "C445",
+      "state_id": "ST34",
+      "district_id": "D408",
+      "name": "RAMPUR",
+      "normalized_name": "Rampur"
+    },
+    {
+      "constituency_id": "C446",
+      "state_id": "ST34",
+      "district_id": "D408",
+      "name": "RAMPUR",
+      "normalized_name": "Rampur"
+    },
+    {
+      "constituency_id": "C447",
+      "state_id": "ST34",
+      "district_id": "D409",
+      "name": "FARURUKHABAD",
+      "normalized_name": "Farurukhabad"
+    },
+    {
+      "constituency_id": "C448",
+      "state_id": "ST34",
+      "district_id": "D382",
+      "name": "VARANASI",
+      "normalized_name": "Varanasi"
+    },
+    {
+      "constituency_id": "C449",
+      "state_id": "ST34",
+      "district_id": "D410",
+      "name": "BALLIA",
+      "normalized_name": "Ballia"
+    },
+    {
+      "constituency_id": "C450",
+      "state_id": "ST34",
+      "district_id": "D411",
+      "name": "PHULPUR",
+      "normalized_name": "Phulpur"
+    },
+    {
+      "constituency_id": "C451",
+      "state_id": "ST34",
+      "district_id": "D412",
+      "name": "KAUSHAMBI",
+      "normalized_name": "Kaushambi"
+    },
+    {
+      "constituency_id": "C452",
+      "state_id": "ST34",
+      "district_id": "D413",
+      "name": "MISRIKH",
+      "normalized_name": "Misrikh"
+    },
+    {
+      "constituency_id": "C453",
+      "state_id": "ST34",
+      "district_id": "D395",
+      "name": "RAE BARELI",
+      "normalized_name": "Rae Bareli"
+    },
+    {
+      "constituency_id": "C454",
+      "state_id": "ST34",
+      "district_id": "D414",
+      "name": "FATEHPUR SIKRI",
+      "normalized_name": "Fatehpur Sikri"
+    },
+    {
+      "constituency_id": "C455",
+      "state_id": "ST34",
+      "district_id": "D415",
+      "name": "LUCKNOW",
+      "normalized_name": "Lucknow"
+    },
+    {
+      "constituency_id": "C456",
+      "state_id": "ST34",
+      "district_id": "D416",
+      "name": "ETAH",
+      "normalized_name": "Etah"
+    },
+    {
+      "constituency_id": "C457",
+      "state_id": "ST34",
+      "district_id": "D406",
+      "name": "SULTANPUR",
+      "normalized_name": "Sultanpur"
+    },
+    {
+      "constituency_id": "C458",
+      "state_id": "ST34",
+      "district_id": "D403",
+      "name": "ETAWAH",
+      "normalized_name": "Etawah"
+    },
+    {
+      "constituency_id": "C459",
+      "state_id": "ST34",
+      "district_id": "D417",
+      "name": "BASTI",
+      "normalized_name": "Basti"
+    },
+    {
+      "constituency_id": "C460",
+      "state_id": "ST34",
+      "district_id": "D418",
+      "name": "BHADOHI",
+      "normalized_name": "Bhadohi"
+    },
+    {
+      "constituency_id": "C461",
+      "state_id": "ST34",
+      "district_id": "D419",
+      "name": "GORAKHPUR",
+      "normalized_name": "Gorakhpur"
+    },
+    {
+      "constituency_id": "C462",
+      "state_id": "ST34",
+      "district_id": "D420",
+      "name": "MORADABAD",
+      "normalized_name": "Moradabad"
+    },
+    {
+      "constituency_id": "C463",
+      "state_id": "ST34",
+      "district_id": "D421",
+      "name": "FATEHPUR",
+      "normalized_name": "Fatehpur"
+    },
+    {
+      "constituency_id": "C464",
+      "state_id": "ST34",
+      "district_id": "D422",
+      "name": "MUZAFFARNAGAR",
+      "normalized_name": "Muzaffarnagar"
+    },
+    {
+      "constituency_id": "C465",
+      "state_id": "ST34",
+      "district_id": "D423",
+      "name": "ALIGARH",
+      "normalized_name": "Aligarh"
+    },
+    {
+      "constituency_id": "C466",
+      "state_id": "ST34",
+      "district_id": "D424",
+      "name": "JASWANTNAGAR",
+      "normalized_name": "Jaswantnagar"
+    },
+    {
+      "constituency_id": "C467",
+      "state_id": "ST34",
+      "district_id": "D425",
+      "name": "ALLAHABAD",
+      "normalized_name": "Allahabad"
+    },
+    {
+      "constituency_id": "C468",
+      "state_id": "ST34",
+      "district_id": "D385",
+      "name": "MIRZAPUR",
+      "normalized_name": "Mirzapur"
+    },
+    {
+      "constituency_id": "C469",
+      "state_id": "ST34",
+      "district_id": "D426",
+      "name": "BANDA",
+      "normalized_name": "Banda"
+    },
+    {
+      "constituency_id": "C470",
+      "state_id": "ST34",
+      "district_id": "D427",
+      "name": "BARABANKI",
+      "normalized_name": "Barabanki"
+    },
+    {
+      "constituency_id": "C471",
+      "state_id": "ST34",
+      "district_id": "D428",
+      "name": "KHERI",
+      "normalized_name": "Kheri"
+    },
+    {
+      "constituency_id": "C472",
+      "state_id": "ST34",
+      "district_id": "D418",
+      "name": "BHADOHI",
+      "normalized_name": "Bhadohi"
+    },
+    {
+      "constituency_id": "C473",
+      "state_id": "ST34",
+      "district_id": "D429",
+      "name": "CHANDAULI",
+      "normalized_name": "Chandauli"
+    },
+    {
+      "constituency_id": "C474",
+      "state_id": "ST34",
+      "district_id": "D430",
+      "name": "HARDOI",
+      "normalized_name": "Hardoi"
+    },
+    {
+      "constituency_id": "C475",
+      "state_id": "ST34",
+      "district_id": "D431",
+      "name": "SAMBHAL",
+      "normalized_name": "Sambhal"
+    },
+    {
+      "constituency_id": "C476",
+      "state_id": "ST34",
+      "district_id": "D422",
+      "name": "MUZAFFARNAGAR",
+      "normalized_name": "Muzaffarnagar"
+    },
+    {
+      "constituency_id": "C477",
+      "state_id": "ST34",
+      "district_id": "D387",
+      "name": "MEERUT",
+      "normalized_name": "Meerut"
+    },
+    {
+      "constituency_id": "C478",
+      "state_id": "ST34",
+      "district_id": "D432",
+      "name": "BIJNOR",
+      "normalized_name": "Bijnor"
+    },
+    {
+      "constituency_id": "C479",
+      "state_id": "ST34",
+      "district_id": "D433",
+      "name": "SITAPUR",
+      "normalized_name": "Sitapur"
+    },
+    {
+      "constituency_id": "C480",
+      "state_id": "ST34",
+      "district_id": "D430",
+      "name": "HARDOI",
+      "normalized_name": "Hardoi"
+    },
+    {
+      "constituency_id": "C481",
+      "state_id": "ST34",
+      "district_id": "D413",
+      "name": "MISRIKH",
+      "normalized_name": "Misrikh"
+    },
+    {
+      "constituency_id": "C482",
+      "state_id": "ST34",
+      "district_id": "D434",
+      "name": "UNNAO",
+      "normalized_name": "Unnao"
+    },
+    {
+      "constituency_id": "C483",
+      "state_id": "ST34",
+      "district_id": "D435",
+      "name": "AGRA",
+      "normalized_name": "Agra"
+    },
+    {
+      "constituency_id": "C484",
+      "state_id": "ST34",
+      "district_id": "D436",
+      "name": "JHANSI",
+      "normalized_name": "Jhansi"
+    },
+    {
+      "constituency_id": "C485",
+      "state_id": "ST34",
+      "district_id": "D426",
+      "name": "BANDA",
+      "normalized_name": "Banda"
+    },
+    {
+      "constituency_id": "C486",
+      "state_id": "ST34",
+      "district_id": "D437",
+      "name": "BULANDSHAHR",
+      "normalized_name": "Bulandshahr"
+    },
+    {
+      "constituency_id": "C487",
+      "state_id": "ST34",
+      "district_id": "D437",
+      "name": "BULANDSHAHR",
+      "normalized_name": "Bulandshahr"
+    },
+    {
+      "constituency_id": "C488",
+      "state_id": "ST34",
+      "district_id": "D438",
+      "name": "KANPUR",
+      "normalized_name": "Kanpur"
+    },
+    {
+      "constituency_id": "C489",
+      "state_id": "ST34",
+      "district_id": "D421",
+      "name": "FATEHPUR",
+      "normalized_name": "Fatehpur"
+    },
+    {
+      "constituency_id": "C490",
+      "state_id": "ST34",
+      "district_id": "D425",
+      "name": "ALLAHABAD",
+      "normalized_name": "Allahabad"
+    },
+    {
+      "constituency_id": "C491",
+      "state_id": "ST34",
+      "district_id": "D411",
+      "name": "PHULPUR",
+      "normalized_name": "Phulpur"
+    },
+    {
+      "constituency_id": "C492",
+      "state_id": "ST34",
+      "district_id": "D426",
+      "name": "BANDA",
+      "normalized_name": "Banda"
+    },
+    {
+      "constituency_id": "C493",
+      "state_id": "ST34",
+      "district_id": "D439",
+      "name": "SANT KABIR NAGAR",
+      "normalized_name": "Sant Kabir Nagar"
+    },
+    {
+      "constituency_id": "C494",
+      "state_id": "ST34",
+      "district_id": "D387",
+      "name": "MEERUT",
+      "normalized_name": "Meerut"
+    },
+    {
+      "constituency_id": "C495",
+      "state_id": "ST34",
+      "district_id": "D440",
+      "name": "KUSHI NAGAR",
+      "normalized_name": "Kushi Nagar"
+    },
+    {
+      "constituency_id": "C496",
+      "state_id": "ST34",
+      "district_id": "D441",
+      "name": "DEORIA",
+      "normalized_name": "Deoria"
+    },
+    {
+      "constituency_id": "C497",
+      "state_id": "ST34",
+      "district_id": "D410",
+      "name": "BALLIA",
+      "normalized_name": "Ballia"
+    },
+    {
+      "constituency_id": "C498",
+      "state_id": "ST34",
+      "district_id": "D442",
+      "name": "BANSGAON",
+      "normalized_name": "Bansgaon"
+    },
+    {
+      "constituency_id": "C499",
+      "state_id": "ST34",
+      "district_id": "D393",
+      "name": "AZAMGARH",
+      "normalized_name": "Azamgarh"
+    },
+    {
+      "constituency_id": "C500",
+      "state_id": "ST34",
+      "district_id": "D443",
+      "name": "LALGANJ",
+      "normalized_name": "Lalganj"
+    },
+    {
+      "constituency_id": "C501",
+      "state_id": "ST34",
+      "district_id": "D444",
+      "name": "MACHHLISHAHR",
+      "normalized_name": "Machhlishahr"
+    },
+    {
+      "constituency_id": "C502",
+      "state_id": "ST34",
+      "district_id": "D445",
+      "name": "KAISERGANJ",
+      "normalized_name": "Kaiserganj"
+    },
+    {
+      "constituency_id": "C503",
+      "state_id": "ST34",
+      "district_id": "D445",
+      "name": "KAISERGANJ",
+      "normalized_name": "Kaiserganj"
+    },
+    {
+      "constituency_id": "C504",
+      "state_id": "ST34",
+      "district_id": "D388",
+      "name": "FAIZABAD",
+      "normalized_name": "Faizabad"
+    },
+    {
+      "constituency_id": "C505",
+      "state_id": "ST34",
+      "district_id": "D446",
+      "name": "GONDA",
+      "normalized_name": "Gonda"
+    },
+    {
+      "constituency_id": "C506",
+      "state_id": "ST34",
+      "district_id": "D446",
+      "name": "GONDA",
+      "normalized_name": "Gonda"
+    },
+    {
+      "constituency_id": "C507",
+      "state_id": "ST34",
+      "district_id": "D447",
+      "name": "SHRAWASTI",
+      "normalized_name": "Shrawasti"
+    },
+    {
+      "constituency_id": "C508",
+      "state_id": "ST34",
+      "district_id": "D448",
+      "name": "BAHRAICH",
+      "normalized_name": "Bahraich"
+    },
+    {
+      "constituency_id": "C509",
+      "state_id": "ST35",
+      "district_id": "D449",
+      "name": "NAINITAL-UDHAMSINGH NAGAR",
+      "normalized_name": "Nainital-udhamsingh Nagar"
+    },
+    {
+      "constituency_id": "C510",
+      "state_id": "ST35",
+      "district_id": "D450",
+      "name": "ALMORA",
+      "normalized_name": "Almora"
+    },
+    {
+      "constituency_id": "C511",
+      "state_id": "ST35",
+      "district_id": "D451",
+      "name": "GARHWAL",
+      "normalized_name": "Garhwal"
+    },
+    {
+      "constituency_id": "C512",
+      "state_id": "ST35",
+      "district_id": "D452",
+      "name": "TEHRI GARHWAL",
+      "normalized_name": "Tehri Garhwal"
+    },
+    {
+      "constituency_id": "C513",
+      "state_id": "ST35",
+      "district_id": "D453",
+      "name": "HARIDWAR",
+      "normalized_name": "Haridwar"
+    },
+    {
+      "constituency_id": "C514",
+      "state_id": "ST36",
+      "district_id": "D454",
+      "name": "DIAMOND HARBOUR",
+      "normalized_name": "Diamond Harbour"
+    },
+    {
+      "constituency_id": "C515",
+      "state_id": "ST36",
+      "district_id": "D455",
+      "name": "BAHARAMPUR",
+      "normalized_name": "Baharampur"
+    },
+    {
+      "constituency_id": "C516",
+      "state_id": "ST36",
+      "district_id": "D456",
+      "name": "BOLPUR",
+      "normalized_name": "Bolpur"
+    },
+    {
+      "constituency_id": "C517",
+      "state_id": "ST36",
+      "district_id": "D457",
+      "name": "JAMUI",
+      "normalized_name": "Jamui"
+    },
+    {
+      "constituency_id": "C518",
+      "state_id": "ST36",
+      "district_id": "D456",
+      "name": "BOLPUR",
+      "normalized_name": "Bolpur"
+    },
+    {
+      "constituency_id": "C519",
+      "state_id": "ST36",
+      "district_id": "D458",
+      "name": "GHATAL",
+      "normalized_name": "Ghatal"
+    },
+    {
+      "constituency_id": "C520",
+      "state_id": "ST36",
+      "district_id": "D459",
+      "name": "BARDHAMAN-DURGAPUR",
+      "normalized_name": "Bardhaman-durgapur"
+    },
+    {
+      "constituency_id": "C521",
+      "state_id": "ST36",
+      "district_id": "D460",
+      "name": "RANAGHAT",
+      "normalized_name": "Ranaghat"
+    },
+    {
+      "constituency_id": "C522",
+      "state_id": "ST36",
+      "district_id": "D461",
+      "name": "PURULIA",
+      "normalized_name": "Purulia"
+    },
+    {
+      "constituency_id": "C523",
+      "state_id": "ST36",
+      "district_id": "D462",
+      "name": "SREERAMPUR",
+      "normalized_name": "Sreerampur"
+    },
+    {
+      "constituency_id": "C524",
+      "state_id": "ST36",
+      "district_id": "D463",
+      "name": "JANGIPUR",
+      "normalized_name": "Jangipur"
+    },
+    {
+      "constituency_id": "C525",
+      "state_id": "ST36",
+      "district_id": "D464",
+      "name": "MALDAHA UTTAR",
+      "normalized_name": "Maldaha Uttar"
+    },
+    {
+      "constituency_id": "C526",
+      "state_id": "ST36",
+      "district_id": "D465",
+      "name": "KRISHNANAGAR",
+      "normalized_name": "Krishnanagar"
+    },
+    {
+      "constituency_id": "C527",
+      "state_id": "ST36",
+      "district_id": "D466",
+      "name": "BALURGHAT",
+      "normalized_name": "Balurghat"
+    },
+    {
+      "constituency_id": "C528",
+      "state_id": "ST36",
+      "district_id": "D467",
+      "name": "COOCH BEHAR",
+      "normalized_name": "Cooch Behar"
+    },
+    {
+      "constituency_id": "C529",
+      "state_id": "ST36",
+      "district_id": "D468",
+      "name": "TRIPURA WEST",
+      "normalized_name": "Tripura West"
+    },
+    {
+      "constituency_id": "C530",
+      "state_id": "ST36",
+      "district_id": "D469",
+      "name": "HOWRAH",
+      "normalized_name": "Howrah"
+    },
+    {
+      "constituency_id": "C531",
+      "state_id": "ST36",
+      "district_id": "D470",
+      "name": "DARJEELING",
+      "normalized_name": "Darjeeling"
+    },
+    {
+      "constituency_id": "C532",
+      "state_id": "ST36",
+      "district_id": "D471",
+      "name": "TONK-SAWAI MADHOPUR",
+      "normalized_name": "Tonk-sawai Madhopur"
+    },
+    {
+      "constituency_id": "C533",
+      "state_id": "ST36",
+      "district_id": "D472",
+      "name": "BIRBHUM",
+      "normalized_name": "Birbhum"
+    },
+    {
+      "constituency_id": "C534",
+      "state_id": "ST36",
+      "district_id": "D473",
+      "name": "BISHNUPUR",
+      "normalized_name": "Bishnupur"
+    },
+    {
+      "constituency_id": "C535",
+      "state_id": "ST36",
+      "district_id": "D474",
+      "name": "JADAVPUR",
+      "normalized_name": "Jadavpur"
+    },
+    {
+      "constituency_id": "C536",
+      "state_id": "ST36",
+      "district_id": "D475",
+      "name": "BANGAON",
+      "normalized_name": "Bangaon"
+    },
+    {
+      "constituency_id": "C537",
+      "state_id": "ST36",
+      "district_id": "D476",
+      "name": "ASANSOL",
+      "normalized_name": "Asansol"
+    },
+    {
+      "constituency_id": "C538",
+      "state_id": "ST36",
+      "district_id": "D466",
+      "name": "BALURGHAT",
+      "normalized_name": "Balurghat"
+    },
+    {
+      "constituency_id": "C539",
+      "state_id": "ST36",
+      "district_id": "D477",
+      "name": "KOLKATA UTTAR",
+      "normalized_name": "Kolkata Uttar"
+    },
+    {
+      "constituency_id": "C540",
+      "state_id": "ST36",
+      "district_id": "D474",
+      "name": "JADAVPUR",
+      "normalized_name": "Jadavpur"
+    },
+    {
+      "constituency_id": "C541",
+      "state_id": "ST36",
+      "district_id": "D455",
+      "name": "BAHARAMPUR",
+      "normalized_name": "Baharampur"
+    },
+    {
+      "constituency_id": "C542",
+      "state_id": "ST36",
+      "district_id": "D478",
+      "name": "BARRACKPORE",
+      "normalized_name": "Barrackpore"
+    },
+    {
+      "constituency_id": "C543",
+      "state_id": "ST36",
+      "district_id": "D459",
+      "name": "BARDHAMAN-DURGAPUR",
+      "normalized_name": "Bardhaman-durgapur"
+    }
+  ]
+}

@@ -1,0 +1,2530 @@
+{
+  "_metadata": {
+    "exported_at": "2026-08-27T17:17:21.840Z",
+    "source": "SIH26102 MPLADS Audit Intelligence Pipeline",
+    "total_records": 252,
+    "schema_version": "v2.6"
+  },
+  "records": [
+    {
+      "ia_id": "IA001",
+      "name": "Andaman & Nicobar Islands PWD Executive Division",
+      "normalized_name": "Andaman & Nicobar Islands PWD Executive Division",
+      "agency_type": "PWD",
+      "state_id": "ST01",
+      "projects_count": 4,
+      "total_budget_handled": 16250000,
+      "hhi_score": 323
+    },
+    {
+      "ia_id": "IA002",
+      "name": "Andaman & Nicobar Islands DRDA Executive Division",
+      "normalized_name": "Andaman & Nicobar Islands DRDA Executive Division",
+      "agency_type": "DRDA",
+      "state_id": "ST01",
+      "projects_count": 1,
+      "total_budget_handled": 5940000,
+      "hhi_score": 43
+    },
+    {
+      "ia_id": "IA003",
+      "name": "Andaman & Nicobar Islands MUNICIPAL Executive Division",
+      "normalized_name": "Andaman & Nicobar Islands MUNICIPAL Executive Division",
+      "agency_type": "MUNICIPAL",
+      "state_id": "ST01",
+      "projects_count": 8,
+      "total_budget_handled": 28200000,
+      "hhi_score": 973
+    },
+    {
+      "ia_id": "IA004",
+      "name": "Andaman & Nicobar Islands PHED Executive Division",
+      "normalized_name": "Andaman & Nicobar Islands PHED Executive Division",
+      "agency_type": "PHED",
+      "state_id": "ST01",
+      "projects_count": 3,
+      "total_budget_handled": 12930000,
+      "hhi_score": 204
+    },
+    {
+      "ia_id": "IA005",
+      "name": "Andaman & Nicobar Islands ZILLA_PARISHAD Executive Division",
+      "normalized_name": "Andaman & Nicobar Islands ZILLA_PARISHAD Executive Division",
+      "agency_type": "ZILLA_PARISHAD",
+      "state_id": "ST01",
+      "projects_count": 1,
+      "total_budget_handled": 4110000,
+      "hhi_score": 21
+    },
+    {
+      "ia_id": "IA006",
+      "name": "Andaman & Nicobar Islands ELECTRICITY Executive Division",
+      "normalized_name": "Andaman & Nicobar Islands ELECTRICITY Executive Division",
+      "agency_type": "ELECTRICITY",
+      "state_id": "ST01",
+      "projects_count": 3,
+      "total_budget_handled": 12820000,
+      "hhi_score": 201
+    },
+    {
+      "ia_id": "IA007",
+      "name": "Andaman & Nicobar Islands IRRIGATION Executive Division",
+      "normalized_name": "Andaman & Nicobar Islands IRRIGATION Executive Division",
+      "agency_type": "IRRIGATION",
+      "state_id": "ST01",
+      "projects_count": 2,
+      "total_budget_handled": 10170000,
+      "hhi_score": 127
+    },
+    {
+      "ia_id": "IA008",
+      "name": "Andhra Pradesh PWD Executive Division",
+      "normalized_name": "Andhra Pradesh PWD Executive Division",
+      "agency_type": "PWD",
+      "state_id": "ST02",
+      "projects_count": 74,
+      "total_budget_handled": 318410000,
+      "hhi_score": 200
+    },
+    {
+      "ia_id": "IA009",
+      "name": "Andhra Pradesh DRDA Executive Division",
+      "normalized_name": "Andhra Pradesh DRDA Executive Division",
+      "agency_type": "DRDA",
+      "state_id": "ST02",
+      "projects_count": 70,
+      "total_budget_handled": 333160000,
+      "hhi_score": 219
+    },
+    {
+      "ia_id": "IA010",
+      "name": "Andhra Pradesh MUNICIPAL Executive Division",
+      "normalized_name": "Andhra Pradesh MUNICIPAL Executive Division",
+      "agency_type": "MUNICIPAL",
+      "state_id": "ST02",
+      "projects_count": 70,
+      "total_budget_handled": 371040000,
+      "hhi_score": 272
+    },
+    {
+      "ia_id": "IA011",
+      "name": "Andhra Pradesh PHED Executive Division",
+      "normalized_name": "Andhra Pradesh PHED Executive Division",
+      "agency_type": "PHED",
+      "state_id": "ST02",
+      "projects_count": 57,
+      "total_budget_handled": 278940000,
+      "hhi_score": 154
+    },
+    {
+      "ia_id": "IA012",
+      "name": "Andhra Pradesh ZILLA_PARISHAD Executive Division",
+      "normalized_name": "Andhra Pradesh ZILLA_PARISHAD Executive Division",
+      "agency_type": "ZILLA_PARISHAD",
+      "state_id": "ST02",
+      "projects_count": 57,
+      "total_budget_handled": 326640000,
+      "hhi_score": 211
+    },
+    {
+      "ia_id": "IA013",
+      "name": "Andhra Pradesh ELECTRICITY Executive Division",
+      "normalized_name": "Andhra Pradesh ELECTRICITY Executive Division",
+      "agency_type": "ELECTRICITY",
+      "state_id": "ST02",
+      "projects_count": 58,
+      "total_budget_handled": 266890000,
+      "hhi_score": 141
+    },
+    {
+      "ia_id": "IA014",
+      "name": "Andhra Pradesh IRRIGATION Executive Division",
+      "normalized_name": "Andhra Pradesh IRRIGATION Executive Division",
+      "agency_type": "IRRIGATION",
+      "state_id": "ST02",
+      "projects_count": 73,
+      "total_budget_handled": 355570000,
+      "hhi_score": 250
+    },
+    {
+      "ia_id": "IA015",
+      "name": "Arunachal Pradesh PWD Executive Division",
+      "normalized_name": "Arunachal Pradesh PWD Executive Division",
+      "agency_type": "PWD",
+      "state_id": "ST03",
+      "projects_count": 8,
+      "total_budget_handled": 32880000,
+      "hhi_score": 317
+    },
+    {
+      "ia_id": "IA016",
+      "name": "Arunachal Pradesh DRDA Executive Division",
+      "normalized_name": "Arunachal Pradesh DRDA Executive Division",
+      "agency_type": "DRDA",
+      "state_id": "ST03",
+      "projects_count": 4,
+      "total_budget_handled": 15950000,
+      "hhi_score": 75
+    },
+    {
+      "ia_id": "IA017",
+      "name": "Arunachal Pradesh MUNICIPAL Executive Division",
+      "normalized_name": "Arunachal Pradesh MUNICIPAL Executive Division",
+      "agency_type": "MUNICIPAL",
+      "state_id": "ST03",
+      "projects_count": 9,
+      "total_budget_handled": 40430000,
+      "hhi_score": 479
+    },
+    {
+      "ia_id": "IA018",
+      "name": "Arunachal Pradesh PHED Executive Division",
+      "normalized_name": "Arunachal Pradesh PHED Executive Division",
+      "agency_type": "PHED",
+      "state_id": "ST03",
+      "projects_count": 5,
+      "total_budget_handled": 23250000,
+      "hhi_score": 158
+    },
+    {
+      "ia_id": "IA019",
+      "name": "Arunachal Pradesh ZILLA_PARISHAD Executive Division",
+      "normalized_name": "Arunachal Pradesh ZILLA_PARISHAD Executive Division",
+      "agency_type": "ZILLA_PARISHAD",
+      "state_id": "ST03",
+      "projects_count": 5,
+      "total_budget_handled": 27040000,
+      "hhi_score": 214
+    },
+    {
+      "ia_id": "IA020",
+      "name": "Arunachal Pradesh ELECTRICITY Executive Division",
+      "normalized_name": "Arunachal Pradesh ELECTRICITY Executive Division",
+      "agency_type": "ELECTRICITY",
+      "state_id": "ST03",
+      "projects_count": 5,
+      "total_budget_handled": 20900000,
+      "hhi_score": 128
+    },
+    {
+      "ia_id": "IA021",
+      "name": "Arunachal Pradesh IRRIGATION Executive Division",
+      "normalized_name": "Arunachal Pradesh IRRIGATION Executive Division",
+      "agency_type": "IRRIGATION",
+      "state_id": "ST03",
+      "projects_count": 5,
+      "total_budget_handled": 24270000,
+      "hhi_score": 173
+    },
+    {
+      "ia_id": "IA022",
+      "name": "Assam PWD Executive Division",
+      "normalized_name": "Assam PWD Executive Division",
+      "agency_type": "PWD",
+      "state_id": "ST04",
+      "projects_count": 44,
+      "total_budget_handled": 183760000,
+      "hhi_score": 239
+    },
+    {
+      "ia_id": "IA023",
+      "name": "Assam DRDA Executive Division",
+      "normalized_name": "Assam DRDA Executive Division",
+      "agency_type": "DRDA",
+      "state_id": "ST04",
+      "projects_count": 45,
+      "total_budget_handled": 191400000,
+      "hhi_score": 259
+    },
+    {
+      "ia_id": "IA024",
+      "name": "Assam MUNICIPAL Executive Division",
+      "normalized_name": "Assam MUNICIPAL Executive Division",
+      "agency_type": "MUNICIPAL",
+      "state_id": "ST04",
+      "projects_count": 33,
+      "total_budget_handled": 150230000,
+      "hhi_score": 160
+    },
+    {
+      "ia_id": "IA025",
+      "name": "Assam PHED Executive Division",
+      "normalized_name": "Assam PHED Executive Division",
+      "agency_type": "PHED",
+      "state_id": "ST04",
+      "projects_count": 42,
+      "total_budget_handled": 194390000,
+      "hhi_score": 267
+    },
+    {
+      "ia_id": "IA026",
+      "name": "Assam ZILLA_PARISHAD Executive Division",
+      "normalized_name": "Assam ZILLA_PARISHAD Executive Division",
+      "agency_type": "ZILLA_PARISHAD",
+      "state_id": "ST04",
+      "projects_count": 37,
+      "total_budget_handled": 159370000,
+      "hhi_score": 180
+    },
+    {
+      "ia_id": "IA027",
+      "name": "Assam ELECTRICITY Executive Division",
+      "normalized_name": "Assam ELECTRICITY Executive Division",
+      "agency_type": "ELECTRICITY",
+      "state_id": "ST04",
+      "projects_count": 26,
+      "total_budget_handled": 121660000,
+      "hhi_score": 105
+    },
+    {
+      "ia_id": "IA028",
+      "name": "Assam IRRIGATION Executive Division",
+      "normalized_name": "Assam IRRIGATION Executive Division",
+      "agency_type": "IRRIGATION",
+      "state_id": "ST04",
+      "projects_count": 42,
+      "total_budget_handled": 188250000,
+      "hhi_score": 251
+    },
+    {
+      "ia_id": "IA029",
+      "name": "Bihar PWD Executive Division",
+      "normalized_name": "Bihar PWD Executive Division",
+      "agency_type": "PWD",
+      "state_id": "ST05",
+      "projects_count": 112,
+      "total_budget_handled": 531050000,
+      "hhi_score": 246
+    },
+    {
+      "ia_id": "IA030",
+      "name": "Bihar DRDA Executive Division",
+      "normalized_name": "Bihar DRDA Executive Division",
+      "agency_type": "DRDA",
+      "state_id": "ST05",
+      "projects_count": 101,
+      "total_budget_handled": 454850000,
+      "hhi_score": 180
+    },
+    {
+      "ia_id": "IA031",
+      "name": "Bihar MUNICIPAL Executive Division",
+      "normalized_name": "Bihar MUNICIPAL Executive Division",
+      "agency_type": "MUNICIPAL",
+      "state_id": "ST05",
+      "projects_count": 109,
+      "total_budget_handled": 493030000,
+      "hhi_score": 212
+    },
+    {
+      "ia_id": "IA032",
+      "name": "Bihar PHED Executive Division",
+      "normalized_name": "Bihar PHED Executive Division",
+      "agency_type": "PHED",
+      "state_id": "ST05",
+      "projects_count": 99,
+      "total_budget_handled": 465140000,
+      "hhi_score": 188
+    },
+    {
+      "ia_id": "IA033",
+      "name": "Bihar ZILLA_PARISHAD Executive Division",
+      "normalized_name": "Bihar ZILLA_PARISHAD Executive Division",
+      "agency_type": "ZILLA_PARISHAD",
+      "state_id": "ST05",
+      "projects_count": 109,
+      "total_budget_handled": 518350000,
+      "hhi_score": 234
+    },
+    {
+      "ia_id": "IA034",
+      "name": "Bihar ELECTRICITY Executive Division",
+      "normalized_name": "Bihar ELECTRICITY Executive Division",
+      "agency_type": "ELECTRICITY",
+      "state_id": "ST05",
+      "projects_count": 106,
+      "total_budget_handled": 476900000,
+      "hhi_score": 198
+    },
+    {
+      "ia_id": "IA035",
+      "name": "Bihar IRRIGATION Executive Division",
+      "normalized_name": "Bihar IRRIGATION Executive Division",
+      "agency_type": "IRRIGATION",
+      "state_id": "ST05",
+      "projects_count": 103,
+      "total_budget_handled": 449260000,
+      "hhi_score": 176
+    },
+    {
+      "ia_id": "IA036",
+      "name": "Chandigarh PWD Executive Division",
+      "normalized_name": "Chandigarh PWD Executive Division",
+      "agency_type": "PWD",
+      "state_id": "ST06",
+      "projects_count": 3,
+      "total_budget_handled": 9800000,
+      "hhi_score": 116
+    },
+    {
+      "ia_id": "IA037",
+      "name": "Chandigarh DRDA Executive Division",
+      "normalized_name": "Chandigarh DRDA Executive Division",
+      "agency_type": "DRDA",
+      "state_id": "ST06",
+      "projects_count": 5,
+      "total_budget_handled": 18280000,
+      "hhi_score": 403
+    },
+    {
+      "ia_id": "IA038",
+      "name": "Chandigarh MUNICIPAL Executive Division",
+      "normalized_name": "Chandigarh MUNICIPAL Executive Division",
+      "agency_type": "MUNICIPAL",
+      "state_id": "ST06",
+      "projects_count": 0,
+      "total_budget_handled": 0,
+      "hhi_score": 0
+    },
+    {
+      "ia_id": "IA039",
+      "name": "Chandigarh PHED Executive Division",
+      "normalized_name": "Chandigarh PHED Executive Division",
+      "agency_type": "PHED",
+      "state_id": "ST06",
+      "projects_count": 5,
+      "total_budget_handled": 28380000,
+      "hhi_score": 972
+    },
+    {
+      "ia_id": "IA040",
+      "name": "Chandigarh ZILLA_PARISHAD Executive Division",
+      "normalized_name": "Chandigarh ZILLA_PARISHAD Executive Division",
+      "agency_type": "ZILLA_PARISHAD",
+      "state_id": "ST06",
+      "projects_count": 6,
+      "total_budget_handled": 23880000,
+      "hhi_score": 688
+    },
+    {
+      "ia_id": "IA041",
+      "name": "Chandigarh ELECTRICITY Executive Division",
+      "normalized_name": "Chandigarh ELECTRICITY Executive Division",
+      "agency_type": "ELECTRICITY",
+      "state_id": "ST06",
+      "projects_count": 3,
+      "total_budget_handled": 10690000,
+      "hhi_score": 138
+    },
+    {
+      "ia_id": "IA042",
+      "name": "Chandigarh IRRIGATION Executive Division",
+      "normalized_name": "Chandigarh IRRIGATION Executive Division",
+      "agency_type": "IRRIGATION",
+      "state_id": "ST06",
+      "projects_count": 0,
+      "total_budget_handled": 0,
+      "hhi_score": 0
+    },
+    {
+      "ia_id": "IA043",
+      "name": "Chhattisgarh PWD Executive Division",
+      "normalized_name": "Chhattisgarh PWD Executive Division",
+      "agency_type": "PWD",
+      "state_id": "ST07",
+      "projects_count": 30,
+      "total_budget_handled": 131850000,
+      "hhi_score": 164
+    },
+    {
+      "ia_id": "IA044",
+      "name": "Chhattisgarh DRDA Executive Division",
+      "normalized_name": "Chhattisgarh DRDA Executive Division",
+      "agency_type": "DRDA",
+      "state_id": "ST07",
+      "projects_count": 30,
+      "total_budget_handled": 140000000,
+      "hhi_score": 185
+    },
+    {
+      "ia_id": "IA045",
+      "name": "Chhattisgarh MUNICIPAL Executive Division",
+      "normalized_name": "Chhattisgarh MUNICIPAL Executive Division",
+      "agency_type": "MUNICIPAL",
+      "state_id": "ST07",
+      "projects_count": 28,
+      "total_budget_handled": 125330000,
+      "hhi_score": 148
+    },
+    {
+      "ia_id": "IA046",
+      "name": "Chhattisgarh PHED Executive Division",
+      "normalized_name": "Chhattisgarh PHED Executive Division",
+      "agency_type": "PHED",
+      "state_id": "ST07",
+      "projects_count": 40,
+      "total_budget_handled": 234850000,
+      "hhi_score": 520
+    },
+    {
+      "ia_id": "IA047",
+      "name": "Chhattisgarh ZILLA_PARISHAD Executive Division",
+      "normalized_name": "Chhattisgarh ZILLA_PARISHAD Executive Division",
+      "agency_type": "ZILLA_PARISHAD",
+      "state_id": "ST07",
+      "projects_count": 30,
+      "total_budget_handled": 141170000,
+      "hhi_score": 188
+    },
+    {
+      "ia_id": "IA048",
+      "name": "Chhattisgarh ELECTRICITY Executive Division",
+      "normalized_name": "Chhattisgarh ELECTRICITY Executive Division",
+      "agency_type": "ELECTRICITY",
+      "state_id": "ST07",
+      "projects_count": 27,
+      "total_budget_handled": 154150000,
+      "hhi_score": 224
+    },
+    {
+      "ia_id": "IA049",
+      "name": "Chhattisgarh IRRIGATION Executive Division",
+      "normalized_name": "Chhattisgarh IRRIGATION Executive Division",
+      "agency_type": "IRRIGATION",
+      "state_id": "ST07",
+      "projects_count": 26,
+      "total_budget_handled": 102450000,
+      "hhi_score": 99
+    },
+    {
+      "ia_id": "IA050",
+      "name": "Dadra & Nagar Haveli & Daman & Diu PWD Executive Division",
+      "normalized_name": "Dadra & Nagar Haveli & Daman & Diu PWD Executive Division",
+      "agency_type": "PWD",
+      "state_id": "ST08",
+      "projects_count": 1,
+      "total_budget_handled": 4410000,
+      "hhi_score": 9
+    },
+    {
+      "ia_id": "IA051",
+      "name": "Dadra & Nagar Haveli & Daman & Diu DRDA Executive Division",
+      "normalized_name": "Dadra & Nagar Haveli & Daman & Diu DRDA Executive Division",
+      "agency_type": "DRDA",
+      "state_id": "ST08",
+      "projects_count": 3,
+      "total_budget_handled": 15950000,
+      "hhi_score": 112
+    },
+    {
+      "ia_id": "IA052",
+      "name": "Dadra & Nagar Haveli & Daman & Diu MUNICIPAL Executive Division",
+      "normalized_name": "Dadra & Nagar Haveli & Daman & Diu MUNICIPAL Executive Division",
+      "agency_type": "MUNICIPAL",
+      "state_id": "ST08",
+      "projects_count": 6,
+      "total_budget_handled": 24970000,
+      "hhi_score": 276
+    },
+    {
+      "ia_id": "IA053",
+      "name": "Dadra & Nagar Haveli & Daman & Diu PHED Executive Division",
+      "normalized_name": "Dadra & Nagar Haveli & Daman & Diu PHED Executive Division",
+      "agency_type": "PHED",
+      "state_id": "ST08",
+      "projects_count": 6,
+      "total_budget_handled": 22500000,
+      "hhi_score": 224
+    },
+    {
+      "ia_id": "IA054",
+      "name": "Dadra & Nagar Haveli & Daman & Diu ZILLA_PARISHAD Executive Division",
+      "normalized_name": "Dadra & Nagar Haveli & Daman & Diu ZILLA_PARISHAD Executive Division",
+      "agency_type": "ZILLA_PARISHAD",
+      "state_id": "ST08",
+      "projects_count": 4,
+      "total_budget_handled": 17920000,
+      "hhi_score": 142
+    },
+    {
+      "ia_id": "IA055",
+      "name": "Dadra & Nagar Haveli & Daman & Diu ELECTRICITY Executive Division",
+      "normalized_name": "Dadra & Nagar Haveli & Daman & Diu ELECTRICITY Executive Division",
+      "agency_type": "ELECTRICITY",
+      "state_id": "ST08",
+      "projects_count": 7,
+      "total_budget_handled": 33260000,
+      "hhi_score": 489
+    },
+    {
+      "ia_id": "IA056",
+      "name": "Dadra & Nagar Haveli & Daman & Diu IRRIGATION Executive Division",
+      "normalized_name": "Dadra & Nagar Haveli & Daman & Diu IRRIGATION Executive Division",
+      "agency_type": "IRRIGATION",
+      "state_id": "ST08",
+      "projects_count": 9,
+      "total_budget_handled": 31380000,
+      "hhi_score": 435
+    },
+    {
+      "ia_id": "IA057",
+      "name": "Delhi (NCT) PWD Executive Division",
+      "normalized_name": "Delhi (NCT) PWD Executive Division",
+      "agency_type": "PWD",
+      "state_id": "ST09",
+      "projects_count": 24,
+      "total_budget_handled": 105460000,
+      "hhi_score": 263
+    },
+    {
+      "ia_id": "IA058",
+      "name": "Delhi (NCT) DRDA Executive Division",
+      "normalized_name": "Delhi (NCT) DRDA Executive Division",
+      "agency_type": "DRDA",
+      "state_id": "ST09",
+      "projects_count": 21,
+      "total_budget_handled": 106750000,
+      "hhi_score": 270
+    },
+    {
+      "ia_id": "IA059",
+      "name": "Delhi (NCT) MUNICIPAL Executive Division",
+      "normalized_name": "Delhi (NCT) MUNICIPAL Executive Division",
+      "agency_type": "MUNICIPAL",
+      "state_id": "ST09",
+      "projects_count": 18,
+      "total_budget_handled": 107920000,
+      "hhi_score": 276
+    },
+    {
+      "ia_id": "IA060",
+      "name": "Delhi (NCT) PHED Executive Division",
+      "normalized_name": "Delhi (NCT) PHED Executive Division",
+      "agency_type": "PHED",
+      "state_id": "ST09",
+      "projects_count": 19,
+      "total_budget_handled": 84040000,
+      "hhi_score": 167
+    },
+    {
+      "ia_id": "IA061",
+      "name": "Delhi (NCT) ZILLA_PARISHAD Executive Division",
+      "normalized_name": "Delhi (NCT) ZILLA_PARISHAD Executive Division",
+      "agency_type": "ZILLA_PARISHAD",
+      "state_id": "ST09",
+      "projects_count": 17,
+      "total_budget_handled": 81020000,
+      "hhi_score": 155
+    },
+    {
+      "ia_id": "IA062",
+      "name": "Delhi (NCT) ELECTRICITY Executive Division",
+      "normalized_name": "Delhi (NCT) ELECTRICITY Executive Division",
+      "agency_type": "ELECTRICITY",
+      "state_id": "ST09",
+      "projects_count": 12,
+      "total_budget_handled": 53440000,
+      "hhi_score": 68
+    },
+    {
+      "ia_id": "IA063",
+      "name": "Delhi (NCT) IRRIGATION Executive Division",
+      "normalized_name": "Delhi (NCT) IRRIGATION Executive Division",
+      "agency_type": "IRRIGATION",
+      "state_id": "ST09",
+      "projects_count": 19,
+      "total_budget_handled": 111150000,
+      "hhi_score": 293
+    },
+    {
+      "ia_id": "IA064",
+      "name": "Goa PWD Executive Division",
+      "normalized_name": "Goa PWD Executive Division",
+      "agency_type": "PWD",
+      "state_id": "ST10",
+      "projects_count": 6,
+      "total_budget_handled": 24440000,
+      "hhi_score": 211
+    },
+    {
+      "ia_id": "IA065",
+      "name": "Goa DRDA Executive Division",
+      "normalized_name": "Goa DRDA Executive Division",
+      "agency_type": "DRDA",
+      "state_id": "ST10",
+      "projects_count": 4,
+      "total_budget_handled": 18310000,
+      "hhi_score": 118
+    },
+    {
+      "ia_id": "IA066",
+      "name": "Goa MUNICIPAL Executive Division",
+      "normalized_name": "Goa MUNICIPAL Executive Division",
+      "agency_type": "MUNICIPAL",
+      "state_id": "ST10",
+      "projects_count": 8,
+      "total_budget_handled": 31700000,
+      "hhi_score": 355
+    },
+    {
+      "ia_id": "IA067",
+      "name": "Goa PHED Executive Division",
+      "normalized_name": "Goa PHED Executive Division",
+      "agency_type": "PHED",
+      "state_id": "ST10",
+      "projects_count": 1,
+      "total_budget_handled": 2190000,
+      "hhi_score": 2
+    },
+    {
+      "ia_id": "IA068",
+      "name": "Goa ZILLA_PARISHAD Executive Division",
+      "normalized_name": "Goa ZILLA_PARISHAD Executive Division",
+      "agency_type": "ZILLA_PARISHAD",
+      "state_id": "ST10",
+      "projects_count": 6,
+      "total_budget_handled": 29760000,
+      "hhi_score": 313
+    },
+    {
+      "ia_id": "IA069",
+      "name": "Goa ELECTRICITY Executive Division",
+      "normalized_name": "Goa ELECTRICITY Executive Division",
+      "agency_type": "ELECTRICITY",
+      "state_id": "ST10",
+      "projects_count": 5,
+      "total_budget_handled": 19940000,
+      "hhi_score": 140
+    },
+    {
+      "ia_id": "IA070",
+      "name": "Goa IRRIGATION Executive Division",
+      "normalized_name": "Goa IRRIGATION Executive Division",
+      "agency_type": "IRRIGATION",
+      "state_id": "ST10",
+      "projects_count": 8,
+      "total_budget_handled": 41910000,
+      "hhi_score": 620
+    },
+    {
+      "ia_id": "IA071",
+      "name": "Gujarat PWD Executive Division",
+      "normalized_name": "Gujarat PWD Executive Division",
+      "agency_type": "PWD",
+      "state_id": "ST11",
+      "projects_count": 80,
+      "total_budget_handled": 381620000,
+      "hhi_score": 277
+    },
+    {
+      "ia_id": "IA072",
+      "name": "Gujarat DRDA Executive Division",
+      "normalized_name": "Gujarat DRDA Executive Division",
+      "agency_type": "DRDA",
+      "state_id": "ST11",
+      "projects_count": 72,
+      "total_budget_handled": 289220000,
+      "hhi_score": 159
+    },
+    {
+      "ia_id": "IA073",
+      "name": "Gujarat MUNICIPAL Executive Division",
+      "normalized_name": "Gujarat MUNICIPAL Executive Division",
+      "agency_type": "MUNICIPAL",
+      "state_id": "ST11",
+      "projects_count": 75,
+      "total_budget_handled": 371970000,
+      "hhi_score": 263
+    },
+    {
+      "ia_id": "IA074",
+      "name": "Gujarat PHED Executive Division",
+      "normalized_name": "Gujarat PHED Executive Division",
+      "agency_type": "PHED",
+      "state_id": "ST11",
+      "projects_count": 60,
+      "total_budget_handled": 270360000,
+      "hhi_score": 139
+    },
+    {
+      "ia_id": "IA075",
+      "name": "Gujarat ZILLA_PARISHAD Executive Division",
+      "normalized_name": "Gujarat ZILLA_PARISHAD Executive Division",
+      "agency_type": "ZILLA_PARISHAD",
+      "state_id": "ST11",
+      "projects_count": 60,
+      "total_budget_handled": 257860000,
+      "hhi_score": 126
+    },
+    {
+      "ia_id": "IA076",
+      "name": "Gujarat ELECTRICITY Executive Division",
+      "normalized_name": "Gujarat ELECTRICITY Executive Division",
+      "agency_type": "ELECTRICITY",
+      "state_id": "ST11",
+      "projects_count": 54,
+      "total_budget_handled": 251340000,
+      "hhi_score": 120
+    },
+    {
+      "ia_id": "IA077",
+      "name": "Gujarat IRRIGATION Executive Division",
+      "normalized_name": "Gujarat IRRIGATION Executive Division",
+      "agency_type": "IRRIGATION",
+      "state_id": "ST11",
+      "projects_count": 93,
+      "total_budget_handled": 470510000,
+      "hhi_score": 421
+    },
+    {
+      "ia_id": "IA078",
+      "name": "Haryana PWD Executive Division",
+      "normalized_name": "Haryana PWD Executive Division",
+      "agency_type": "PWD",
+      "state_id": "ST12",
+      "projects_count": 36,
+      "total_budget_handled": 197200000,
+      "hhi_score": 443
+    },
+    {
+      "ia_id": "IA079",
+      "name": "Haryana DRDA Executive Division",
+      "normalized_name": "Haryana DRDA Executive Division",
+      "agency_type": "DRDA",
+      "state_id": "ST12",
+      "projects_count": 26,
+      "total_budget_handled": 124080000,
+      "hhi_score": 175
+    },
+    {
+      "ia_id": "IA080",
+      "name": "Haryana MUNICIPAL Executive Division",
+      "normalized_name": "Haryana MUNICIPAL Executive Division",
+      "agency_type": "MUNICIPAL",
+      "state_id": "ST12",
+      "projects_count": 25,
+      "total_budget_handled": 96870000,
+      "hhi_score": 107
+    },
+    {
+      "ia_id": "IA081",
+      "name": "Haryana PHED Executive Division",
+      "normalized_name": "Haryana PHED Executive Division",
+      "agency_type": "PHED",
+      "state_id": "ST12",
+      "projects_count": 32,
+      "total_budget_handled": 141290000,
+      "hhi_score": 227
+    },
+    {
+      "ia_id": "IA082",
+      "name": "Haryana ZILLA_PARISHAD Executive Division",
+      "normalized_name": "Haryana ZILLA_PARISHAD Executive Division",
+      "agency_type": "ZILLA_PARISHAD",
+      "state_id": "ST12",
+      "projects_count": 21,
+      "total_budget_handled": 100280000,
+      "hhi_score": 115
+    },
+    {
+      "ia_id": "IA083",
+      "name": "Haryana ELECTRICITY Executive Division",
+      "normalized_name": "Haryana ELECTRICITY Executive Division",
+      "agency_type": "ELECTRICITY",
+      "state_id": "ST12",
+      "projects_count": 29,
+      "total_budget_handled": 137020000,
+      "hhi_score": 214
+    },
+    {
+      "ia_id": "IA084",
+      "name": "Haryana IRRIGATION Executive Division",
+      "normalized_name": "Haryana IRRIGATION Executive Division",
+      "agency_type": "IRRIGATION",
+      "state_id": "ST12",
+      "projects_count": 18,
+      "total_budget_handled": 140410000,
+      "hhi_score": 224
+    },
+    {
+      "ia_id": "IA085",
+      "name": "Himachal Pradesh PWD Executive Division",
+      "normalized_name": "Himachal Pradesh PWD Executive Division",
+      "agency_type": "PWD",
+      "state_id": "ST13",
+      "projects_count": 11,
+      "total_budget_handled": 53570000,
+      "hhi_score": 234
+    },
+    {
+      "ia_id": "IA086",
+      "name": "Himachal Pradesh DRDA Executive Division",
+      "normalized_name": "Himachal Pradesh DRDA Executive Division",
+      "agency_type": "DRDA",
+      "state_id": "ST13",
+      "projects_count": 13,
+      "total_budget_handled": 62250000,
+      "hhi_score": 316
+    },
+    {
+      "ia_id": "IA087",
+      "name": "Himachal Pradesh MUNICIPAL Executive Division",
+      "normalized_name": "Himachal Pradesh MUNICIPAL Executive Division",
+      "agency_type": "MUNICIPAL",
+      "state_id": "ST13",
+      "projects_count": 10,
+      "total_budget_handled": 54870000,
+      "hhi_score": 245
+    },
+    {
+      "ia_id": "IA088",
+      "name": "Himachal Pradesh PHED Executive Division",
+      "normalized_name": "Himachal Pradesh PHED Executive Division",
+      "agency_type": "PHED",
+      "state_id": "ST13",
+      "projects_count": 7,
+      "total_budget_handled": 34530000,
+      "hhi_score": 97
+    },
+    {
+      "ia_id": "IA089",
+      "name": "Himachal Pradesh ZILLA_PARISHAD Executive Division",
+      "normalized_name": "Himachal Pradesh ZILLA_PARISHAD Executive Division",
+      "agency_type": "ZILLA_PARISHAD",
+      "state_id": "ST13",
+      "projects_count": 8,
+      "total_budget_handled": 34120000,
+      "hhi_score": 95
+    },
+    {
+      "ia_id": "IA090",
+      "name": "Himachal Pradesh ELECTRICITY Executive Division",
+      "normalized_name": "Himachal Pradesh ELECTRICITY Executive Division",
+      "agency_type": "ELECTRICITY",
+      "state_id": "ST13",
+      "projects_count": 13,
+      "total_budget_handled": 56920000,
+      "hhi_score": 264
+    },
+    {
+      "ia_id": "IA091",
+      "name": "Himachal Pradesh IRRIGATION Executive Division",
+      "normalized_name": "Himachal Pradesh IRRIGATION Executive Division",
+      "agency_type": "IRRIGATION",
+      "state_id": "ST13",
+      "projects_count": 10,
+      "total_budget_handled": 54040000,
+      "hhi_score": 238
+    },
+    {
+      "ia_id": "IA092",
+      "name": "Jammu & Kashmir PWD Executive Division",
+      "normalized_name": "Jammu & Kashmir PWD Executive Division",
+      "agency_type": "PWD",
+      "state_id": "ST14",
+      "projects_count": 11,
+      "total_budget_handled": 45540000,
+      "hhi_score": 87
+    },
+    {
+      "ia_id": "IA093",
+      "name": "Jammu & Kashmir DRDA Executive Division",
+      "normalized_name": "Jammu & Kashmir DRDA Executive Division",
+      "agency_type": "DRDA",
+      "state_id": "ST14",
+      "projects_count": 14,
+      "total_budget_handled": 71700000,
+      "hhi_score": 216
+    },
+    {
+      "ia_id": "IA094",
+      "name": "Jammu & Kashmir MUNICIPAL Executive Division",
+      "normalized_name": "Jammu & Kashmir MUNICIPAL Executive Division",
+      "agency_type": "MUNICIPAL",
+      "state_id": "ST14",
+      "projects_count": 18,
+      "total_budget_handled": 115950000,
+      "hhi_score": 565
+    },
+    {
+      "ia_id": "IA095",
+      "name": "Jammu & Kashmir PHED Executive Division",
+      "normalized_name": "Jammu & Kashmir PHED Executive Division",
+      "agency_type": "PHED",
+      "state_id": "ST14",
+      "projects_count": 14,
+      "total_budget_handled": 60120000,
+      "hhi_score": 152
+    },
+    {
+      "ia_id": "IA096",
+      "name": "Jammu & Kashmir ZILLA_PARISHAD Executive Division",
+      "normalized_name": "Jammu & Kashmir ZILLA_PARISHAD Executive Division",
+      "agency_type": "ZILLA_PARISHAD",
+      "state_id": "ST14",
+      "projects_count": 17,
+      "total_budget_handled": 87550000,
+      "hhi_score": 322
+    },
+    {
+      "ia_id": "IA097",
+      "name": "Jammu & Kashmir ELECTRICITY Executive Division",
+      "normalized_name": "Jammu & Kashmir ELECTRICITY Executive Division",
+      "agency_type": "ELECTRICITY",
+      "state_id": "ST14",
+      "projects_count": 9,
+      "total_budget_handled": 48910000,
+      "hhi_score": 101
+    },
+    {
+      "ia_id": "IA098",
+      "name": "Jammu & Kashmir IRRIGATION Executive Division",
+      "normalized_name": "Jammu & Kashmir IRRIGATION Executive Division",
+      "agency_type": "IRRIGATION",
+      "state_id": "ST14",
+      "projects_count": 13,
+      "total_budget_handled": 58050000,
+      "hhi_score": 142
+    },
+    {
+      "ia_id": "IA099",
+      "name": "Jharkhand PWD Executive Division",
+      "normalized_name": "Jharkhand PWD Executive Division",
+      "agency_type": "PWD",
+      "state_id": "ST15",
+      "projects_count": 36,
+      "total_budget_handled": 178560000,
+      "hhi_score": 239
+    },
+    {
+      "ia_id": "IA100",
+      "name": "Jharkhand DRDA Executive Division",
+      "normalized_name": "Jharkhand DRDA Executive Division",
+      "agency_type": "DRDA",
+      "state_id": "ST15",
+      "projects_count": 37,
+      "total_budget_handled": 160670000,
+      "hhi_score": 193
+    },
+    {
+      "ia_id": "IA101",
+      "name": "Jharkhand MUNICIPAL Executive Division",
+      "normalized_name": "Jharkhand MUNICIPAL Executive Division",
+      "agency_type": "MUNICIPAL",
+      "state_id": "ST15",
+      "projects_count": 32,
+      "total_budget_handled": 151250000,
+      "hhi_score": 171
+    },
+    {
+      "ia_id": "IA102",
+      "name": "Jharkhand PHED Executive Division",
+      "normalized_name": "Jharkhand PHED Executive Division",
+      "agency_type": "PHED",
+      "state_id": "ST15",
+      "projects_count": 32,
+      "total_budget_handled": 168410000,
+      "hhi_score": 212
+    },
+    {
+      "ia_id": "IA103",
+      "name": "Jharkhand ZILLA_PARISHAD Executive Division",
+      "normalized_name": "Jharkhand ZILLA_PARISHAD Executive Division",
+      "agency_type": "ZILLA_PARISHAD",
+      "state_id": "ST15",
+      "projects_count": 35,
+      "total_budget_handled": 149190000,
+      "hhi_score": 167
+    },
+    {
+      "ia_id": "IA104",
+      "name": "Jharkhand ELECTRICITY Executive Division",
+      "normalized_name": "Jharkhand ELECTRICITY Executive Division",
+      "agency_type": "ELECTRICITY",
+      "state_id": "ST15",
+      "projects_count": 43,
+      "total_budget_handled": 205030000,
+      "hhi_score": 315
+    },
+    {
+      "ia_id": "IA105",
+      "name": "Jharkhand IRRIGATION Executive Division",
+      "normalized_name": "Jharkhand IRRIGATION Executive Division",
+      "agency_type": "IRRIGATION",
+      "state_id": "ST15",
+      "projects_count": 35,
+      "total_budget_handled": 142430000,
+      "hhi_score": 152
+    },
+    {
+      "ia_id": "IA106",
+      "name": "Karnataka PWD Executive Division",
+      "normalized_name": "Karnataka PWD Executive Division",
+      "agency_type": "PWD",
+      "state_id": "ST16",
+      "projects_count": 74,
+      "total_budget_handled": 385490000,
+      "hhi_score": 213
+    },
+    {
+      "ia_id": "IA107",
+      "name": "Karnataka DRDA Executive Division",
+      "normalized_name": "Karnataka DRDA Executive Division",
+      "agency_type": "DRDA",
+      "state_id": "ST16",
+      "projects_count": 93,
+      "total_budget_handled": 407570000,
+      "hhi_score": 239
+    },
+    {
+      "ia_id": "IA108",
+      "name": "Karnataka MUNICIPAL Executive Division",
+      "normalized_name": "Karnataka MUNICIPAL Executive Division",
+      "agency_type": "MUNICIPAL",
+      "state_id": "ST16",
+      "projects_count": 76,
+      "total_budget_handled": 366010000,
+      "hhi_score": 192
+    },
+    {
+      "ia_id": "IA109",
+      "name": "Karnataka PHED Executive Division",
+      "normalized_name": "Karnataka PHED Executive Division",
+      "agency_type": "PHED",
+      "state_id": "ST16",
+      "projects_count": 72,
+      "total_budget_handled": 354320000,
+      "hhi_score": 180
+    },
+    {
+      "ia_id": "IA110",
+      "name": "Karnataka ZILLA_PARISHAD Executive Division",
+      "normalized_name": "Karnataka ZILLA_PARISHAD Executive Division",
+      "agency_type": "ZILLA_PARISHAD",
+      "state_id": "ST16",
+      "projects_count": 84,
+      "total_budget_handled": 459800000,
+      "hhi_score": 304
+    },
+    {
+      "ia_id": "IA111",
+      "name": "Karnataka ELECTRICITY Executive Division",
+      "normalized_name": "Karnataka ELECTRICITY Executive Division",
+      "agency_type": "ELECTRICITY",
+      "state_id": "ST16",
+      "projects_count": 71,
+      "total_budget_handled": 344680000,
+      "hhi_score": 171
+    },
+    {
+      "ia_id": "IA112",
+      "name": "Karnataka IRRIGATION Executive Division",
+      "normalized_name": "Karnataka IRRIGATION Executive Division",
+      "agency_type": "IRRIGATION",
+      "state_id": "ST16",
+      "projects_count": 67,
+      "total_budget_handled": 320990000,
+      "hhi_score": 148
+    },
+    {
+      "ia_id": "IA113",
+      "name": "Kerala PWD Executive Division",
+      "normalized_name": "Kerala PWD Executive Division",
+      "agency_type": "PWD",
+      "state_id": "ST17",
+      "projects_count": 54,
+      "total_budget_handled": 238850000,
+      "hhi_score": 157
+    },
+    {
+      "ia_id": "IA114",
+      "name": "Kerala DRDA Executive Division",
+      "normalized_name": "Kerala DRDA Executive Division",
+      "agency_type": "DRDA",
+      "state_id": "ST17",
+      "projects_count": 39,
+      "total_budget_handled": 181060000,
+      "hhi_score": 90
+    },
+    {
+      "ia_id": "IA115",
+      "name": "Kerala MUNICIPAL Executive Division",
+      "normalized_name": "Kerala MUNICIPAL Executive Division",
+      "agency_type": "MUNICIPAL",
+      "state_id": "ST17",
+      "projects_count": 60,
+      "total_budget_handled": 343210000,
+      "hhi_score": 325
+    },
+    {
+      "ia_id": "IA116",
+      "name": "Kerala PHED Executive Division",
+      "normalized_name": "Kerala PHED Executive Division",
+      "agency_type": "PHED",
+      "state_id": "ST17",
+      "projects_count": 59,
+      "total_budget_handled": 266000000,
+      "hhi_score": 195
+    },
+    {
+      "ia_id": "IA117",
+      "name": "Kerala ZILLA_PARISHAD Executive Division",
+      "normalized_name": "Kerala ZILLA_PARISHAD Executive Division",
+      "agency_type": "ZILLA_PARISHAD",
+      "state_id": "ST17",
+      "projects_count": 46,
+      "total_budget_handled": 269300000,
+      "hhi_score": 200
+    },
+    {
+      "ia_id": "IA118",
+      "name": "Kerala ELECTRICITY Executive Division",
+      "normalized_name": "Kerala ELECTRICITY Executive Division",
+      "agency_type": "ELECTRICITY",
+      "state_id": "ST17",
+      "projects_count": 44,
+      "total_budget_handled": 195640000,
+      "hhi_score": 106
+    },
+    {
+      "ia_id": "IA119",
+      "name": "Kerala IRRIGATION Executive Division",
+      "normalized_name": "Kerala IRRIGATION Executive Division",
+      "agency_type": "IRRIGATION",
+      "state_id": "ST17",
+      "projects_count": 76,
+      "total_budget_handled": 409550000,
+      "hhi_score": 463
+    },
+    {
+      "ia_id": "IA120",
+      "name": "Ladakh PWD Executive Division",
+      "normalized_name": "Ladakh PWD Executive Division",
+      "agency_type": "PWD",
+      "state_id": "ST18",
+      "projects_count": 3,
+      "total_budget_handled": 9490000,
+      "hhi_score": 95
+    },
+    {
+      "ia_id": "IA121",
+      "name": "Ladakh DRDA Executive Division",
+      "normalized_name": "Ladakh DRDA Executive Division",
+      "agency_type": "DRDA",
+      "state_id": "ST18",
+      "projects_count": 3,
+      "total_budget_handled": 12080000,
+      "hhi_score": 154
+    },
+    {
+      "ia_id": "IA122",
+      "name": "Ladakh MUNICIPAL Executive Division",
+      "normalized_name": "Ladakh MUNICIPAL Executive Division",
+      "agency_type": "MUNICIPAL",
+      "state_id": "ST18",
+      "projects_count": 4,
+      "total_budget_handled": 19260000,
+      "hhi_score": 392
+    },
+    {
+      "ia_id": "IA123",
+      "name": "Ladakh PHED Executive Division",
+      "normalized_name": "Ladakh PHED Executive Division",
+      "agency_type": "PHED",
+      "state_id": "ST18",
+      "projects_count": 3,
+      "total_budget_handled": 11940000,
+      "hhi_score": 151
+    },
+    {
+      "ia_id": "IA124",
+      "name": "Ladakh ZILLA_PARISHAD Executive Division",
+      "normalized_name": "Ladakh ZILLA_PARISHAD Executive Division",
+      "agency_type": "ZILLA_PARISHAD",
+      "state_id": "ST18",
+      "projects_count": 4,
+      "total_budget_handled": 17960000,
+      "hhi_score": 341
+    },
+    {
+      "ia_id": "IA125",
+      "name": "Ladakh ELECTRICITY Executive Division",
+      "normalized_name": "Ladakh ELECTRICITY Executive Division",
+      "agency_type": "ELECTRICITY",
+      "state_id": "ST18",
+      "projects_count": 1,
+      "total_budget_handled": 7380000,
+      "hhi_score": 58
+    },
+    {
+      "ia_id": "IA126",
+      "name": "Ladakh IRRIGATION Executive Division",
+      "normalized_name": "Ladakh IRRIGATION Executive Division",
+      "agency_type": "IRRIGATION",
+      "state_id": "ST18",
+      "projects_count": 4,
+      "total_budget_handled": 19150000,
+      "hhi_score": 388
+    },
+    {
+      "ia_id": "IA127",
+      "name": "Lakshadweep PWD Executive Division",
+      "normalized_name": "Lakshadweep PWD Executive Division",
+      "agency_type": "PWD",
+      "state_id": "ST19",
+      "projects_count": 1,
+      "total_budget_handled": 3460000,
+      "hhi_score": 22
+    },
+    {
+      "ia_id": "IA128",
+      "name": "Lakshadweep DRDA Executive Division",
+      "normalized_name": "Lakshadweep DRDA Executive Division",
+      "agency_type": "DRDA",
+      "state_id": "ST19",
+      "projects_count": 5,
+      "total_budget_handled": 19460000,
+      "hhi_score": 681
+    },
+    {
+      "ia_id": "IA129",
+      "name": "Lakshadweep MUNICIPAL Executive Division",
+      "normalized_name": "Lakshadweep MUNICIPAL Executive Division",
+      "agency_type": "MUNICIPAL",
+      "state_id": "ST19",
+      "projects_count": 3,
+      "total_budget_handled": 15070000,
+      "hhi_score": 409
+    },
+    {
+      "ia_id": "IA130",
+      "name": "Lakshadweep PHED Executive Division",
+      "normalized_name": "Lakshadweep PHED Executive Division",
+      "agency_type": "PHED",
+      "state_id": "ST19",
+      "projects_count": 2,
+      "total_budget_handled": 9110000,
+      "hhi_score": 149
+    },
+    {
+      "ia_id": "IA131",
+      "name": "Lakshadweep ZILLA_PARISHAD Executive Division",
+      "normalized_name": "Lakshadweep ZILLA_PARISHAD Executive Division",
+      "agency_type": "ZILLA_PARISHAD",
+      "state_id": "ST19",
+      "projects_count": 1,
+      "total_budget_handled": 7260000,
+      "hhi_score": 95
+    },
+    {
+      "ia_id": "IA132",
+      "name": "Lakshadweep ELECTRICITY Executive Division",
+      "normalized_name": "Lakshadweep ELECTRICITY Executive Division",
+      "agency_type": "ELECTRICITY",
+      "state_id": "ST19",
+      "projects_count": 3,
+      "total_budget_handled": 16880000,
+      "hhi_score": 513
+    },
+    {
+      "ia_id": "IA133",
+      "name": "Lakshadweep IRRIGATION Executive Division",
+      "normalized_name": "Lakshadweep IRRIGATION Executive Division",
+      "agency_type": "IRRIGATION",
+      "state_id": "ST19",
+      "projects_count": 1,
+      "total_budget_handled": 3320000,
+      "hhi_score": 20
+    },
+    {
+      "ia_id": "IA134",
+      "name": "Madhya Pradesh PWD Executive Division",
+      "normalized_name": "Madhya Pradesh PWD Executive Division",
+      "agency_type": "PWD",
+      "state_id": "ST20",
+      "projects_count": 94,
+      "total_budget_handled": 440180000,
+      "hhi_score": 284
+    },
+    {
+      "ia_id": "IA135",
+      "name": "Madhya Pradesh DRDA Executive Division",
+      "normalized_name": "Madhya Pradesh DRDA Executive Division",
+      "agency_type": "DRDA",
+      "state_id": "ST20",
+      "projects_count": 76,
+      "total_budget_handled": 335720000,
+      "hhi_score": 165
+    },
+    {
+      "ia_id": "IA136",
+      "name": "Madhya Pradesh MUNICIPAL Executive Division",
+      "normalized_name": "Madhya Pradesh MUNICIPAL Executive Division",
+      "agency_type": "MUNICIPAL",
+      "state_id": "ST20",
+      "projects_count": 81,
+      "total_budget_handled": 401400000,
+      "hhi_score": 236
+    },
+    {
+      "ia_id": "IA137",
+      "name": "Madhya Pradesh PHED Executive Division",
+      "normalized_name": "Madhya Pradesh PHED Executive Division",
+      "agency_type": "PHED",
+      "state_id": "ST20",
+      "projects_count": 75,
+      "total_budget_handled": 354760000,
+      "hhi_score": 184
+    },
+    {
+      "ia_id": "IA138",
+      "name": "Madhya Pradesh ZILLA_PARISHAD Executive Division",
+      "normalized_name": "Madhya Pradesh ZILLA_PARISHAD Executive Division",
+      "agency_type": "ZILLA_PARISHAD",
+      "state_id": "ST20",
+      "projects_count": 76,
+      "total_budget_handled": 382750000,
+      "hhi_score": 215
+    },
+    {
+      "ia_id": "IA139",
+      "name": "Madhya Pradesh ELECTRICITY Executive Division",
+      "normalized_name": "Madhya Pradesh ELECTRICITY Executive Division",
+      "agency_type": "ELECTRICITY",
+      "state_id": "ST20",
+      "projects_count": 70,
+      "total_budget_handled": 322270000,
+      "hhi_score": 152
+    },
+    {
+      "ia_id": "IA140",
+      "name": "Madhya Pradesh IRRIGATION Executive Division",
+      "normalized_name": "Madhya Pradesh IRRIGATION Executive Division",
+      "agency_type": "IRRIGATION",
+      "state_id": "ST20",
+      "projects_count": 81,
+      "total_budget_handled": 376120000,
+      "hhi_score": 207
+    },
+    {
+      "ia_id": "IA141",
+      "name": "Maharashtra PWD Executive Division",
+      "normalized_name": "Maharashtra PWD Executive Division",
+      "agency_type": "PWD",
+      "state_id": "ST21",
+      "projects_count": 122,
+      "total_budget_handled": 553550000,
+      "hhi_score": 161
+    },
+    {
+      "ia_id": "IA142",
+      "name": "Maharashtra DRDA Executive Division",
+      "normalized_name": "Maharashtra DRDA Executive Division",
+      "agency_type": "DRDA",
+      "state_id": "ST21",
+      "projects_count": 132,
+      "total_budget_handled": 612580000,
+      "hhi_score": 197
+    },
+    {
+      "ia_id": "IA143",
+      "name": "Maharashtra MUNICIPAL Executive Division",
+      "normalized_name": "Maharashtra MUNICIPAL Executive Division",
+      "agency_type": "MUNICIPAL",
+      "state_id": "ST21",
+      "projects_count": 144,
+      "total_budget_handled": 645980000,
+      "hhi_score": 219
+    },
+    {
+      "ia_id": "IA144",
+      "name": "Maharashtra PHED Executive Division",
+      "normalized_name": "Maharashtra PHED Executive Division",
+      "agency_type": "PHED",
+      "state_id": "ST21",
+      "projects_count": 113,
+      "total_budget_handled": 543490000,
+      "hhi_score": 155
+    },
+    {
+      "ia_id": "IA145",
+      "name": "Maharashtra ZILLA_PARISHAD Executive Division",
+      "normalized_name": "Maharashtra ZILLA_PARISHAD Executive Division",
+      "agency_type": "ZILLA_PARISHAD",
+      "state_id": "ST21",
+      "projects_count": 128,
+      "total_budget_handled": 642070000,
+      "hhi_score": 216
+    },
+    {
+      "ia_id": "IA146",
+      "name": "Maharashtra ELECTRICITY Executive Division",
+      "normalized_name": "Maharashtra ELECTRICITY Executive Division",
+      "agency_type": "ELECTRICITY",
+      "state_id": "ST21",
+      "projects_count": 139,
+      "total_budget_handled": 701350000,
+      "hhi_score": 258
+    },
+    {
+      "ia_id": "IA147",
+      "name": "Maharashtra IRRIGATION Executive Division",
+      "normalized_name": "Maharashtra IRRIGATION Executive Division",
+      "agency_type": "IRRIGATION",
+      "state_id": "ST21",
+      "projects_count": 126,
+      "total_budget_handled": 669770000,
+      "hhi_score": 235
+    },
+    {
+      "ia_id": "IA148",
+      "name": "Manipur PWD Executive Division",
+      "normalized_name": "Manipur PWD Executive Division",
+      "agency_type": "PWD",
+      "state_id": "ST22",
+      "projects_count": 4,
+      "total_budget_handled": 25110000,
+      "hhi_score": 218
+    },
+    {
+      "ia_id": "IA149",
+      "name": "Manipur DRDA Executive Division",
+      "normalized_name": "Manipur DRDA Executive Division",
+      "agency_type": "DRDA",
+      "state_id": "ST22",
+      "projects_count": 5,
+      "total_budget_handled": 22800000,
+      "hhi_score": 179
+    },
+    {
+      "ia_id": "IA150",
+      "name": "Manipur MUNICIPAL Executive Division",
+      "normalized_name": "Manipur MUNICIPAL Executive Division",
+      "agency_type": "MUNICIPAL",
+      "state_id": "ST22",
+      "projects_count": 4,
+      "total_budget_handled": 17140000,
+      "hhi_score": 101
+    },
+    {
+      "ia_id": "IA151",
+      "name": "Manipur PHED Executive Division",
+      "normalized_name": "Manipur PHED Executive Division",
+      "agency_type": "PHED",
+      "state_id": "ST22",
+      "projects_count": 5,
+      "total_budget_handled": 21410000,
+      "hhi_score": 158
+    },
+    {
+      "ia_id": "IA152",
+      "name": "Manipur ZILLA_PARISHAD Executive Division",
+      "normalized_name": "Manipur ZILLA_PARISHAD Executive Division",
+      "agency_type": "ZILLA_PARISHAD",
+      "state_id": "ST22",
+      "projects_count": 7,
+      "total_budget_handled": 26570000,
+      "hhi_score": 244
+    },
+    {
+      "ia_id": "IA153",
+      "name": "Manipur ELECTRICITY Executive Division",
+      "normalized_name": "Manipur ELECTRICITY Executive Division",
+      "agency_type": "ELECTRICITY",
+      "state_id": "ST22",
+      "projects_count": 5,
+      "total_budget_handled": 28110000,
+      "hhi_score": 273
+    },
+    {
+      "ia_id": "IA154",
+      "name": "Manipur IRRIGATION Executive Division",
+      "normalized_name": "Manipur IRRIGATION Executive Division",
+      "agency_type": "IRRIGATION",
+      "state_id": "ST22",
+      "projects_count": 7,
+      "total_budget_handled": 29090000,
+      "hhi_score": 292
+    },
+    {
+      "ia_id": "IA155",
+      "name": "Meghalaya PWD Executive Division",
+      "normalized_name": "Meghalaya PWD Executive Division",
+      "agency_type": "PWD",
+      "state_id": "ST23",
+      "projects_count": 7,
+      "total_budget_handled": 34110000,
+      "hhi_score": 515
+    },
+    {
+      "ia_id": "IA156",
+      "name": "Meghalaya DRDA Executive Division",
+      "normalized_name": "Meghalaya DRDA Executive Division",
+      "agency_type": "DRDA",
+      "state_id": "ST23",
+      "projects_count": 3,
+      "total_budget_handled": 14540000,
+      "hhi_score": 94
+    },
+    {
+      "ia_id": "IA157",
+      "name": "Meghalaya MUNICIPAL Executive Division",
+      "normalized_name": "Meghalaya MUNICIPAL Executive Division",
+      "agency_type": "MUNICIPAL",
+      "state_id": "ST23",
+      "projects_count": 7,
+      "total_budget_handled": 25820000,
+      "hhi_score": 295
+    },
+    {
+      "ia_id": "IA158",
+      "name": "Meghalaya PHED Executive Division",
+      "normalized_name": "Meghalaya PHED Executive Division",
+      "agency_type": "PHED",
+      "state_id": "ST23",
+      "projects_count": 4,
+      "total_budget_handled": 18580000,
+      "hhi_score": 153
+    },
+    {
+      "ia_id": "IA159",
+      "name": "Meghalaya ZILLA_PARISHAD Executive Division",
+      "normalized_name": "Meghalaya ZILLA_PARISHAD Executive Division",
+      "agency_type": "ZILLA_PARISHAD",
+      "state_id": "ST23",
+      "projects_count": 4,
+      "total_budget_handled": 18740000,
+      "hhi_score": 155
+    },
+    {
+      "ia_id": "IA160",
+      "name": "Meghalaya ELECTRICITY Executive Division",
+      "normalized_name": "Meghalaya ELECTRICITY Executive Division",
+      "agency_type": "ELECTRICITY",
+      "state_id": "ST23",
+      "projects_count": 5,
+      "total_budget_handled": 26540000,
+      "hhi_score": 312
+    },
+    {
+      "ia_id": "IA161",
+      "name": "Meghalaya IRRIGATION Executive Division",
+      "normalized_name": "Meghalaya IRRIGATION Executive Division",
+      "agency_type": "IRRIGATION",
+      "state_id": "ST23",
+      "projects_count": 4,
+      "total_budget_handled": 11980000,
+      "hhi_score": 64
+    },
+    {
+      "ia_id": "IA162",
+      "name": "Mizoram PWD Executive Division",
+      "normalized_name": "Mizoram PWD Executive Division",
+      "agency_type": "PWD",
+      "state_id": "ST24",
+      "projects_count": 4,
+      "total_budget_handled": 18420000,
+      "hhi_score": 504
+    },
+    {
+      "ia_id": "IA163",
+      "name": "Mizoram DRDA Executive Division",
+      "normalized_name": "Mizoram DRDA Executive Division",
+      "agency_type": "DRDA",
+      "state_id": "ST24",
+      "projects_count": 4,
+      "total_budget_handled": 16130000,
+      "hhi_score": 386
+    },
+    {
+      "ia_id": "IA164",
+      "name": "Mizoram MUNICIPAL Executive Division",
+      "normalized_name": "Mizoram MUNICIPAL Executive Division",
+      "agency_type": "MUNICIPAL",
+      "state_id": "ST24",
+      "projects_count": 0,
+      "total_budget_handled": 0,
+      "hhi_score": 0
+    },
+    {
+      "ia_id": "IA165",
+      "name": "Mizoram PHED Executive Division",
+      "normalized_name": "Mizoram PHED Executive Division",
+      "agency_type": "PHED",
+      "state_id": "ST24",
+      "projects_count": 2,
+      "total_budget_handled": 9870000,
+      "hhi_score": 145
+    },
+    {
+      "ia_id": "IA166",
+      "name": "Mizoram ZILLA_PARISHAD Executive Division",
+      "normalized_name": "Mizoram ZILLA_PARISHAD Executive Division",
+      "agency_type": "ZILLA_PARISHAD",
+      "state_id": "ST24",
+      "projects_count": 2,
+      "total_budget_handled": 9290000,
+      "hhi_score": 128
+    },
+    {
+      "ia_id": "IA167",
+      "name": "Mizoram ELECTRICITY Executive Division",
+      "normalized_name": "Mizoram ELECTRICITY Executive Division",
+      "agency_type": "ELECTRICITY",
+      "state_id": "ST24",
+      "projects_count": 7,
+      "total_budget_handled": 28350000,
+      "hhi_score": 1194
+    },
+    {
+      "ia_id": "IA168",
+      "name": "Mizoram IRRIGATION Executive Division",
+      "normalized_name": "Mizoram IRRIGATION Executive Division",
+      "agency_type": "IRRIGATION",
+      "state_id": "ST24",
+      "projects_count": 0,
+      "total_budget_handled": 0,
+      "hhi_score": 0
+    },
+    {
+      "ia_id": "IA169",
+      "name": "Nagaland PWD Executive Division",
+      "normalized_name": "Nagaland PWD Executive Division",
+      "agency_type": "PWD",
+      "state_id": "ST25",
+      "projects_count": 1,
+      "total_budget_handled": 3700000,
+      "hhi_score": 14
+    },
+    {
+      "ia_id": "IA170",
+      "name": "Nagaland DRDA Executive Division",
+      "normalized_name": "Nagaland DRDA Executive Division",
+      "agency_type": "DRDA",
+      "state_id": "ST25",
+      "projects_count": 3,
+      "total_budget_handled": 10890000,
+      "hhi_score": 120
+    },
+    {
+      "ia_id": "IA171",
+      "name": "Nagaland MUNICIPAL Executive Division",
+      "normalized_name": "Nagaland MUNICIPAL Executive Division",
+      "agency_type": "MUNICIPAL",
+      "state_id": "ST25",
+      "projects_count": 4,
+      "total_budget_handled": 21240000,
+      "hhi_score": 458
+    },
+    {
+      "ia_id": "IA172",
+      "name": "Nagaland PHED Executive Division",
+      "normalized_name": "Nagaland PHED Executive Division",
+      "agency_type": "PHED",
+      "state_id": "ST25",
+      "projects_count": 7,
+      "total_budget_handled": 32110000,
+      "hhi_score": 1046
+    },
+    {
+      "ia_id": "IA173",
+      "name": "Nagaland ZILLA_PARISHAD Executive Division",
+      "normalized_name": "Nagaland ZILLA_PARISHAD Executive Division",
+      "agency_type": "ZILLA_PARISHAD",
+      "state_id": "ST25",
+      "projects_count": 4,
+      "total_budget_handled": 17420000,
+      "hhi_score": 308
+    },
+    {
+      "ia_id": "IA174",
+      "name": "Nagaland ELECTRICITY Executive Division",
+      "normalized_name": "Nagaland ELECTRICITY Executive Division",
+      "agency_type": "ELECTRICITY",
+      "state_id": "ST25",
+      "projects_count": 2,
+      "total_budget_handled": 11590000,
+      "hhi_score": 136
+    },
+    {
+      "ia_id": "IA175",
+      "name": "Nagaland IRRIGATION Executive Division",
+      "normalized_name": "Nagaland IRRIGATION Executive Division",
+      "agency_type": "IRRIGATION",
+      "state_id": "ST25",
+      "projects_count": 1,
+      "total_budget_handled": 2320000,
+      "hhi_score": 5
+    },
+    {
+      "ia_id": "IA176",
+      "name": "Odisha PWD Executive Division",
+      "normalized_name": "Odisha PWD Executive Division",
+      "agency_type": "PWD",
+      "state_id": "ST26",
+      "projects_count": 57,
+      "total_budget_handled": 272530000,
+      "hhi_score": 229
+    },
+    {
+      "ia_id": "IA177",
+      "name": "Odisha DRDA Executive Division",
+      "normalized_name": "Odisha DRDA Executive Division",
+      "agency_type": "DRDA",
+      "state_id": "ST26",
+      "projects_count": 58,
+      "total_budget_handled": 285020000,
+      "hhi_score": 250
+    },
+    {
+      "ia_id": "IA178",
+      "name": "Odisha MUNICIPAL Executive Division",
+      "normalized_name": "Odisha MUNICIPAL Executive Division",
+      "agency_type": "MUNICIPAL",
+      "state_id": "ST26",
+      "projects_count": 55,
+      "total_budget_handled": 267840000,
+      "hhi_score": 221
+    },
+    {
+      "ia_id": "IA179",
+      "name": "Odisha PHED Executive Division",
+      "normalized_name": "Odisha PHED Executive Division",
+      "agency_type": "PHED",
+      "state_id": "ST26",
+      "projects_count": 57,
+      "total_budget_handled": 279230000,
+      "hhi_score": 240
+    },
+    {
+      "ia_id": "IA180",
+      "name": "Odisha ZILLA_PARISHAD Executive Division",
+      "normalized_name": "Odisha ZILLA_PARISHAD Executive Division",
+      "agency_type": "ZILLA_PARISHAD",
+      "state_id": "ST26",
+      "projects_count": 65,
+      "total_budget_handled": 284850000,
+      "hhi_score": 250
+    },
+    {
+      "ia_id": "IA181",
+      "name": "Odisha ELECTRICITY Executive Division",
+      "normalized_name": "Odisha ELECTRICITY Executive Division",
+      "agency_type": "ELECTRICITY",
+      "state_id": "ST26",
+      "projects_count": 46,
+      "total_budget_handled": 197100000,
+      "hhi_score": 120
+    },
+    {
+      "ia_id": "IA182",
+      "name": "Odisha IRRIGATION Executive Division",
+      "normalized_name": "Odisha IRRIGATION Executive Division",
+      "agency_type": "IRRIGATION",
+      "state_id": "ST26",
+      "projects_count": 48,
+      "total_budget_handled": 215710000,
+      "hhi_score": 143
+    },
+    {
+      "ia_id": "IA183",
+      "name": "Puducherry PWD Executive Division",
+      "normalized_name": "Puducherry PWD Executive Division",
+      "agency_type": "PWD",
+      "state_id": "ST27",
+      "projects_count": 0,
+      "total_budget_handled": 0,
+      "hhi_score": 0
+    },
+    {
+      "ia_id": "IA184",
+      "name": "Puducherry DRDA Executive Division",
+      "normalized_name": "Puducherry DRDA Executive Division",
+      "agency_type": "DRDA",
+      "state_id": "ST27",
+      "projects_count": 3,
+      "total_budget_handled": 16380000,
+      "hhi_score": 246
+    },
+    {
+      "ia_id": "IA185",
+      "name": "Puducherry MUNICIPAL Executive Division",
+      "normalized_name": "Puducherry MUNICIPAL Executive Division",
+      "agency_type": "MUNICIPAL",
+      "state_id": "ST27",
+      "projects_count": 2,
+      "total_budget_handled": 10110000,
+      "hhi_score": 94
+    },
+    {
+      "ia_id": "IA186",
+      "name": "Puducherry PHED Executive Division",
+      "normalized_name": "Puducherry PHED Executive Division",
+      "agency_type": "PHED",
+      "state_id": "ST27",
+      "projects_count": 4,
+      "total_budget_handled": 20000000,
+      "hhi_score": 367
+    },
+    {
+      "ia_id": "IA187",
+      "name": "Puducherry ZILLA_PARISHAD Executive Division",
+      "normalized_name": "Puducherry ZILLA_PARISHAD Executive Division",
+      "agency_type": "ZILLA_PARISHAD",
+      "state_id": "ST27",
+      "projects_count": 3,
+      "total_budget_handled": 10030000,
+      "hhi_score": 92
+    },
+    {
+      "ia_id": "IA188",
+      "name": "Puducherry ELECTRICITY Executive Division",
+      "normalized_name": "Puducherry ELECTRICITY Executive Division",
+      "agency_type": "ELECTRICITY",
+      "state_id": "ST27",
+      "projects_count": 7,
+      "total_budget_handled": 36480000,
+      "hhi_score": 1222
+    },
+    {
+      "ia_id": "IA189",
+      "name": "Puducherry IRRIGATION Executive Division",
+      "normalized_name": "Puducherry IRRIGATION Executive Division",
+      "agency_type": "IRRIGATION",
+      "state_id": "ST27",
+      "projects_count": 3,
+      "total_budget_handled": 11360000,
+      "hhi_score": 118
+    },
+    {
+      "ia_id": "IA190",
+      "name": "Punjab PWD Executive Division",
+      "normalized_name": "Punjab PWD Executive Division",
+      "agency_type": "PWD",
+      "state_id": "ST28",
+      "projects_count": 31,
+      "total_budget_handled": 146800000,
+      "hhi_score": 132
+    },
+    {
+      "ia_id": "IA191",
+      "name": "Punjab DRDA Executive Division",
+      "normalized_name": "Punjab DRDA Executive Division",
+      "agency_type": "DRDA",
+      "state_id": "ST28",
+      "projects_count": 45,
+      "total_budget_handled": 210500000,
+      "hhi_score": 272
+    },
+    {
+      "ia_id": "IA192",
+      "name": "Punjab MUNICIPAL Executive Division",
+      "normalized_name": "Punjab MUNICIPAL Executive Division",
+      "agency_type": "MUNICIPAL",
+      "state_id": "ST28",
+      "projects_count": 36,
+      "total_budget_handled": 168380000,
+      "hhi_score": 174
+    },
+    {
+      "ia_id": "IA193",
+      "name": "Punjab PHED Executive Division",
+      "normalized_name": "Punjab PHED Executive Division",
+      "agency_type": "PHED",
+      "state_id": "ST28",
+      "projects_count": 44,
+      "total_budget_handled": 210750000,
+      "hhi_score": 273
+    },
+    {
+      "ia_id": "IA194",
+      "name": "Punjab ZILLA_PARISHAD Executive Division",
+      "normalized_name": "Punjab ZILLA_PARISHAD Executive Division",
+      "agency_type": "ZILLA_PARISHAD",
+      "state_id": "ST28",
+      "projects_count": 33,
+      "total_budget_handled": 173880000,
+      "hhi_score": 186
+    },
+    {
+      "ia_id": "IA195",
+      "name": "Punjab ELECTRICITY Executive Division",
+      "normalized_name": "Punjab ELECTRICITY Executive Division",
+      "agency_type": "ELECTRICITY",
+      "state_id": "ST28",
+      "projects_count": 40,
+      "total_budget_handled": 218760000,
+      "hhi_score": 294
+    },
+    {
+      "ia_id": "IA196",
+      "name": "Punjab IRRIGATION Executive Division",
+      "normalized_name": "Punjab IRRIGATION Executive Division",
+      "agency_type": "IRRIGATION",
+      "state_id": "ST28",
+      "projects_count": 32,
+      "total_budget_handled": 147040000,
+      "hhi_score": 133
+    },
+    {
+      "ia_id": "IA197",
+      "name": "Rajasthan PWD Executive Division",
+      "normalized_name": "Rajasthan PWD Executive Division",
+      "agency_type": "PWD",
+      "state_id": "ST29",
+      "projects_count": 72,
+      "total_budget_handled": 341090000,
+      "hhi_score": 258
+    },
+    {
+      "ia_id": "IA198",
+      "name": "Rajasthan DRDA Executive Division",
+      "normalized_name": "Rajasthan DRDA Executive Division",
+      "agency_type": "DRDA",
+      "state_id": "ST29",
+      "projects_count": 78,
+      "total_budget_handled": 331630000,
+      "hhi_score": 244
+    },
+    {
+      "ia_id": "IA199",
+      "name": "Rajasthan MUNICIPAL Executive Division",
+      "normalized_name": "Rajasthan MUNICIPAL Executive Division",
+      "agency_type": "MUNICIPAL",
+      "state_id": "ST29",
+      "projects_count": 55,
+      "total_budget_handled": 264500000,
+      "hhi_score": 155
+    },
+    {
+      "ia_id": "IA200",
+      "name": "Rajasthan PHED Executive Division",
+      "normalized_name": "Rajasthan PHED Executive Division",
+      "agency_type": "PHED",
+      "state_id": "ST29",
+      "projects_count": 68,
+      "total_budget_handled": 328110000,
+      "hhi_score": 239
+    },
+    {
+      "ia_id": "IA201",
+      "name": "Rajasthan ZILLA_PARISHAD Executive Division",
+      "normalized_name": "Rajasthan ZILLA_PARISHAD Executive Division",
+      "agency_type": "ZILLA_PARISHAD",
+      "state_id": "ST29",
+      "projects_count": 73,
+      "total_budget_handled": 315970000,
+      "hhi_score": 221
+    },
+    {
+      "ia_id": "IA202",
+      "name": "Rajasthan ELECTRICITY Executive Division",
+      "normalized_name": "Rajasthan ELECTRICITY Executive Division",
+      "agency_type": "ELECTRICITY",
+      "state_id": "ST29",
+      "projects_count": 57,
+      "total_budget_handled": 258580000,
+      "hhi_score": 148
+    },
+    {
+      "ia_id": "IA203",
+      "name": "Rajasthan IRRIGATION Executive Division",
+      "normalized_name": "Rajasthan IRRIGATION Executive Division",
+      "agency_type": "IRRIGATION",
+      "state_id": "ST29",
+      "projects_count": 66,
+      "total_budget_handled": 283840000,
+      "hhi_score": 179
+    },
+    {
+      "ia_id": "IA204",
+      "name": "Sikkim PWD Executive Division",
+      "normalized_name": "Sikkim PWD Executive Division",
+      "agency_type": "PWD",
+      "state_id": "ST30",
+      "projects_count": 3,
+      "total_budget_handled": 9480000,
+      "hhi_score": 125
+    },
+    {
+      "ia_id": "IA205",
+      "name": "Sikkim DRDA Executive Division",
+      "normalized_name": "Sikkim DRDA Executive Division",
+      "agency_type": "DRDA",
+      "state_id": "ST30",
+      "projects_count": 0,
+      "total_budget_handled": 0,
+      "hhi_score": 0
+    },
+    {
+      "ia_id": "IA206",
+      "name": "Sikkim MUNICIPAL Executive Division",
+      "normalized_name": "Sikkim MUNICIPAL Executive Division",
+      "agency_type": "MUNICIPAL",
+      "state_id": "ST30",
+      "projects_count": 4,
+      "total_budget_handled": 13920000,
+      "hhi_score": 270
+    },
+    {
+      "ia_id": "IA207",
+      "name": "Sikkim PHED Executive Division",
+      "normalized_name": "Sikkim PHED Executive Division",
+      "agency_type": "PHED",
+      "state_id": "ST30",
+      "projects_count": 1,
+      "total_budget_handled": 3920000,
+      "hhi_score": 21
+    },
+    {
+      "ia_id": "IA208",
+      "name": "Sikkim ZILLA_PARISHAD Executive Division",
+      "normalized_name": "Sikkim ZILLA_PARISHAD Executive Division",
+      "agency_type": "ZILLA_PARISHAD",
+      "state_id": "ST30",
+      "projects_count": 3,
+      "total_budget_handled": 13800000,
+      "hhi_score": 266
+    },
+    {
+      "ia_id": "IA209",
+      "name": "Sikkim ELECTRICITY Executive Division",
+      "normalized_name": "Sikkim ELECTRICITY Executive Division",
+      "agency_type": "ELECTRICITY",
+      "state_id": "ST30",
+      "projects_count": 2,
+      "total_budget_handled": 11520000,
+      "hhi_score": 185
+    },
+    {
+      "ia_id": "IA210",
+      "name": "Sikkim IRRIGATION Executive Division",
+      "normalized_name": "Sikkim IRRIGATION Executive Division",
+      "agency_type": "IRRIGATION",
+      "state_id": "ST30",
+      "projects_count": 7,
+      "total_budget_handled": 32040000,
+      "hhi_score": 1432
+    },
+    {
+      "ia_id": "IA211",
+      "name": "Tamil Nadu PWD Executive Division",
+      "normalized_name": "Tamil Nadu PWD Executive Division",
+      "agency_type": "PWD",
+      "state_id": "ST31",
+      "projects_count": 119,
+      "total_budget_handled": 547930000,
+      "hhi_score": 246
+    },
+    {
+      "ia_id": "IA212",
+      "name": "Tamil Nadu DRDA Executive Division",
+      "normalized_name": "Tamil Nadu DRDA Executive Division",
+      "agency_type": "DRDA",
+      "state_id": "ST31",
+      "projects_count": 100,
+      "total_budget_handled": 466430000,
+      "hhi_score": 178
+    },
+    {
+      "ia_id": "IA213",
+      "name": "Tamil Nadu MUNICIPAL Executive Division",
+      "normalized_name": "Tamil Nadu MUNICIPAL Executive Division",
+      "agency_type": "MUNICIPAL",
+      "state_id": "ST31",
+      "projects_count": 108,
+      "total_budget_handled": 523600000,
+      "hhi_score": 225
+    },
+    {
+      "ia_id": "IA214",
+      "name": "Tamil Nadu PHED Executive Division",
+      "normalized_name": "Tamil Nadu PHED Executive Division",
+      "agency_type": "PHED",
+      "state_id": "ST31",
+      "projects_count": 101,
+      "total_budget_handled": 502960000,
+      "hhi_score": 207
+    },
+    {
+      "ia_id": "IA215",
+      "name": "Tamil Nadu ZILLA_PARISHAD Executive Division",
+      "normalized_name": "Tamil Nadu ZILLA_PARISHAD Executive Division",
+      "agency_type": "ZILLA_PARISHAD",
+      "state_id": "ST31",
+      "projects_count": 110,
+      "total_budget_handled": 498850000,
+      "hhi_score": 204
+    },
+    {
+      "ia_id": "IA216",
+      "name": "Tamil Nadu ELECTRICITY Executive Division",
+      "normalized_name": "Tamil Nadu ELECTRICITY Executive Division",
+      "agency_type": "ELECTRICITY",
+      "state_id": "ST31",
+      "projects_count": 112,
+      "total_budget_handled": 526840000,
+      "hhi_score": 228
+    },
+    {
+      "ia_id": "IA217",
+      "name": "Tamil Nadu IRRIGATION Executive Division",
+      "normalized_name": "Tamil Nadu IRRIGATION Executive Division",
+      "agency_type": "IRRIGATION",
+      "state_id": "ST31",
+      "projects_count": 95,
+      "total_budget_handled": 425290000,
+      "hhi_score": 148
+    },
+    {
+      "ia_id": "IA218",
+      "name": "Telangana PWD Executive Division",
+      "normalized_name": "Telangana PWD Executive Division",
+      "agency_type": "PWD",
+      "state_id": "ST32",
+      "projects_count": 46,
+      "total_budget_handled": 235060000,
+      "hhi_score": 238
+    },
+    {
+      "ia_id": "IA219",
+      "name": "Telangana DRDA Executive Division",
+      "normalized_name": "Telangana DRDA Executive Division",
+      "agency_type": "DRDA",
+      "state_id": "ST32",
+      "projects_count": 47,
+      "total_budget_handled": 216900000,
+      "hhi_score": 203
+    },
+    {
+      "ia_id": "IA220",
+      "name": "Telangana MUNICIPAL Executive Division",
+      "normalized_name": "Telangana MUNICIPAL Executive Division",
+      "agency_type": "MUNICIPAL",
+      "state_id": "ST32",
+      "projects_count": 50,
+      "total_budget_handled": 262970000,
+      "hhi_score": 298
+    },
+    {
+      "ia_id": "IA221",
+      "name": "Telangana PHED Executive Division",
+      "normalized_name": "Telangana PHED Executive Division",
+      "agency_type": "PHED",
+      "state_id": "ST32",
+      "projects_count": 34,
+      "total_budget_handled": 153020000,
+      "hhi_score": 101
+    },
+    {
+      "ia_id": "IA222",
+      "name": "Telangana ZILLA_PARISHAD Executive Division",
+      "normalized_name": "Telangana ZILLA_PARISHAD Executive Division",
+      "agency_type": "ZILLA_PARISHAD",
+      "state_id": "ST32",
+      "projects_count": 44,
+      "total_budget_handled": 199460000,
+      "hhi_score": 172
+    },
+    {
+      "ia_id": "IA223",
+      "name": "Telangana ELECTRICITY Executive Division",
+      "normalized_name": "Telangana ELECTRICITY Executive Division",
+      "agency_type": "ELECTRICITY",
+      "state_id": "ST32",
+      "projects_count": 61,
+      "total_budget_handled": 269430000,
+      "hhi_score": 313
+    },
+    {
+      "ia_id": "IA224",
+      "name": "Telangana IRRIGATION Executive Division",
+      "normalized_name": "Telangana IRRIGATION Executive Division",
+      "agency_type": "IRRIGATION",
+      "state_id": "ST32",
+      "projects_count": 46,
+      "total_budget_handled": 185730000,
+      "hhi_score": 149
+    },
+    {
+      "ia_id": "IA225",
+      "name": "Tripura PWD Executive Division",
+      "normalized_name": "Tripura PWD Executive Division",
+      "agency_type": "PWD",
+      "state_id": "ST33",
+      "projects_count": 2,
+      "total_budget_handled": 12090000,
+      "hhi_score": 40
+    },
+    {
+      "ia_id": "IA226",
+      "name": "Tripura DRDA Executive Division",
+      "normalized_name": "Tripura DRDA Executive Division",
+      "agency_type": "DRDA",
+      "state_id": "ST33",
+      "projects_count": 7,
+      "total_budget_handled": 32830000,
+      "hhi_score": 294
+    },
+    {
+      "ia_id": "IA227",
+      "name": "Tripura MUNICIPAL Executive Division",
+      "normalized_name": "Tripura MUNICIPAL Executive Division",
+      "agency_type": "MUNICIPAL",
+      "state_id": "ST33",
+      "projects_count": 4,
+      "total_budget_handled": 23780000,
+      "hhi_score": 154
+    },
+    {
+      "ia_id": "IA228",
+      "name": "Tripura PHED Executive Division",
+      "normalized_name": "Tripura PHED Executive Division",
+      "agency_type": "PHED",
+      "state_id": "ST33",
+      "projects_count": 5,
+      "total_budget_handled": 17290000,
+      "hhi_score": 82
+    },
+    {
+      "ia_id": "IA229",
+      "name": "Tripura ZILLA_PARISHAD Executive Division",
+      "normalized_name": "Tripura ZILLA_PARISHAD Executive Division",
+      "agency_type": "ZILLA_PARISHAD",
+      "state_id": "ST33",
+      "projects_count": 5,
+      "total_budget_handled": 20690000,
+      "hhi_score": 117
+    },
+    {
+      "ia_id": "IA230",
+      "name": "Tripura ELECTRICITY Executive Division",
+      "normalized_name": "Tripura ELECTRICITY Executive Division",
+      "agency_type": "ELECTRICITY",
+      "state_id": "ST33",
+      "projects_count": 10,
+      "total_budget_handled": 49470000,
+      "hhi_score": 669
+    },
+    {
+      "ia_id": "IA231",
+      "name": "Tripura IRRIGATION Executive Division",
+      "normalized_name": "Tripura IRRIGATION Executive Division",
+      "agency_type": "IRRIGATION",
+      "state_id": "ST33",
+      "projects_count": 6,
+      "total_budget_handled": 35180000,
+      "hhi_score": 338
+    },
+    {
+      "ia_id": "IA232",
+      "name": "Uttar Pradesh PWD Executive Division",
+      "normalized_name": "Uttar Pradesh PWD Executive Division",
+      "agency_type": "PWD",
+      "state_id": "ST34",
+      "projects_count": 273,
+      "total_budget_handled": 1248760000,
+      "hhi_score": 216
+    },
+    {
+      "ia_id": "IA233",
+      "name": "Uttar Pradesh DRDA Executive Division",
+      "normalized_name": "Uttar Pradesh DRDA Executive Division",
+      "agency_type": "DRDA",
+      "state_id": "ST34",
+      "projects_count": 289,
+      "total_budget_handled": 1321630000,
+      "hhi_score": 242
+    },
+    {
+      "ia_id": "IA234",
+      "name": "Uttar Pradesh MUNICIPAL Executive Division",
+      "normalized_name": "Uttar Pradesh MUNICIPAL Executive Division",
+      "agency_type": "MUNICIPAL",
+      "state_id": "ST34",
+      "projects_count": 255,
+      "total_budget_handled": 1285380000,
+      "hhi_score": 229
+    },
+    {
+      "ia_id": "IA235",
+      "name": "Uttar Pradesh PHED Executive Division",
+      "normalized_name": "Uttar Pradesh PHED Executive Division",
+      "agency_type": "PHED",
+      "state_id": "ST34",
+      "projects_count": 244,
+      "total_budget_handled": 1124940000,
+      "hhi_score": 175
+    },
+    {
+      "ia_id": "IA236",
+      "name": "Uttar Pradesh ZILLA_PARISHAD Executive Division",
+      "normalized_name": "Uttar Pradesh ZILLA_PARISHAD Executive Division",
+      "agency_type": "ZILLA_PARISHAD",
+      "state_id": "ST34",
+      "projects_count": 223,
+      "total_budget_handled": 1181120000,
+      "hhi_score": 193
+    },
+    {
+      "ia_id": "IA237",
+      "name": "Uttar Pradesh ELECTRICITY Executive Division",
+      "normalized_name": "Uttar Pradesh ELECTRICITY Executive Division",
+      "agency_type": "ELECTRICITY",
+      "state_id": "ST34",
+      "projects_count": 253,
+      "total_budget_handled": 1171650000,
+      "hhi_score": 190
+    },
+    {
+      "ia_id": "IA238",
+      "name": "Uttar Pradesh IRRIGATION Executive Division",
+      "normalized_name": "Uttar Pradesh IRRIGATION Executive Division",
+      "agency_type": "IRRIGATION",
+      "state_id": "ST34",
+      "projects_count": 222,
+      "total_budget_handled": 1161810000,
+      "hhi_score": 187
+    },
+    {
+      "ia_id": "IA239",
+      "name": "Uttarakhand PWD Executive Division",
+      "normalized_name": "Uttarakhand PWD Executive Division",
+      "agency_type": "PWD",
+      "state_id": "ST35",
+      "projects_count": 12,
+      "total_budget_handled": 60280000,
+      "hhi_score": 147
+    },
+    {
+      "ia_id": "IA240",
+      "name": "Uttarakhand DRDA Executive Division",
+      "normalized_name": "Uttarakhand DRDA Executive Division",
+      "agency_type": "DRDA",
+      "state_id": "ST35",
+      "projects_count": 18,
+      "total_budget_handled": 88230000,
+      "hhi_score": 314
+    },
+    {
+      "ia_id": "IA241",
+      "name": "Uttarakhand MUNICIPAL Executive Division",
+      "normalized_name": "Uttarakhand MUNICIPAL Executive Division",
+      "agency_type": "MUNICIPAL",
+      "state_id": "ST35",
+      "projects_count": 12,
+      "total_budget_handled": 84920000,
+      "hhi_score": 291
+    },
+    {
+      "ia_id": "IA242",
+      "name": "Uttarakhand PHED Executive Division",
+      "normalized_name": "Uttarakhand PHED Executive Division",
+      "agency_type": "PHED",
+      "state_id": "ST35",
+      "projects_count": 15,
+      "total_budget_handled": 67420000,
+      "hhi_score": 183
+    },
+    {
+      "ia_id": "IA243",
+      "name": "Uttarakhand ZILLA_PARISHAD Executive Division",
+      "normalized_name": "Uttarakhand ZILLA_PARISHAD Executive Division",
+      "agency_type": "ZILLA_PARISHAD",
+      "state_id": "ST35",
+      "projects_count": 15,
+      "total_budget_handled": 71740000,
+      "hhi_score": 208
+    },
+    {
+      "ia_id": "IA244",
+      "name": "Uttarakhand ELECTRICITY Executive Division",
+      "normalized_name": "Uttarakhand ELECTRICITY Executive Division",
+      "agency_type": "ELECTRICITY",
+      "state_id": "ST35",
+      "projects_count": 19,
+      "total_budget_handled": 86610000,
+      "hhi_score": 303
+    },
+    {
+      "ia_id": "IA245",
+      "name": "Uttarakhand IRRIGATION Executive Division",
+      "normalized_name": "Uttarakhand IRRIGATION Executive Division",
+      "agency_type": "IRRIGATION",
+      "state_id": "ST35",
+      "projects_count": 9,
+      "total_budget_handled": 38670000,
+      "hhi_score": 60
+    },
+    {
+      "ia_id": "IA246",
+      "name": "West Bengal PWD Executive Division",
+      "normalized_name": "West Bengal PWD Executive Division",
+      "agency_type": "PWD",
+      "state_id": "ST36",
+      "projects_count": 33,
+      "total_budget_handled": 155890000,
+      "hhi_score": 137
+    },
+    {
+      "ia_id": "IA247",
+      "name": "West Bengal DRDA Executive Division",
+      "normalized_name": "West Bengal DRDA Executive Division",
+      "agency_type": "DRDA",
+      "state_id": "ST36",
+      "projects_count": 37,
+      "total_budget_handled": 175730000,
+      "hhi_score": 175
+    },
+    {
+      "ia_id": "IA248",
+      "name": "West Bengal MUNICIPAL Executive Division",
+      "normalized_name": "West Bengal MUNICIPAL Executive Division",
+      "agency_type": "MUNICIPAL",
+      "state_id": "ST36",
+      "projects_count": 49,
+      "total_budget_handled": 208300000,
+      "hhi_score": 245
+    },
+    {
+      "ia_id": "IA249",
+      "name": "West Bengal PHED Executive Division",
+      "normalized_name": "West Bengal PHED Executive Division",
+      "agency_type": "PHED",
+      "state_id": "ST36",
+      "projects_count": 48,
+      "total_budget_handled": 244740000,
+      "hhi_score": 339
+    },
+    {
+      "ia_id": "IA250",
+      "name": "West Bengal ZILLA_PARISHAD Executive Division",
+      "normalized_name": "West Bengal ZILLA_PARISHAD Executive Division",
+      "agency_type": "ZILLA_PARISHAD",
+      "state_id": "ST36",
+      "projects_count": 31,
+      "total_budget_handled": 142900000,
+      "hhi_score": 115
+    },
+    {
+      "ia_id": "IA251",
+      "name": "West Bengal ELECTRICITY Executive Division",
+      "normalized_name": "West Bengal ELECTRICITY Executive Division",
+      "agency_type": "ELECTRICITY",
+      "state_id": "ST36",
+      "projects_count": 41,
+      "total_budget_handled": 214840000,
+      "hhi_score": 261
+    },
+    {
+      "ia_id": "IA252",
+      "name": "West Bengal IRRIGATION Executive Division",
+      "normalized_name": "West Bengal IRRIGATION Executive Division",
+      "agency_type": "IRRIGATION",
+      "state_id": "ST36",
+      "projects_count": 44,
+      "total_budget_handled": 187560000,
+      "hhi_score": 199
+    }
+  ]
+}

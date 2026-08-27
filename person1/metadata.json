@@ -1,0 +1,6 @@
+{
+  "name": "MPLADS Audit Intelligence",
+  "description": "Comprehensive data pipeline, risk assessment, duplicate detection, and review console for MPLADS civic projects audit (SIH26102).",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

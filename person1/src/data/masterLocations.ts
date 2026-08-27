@@ -1,0 +1,43 @@
+/**
+ * Master Geographical Reference for all 36 Indian States & Union Territories
+ */
+import { StateEntity } from '../types.ts';
+
+export const MASTER_STATES: StateEntity[] = [
+  { state_id: 'ST01', name: 'ANDAMAN AND NICOBAR ISLANDS', normalized_name: 'Andaman & Nicobar Islands', state_type: 'UNION_TERRITORY', total_mps: 1, total_allocated: 50000000, latitude: 11.7401, longitude: 92.6586 },
+  { state_id: 'ST02', name: 'ANDHRA PRADESH', normalized_name: 'Andhra Pradesh', state_type: 'STATE', total_mps: 25, total_allocated: 1250000000, latitude: 15.9129, longitude: 79.7400 },
+  { state_id: 'ST03', name: 'ARUNACHAL PRADESH', normalized_name: 'Arunachal Pradesh', state_type: 'STATE', total_mps: 2, total_allocated: 100000000, latitude: 28.2180, longitude: 94.7278 },
+  { state_id: 'ST04', name: 'ASSAM', normalized_name: 'Assam', state_type: 'STATE', total_mps: 14, total_allocated: 700000000, latitude: 26.2006, longitude: 92.9376 },
+  { state_id: 'ST05', name: 'BIHAR', normalized_name: 'Bihar', state_type: 'STATE', total_mps: 40, total_allocated: 2000000000, latitude: 25.0961, longitude: 85.3131 },
+  { state_id: 'ST06', name: 'CHANDIGARH', normalized_name: 'Chandigarh', state_type: 'UNION_TERRITORY', total_mps: 1, total_allocated: 50000000, latitude: 30.7333, longitude: 76.7794 },
+  { state_id: 'ST07', name: 'CHHATTISGARH', normalized_name: 'Chhattisgarh', state_type: 'STATE', total_mps: 11, total_allocated: 550000000, latitude: 21.2787, longitude: 81.8661 },
+  { state_id: 'ST08', name: 'DADRA AND NAGAR HAVELI AND DAMAN AND DIU', normalized_name: 'Dadra & Nagar Haveli & Daman & Diu', state_type: 'UNION_TERRITORY', total_mps: 2, total_allocated: 100000000, latitude: 20.4283, longitude: 72.8397 },
+  { state_id: 'ST09', name: 'DELHI', normalized_name: 'Delhi (NCT)', state_type: 'UNION_TERRITORY', total_mps: 7, total_allocated: 350000000, latitude: 28.7041, longitude: 77.1025 },
+  { state_id: 'ST10', name: 'GOA', normalized_name: 'Goa', state_type: 'STATE', total_mps: 2, total_allocated: 100000000, latitude: 15.2993, longitude: 74.1240 },
+  { state_id: 'ST11', name: 'GUJARAT', normalized_name: 'Gujarat', state_type: 'STATE', total_mps: 26, total_allocated: 1300000000, latitude: 22.2587, longitude: 71.1924 },
+  { state_id: 'ST12', name: 'HARYANA', normalized_name: 'Haryana', state_type: 'STATE', total_mps: 10, total_allocated: 500000000, latitude: 29.0588, longitude: 76.0856 },
+  { state_id: 'ST13', name: 'HIMACHAL PRADESH', normalized_name: 'Himachal Pradesh', state_type: 'STATE', total_mps: 4, total_allocated: 200000000, latitude: 31.1048, longitude: 77.1734 },
+  { state_id: 'ST14', name: 'JAMMU AND KASHMIR', normalized_name: 'Jammu & Kashmir', state_type: 'UNION_TERRITORY', total_mps: 5, total_allocated: 250000000, latitude: 33.7782, longitude: 76.5762 },
+  { state_id: 'ST15', name: 'JHARKHAND', normalized_name: 'Jharkhand', state_type: 'STATE', total_mps: 14, total_allocated: 700000000, latitude: 23.6102, longitude: 85.2799 },
+  { state_id: 'ST16', name: 'KARNATAKA', normalized_name: 'Karnataka', state_type: 'STATE', total_mps: 28, total_allocated: 1400000000, latitude: 15.3173, longitude: 75.7139 },
+  { state_id: 'ST17', name: 'KERALA', normalized_name: 'Kerala', state_type: 'STATE', total_mps: 20, total_allocated: 1000000000, latitude: 10.8505, longitude: 76.2711 },
+  { state_id: 'ST18', name: 'LADAKH', normalized_name: 'Ladakh', state_type: 'UNION_TERRITORY', total_mps: 1, total_allocated: 50000000, latitude: 34.1526, longitude: 77.5771 },
+  { state_id: 'ST19', name: 'LAKSHADWEEP', normalized_name: 'Lakshadweep', state_type: 'UNION_TERRITORY', total_mps: 1, total_allocated: 50000000, latitude: 10.5667, longitude: 72.6417 },
+  { state_id: 'ST20', name: 'MADHYA PRADESH', normalized_name: 'Madhya Pradesh', state_type: 'STATE', total_mps: 29, total_allocated: 1450000000, latitude: 22.9734, longitude: 78.6569 },
+  { state_id: 'ST21', name: 'MAHARASHTRA', normalized_name: 'Maharashtra', state_type: 'STATE', total_mps: 48, total_allocated: 2350000000, latitude: 19.7515, longitude: 75.7139 },
+  { state_id: 'ST22', name: 'MANIPUR', normalized_name: 'Manipur', state_type: 'STATE', total_mps: 2, total_allocated: 100000000, latitude: 24.6637, longitude: 93.9063 },
+  { state_id: 'ST23', name: 'MEGHALAYA', normalized_name: 'Meghalaya', state_type: 'STATE', total_mps: 2, total_allocated: 100000000, latitude: 25.4670, longitude: 91.3662 },
+  { state_id: 'ST24', name: 'MIZORAM', normalized_name: 'Mizoram', state_type: 'STATE', total_mps: 1, total_allocated: 50000000, latitude: 23.1645, longitude: 92.9376 },
+  { state_id: 'ST25', name: 'NAGALAND', normalized_name: 'Nagaland', state_type: 'STATE', total_mps: 1, total_allocated: 50000000, latitude: 26.1584, longitude: 94.5624 },
+  { state_id: 'ST26', name: 'ODISHA', normalized_name: 'Odisha', state_type: 'STATE', total_mps: 21, total_allocated: 1050000000, latitude: 20.9517, longitude: 85.0985 },
+  { state_id: 'ST27', name: 'PUDUCHERRY', normalized_name: 'Puducherry', state_type: 'UNION_TERRITORY', total_mps: 1, total_allocated: 50000000, latitude: 11.9416, longitude: 79.8083 },
+  { state_id: 'ST28', name: 'PUNJAB', normalized_name: 'Punjab', state_type: 'STATE', total_mps: 13, total_allocated: 650000000, latitude: 31.1471, longitude: 75.3412 },
+  { state_id: 'ST29', name: 'RAJASTHAN', normalized_name: 'Rajasthan', state_type: 'STATE', total_mps: 25, total_allocated: 1250000000, latitude: 27.0238, longitude: 74.2179 },
+  { state_id: 'ST30', name: 'SIKKIM', normalized_name: 'Sikkim', state_type: 'STATE', total_mps: 1, total_allocated: 50000000, latitude: 27.5330, longitude: 88.5122 },
+  { state_id: 'ST31', name: 'TAMIL NADU', normalized_name: 'Tamil Nadu', state_type: 'STATE', total_mps: 39, total_allocated: 1950000000, latitude: 11.1271, longitude: 78.6569 },
+  { state_id: 'ST32', name: 'TELANGANA', normalized_name: 'Telangana', state_type: 'STATE', total_mps: 17, total_allocated: 850000000, latitude: 18.1124, longitude: 79.0193 },
+  { state_id: 'ST33', name: 'TRIPURA', normalized_name: 'Tripura', state_type: 'STATE', total_mps: 2, total_allocated: 100000000, latitude: 23.9408, longitude: 91.9882 },
+  { state_id: 'ST34', name: 'UTTAR PRADESH', normalized_name: 'Uttar Pradesh', state_type: 'STATE', total_mps: 80, total_allocated: 4000000000, latitude: 26.8467, longitude: 80.9462 },
+  { state_id: 'ST35', name: 'UTTARAKHAND', normalized_name: 'Uttarakhand', state_type: 'STATE', total_mps: 5, total_allocated: 250000000, latitude: 30.0668, longitude: 79.0193 },
+  { state_id: 'ST36', name: 'WEST BENGAL', normalized_name: 'West Bengal', state_type: 'STATE', total_mps: 42, total_allocated: 2100000000, latitude: 22.9868, longitude: 87.8550 },
+];

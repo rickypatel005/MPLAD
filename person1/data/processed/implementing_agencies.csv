@@ -1,0 +1,253 @@
+ia_id,name,normalized_name,agency_type,state_id,projects_count,total_budget_handled,hhi_score,average_risk_score
+IA001,Andaman & Nicobar Islands PWD Executive Division,Andaman & Nicobar Islands PWD Executive Division,PWD,ST01,4,16250000,323,0
+IA002,Andaman & Nicobar Islands DRDA Executive Division,Andaman & Nicobar Islands DRDA Executive Division,DRDA,ST01,1,5940000,43,0
+IA003,Andaman & Nicobar Islands MUNICIPAL Executive Division,Andaman & Nicobar Islands MUNICIPAL Executive Division,MUNICIPAL,ST01,8,28200000,973,0
+IA004,Andaman & Nicobar Islands PHED Executive Division,Andaman & Nicobar Islands PHED Executive Division,PHED,ST01,3,12930000,204,0
+IA005,Andaman & Nicobar Islands ZILLA_PARISHAD Executive Division,Andaman & Nicobar Islands ZILLA_PARISHAD Executive Division,ZILLA_PARISHAD,ST01,1,4110000,21,0
+IA006,Andaman & Nicobar Islands ELECTRICITY Executive Division,Andaman & Nicobar Islands ELECTRICITY Executive Division,ELECTRICITY,ST01,3,12820000,201,0
+IA007,Andaman & Nicobar Islands IRRIGATION Executive Division,Andaman & Nicobar Islands IRRIGATION Executive Division,IRRIGATION,ST01,2,10170000,127,0
+IA008,Andhra Pradesh PWD Executive Division,Andhra Pradesh PWD Executive Division,PWD,ST02,74,318410000,200,0
+IA009,Andhra Pradesh DRDA Executive Division,Andhra Pradesh DRDA Executive Division,DRDA,ST02,70,333160000,219,0
+IA010,Andhra Pradesh MUNICIPAL Executive Division,Andhra Pradesh MUNICIPAL Executive Division,MUNICIPAL,ST02,70,371040000,272,0
+IA011,Andhra Pradesh PHED Executive Division,Andhra Pradesh PHED Executive Division,PHED,ST02,57,278940000,154,0
+IA012,Andhra Pradesh ZILLA_PARISHAD Executive Division,Andhra Pradesh ZILLA_PARISHAD Executive Division,ZILLA_PARISHAD,ST02,57,326640000,211,0
+IA013,Andhra Pradesh ELECTRICITY Executive Division,Andhra Pradesh ELECTRICITY Executive Division,ELECTRICITY,ST02,58,266890000,141,0
+IA014,Andhra Pradesh IRRIGATION Executive Division,Andhra Pradesh IRRIGATION Executive Division,IRRIGATION,ST02,73,355570000,250,0
+IA015,Arunachal Pradesh PWD Executive Division,Arunachal Pradesh PWD Executive Division,PWD,ST03,8,32880000,317,0
+IA016,Arunachal Pradesh DRDA Executive Division,Arunachal Pradesh DRDA Executive Division,DRDA,ST03,4,15950000,75,0
+IA017,Arunachal Pradesh MUNICIPAL Executive Division,Arunachal Pradesh MUNICIPAL Executive Division,MUNICIPAL,ST03,9,40430000,479,0
+IA018,Arunachal Pradesh PHED Executive Division,Arunachal Pradesh PHED Executive Division,PHED,ST03,5,23250000,158,0
+IA019,Arunachal Pradesh ZILLA_PARISHAD Executive Division,Arunachal Pradesh ZILLA_PARISHAD Executive Division,ZILLA_PARISHAD,ST03,5,27040000,214,0
+IA020,Arunachal Pradesh ELECTRICITY Executive Division,Arunachal Pradesh ELECTRICITY Executive Division,ELECTRICITY,ST03,5,20900000,128,0
+IA021,Arunachal Pradesh IRRIGATION Executive Division,Arunachal Pradesh IRRIGATION Executive Division,IRRIGATION,ST03,5,24270000,173,0
+IA022,Assam PWD Executive Division,Assam PWD Executive Division,PWD,ST04,44,183760000,239,0
+IA023,Assam DRDA Executive Division,Assam DRDA Executive Division,DRDA,ST04,45,191400000,259,0
+IA024,Assam MUNICIPAL Executive Division,Assam MUNICIPAL Executive Division,MUNICIPAL,ST04,33,150230000,160,0
+IA025,Assam PHED Executive Division,Assam PHED Executive Division,PHED,ST04,42,194390000,267,0
+IA026,Assam ZILLA_PARISHAD Executive Division,Assam ZILLA_PARISHAD Executive Division,ZILLA_PARISHAD,ST04,37,159370000,180,0
+IA027,Assam ELECTRICITY Executive Division,Assam ELECTRICITY Executive Division,ELECTRICITY,ST04,26,121660000,105,0
+IA028,Assam IRRIGATION Executive Division,Assam IRRIGATION Executive Division,IRRIGATION,ST04,42,188250000,251,0
+IA029,Bihar PWD Executive Division,Bihar PWD Executive Division,PWD,ST05,112,531050000,246,0
+IA030,Bihar DRDA Executive Division,Bihar DRDA Executive Division,DRDA,ST05,101,454850000,180,0
+IA031,Bihar MUNICIPAL Executive Division,Bihar MUNICIPAL Executive Division,MUNICIPAL,ST05,109,493030000,212,0
+IA032,Bihar PHED Executive Division,Bihar PHED Executive Division,PHED,ST05,99,465140000,188,0
+IA033,Bihar ZILLA_PARISHAD Executive Division,Bihar ZILLA_PARISHAD Executive Division,ZILLA_PARISHAD,ST05,109,518350000,234,0
+IA034,Bihar ELECTRICITY Executive Division,Bihar ELECTRICITY Executive Division,ELECTRICITY,ST05,106,476900000,198,0
+IA035,Bihar IRRIGATION Executive Division,Bihar IRRIGATION Executive Division,IRRIGATION,ST05,103,449260000,176,0
+IA036,Chandigarh PWD Executive Division,Chandigarh PWD Executive Division,PWD,ST06,3,9800000,116,0
+IA037,Chandigarh DRDA Executive Division,Chandigarh DRDA Executive Division,DRDA,ST06,5,18280000,403,0
+IA038,Chandigarh MUNICIPAL Executive Division,Chandigarh MUNICIPAL Executive Division,MUNICIPAL,ST06,0,0,0,0
+IA039,Chandigarh PHED Executive Division,Chandigarh PHED Executive Division,PHED,ST06,5,28380000,972,0
+IA040,Chandigarh ZILLA_PARISHAD Executive Division,Chandigarh ZILLA_PARISHAD Executive Division,ZILLA_PARISHAD,ST06,6,23880000,688,0
+IA041,Chandigarh ELECTRICITY Executive Division,Chandigarh ELECTRICITY Executive Division,ELECTRICITY,ST06,3,10690000,138,0
+IA042,Chandigarh IRRIGATION Executive Division,Chandigarh IRRIGATION Executive Division,IRRIGATION,ST06,0,0,0,0
+IA043,Chhattisgarh PWD Executive Division,Chhattisgarh PWD Executive Division,PWD,ST07,30,131850000,164,0
+IA044,Chhattisgarh DRDA Executive Division,Chhattisgarh DRDA Executive Division,DRDA,ST07,30,140000000,185,0
+IA045,Chhattisgarh MUNICIPAL Executive Division,Chhattisgarh MUNICIPAL Executive Division,MUNICIPAL,ST07,28,125330000,148,0
+IA046,Chhattisgarh PHED Executive Division,Chhattisgarh PHED Executive Division,PHED,ST07,40,234850000,520,0
+IA047,Chhattisgarh ZILLA_PARISHAD Executive Division,Chhattisgarh ZILLA_PARISHAD Executive Division,ZILLA_PARISHAD,ST07,30,141170000,188,0
+IA048,Chhattisgarh ELECTRICITY Executive Division,Chhattisgarh ELECTRICITY Executive Division,ELECTRICITY,ST07,27,154150000,224,0
+IA049,Chhattisgarh IRRIGATION Executive Division,Chhattisgarh IRRIGATION Executive Division,IRRIGATION,ST07,26,102450000,99,0
+IA050,Dadra & Nagar Haveli & Daman & Diu PWD Executive Division,Dadra & Nagar Haveli & Daman & Diu PWD Executive Division,PWD,ST08,1,4410000,9,0
+IA051,Dadra & Nagar Haveli & Daman & Diu DRDA Executive Division,Dadra & Nagar Haveli & Daman & Diu DRDA Executive Division,DRDA,ST08,3,15950000,112,0
+IA052,Dadra & Nagar Haveli & Daman & Diu MUNICIPAL Executive Division,Dadra & Nagar Haveli & Daman & Diu MUNICIPAL Executive Division,MUNICIPAL,ST08,6,24970000,276,0
+IA053,Dadra & Nagar Haveli & Daman & Diu PHED Executive Division,Dadra & Nagar Haveli & Daman & Diu PHED Executive Division,PHED,ST08,6,22500000,224,0
+IA054,Dadra & Nagar Haveli & Daman & Diu ZILLA_PARISHAD Executive Division,Dadra & Nagar Haveli & Daman & Diu ZILLA_PARISHAD Executive Division,ZILLA_PARISHAD,ST08,4,17920000,142,0
+IA055,Dadra & Nagar Haveli & Daman & Diu ELECTRICITY Executive Division,Dadra & Nagar Haveli & Daman & Diu ELECTRICITY Executive Division,ELECTRICITY,ST08,7,33260000,489,0
+IA056,Dadra & Nagar Haveli & Daman & Diu IRRIGATION Executive Division,Dadra & Nagar Haveli & Daman & Diu IRRIGATION Executive Division,IRRIGATION,ST08,9,31380000,435,0
+IA057,Delhi (NCT) PWD Executive Division,Delhi (NCT) PWD Executive Division,PWD,ST09,24,105460000,263,0
+IA058,Delhi (NCT) DRDA Executive Division,Delhi (NCT) DRDA Executive Division,DRDA,ST09,21,106750000,270,0
+IA059,Delhi (NCT) MUNICIPAL Executive Division,Delhi (NCT) MUNICIPAL Executive Division,MUNICIPAL,ST09,18,107920000,276,0
+IA060,Delhi (NCT) PHED Executive Division,Delhi (NCT) PHED Executive Division,PHED,ST09,19,84040000,167,0
+IA061,Delhi (NCT) ZILLA_PARISHAD Executive Division,Delhi (NCT) ZILLA_PARISHAD Executive Division,ZILLA_PARISHAD,ST09,17,81020000,155,0
+IA062,Delhi (NCT) ELECTRICITY Executive Division,Delhi (NCT) ELECTRICITY Executive Division,ELECTRICITY,ST09,12,53440000,68,0
+IA063,Delhi (NCT) IRRIGATION Executive Division,Delhi (NCT) IRRIGATION Executive Division,IRRIGATION,ST09,19,111150000,293,0
+IA064,Goa PWD Executive Division,Goa PWD Executive Division,PWD,ST10,6,24440000,211,0
+IA065,Goa DRDA Executive Division,Goa DRDA Executive Division,DRDA,ST10,4,18310000,118,0
+IA066,Goa MUNICIPAL Executive Division,Goa MUNICIPAL Executive Division,MUNICIPAL,ST10,8,31700000,355,0
+IA067,Goa PHED Executive Division,Goa PHED Executive Division,PHED,ST10,1,2190000,2,0
+IA068,Goa ZILLA_PARISHAD Executive Division,Goa ZILLA_PARISHAD Executive Division,ZILLA_PARISHAD,ST10,6,29760000,313,0
+IA069,Goa ELECTRICITY Executive Division,Goa ELECTRICITY Executive Division,ELECTRICITY,ST10,5,19940000,140,0
+IA070,Goa IRRIGATION Executive Division,Goa IRRIGATION Executive Division,IRRIGATION,ST10,8,41910000,620,0
+IA071,Gujarat PWD Executive Division,Gujarat PWD Executive Division,PWD,ST11,80,381620000,277,0
+IA072,Gujarat DRDA Executive Division,Gujarat DRDA Executive Division,DRDA,ST11,72,289220000,159,0
+IA073,Gujarat MUNICIPAL Executive Division,Gujarat MUNICIPAL Executive Division,MUNICIPAL,ST11,75,371970000,263,0
+IA074,Gujarat PHED Executive Division,Gujarat PHED Executive Division,PHED,ST11,60,270360000,139,0
+IA075,Gujarat ZILLA_PARISHAD Executive Division,Gujarat ZILLA_PARISHAD Executive Division,ZILLA_PARISHAD,ST11,60,257860000,126,0
+IA076,Gujarat ELECTRICITY Executive Division,Gujarat ELECTRICITY Executive Division,ELECTRICITY,ST11,54,251340000,120,0
+IA077,Gujarat IRRIGATION Executive Division,Gujarat IRRIGATION Executive Division,IRRIGATION,ST11,93,470510000,421,0
+IA078,Haryana PWD Executive Division,Haryana PWD Executive Division,PWD,ST12,36,197200000,443,0
+IA079,Haryana DRDA Executive Division,Haryana DRDA Executive Division,DRDA,ST12,26,124080000,175,0
+IA080,Haryana MUNICIPAL Executive Division,Haryana MUNICIPAL Executive Division,MUNICIPAL,ST12,25,96870000,107,0
+IA081,Haryana PHED Executive Division,Haryana PHED Executive Division,PHED,ST12,32,141290000,227,0
+IA082,Haryana ZILLA_PARISHAD Executive Division,Haryana ZILLA_PARISHAD Executive Division,ZILLA_PARISHAD,ST12,21,100280000,115,0
+IA083,Haryana ELECTRICITY Executive Division,Haryana ELECTRICITY Executive Division,ELECTRICITY,ST12,29,137020000,214,0
+IA084,Haryana IRRIGATION Executive Division,Haryana IRRIGATION Executive Division,IRRIGATION,ST12,18,140410000,224,0
+IA085,Himachal Pradesh PWD Executive Division,Himachal Pradesh PWD Executive Division,PWD,ST13,11,53570000,234,0
+IA086,Himachal Pradesh DRDA Executive Division,Himachal Pradesh DRDA Executive Division,DRDA,ST13,13,62250000,316,0
+IA087,Himachal Pradesh MUNICIPAL Executive Division,Himachal Pradesh MUNICIPAL Executive Division,MUNICIPAL,ST13,10,54870000,245,0
+IA088,Himachal Pradesh PHED Executive Division,Himachal Pradesh PHED Executive Division,PHED,ST13,7,34530000,97,0
+IA089,Himachal Pradesh ZILLA_PARISHAD Executive Division,Himachal Pradesh ZILLA_PARISHAD Executive Division,ZILLA_PARISHAD,ST13,8,34120000,95,0
+IA090,Himachal Pradesh ELECTRICITY Executive Division,Himachal Pradesh ELECTRICITY Executive Division,ELECTRICITY,ST13,13,56920000,264,0
+IA091,Himachal Pradesh IRRIGATION Executive Division,Himachal Pradesh IRRIGATION Executive Division,IRRIGATION,ST13,10,54040000,238,0
+IA092,Jammu & Kashmir PWD Executive Division,Jammu & Kashmir PWD Executive Division,PWD,ST14,11,45540000,87,0
+IA093,Jammu & Kashmir DRDA Executive Division,Jammu & Kashmir DRDA Executive Division,DRDA,ST14,14,71700000,216,0
+IA094,Jammu & Kashmir MUNICIPAL Executive Division,Jammu & Kashmir MUNICIPAL Executive Division,MUNICIPAL,ST14,18,115950000,565,0
+IA095,Jammu & Kashmir PHED Executive Division,Jammu & Kashmir PHED Executive Division,PHED,ST14,14,60120000,152,0
+IA096,Jammu & Kashmir ZILLA_PARISHAD Executive Division,Jammu & Kashmir ZILLA_PARISHAD Executive Division,ZILLA_PARISHAD,ST14,17,87550000,322,0
+IA097,Jammu & Kashmir ELECTRICITY Executive Division,Jammu & Kashmir ELECTRICITY Executive Division,ELECTRICITY,ST14,9,48910000,101,0
+IA098,Jammu & Kashmir IRRIGATION Executive Division,Jammu & Kashmir IRRIGATION Executive Division,IRRIGATION,ST14,13,58050000,142,0
+IA099,Jharkhand PWD Executive Division,Jharkhand PWD Executive Division,PWD,ST15,36,178560000,239,0
+IA100,Jharkhand DRDA Executive Division,Jharkhand DRDA Executive Division,DRDA,ST15,37,160670000,193,0
+IA101,Jharkhand MUNICIPAL Executive Division,Jharkhand MUNICIPAL Executive Division,MUNICIPAL,ST15,32,151250000,171,0
+IA102,Jharkhand PHED Executive Division,Jharkhand PHED Executive Division,PHED,ST15,32,168410000,212,0
+IA103,Jharkhand ZILLA_PARISHAD Executive Division,Jharkhand ZILLA_PARISHAD Executive Division,ZILLA_PARISHAD,ST15,35,149190000,167,0
+IA104,Jharkhand ELECTRICITY Executive Division,Jharkhand ELECTRICITY Executive Division,ELECTRICITY,ST15,43,205030000,315,0
+IA105,Jharkhand IRRIGATION Executive Division,Jharkhand IRRIGATION Executive Division,IRRIGATION,ST15,35,142430000,152,0
+IA106,Karnataka PWD Executive Division,Karnataka PWD Executive Division,PWD,ST16,74,385490000,213,0
+IA107,Karnataka DRDA Executive Division,Karnataka DRDA Executive Division,DRDA,ST16,93,407570000,239,0
+IA108,Karnataka MUNICIPAL Executive Division,Karnataka MUNICIPAL Executive Division,MUNICIPAL,ST16,76,366010000,192,0
+IA109,Karnataka PHED Executive Division,Karnataka PHED Executive Division,PHED,ST16,72,354320000,180,0
+IA110,Karnataka ZILLA_PARISHAD Executive Division,Karnataka ZILLA_PARISHAD Executive Division,ZILLA_PARISHAD,ST16,84,459800000,304,0
+IA111,Karnataka ELECTRICITY Executive Division,Karnataka ELECTRICITY Executive Division,ELECTRICITY,ST16,71,344680000,171,0
+IA112,Karnataka IRRIGATION Executive Division,Karnataka IRRIGATION Executive Division,IRRIGATION,ST16,67,320990000,148,0
+IA113,Kerala PWD Executive Division,Kerala PWD Executive Division,PWD,ST17,54,238850000,157,0
+IA114,Kerala DRDA Executive Division,Kerala DRDA Executive Division,DRDA,ST17,39,181060000,90,0
+IA115,Kerala MUNICIPAL Executive Division,Kerala MUNICIPAL Executive Division,MUNICIPAL,ST17,60,343210000,325,0
+IA116,Kerala PHED Executive Division,Kerala PHED Executive Division,PHED,ST17,59,266000000,195,0
+IA117,Kerala ZILLA_PARISHAD Executive Division,Kerala ZILLA_PARISHAD Executive Division,ZILLA_PARISHAD,ST17,46,269300000,200,0
+IA118,Kerala ELECTRICITY Executive Division,Kerala ELECTRICITY Executive Division,ELECTRICITY,ST17,44,195640000,106,0
+IA119,Kerala IRRIGATION Executive Division,Kerala IRRIGATION Executive Division,IRRIGATION,ST17,76,409550000,463,0
+IA120,Ladakh PWD Executive Division,Ladakh PWD Executive Division,PWD,ST18,3,9490000,95,0
+IA121,Ladakh DRDA Executive Division,Ladakh DRDA Executive Division,DRDA,ST18,3,12080000,154,0
+IA122,Ladakh MUNICIPAL Executive Division,Ladakh MUNICIPAL Executive Division,MUNICIPAL,ST18,4,19260000,392,0
+IA123,Ladakh PHED Executive Division,Ladakh PHED Executive Division,PHED,ST18,3,11940000,151,0
+IA124,Ladakh ZILLA_PARISHAD Executive Division,Ladakh ZILLA_PARISHAD Executive Division,ZILLA_PARISHAD,ST18,4,17960000,341,0
+IA125,Ladakh ELECTRICITY Executive Division,Ladakh ELECTRICITY Executive Division,ELECTRICITY,ST18,1,7380000,58,0
+IA126,Ladakh IRRIGATION Executive Division,Ladakh IRRIGATION Executive Division,IRRIGATION,ST18,4,19150000,388,0
+IA127,Lakshadweep PWD Executive Division,Lakshadweep PWD Executive Division,PWD,ST19,1,3460000,22,0
+IA128,Lakshadweep DRDA Executive Division,Lakshadweep DRDA Executive Division,DRDA,ST19,5,19460000,681,0
+IA129,Lakshadweep MUNICIPAL Executive Division,Lakshadweep MUNICIPAL Executive Division,MUNICIPAL,ST19,3,15070000,409,0
+IA130,Lakshadweep PHED Executive Division,Lakshadweep PHED Executive Division,PHED,ST19,2,9110000,149,0
+IA131,Lakshadweep ZILLA_PARISHAD Executive Division,Lakshadweep ZILLA_PARISHAD Executive Division,ZILLA_PARISHAD,ST19,1,7260000,95,0
+IA132,Lakshadweep ELECTRICITY Executive Division,Lakshadweep ELECTRICITY Executive Division,ELECTRICITY,ST19,3,16880000,513,0
+IA133,Lakshadweep IRRIGATION Executive Division,Lakshadweep IRRIGATION Executive Division,IRRIGATION,ST19,1,3320000,20,0
+IA134,Madhya Pradesh PWD Executive Division,Madhya Pradesh PWD Executive Division,PWD,ST20,94,440180000,284,0
+IA135,Madhya Pradesh DRDA Executive Division,Madhya Pradesh DRDA Executive Division,DRDA,ST20,76,335720000,165,0
+IA136,Madhya Pradesh MUNICIPAL Executive Division,Madhya Pradesh MUNICIPAL Executive Division,MUNICIPAL,ST20,81,401400000,236,0
+IA137,Madhya Pradesh PHED Executive Division,Madhya Pradesh PHED Executive Division,PHED,ST20,75,354760000,184,0
+IA138,Madhya Pradesh ZILLA_PARISHAD Executive Division,Madhya Pradesh ZILLA_PARISHAD Executive Division,ZILLA_PARISHAD,ST20,76,382750000,215,0
+IA139,Madhya Pradesh ELECTRICITY Executive Division,Madhya Pradesh ELECTRICITY Executive Division,ELECTRICITY,ST20,70,322270000,152,0
+IA140,Madhya Pradesh IRRIGATION Executive Division,Madhya Pradesh IRRIGATION Executive Division,IRRIGATION,ST20,81,376120000,207,0
+IA141,Maharashtra PWD Executive Division,Maharashtra PWD Executive Division,PWD,ST21,122,553550000,161,0
+IA142,Maharashtra DRDA Executive Division,Maharashtra DRDA Executive Division,DRDA,ST21,132,612580000,197,0
+IA143,Maharashtra MUNICIPAL Executive Division,Maharashtra MUNICIPAL Executive Division,MUNICIPAL,ST21,144,645980000,219,0
+IA144,Maharashtra PHED Executive Division,Maharashtra PHED Executive Division,PHED,ST21,113,543490000,155,0
+IA145,Maharashtra ZILLA_PARISHAD Executive Division,Maharashtra ZILLA_PARISHAD Executive Division,ZILLA_PARISHAD,ST21,128,642070000,216,0
+IA146,Maharashtra ELECTRICITY Executive Division,Maharashtra ELECTRICITY Executive Division,ELECTRICITY,ST21,139,701350000,258,0
+IA147,Maharashtra IRRIGATION Executive Division,Maharashtra IRRIGATION Executive Division,IRRIGATION,ST21,126,669770000,235,0
+IA148,Manipur PWD Executive Division,Manipur PWD Executive Division,PWD,ST22,4,25110000,218,0
+IA149,Manipur DRDA Executive Division,Manipur DRDA Executive Division,DRDA,ST22,5,22800000,179,0
+IA150,Manipur MUNICIPAL Executive Division,Manipur MUNICIPAL Executive Division,MUNICIPAL,ST22,4,17140000,101,0
+IA151,Manipur PHED Executive Division,Manipur PHED Executive Division,PHED,ST22,5,21410000,158,0
+IA152,Manipur ZILLA_PARISHAD Executive Division,Manipur ZILLA_PARISHAD Executive Division,ZILLA_PARISHAD,ST22,7,26570000,244,0
+IA153,Manipur ELECTRICITY Executive Division,Manipur ELECTRICITY Executive Division,ELECTRICITY,ST22,5,28110000,273,0
+IA154,Manipur IRRIGATION Executive Division,Manipur IRRIGATION Executive Division,IRRIGATION,ST22,7,29090000,292,0
+IA155,Meghalaya PWD Executive Division,Meghalaya PWD Executive Division,PWD,ST23,7,34110000,515,0
+IA156,Meghalaya DRDA Executive Division,Meghalaya DRDA Executive Division,DRDA,ST23,3,14540000,94,0
+IA157,Meghalaya MUNICIPAL Executive Division,Meghalaya MUNICIPAL Executive Division,MUNICIPAL,ST23,7,25820000,295,0
+IA158,Meghalaya PHED Executive Division,Meghalaya PHED Executive Division,PHED,ST23,4,18580000,153,0
+IA159,Meghalaya ZILLA_PARISHAD Executive Division,Meghalaya ZILLA_PARISHAD Executive Division,ZILLA_PARISHAD,ST23,4,18740000,155,0
+IA160,Meghalaya ELECTRICITY Executive Division,Meghalaya ELECTRICITY Executive Division,ELECTRICITY,ST23,5,26540000,312,0
+IA161,Meghalaya IRRIGATION Executive Division,Meghalaya IRRIGATION Executive Division,IRRIGATION,ST23,4,11980000,64,0
+IA162,Mizoram PWD Executive Division,Mizoram PWD Executive Division,PWD,ST24,4,18420000,504,0
+IA163,Mizoram DRDA Executive Division,Mizoram DRDA Executive Division,DRDA,ST24,4,16130000,386,0
+IA164,Mizoram MUNICIPAL Executive Division,Mizoram MUNICIPAL Executive Division,MUNICIPAL,ST24,0,0,0,0
+IA165,Mizoram PHED Executive Division,Mizoram PHED Executive Division,PHED,ST24,2,9870000,145,0
+IA166,Mizoram ZILLA_PARISHAD Executive Division,Mizoram ZILLA_PARISHAD Executive Division,ZILLA_PARISHAD,ST24,2,9290000,128,0
+IA167,Mizoram ELECTRICITY Executive Division,Mizoram ELECTRICITY Executive Division,ELECTRICITY,ST24,7,28350000,1194,0
+IA168,Mizoram IRRIGATION Executive Division,Mizoram IRRIGATION Executive Division,IRRIGATION,ST24,0,0,0,0
+IA169,Nagaland PWD Executive Division,Nagaland PWD Executive Division,PWD,ST25,1,3700000,14,0
+IA170,Nagaland DRDA Executive Division,Nagaland DRDA Executive Division,DRDA,ST25,3,10890000,120,0
+IA171,Nagaland MUNICIPAL Executive Division,Nagaland MUNICIPAL Executive Division,MUNICIPAL,ST25,4,21240000,458,0
+IA172,Nagaland PHED Executive Division,Nagaland PHED Executive Division,PHED,ST25,7,32110000,1046,0
+IA173,Nagaland ZILLA_PARISHAD Executive Division,Nagaland ZILLA_PARISHAD Executive Division,ZILLA_PARISHAD,ST25,4,17420000,308,0
+IA174,Nagaland ELECTRICITY Executive Division,Nagaland ELECTRICITY Executive Division,ELECTRICITY,ST25,2,11590000,136,0
+IA175,Nagaland IRRIGATION Executive Division,Nagaland IRRIGATION Executive Division,IRRIGATION,ST25,1,2320000,5,0
+IA176,Odisha PWD Executive Division,Odisha PWD Executive Division,PWD,ST26,57,272530000,229,0
+IA177,Odisha DRDA Executive Division,Odisha DRDA Executive Division,DRDA,ST26,58,285020000,250,0
+IA178,Odisha MUNICIPAL Executive Division,Odisha MUNICIPAL Executive Division,MUNICIPAL,ST26,55,267840000,221,0
+IA179,Odisha PHED Executive Division,Odisha PHED Executive Division,PHED,ST26,57,279230000,240,0
+IA180,Odisha ZILLA_PARISHAD Executive Division,Odisha ZILLA_PARISHAD Executive Division,ZILLA_PARISHAD,ST26,65,284850000,250,0
+IA181,Odisha ELECTRICITY Executive Division,Odisha ELECTRICITY Executive Division,ELECTRICITY,ST26,46,197100000,120,0
+IA182,Odisha IRRIGATION Executive Division,Odisha IRRIGATION Executive Division,IRRIGATION,ST26,48,215710000,143,0
+IA183,Puducherry PWD Executive Division,Puducherry PWD Executive Division,PWD,ST27,0,0,0,0
+IA184,Puducherry DRDA Executive Division,Puducherry DRDA Executive Division,DRDA,ST27,3,16380000,246,0
+IA185,Puducherry MUNICIPAL Executive Division,Puducherry MUNICIPAL Executive Division,MUNICIPAL,ST27,2,10110000,94,0
+IA186,Puducherry PHED Executive Division,Puducherry PHED Executive Division,PHED,ST27,4,20000000,367,0
+IA187,Puducherry ZILLA_PARISHAD Executive Division,Puducherry ZILLA_PARISHAD Executive Division,ZILLA_PARISHAD,ST27,3,10030000,92,0
+IA188,Puducherry ELECTRICITY Executive Division,Puducherry ELECTRICITY Executive Division,ELECTRICITY,ST27,7,36480000,1222,0
+IA189,Puducherry IRRIGATION Executive Division,Puducherry IRRIGATION Executive Division,IRRIGATION,ST27,3,11360000,118,0
+IA190,Punjab PWD Executive Division,Punjab PWD Executive Division,PWD,ST28,31,146800000,132,0
+IA191,Punjab DRDA Executive Division,Punjab DRDA Executive Division,DRDA,ST28,45,210500000,272,0
+IA192,Punjab MUNICIPAL Executive Division,Punjab MUNICIPAL Executive Division,MUNICIPAL,ST28,36,168380000,174,0
+IA193,Punjab PHED Executive Division,Punjab PHED Executive Division,PHED,ST28,44,210750000,273,0
+IA194,Punjab ZILLA_PARISHAD Executive Division,Punjab ZILLA_PARISHAD Executive Division,ZILLA_PARISHAD,ST28,33,173880000,186,0
+IA195,Punjab ELECTRICITY Executive Division,Punjab ELECTRICITY Executive Division,ELECTRICITY,ST28,40,218760000,294,0
+IA196,Punjab IRRIGATION Executive Division,Punjab IRRIGATION Executive Division,IRRIGATION,ST28,32,147040000,133,0
+IA197,Rajasthan PWD Executive Division,Rajasthan PWD Executive Division,PWD,ST29,72,341090000,258,0
+IA198,Rajasthan DRDA Executive Division,Rajasthan DRDA Executive Division,DRDA,ST29,78,331630000,244,0
+IA199,Rajasthan MUNICIPAL Executive Division,Rajasthan MUNICIPAL Executive Division,MUNICIPAL,ST29,55,264500000,155,0
+IA200,Rajasthan PHED Executive Division,Rajasthan PHED Executive Division,PHED,ST29,68,328110000,239,0
+IA201,Rajasthan ZILLA_PARISHAD Executive Division,Rajasthan ZILLA_PARISHAD Executive Division,ZILLA_PARISHAD,ST29,73,315970000,221,0
+IA202,Rajasthan ELECTRICITY Executive Division,Rajasthan ELECTRICITY Executive Division,ELECTRICITY,ST29,57,258580000,148,0
+IA203,Rajasthan IRRIGATION Executive Division,Rajasthan IRRIGATION Executive Division,IRRIGATION,ST29,66,283840000,179,0
+IA204,Sikkim PWD Executive Division,Sikkim PWD Executive Division,PWD,ST30,3,9480000,125,0
+IA205,Sikkim DRDA Executive Division,Sikkim DRDA Executive Division,DRDA,ST30,0,0,0,0
+IA206,Sikkim MUNICIPAL Executive Division,Sikkim MUNICIPAL Executive Division,MUNICIPAL,ST30,4,13920000,270,0
+IA207,Sikkim PHED Executive Division,Sikkim PHED Executive Division,PHED,ST30,1,3920000,21,0
+IA208,Sikkim ZILLA_PARISHAD Executive Division,Sikkim ZILLA_PARISHAD Executive Division,ZILLA_PARISHAD,ST30,3,13800000,266,0
+IA209,Sikkim ELECTRICITY Executive Division,Sikkim ELECTRICITY Executive Division,ELECTRICITY,ST30,2,11520000,185,0
+IA210,Sikkim IRRIGATION Executive Division,Sikkim IRRIGATION Executive Division,IRRIGATION,ST30,7,32040000,1432,0
+IA211,Tamil Nadu PWD Executive Division,Tamil Nadu PWD Executive Division,PWD,ST31,119,547930000,246,0
+IA212,Tamil Nadu DRDA Executive Division,Tamil Nadu DRDA Executive Division,DRDA,ST31,100,466430000,178,0
+IA213,Tamil Nadu MUNICIPAL Executive Division,Tamil Nadu MUNICIPAL Executive Division,MUNICIPAL,ST31,108,523600000,225,0
+IA214,Tamil Nadu PHED Executive Division,Tamil Nadu PHED Executive Division,PHED,ST31,101,502960000,207,0
+IA215,Tamil Nadu ZILLA_PARISHAD Executive Division,Tamil Nadu ZILLA_PARISHAD Executive Division,ZILLA_PARISHAD,ST31,110,498850000,204,0
+IA216,Tamil Nadu ELECTRICITY Executive Division,Tamil Nadu ELECTRICITY Executive Division,ELECTRICITY,ST31,112,526840000,228,0
+IA217,Tamil Nadu IRRIGATION Executive Division,Tamil Nadu IRRIGATION Executive Division,IRRIGATION,ST31,95,425290000,148,0
+IA218,Telangana PWD Executive Division,Telangana PWD Executive Division,PWD,ST32,46,235060000,238,0
+IA219,Telangana DRDA Executive Division,Telangana DRDA Executive Division,DRDA,ST32,47,216900000,203,0
+IA220,Telangana MUNICIPAL Executive Division,Telangana MUNICIPAL Executive Division,MUNICIPAL,ST32,50,262970000,298,0
+IA221,Telangana PHED Executive Division,Telangana PHED Executive Division,PHED,ST32,34,153020000,101,0
+IA222,Telangana ZILLA_PARISHAD Executive Division,Telangana ZILLA_PARISHAD Executive Division,ZILLA_PARISHAD,ST32,44,199460000,172,0
+IA223,Telangana ELECTRICITY Executive Division,Telangana ELECTRICITY Executive Division,ELECTRICITY,ST32,61,269430000,313,0
+IA224,Telangana IRRIGATION Executive Division,Telangana IRRIGATION Executive Division,IRRIGATION,ST32,46,185730000,149,0
+IA225,Tripura PWD Executive Division,Tripura PWD Executive Division,PWD,ST33,2,12090000,40,0
+IA226,Tripura DRDA Executive Division,Tripura DRDA Executive Division,DRDA,ST33,7,32830000,294,0
+IA227,Tripura MUNICIPAL Executive Division,Tripura MUNICIPAL Executive Division,MUNICIPAL,ST33,4,23780000,154,0
+IA228,Tripura PHED Executive Division,Tripura PHED Executive Division,PHED,ST33,5,17290000,82,0
+IA229,Tripura ZILLA_PARISHAD Executive Division,Tripura ZILLA_PARISHAD Executive Division,ZILLA_PARISHAD,ST33,5,20690000,117,0
+IA230,Tripura ELECTRICITY Executive Division,Tripura ELECTRICITY Executive Division,ELECTRICITY,ST33,10,49470000,669,0
+IA231,Tripura IRRIGATION Executive Division,Tripura IRRIGATION Executive Division,IRRIGATION,ST33,6,35180000,338,0
+IA232,Uttar Pradesh PWD Executive Division,Uttar Pradesh PWD Executive Division,PWD,ST34,273,1248760000,216,0
+IA233,Uttar Pradesh DRDA Executive Division,Uttar Pradesh DRDA Executive Division,DRDA,ST34,289,1321630000,242,0
+IA234,Uttar Pradesh MUNICIPAL Executive Division,Uttar Pradesh MUNICIPAL Executive Division,MUNICIPAL,ST34,255,1285380000,229,0
+IA235,Uttar Pradesh PHED Executive Division,Uttar Pradesh PHED Executive Division,PHED,ST34,244,1124940000,175,0
+IA236,Uttar Pradesh ZILLA_PARISHAD Executive Division,Uttar Pradesh ZILLA_PARISHAD Executive Division,ZILLA_PARISHAD,ST34,223,1181120000,193,0
+IA237,Uttar Pradesh ELECTRICITY Executive Division,Uttar Pradesh ELECTRICITY Executive Division,ELECTRICITY,ST34,253,1171650000,190,0
+IA238,Uttar Pradesh IRRIGATION Executive Division,Uttar Pradesh IRRIGATION Executive Division,IRRIGATION,ST34,222,1161810000,187,0
+IA239,Uttarakhand PWD Executive Division,Uttarakhand PWD Executive Division,PWD,ST35,12,60280000,147,0
+IA240,Uttarakhand DRDA Executive Division,Uttarakhand DRDA Executive Division,DRDA,ST35,18,88230000,314,0
+IA241,Uttarakhand MUNICIPAL Executive Division,Uttarakhand MUNICIPAL Executive Division,MUNICIPAL,ST35,12,84920000,291,0
+IA242,Uttarakhand PHED Executive Division,Uttarakhand PHED Executive Division,PHED,ST35,15,67420000,183,0
+IA243,Uttarakhand ZILLA_PARISHAD Executive Division,Uttarakhand ZILLA_PARISHAD Executive Division,ZILLA_PARISHAD,ST35,15,71740000,208,0
+IA244,Uttarakhand ELECTRICITY Executive Division,Uttarakhand ELECTRICITY Executive Division,ELECTRICITY,ST35,19,86610000,303,0
+IA245,Uttarakhand IRRIGATION Executive Division,Uttarakhand IRRIGATION Executive Division,IRRIGATION,ST35,9,38670000,60,0
+IA246,West Bengal PWD Executive Division,West Bengal PWD Executive Division,PWD,ST36,33,155890000,137,0
+IA247,West Bengal DRDA Executive Division,West Bengal DRDA Executive Division,DRDA,ST36,37,175730000,175,0
+IA248,West Bengal MUNICIPAL Executive Division,West Bengal MUNICIPAL Executive Division,MUNICIPAL,ST36,49,208300000,245,0
+IA249,West Bengal PHED Executive Division,West Bengal PHED Executive Division,PHED,ST36,48,244740000,339,0
+IA250,West Bengal ZILLA_PARISHAD Executive Division,West Bengal ZILLA_PARISHAD Executive Division,ZILLA_PARISHAD,ST36,31,142900000,115,0
+IA251,West Bengal ELECTRICITY Executive Division,West Bengal ELECTRICITY Executive Division,ELECTRICITY,ST36,41,214840000,261,0
+IA252,West Bengal IRRIGATION Executive Division,West Bengal IRRIGATION Executive Division,IRRIGATION,ST36,44,187560000,199,0
