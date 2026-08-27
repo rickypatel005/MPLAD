@@ -1,0 +1,22 @@
+{
+  "extends": ["next/core-web-vitals", "prettier"],
+  "plugins": ["@typescript-eslint"],
+  "rules": {
+    "no-restricted-syntax": [
+      "error",
+      {
+        "selector": "CallExpression[callee.name='fetch']",
+        "message": "Do not call fetch() directly from components. All API access must go through src/lib/api (see TRD §9 / brief §9)."
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": ["src/lib/api/**/*.ts", "src/app/api/**/*.ts", "src/mocks/**/*.ts"],
+      "rules": {
+        "no-restricted-syntax": "off"
+      }
+    }
+  ],
+  "ignorePatterns": ["node_modules/", ".next/", "out/"]
+}
