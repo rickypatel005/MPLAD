@@ -1,0 +1,149 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+ * MPLADS-AUDIT-AI global styles.
+ *
+ * Visual direction: government audit / intelligence system. Professional,
+ * trustworthy, data-dense but readable, institutional, restrained. Deliberately
+ * NOT a SaaS template — no gradients, glows, large hero sections, or decorative
+ * animation.
+ */
+
+@layer base {
+  :root {
+    color-scheme: light;
+
+    /* Fixed risk scale — PRD §7 / Design Doc §2.1. Do not change these values. */
+    --risk-low: #16a34a;
+    --risk-medium: #eab308;
+    --risk-high: #f97316;
+    --risk-critical: #dc2626;
+
+    /* Institutional neutrals */
+    --ink: #1b2430;
+    --ink-muted: #4a5568;
+    --surface-page: #f4f5f7;
+    --line: #e2e5ea;
+
+    /* Single restrained accent */
+    --gov-accent: #2c5a96;
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-surface-page text-ink antialiased;
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+    /* Desktop-first: primary target 1280–1920px, must not break below ~1024px. */
+    min-width: 1024px;
+  }
+
+  /* Numeric columns must align in dense tables (Design Doc §2.3). */
+  .tabular {
+    font-variant-numeric: tabular-nums;
+    font-feature-settings: 'tnum' 1;
+  }
+
+  th {
+    @apply text-left font-semibold;
+  }
+
+  /* Visible, consistent focus ring for keyboard operation (Design Doc §7). */
+  :focus-visible {
+    outline: 2px solid var(--gov-accent);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  /* Respect reduced-motion preferences. */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  /* ---- Structural primitives ---------------------------------------- */
+
+  .panel {
+    @apply rounded-card border border-line bg-surface shadow-card;
+  }
+
+  .panel-header {
+    @apply flex items-baseline justify-between gap-4 border-b border-line px-4 py-3;
+  }
+
+  .panel-title {
+    @apply text-card-title font-semibold text-ink;
+  }
+
+  .panel-hint {
+    @apply text-caption text-ink-subtle;
+  }
+
+  /* Small uppercase label used for field names and column groups. */
+  .eyebrow {
+    @apply text-meta font-semibold uppercase tracking-wider text-ink-subtle;
+  }
+
+  /* ---- Controls ------------------------------------------------------ */
+
+  .control {
+    @apply h-8 rounded-control border border-line-strong bg-surface px-2.5 text-body-sm text-ink
+      transition-colors hover:border-gov-300 focus:border-gov-500 focus:outline-none
+      focus:ring-1 focus:ring-gov-500 disabled:cursor-not-allowed disabled:bg-surface-sunken
+      disabled:text-ink-faint;
+  }
+
+  .btn {
+    @apply inline-flex h-8 items-center justify-center gap-1.5 rounded-control border px-3
+      text-body-sm font-medium transition-colors disabled:cursor-not-allowed
+      disabled:opacity-50;
+  }
+
+  .btn-primary {
+    @apply btn border-gov-600 bg-gov-600 text-white hover:border-gov-700 hover:bg-gov-700;
+  }
+
+  .btn-secondary {
+    @apply btn border-line-strong bg-surface text-ink hover:border-gov-300 hover:bg-gov-50;
+  }
+
+  .btn-ghost {
+    @apply btn border-transparent bg-transparent text-gov-600 hover:bg-gov-50;
+  }
+
+  /* ---- Dense data tables -------------------------------------------- */
+
+  .data-table {
+    @apply w-full border-collapse text-body-sm;
+  }
+
+  .data-table thead th {
+    @apply sticky top-0 z-10 whitespace-nowrap border-b border-line-strong bg-surface-sunken
+      px-3 py-2 text-meta font-semibold uppercase tracking-wider text-ink-muted;
+  }
+
+  .data-table tbody td {
+    @apply border-b border-line-subtle px-3 py-2 align-middle;
+  }
+
+  .data-table tbody tr:hover {
+    @apply bg-gov-50/60;
+  }
+
+  /* Skeleton block for loading states (Design Doc §6 — skeletons, not spinners). */
+  .skeleton {
+    @apply animate-pulse rounded bg-line-subtle;
+  }
+}
