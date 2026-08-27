@@ -1,0 +1,1 @@
+Store only reviewed, versioned artifacts here. Suggested layout: <component>/<semantic-version>/{artifact,metadata.json}. Artifacts are not created in phase 1 because no real data or trained model exists.

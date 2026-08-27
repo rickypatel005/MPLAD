@@ -1,0 +1,1 @@
+No supervised prediction artifact exists yet. A real labelled project dataset is required before training. Future versioned artifacts should use models/prediction/<version>/{model.pkl,preprocessing.pkl,feature_schema.json,metadata.json}.

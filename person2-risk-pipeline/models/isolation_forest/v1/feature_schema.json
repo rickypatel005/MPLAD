@@ -1,0 +1,10 @@
+[
+  "cost_ratio",
+  "release_ratio",
+  "payment_ratio",
+  "utilization_ratio",
+  "payment_progress_gap",
+  "utilization_progress_gap",
+  "physical_progress",
+  "remaining_budget_ratio"
+]

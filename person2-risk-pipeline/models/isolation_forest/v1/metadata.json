@@ -1,0 +1,31 @@
+{
+  "model_name": "isolation-forest",
+  "model_version": "v1",
+  "training_date": "2026-08-27T15:55:05.066777+00:00",
+  "feature_names": [
+    "cost_ratio",
+    "release_ratio",
+    "payment_ratio",
+    "utilization_ratio",
+    "payment_progress_gap",
+    "utilization_progress_gap",
+    "physical_progress",
+    "remaining_budget_ratio"
+  ],
+  "preprocessing_version": "simple-imputer-median-plus-standard-scaler-v1",
+  "isolation_forest_parameters": {
+    "n_estimators": 200,
+    "contamination": 0.1,
+    "max_samples": "auto",
+    "max_features": 1.0,
+    "random_state": 42
+  },
+  "dataset_version": "synthetic-seed-7-count-60",
+  "random_seed": 42,
+  "score_normalization": {
+    "raw_score": "-decision_function",
+    "low": -0.11570770011318926,
+    "high": 0.008372644151913189,
+    "formula": "clamp((raw-low)/(high-low), 0, 1)"
+  }
+}
