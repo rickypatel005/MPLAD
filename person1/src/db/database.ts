@@ -29,6 +29,7 @@ import {
   RiskFlag,
   RiskScore,
   StateEntity,
+  UserEntity,
   UserRole,
 } from '../types.ts';
 
@@ -922,5 +923,48 @@ export class AppDatabase {
     const list = this.reviewByProject.get(projectId);
     if (!list || list.length === 0) return 'UNREVIEWED';
     return list[0].action;
+  }
+
+  public getUserByUsername(username: string): UserEntity | null {
+    const normalized = username.toLowerCase();
+    const demoAccounts: UserEntity[] = [
+      {
+        user_id: 'USR-001',
+        username: 'admin',
+        password_hash: 'a1b2c3d4e5f60718:61633fa03f5cefe52261a8ef153eefba79a544c4b693bc2f50fbfa6a0667fca99bbd6da61d368e7ec8ff1784918e7e17ea474136e053d2bf2cbfa4a1ff936a28',
+        display_name: 'System Administrator',
+        role: 'ADMIN',
+        is_active: true,
+        is_demo_account: true,
+      },
+      {
+        user_id: 'USR-002',
+        username: 'auditor',
+        password_hash: 'b2c3d4e5f6071829:c6bfa168a2f4c39f1c711019623e1dc28574c3eb7b9b1836696b99adfe0e73e913aeb18d6a7fe61ea00d8b3c66f7f2b15e1975e53ebbeecae35baeeea760d62a',
+        display_name: 'Shri R. Sharma (CAG)',
+        role: 'AUDITOR',
+        is_active: true,
+        is_demo_account: true,
+      },
+      {
+        user_id: 'USR-004',
+        username: 'reviewer',
+        password_hash: 'd4e5f60718293a4b:0c7bb09176378eeb295797f7bb54c9cfa74967fe08c2a8f094eb84e36b85cf957388cf6cfb9e4a360dc065e1eb2bce151cbe5ceb15db233e9b6fb3e4d9b23b8f',
+        display_name: 'Audit Review Officer',
+        role: 'REVIEWER',
+        is_active: true,
+        is_demo_account: true,
+      },
+      {
+        user_id: 'USR-005',
+        username: 'viewer',
+        password_hash: 'e5f60718293a4b5c:e9e422bfdfa58f273577eeceea534c0cfd26c59b66236b2f4477c7f3e1a0b3152528fae9dfadad1d4cf7f2aa25394be5ca7830cb855848aa2e2fa9dca12f4553',
+        display_name: 'Public Transparency Viewer',
+        role: 'VIEWER',
+        is_active: true,
+        is_demo_account: true,
+      },
+    ];
+    return demoAccounts.find((u) => u.username.toLowerCase() === normalized && u.is_active) || null;
   }
 }

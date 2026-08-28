@@ -548,6 +548,9 @@ export interface FEAnalyzeResponse {
   model_version: string;
   started_at: string;
   completed_at: string | null;
+  is_authoritative_rescore?: boolean;
+  mode?: string;
+  notice?: string;
 }
 
 export interface FEReportResponse {

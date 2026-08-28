@@ -20,6 +20,7 @@ import {
   RiskFlag,
   RiskScore,
   StateEntity,
+  UserEntity,
   UserRole,
 } from '../types.ts';
 
@@ -1525,3 +1526,29 @@ export async function getComplianceRules(): Promise<ComplianceRuleEntity[]> {
     return AppDatabase.getInstance().getComplianceRules();
   }
 }
+
+/**
+ * Retrieves a user record by username for database-backed authentication.
+ * Falls back to in-memory AppDatabase if PostgreSQL is offline.
+ */
+export async function getUserByUsername(username: string): Promise<UserEntity | null> {
+  try {
+    const res = await query<UserEntity>(
+      `SELECT user_id, username, password_hash, display_name, role, is_active,
+              TO_CHAR(created_at, 'YYYY-MM-DD"T"HH24:MI:SS"Z"') AS created_at,
+              TO_CHAR(updated_at, 'YYYY-MM-DD"T"HH24:MI:SS"Z"') AS updated_at
+       FROM users
+       WHERE LOWER(username) = LOWER($1) AND is_active = true
+       LIMIT 1;`,
+      [username.trim()]
+    );
+    if (res.rows.length === 0) return null;
+    return {
+      ...res.rows[0],
+      is_demo_account: false,
+    };
+  } catch {
+    return null;
+  }
+}
+

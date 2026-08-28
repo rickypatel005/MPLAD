@@ -329,3 +329,15 @@ export interface PipelineProfileReport {
 }
 
 export type DataProfileReport = PipelineProfileReport;
+
+export interface UserEntity {
+  user_id: string;
+  username: string;
+  password_hash: string;
+  display_name: string;
+  role: UserRole;
+  is_active: boolean;
+  is_demo_account?: boolean;
+  created_at?: string;
+  updated_at?: string;
+}

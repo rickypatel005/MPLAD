@@ -17,6 +17,7 @@ import { checkDatabaseConnection, seedDatabase } from './src/db/postgres.ts';
 import * as dbQueries from './src/db/queries.ts';
 import {
   authenticateUser,
+  authenticateUserAsync,
   optionalAuth,
   requireAuth,
   requireRole,
@@ -65,7 +66,7 @@ app.use(optionalAuth);
 // ----------------------------------------------------
 // 0. Authentication Endpoints (Phase 9)
 // ----------------------------------------------------
-app.post('/api/auth/login', (req, res) => {
+app.post('/api/auth/login', async (req, res) => {
   const { username, password } = req.body;
 
   if (!username || !password) {
@@ -77,7 +78,7 @@ app.post('/api/auth/login', (req, res) => {
     });
   }
 
-  const result = authenticateUser(username, password);
+  const result = await authenticateUserAsync(username, password);
   if (!result) {
     return res.status(401).json({
       error: {
@@ -87,10 +88,15 @@ app.post('/api/auth/login', (req, res) => {
     });
   }
 
+  const authMode = result.is_demo_mode ? 'demo_sandbox' : 'database_backed';
+  res.setHeader('X-Auth-Mode', authMode);
+
   res.json({
     token: result.token,
     user: result.user,
     expires_in: '24h',
+    auth_mode: authMode,
+    is_demo_account: result.is_demo_mode,
   });
 });
 

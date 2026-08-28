@@ -5,6 +5,7 @@
 import { Request, Response, NextFunction } from 'express';
 import crypto from 'crypto';
 import { UserRole } from '../types.ts';
+import { getUserByUsername } from '../db/queries.ts';
 
 // ─────────────────────────────────────────────
 // Types
@@ -17,7 +18,10 @@ export interface DemoUser {
   display_name: string;
   role: UserRole;
   is_active: boolean;
+  is_demo_account?: boolean;
 }
+
+export type SafeUser = Omit<DemoUser, 'password_hash'>;
 
 export interface JwtPayload {
   user_id: string;
@@ -81,11 +85,13 @@ export function verifyPassword(password: string, storedHash: string): boolean {
 }
 
 // ─────────────────────────────────────────────
-// Demo User Store
-// Salted scrypt password hashes
+// Sandbox / Demo-Only User Store
+// WARNING: DEMO-ONLY CREDENTIALS.
+// In production, users are authenticated strictly against PostgreSQL 'users' table.
+// Demo users are rejected in production unless ALLOW_DEMO_USERS=true is explicitly configured.
 // ─────────────────────────────────────────────
 
-const DEMO_USERS: DemoUser[] = [
+export const DEMO_ONLY_USERS: DemoUser[] = [
   {
     user_id: 'USR-001',
     username: 'admin',
@@ -93,6 +99,7 @@ const DEMO_USERS: DemoUser[] = [
     display_name: 'System Administrator',
     role: 'ADMIN',
     is_active: true,
+    is_demo_account: true,
   },
   {
     user_id: 'USR-002',
@@ -101,6 +108,7 @@ const DEMO_USERS: DemoUser[] = [
     display_name: 'Shri R. Sharma (CAG)',
     role: 'AUDITOR',
     is_active: true,
+    is_demo_account: true,
   },
   {
     user_id: 'USR-004',
@@ -109,6 +117,7 @@ const DEMO_USERS: DemoUser[] = [
     display_name: 'Audit Review Officer',
     role: 'REVIEWER',
     is_active: true,
+    is_demo_account: true,
   },
   {
     user_id: 'USR-005',
@@ -117,8 +126,11 @@ const DEMO_USERS: DemoUser[] = [
     display_name: 'Public Transparency Viewer',
     role: 'VIEWER',
     is_active: true,
+    is_demo_account: true,
   },
 ];
+
+export const DEMO_USERS = DEMO_ONLY_USERS;
 
 // ─────────────────────────────────────────────
 // JWT Implementation
@@ -178,14 +190,90 @@ export function verifyToken(token: string): JwtPayload | null {
 }
 
 // ─────────────────────────────────────────────
-// User Authentication
+// User Authentication (DB-Backed with Demo Sandbox Fallback)
 // ─────────────────────────────────────────────
 
+/**
+ * Asynchronous database-backed authentication.
+ * Checks PostgreSQL 'users' table first; falls back to DEMO_ONLY_USERS in sandbox/dev mode.
+ */
+export async function authenticateUserAsync(
+  username: string,
+  password: string
+): Promise<{ token: string; user: SafeUser; is_demo_mode: boolean } | null> {
+  const isProd = process.env.NODE_ENV === 'production';
+  const allowDemo = process.env.ALLOW_DEMO_USERS === 'true';
+
+  // 1. Database-backed authentication (Primary for live/production setups)
+  try {
+    const dbUser = await getUserByUsername(username);
+    if (dbUser && dbUser.is_active) {
+      if (verifyPassword(password, dbUser.password_hash)) {
+        const token = generateToken({
+          user_id: dbUser.user_id,
+          username: dbUser.username,
+          role: dbUser.role,
+          display_name: dbUser.display_name,
+        });
+        const { password_hash, ...safeUser } = dbUser;
+        return {
+          token,
+          user: safeUser,
+          is_demo_mode: dbUser.is_demo_account === true,
+        };
+      }
+      return null; // Invalid password for existing DB user
+    }
+  } catch {
+    // Database query failed; fall through to sandbox demo verification if permitted
+  }
+
+  // 2. Demo User Fallback (Strictly prohibited in production unless ALLOW_DEMO_USERS=true)
+  if (isProd && !allowDemo) {
+    console.warn(`[AUTH SECURITY] Rejected demo authentication attempt in production mode for '${username}'.`);
+    return null;
+  }
+
+  const demoUser = DEMO_ONLY_USERS.find(
+    (u) => u.username.toLowerCase() === username.toLowerCase() && u.is_active
+  );
+  if (!demoUser) return null;
+
+  if (!verifyPassword(password, demoUser.password_hash)) return null;
+
+  const token = generateToken({
+    user_id: demoUser.user_id,
+    username: demoUser.username,
+    role: demoUser.role,
+    display_name: demoUser.display_name,
+  });
+
+  const { password_hash, ...safeUser } = demoUser;
+  return {
+    token,
+    user: { ...safeUser, is_demo_account: true },
+    is_demo_mode: true,
+  };
+}
+
+/**
+ * Synchronous authentication for test suites and offline sandbox mode.
+ */
 export function authenticateUser(
   username: string,
   password: string
-): { token: string; user: Omit<DemoUser, 'password_hash'> } | null {
-  const user = DEMO_USERS.find((u) => u.username.toLowerCase() === username.toLowerCase() && u.is_active);
+): { token: string; user: SafeUser; is_demo_mode: boolean } | null {
+  const isProd = process.env.NODE_ENV === 'production';
+  const allowDemo = process.env.ALLOW_DEMO_USERS === 'true';
+
+  if (isProd && !allowDemo) {
+    console.warn(`[AUTH SECURITY] Rejected synchronous demo authentication in production mode for '${username}'.`);
+    return null;
+  }
+
+  const user = DEMO_ONLY_USERS.find(
+    (u) => u.username.toLowerCase() === username.toLowerCase() && u.is_active
+  );
   if (!user) return null;
 
   if (!verifyPassword(password, user.password_hash)) return null;
@@ -198,7 +286,11 @@ export function authenticateUser(
   });
 
   const { password_hash, ...safeUser } = user;
-  return { token, user: safeUser };
+  return {
+    token,
+    user: { ...safeUser, is_demo_account: true },
+    is_demo_mode: true,
+  };
 }
 
 // ─────────────────────────────────────────────

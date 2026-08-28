@@ -30,6 +30,7 @@ export interface ModelMetadata {
   models: string[];
   model_version: string;
   mode: 'REAL' | 'DEVELOPMENT_FALLBACK';
+  warning?: string;
   scored_at: string;
 }
 
@@ -58,13 +59,12 @@ export interface CanonicalRiskAssessment {
 export class IntegrationAggregator {
   private static instance: IntegrationAggregator;
 
-  public person2Url: string;
-  public person3Url: string;
-  private requestTimeoutMs: number = 3000;
+  private person2Url: string;
+  private person3Url: string;
 
   private constructor() {
-    this.person2Url = process.env.PERSON2_SERVICE_URL || 'http://127.0.0.1:8002';
-    this.person3Url = process.env.PERSON3_SERVICE_URL || 'http://127.0.0.1:8000';
+    this.person2Url = process.env.PERSON2_RISK_URL || 'http://127.0.0.1:8002';
+    this.person3Url = process.env.PERSON3_NLP_URL || 'http://127.0.0.1:8000';
   }
 
   public static getInstance(): IntegrationAggregator {
@@ -75,46 +75,51 @@ export class IntegrationAggregator {
   }
 
   /**
-   * Performs an asynchronous HTTP POST/GET request with timeout.
+   * Helper to perform HTTP JSON requests with standard timeout.
    */
-  private async fetchJson<T>(urlStr: string, method: 'GET' | 'POST' = 'GET', body?: any): Promise<T | null> {
+  private async fetchJson<T>(urlStr: string, method: 'GET' | 'POST', body?: any): Promise<T | null> {
     return new Promise((resolve) => {
       try {
         const url = new URL(urlStr);
-        const data = body ? JSON.stringify(body) : undefined;
-        
-        const req = http.request(
-          {
-            hostname: url.hostname,
-            port: url.port || (url.protocol === 'https:' ? 443 : 80),
-            path: url.pathname + url.search,
-            method,
-            headers: {
-              'Content-Type': 'application/json',
-              'Accept': 'application/json',
-              ...(data ? { 'Content-Length': Buffer.byteLength(data) } : {}),
-            },
-            timeout: this.requestTimeoutMs,
+        const data = body ? JSON.stringify(body) : null;
+
+        const options: http.RequestOptions = {
+          hostname: url.hostname,
+          port: url.port || 80,
+          path: `${url.pathname}${url.search}`,
+          method: method,
+          headers: {
+            'Content-Type': 'application/json',
+            ...(data ? { 'Content-Length': Buffer.byteLength(data) } : {}),
           },
-          (res) => {
-            if (res.statusCode && res.statusCode >= 200 && res.statusCode < 300) {
-              let bodyStr = '';
-              res.setEncoding('utf8');
-              res.on('data', (chunk) => { bodyStr += chunk; });
-              res.on('end', () => {
-                try {
-                  resolve(JSON.parse(bodyStr) as T);
-                } catch {
-                  resolve(null);
-                }
-              });
-            } else {
+          timeout: 2500, // 2.5 second timeout
+        };
+
+        const req = http.request(options, (res) => {
+          if (res.statusCode && (res.statusCode < 200 || res.statusCode >= 300)) {
+            resolve(null);
+            return;
+          }
+
+          let responseBody = '';
+          res.setEncoding('utf8');
+          res.on('data', (chunk) => {
+            responseBody += chunk;
+          });
+          res.on('end', () => {
+            try {
+              const parsed = JSON.parse(responseBody);
+              resolve(parsed as T);
+            } catch {
               resolve(null);
             }
-          }
-        );
+          });
+        });
 
-        req.on('error', () => resolve(null));
+        req.on('error', () => {
+          resolve(null);
+        });
+
         req.on('timeout', () => {
           req.destroy();
           resolve(null);
@@ -141,7 +146,9 @@ export class IntegrationAggregator {
     reasons: string[];
     isReal: boolean;
   }> {
-    if (process.env.MOCK_MODE === 'true') {
+    const isMock = process.env.MOCK_MODE === 'true';
+
+    if (isMock) {
       const fin = project.financial_progress > project.physical_progress + 25 ? 0.75 : 0.15;
       const time = project.status === 'STALLED' ? 0.85 : project.physical_progress < 30 ? 0.50 : 0.10;
       const comp = project.sanction_amount > 50000000 && project.financial_progress > 50 ? 0.40 : 0.10;
@@ -200,7 +207,8 @@ export class IntegrationAggregator {
       };
     }
 
-    // Local explicit fallback if service is offline
+    // Downstream service is offline in non-mock mode: do NOT silently pretend it succeeded
+    console.warn(`[IntegrationAggregator] WARNING: Downstream Person 2 ML Service (${this.person2Url}) is unreachable. MOCK_MODE is false.`);
     const fin = project.financial_progress > project.physical_progress + 25 ? 0.75 : 0.15;
     const time = project.status === 'STALLED' ? 0.85 : project.physical_progress < 30 ? 0.50 : 0.10;
     const comp = project.sanction_amount > 50000000 && project.financial_progress > 50 ? 0.40 : 0.10;
@@ -211,7 +219,10 @@ export class IntegrationAggregator {
       timeline_score: time,
       compliance_score: comp,
       anomaly_score: anom,
-      reasons: project.synthetic_scenario !== 'NORMAL_BENCHMARK' ? [`Synthetic pattern: ${project.synthetic_scenario}`] : [],
+      reasons: [
+        `[P2_SERVICE_UNAVAILABLE] Person 2 ML scoring service is unreachable at ${this.person2Url}; fallback score is non-authoritative.`,
+        ...(project.synthetic_scenario !== 'NORMAL_BENCHMARK' ? [`Synthetic pattern: ${project.synthetic_scenario}`] : []),
+      ],
       isReal: false,
     };
   }
@@ -227,7 +238,9 @@ export class IntegrationAggregator {
     reasons: string[];
     isReal: boolean;
   }> {
-    if (process.env.MOCK_MODE === 'true') {
+    const isMock = process.env.MOCK_MODE === 'true';
+
+    if (isMock) {
       const iaScore = project.synthetic_scenario === 'IA_CONCENTRATION_ANOMALY' ? 0.80 : 0.15;
       const geoScore = project.synthetic_scenario === 'DUPLICATE_PROJECT_PAIR' ? 0.85 : 0.10;
       return {
@@ -258,6 +271,11 @@ export class IntegrationAggregator {
     const reasons: string[] = [];
     if (!geoWithin) reasons.push(`Project coordinate falls outside assigned constituency (${project.constituency_id})`);
     if (netRes?.metrics?.is_high_concentration) reasons.push(`Implementing Agency exhibits high MP concentration (HHI: ${iaHhi})`);
+
+    if (!isReal) {
+      console.warn(`[IntegrationAggregator] WARNING: Downstream Person 3 Intelligence Service (${this.person3Url}) is unreachable. MOCK_MODE is false.`);
+      reasons.push(`[P3_SERVICE_UNAVAILABLE] Person 3 Intelligence service is unreachable at ${this.person3Url}; fallback score is non-authoritative.`);
+    }
 
     return {
       ia_score: iaScore,
@@ -303,12 +321,22 @@ export class IntegrationAggregator {
     }
 
     const isRealLive = p2.isReal && p3.isReal;
+    const isMock = process.env.MOCK_MODE === 'true';
 
     const metadata: ModelMetadata = {
-      model_source: isRealLive ? 'person2-risk-service + person3-intelligence-service' : 'person1-integration-local-engine',
+      model_source: isRealLive
+        ? 'person2-risk-service + person3-intelligence-service'
+        : isMock
+        ? 'person1-mock-sandbox'
+        : 'person1-integration-local-engine (DOWNSTREAM_SERVICES_OFFLINE)',
       models: isRealLive ? ['IsolationForest', 'RuleEngine', 'SentenceBERT', 'NetworkX-HHI'] : ['HeuristicRuleBaseline'],
       model_version: isRealLive ? 'v1' : 'HEURISTIC_BASELINE_V1',
       mode: isRealLive ? 'REAL' : 'DEVELOPMENT_FALLBACK',
+      warning: isRealLive
+        ? undefined
+        : isMock
+        ? 'Computed under mock sandbox mode.'
+        : 'MOCK_MODE is false but downstream P2/P3 services were unavailable. Fallback scores are explicitly non-authoritative.',
       scored_at: new Date().toISOString(),
     };
 

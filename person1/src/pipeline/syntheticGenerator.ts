@@ -6,7 +6,6 @@ import {
   ConstituencyEntity,
   DistrictEntity,
   DuplicateCluster,
-  DuplicateMatch,
   ImplementingAgencyEntity,
   MPEntity,
   PaymentTransaction,
@@ -172,7 +171,7 @@ export function generateSyntheticDataset(
   let paymentCounter = 1;
   const duplicateClusters: DuplicateCluster[] = [];
 
-  // Fixed demo IDs are available in the 10k dataset.  Smaller fixtures must
+  // Fixed demo IDs are available in the 10k dataset. Smaller fixtures must
   // still create a duplicate pair, but it has to reference generated rows.
   const duplicatePairIds = targetProjectCount >= 702
     ? ['P10701', 'P10702'] as const
@@ -361,8 +360,8 @@ export function generateSyntheticDataset(
         allPayments.push(payment);
       }
 
-      // Compute Risk Score & Flags
-      const { riskScore, flags } = computeRiskVector(
+      // Generate initial baseline seed values (non-authoritative placeholder for dataset generation)
+      const { riskScore, flags } = generateSyntheticBaselineSeed(
         projectId,
         scenario,
         sanctionAmount,
@@ -453,21 +452,21 @@ export function generateSyntheticDataset(
       max_similarity: 0.94,
       total_suspect_amount: duplicatePrimary.sanction_amount + duplicateMatch.sanction_amount,
       matches: [
-      {
-        match_project_id: duplicateMatchId,
-        match_project_name: 'Construction of multipurpose community hall at Rampur Ward 4',
-        match_description: 'Construction of multipurpose community welfare hall and cultural stage at Rampur Ward 4 in Varanasi.',
-        overall_similarity: 0.94,
-        text_similarity: 0.96,
-        geo_distance_meters: 44.8,
-        date_proximity_days: 14,
-        same_ia: true,
-        match_reasons: [
-          'High cosine text similarity (>95%)',
-          'Physical distance 44.8m is within asset duplication radius (100m)',
-          'Sanctioned within 14 days under identical implementing agency',
-        ],
-      },
+        {
+          match_project_id: duplicateMatchId,
+          match_project_name: 'Construction of multipurpose community hall at Rampur Ward 4',
+          match_description: 'Construction of multipurpose community welfare hall and cultural stage at Rampur Ward 4 in Varanasi.',
+          overall_similarity: 0.94,
+          text_similarity: 0.96,
+          geo_distance_meters: 44.8,
+          date_proximity_days: 14,
+          same_ia: true,
+          match_reasons: [
+            'High cosine text similarity (>95%)',
+            'Physical distance 44.8m is within asset duplication radius (100m)',
+            'Sanctioned within 14 days under identical implementing agency',
+          ],
+        },
       ],
     });
   }
@@ -480,7 +479,12 @@ export function generateSyntheticDataset(
   };
 }
 
-function computeRiskVector(
+/**
+ * Non-authoritative synthetic baseline seed generator.
+ * NOTE: This is strictly a dataset initialization seed placeholder.
+ * Authoritative risk scoring is owned exclusively by Person 2 ML & Person 3 Intelligence services.
+ */
+function generateSyntheticBaselineSeed(
   projectId: string,
   scenario: AnomalyScenario,
   amount: number,
@@ -649,7 +653,7 @@ function computeRiskVector(
     ia_score: parseFloat(iaScore.toFixed(2)),
     geo_score: parseFloat(geoScore.toFixed(2)),
     evidence_score: parseFloat(evidenceScore.toFixed(2)),
-    model_version: 'HEURISTIC_BASELINE_V1',
+    model_version: 'SYNTHETIC_SEED_BASELINE',
     scored_at: '2026-08-26T10:00:00Z',
     reasons: reasons,
     feature_contributions: [

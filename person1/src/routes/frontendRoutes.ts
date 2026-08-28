@@ -686,13 +686,12 @@ router.post('/api/analyze', (req: Request, res: Response) => {
   const store = FrontendDataStore.getInstance();
   const startedAt = new Date();
 
-  // Re-initialize the data store to simulate re-scoring
+  // Re-initialize the in-memory presentation view cache from master data
   try {
     store.initialize();
   } catch (err) {
-    // In case re-initialization fails, return error
     return res.status(500).json({
-      error: { code: 'ANALYSIS_FAILED', message: 'Re-scoring failed.' },
+      error: { code: 'SYNC_FAILED', message: 'Presentation view cache re-index failed.' },
     });
   }
 
@@ -702,6 +701,8 @@ router.post('/api/analyze', (req: Request, res: Response) => {
   const highOrCritical = store.records.filter(r =>
     r.riskLevel === 'HIGH' || r.riskLevel === 'CRITICAL'
   ).length;
+
+  const isMock = process.env.MOCK_MODE === 'true';
 
   const response: FEAnalyzeResponse = {
     run_id: `RUN-${Date.now()}`,
@@ -713,6 +714,9 @@ router.post('/api/analyze', (req: Request, res: Response) => {
     model_version: store.modelVersion,
     started_at: startedAt.toISOString(),
     completed_at: completedAt.toISOString(),
+    is_authoritative_rescore: false,
+    mode: isMock ? 'DEMO_MOCK_REFRESH' : 'VIEW_CACHE_SYNC',
+    notice: 'Re-indexed in-memory presentation view. Authoritative ML anomaly scoring is computed exclusively by Person 2 (Isolation Forest ML Service) and Person 3 (Sentence-BERT & Graph Intelligence Service).',
   };
 
   res.json(response);
