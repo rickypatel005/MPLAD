@@ -1,0 +1,23 @@
+{
+  "name": "mplads-audit-intelligence-unified",
+  "version": "1.0.0",
+  "private": true,
+  "description": "SIH26102 — MPLADS Audit Intelligence Unified System (Person 1 Data+Backend, Person 2 Risk+ML, Person 3 NLP+Graph+Geo, Person 4 Frontend)",
+  "scripts": {
+    "migrate": "npm --prefix person1 run migrate",
+    "seed": "npm --prefix person1 run seed",
+    "dev:backend": "npm --prefix person1 run dev",
+    "dev:frontend": "npm --prefix person4-frontend run dev -- -p 3001",
+    "build:backend": "npm --prefix person1 run build",
+    "build:frontend": "npm --prefix person4-frontend run build",
+    "build": "npm run build:backend && npm run build:frontend",
+    "start:backend": "npm --prefix person1 run start",
+    "start:frontend": "npm --prefix person4-frontend run start -- -p 3001",
+    "test:backend": "npm --prefix person1 test",
+    "test:integration": "npm --prefix person1 run test:integration",
+    "test:ml": "node -e \"const { spawnSync } = require('child_process'); const res = spawnSync('python', ['-m', 'unittest', 'discover', '-s', 'tests', '-v'], { cwd: 'person2-risk-pipeline', stdio: 'inherit' }); process.exit(res.status);\"",
+    "test": "npm run test:backend && npm run test:ml",
+    "typecheck": "npm --prefix person1 run lint && npm --prefix person4-frontend run typecheck",
+    "lint": "npm run typecheck"
+  }
+}

@@ -6,6 +6,10 @@
 import express from 'express';
 import path from 'path';
 import fs from 'fs';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 import dotenv from 'dotenv';
 import { GoogleGenAI } from '@google/genai';
 import { createServer as createViteServer } from 'vite';
@@ -833,10 +837,16 @@ Project Details:
 // 12. OpenAPI / Swagger Documentation Endpoints (Phase 6/7)
 // ----------------------------------------------------
 app.get('/api/openapi.json', (_req, res) => {
-  const openApiPath = path.join(process.cwd(), 'docs', 'openapi.json');
-  if (fs.existsSync(openApiPath)) {
-    const spec = JSON.parse(fs.readFileSync(openApiPath, 'utf-8'));
-    return res.json(spec);
+  const candidatePaths = [
+    path.join(process.cwd(), 'docs', 'openapi.json'),
+    path.join(process.cwd(), 'person1', 'docs', 'openapi.json'),
+    path.join(__dirname, 'docs', 'openapi.json'),
+  ];
+  for (const openApiPath of candidatePaths) {
+    if (fs.existsSync(openApiPath)) {
+      const spec = JSON.parse(fs.readFileSync(openApiPath, 'utf-8'));
+      return res.json(spec);
+    }
   }
   res.json({
     openapi: '3.0.3',

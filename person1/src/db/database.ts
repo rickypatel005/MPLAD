@@ -4,6 +4,10 @@
  */
 import fs from 'fs';
 import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 import { cleanAndNormalizeMasterData, parseRawCsvText } from '../pipeline/ingestAndClean.ts';
 import { generateSyntheticDataset } from '../pipeline/syntheticGenerator.ts';
 import { runValidationSuite } from '../pipeline/validationSuite.ts';
@@ -73,9 +77,16 @@ export class AppDatabase {
 
     // Load CSV file
     let csvContent = '';
-    const rawPath = path.join(process.cwd(), 'data', 'raw', 'Allocated Limit for Honble MPs.csv');
-    if (fs.existsSync(rawPath)) {
-      csvContent = fs.readFileSync(rawPath, 'utf-8');
+    const candidatePaths = [
+      path.join(process.cwd(), 'data', 'raw', 'Allocated Limit for Honble MPs.csv'),
+      path.join(process.cwd(), 'person1', 'data', 'raw', 'Allocated Limit for Honble MPs.csv'),
+      path.join(__dirname, '..', '..', 'data', 'raw', 'Allocated Limit for Honble MPs.csv'),
+    ];
+    for (const p of candidatePaths) {
+      if (fs.existsSync(p)) {
+        csvContent = fs.readFileSync(p, 'utf-8');
+        break;
+      }
     }
 
     const rawRecords = parseRawCsvText(csvContent);
