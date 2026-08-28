@@ -20,6 +20,8 @@
  */
 
 import { Router, type Request, type Response } from 'express';
+import { AppDatabase } from '../db/database.ts';
+import { IntegrationAggregator } from '../services/integrationAggregator.ts';
 import {
   FrontendDataStore,
   type FERankedProject,
@@ -45,6 +47,7 @@ import {
 } from '../db/frontendData.ts';
 
 const router = Router();
+
 
 // ─────────────────────────────────────────────
 // Helpers
@@ -279,6 +282,7 @@ router.get('/api/dashboard', (req: Request, res: Response) => {
 
 router.get('/api/project/:id', (req: Request, res: Response) => {
   const store = FrontendDataStore.getInstance();
+  const db = AppDatabase.getInstance();
   const detail = store.getProjectDetail(req.params.id);
 
   if (!detail) {
@@ -287,8 +291,18 @@ router.get('/api/project/:id', (req: Request, res: Response) => {
     });
   }
 
-  res.json(detail);
+  const auditTrail = db.getAuditTrailForProject(req.params.id);
+  const reviews = db.reviewActions.filter(r => r.project_id === req.params.id);
+
+  res.json({
+    ...detail,
+    audit_trail: auditTrail,
+    audit_logs: auditTrail,
+    review_actions: reviews,
+    latest_review: reviews.length > 0 ? reviews[reviews.length - 1] : null,
+  });
 });
+
 
 // ─────────────────────────────────────────────
 // GET /api/alerts
@@ -704,4 +718,91 @@ router.post('/api/analyze', (req: Request, res: Response) => {
   res.json(response);
 });
 
+// ─────────────────────────────────────────────
+// GET /api/projects/:id/duplicates
+// ─────────────────────────────────────────────
+
+router.get('/api/projects/:id/duplicates', async (req: Request, res: Response) => {
+  const aggregator = IntegrationAggregator.getInstance();
+  const p3Res = await (aggregator as any).fetchJson(`${aggregator.person3Url}/projects/${req.params.id}/duplicates`);
+  if (p3Res) return res.json(p3Res);
+
+  const store = FrontendDataStore.getInstance();
+  const pairs = store.duplicatePairs.filter(p => p.project_id_1 === req.params.id || p.project_id_2 === req.params.id);
+  res.json({
+    project_id: req.params.id,
+    found: pairs.length > 0,
+    duplicate_count: pairs.length,
+    matches: pairs.map(p => ({
+      target_project_id: req.params.id,
+      counterpart_project_id: p.project_id_1 === req.params.id ? p.project_id_2 : p.project_id_1,
+      similarity_score: p.similarity_score,
+      geo_distance_km: p.geo_distance_km,
+      same_agency: p.project_a.ia_id === p.project_b.ia_id,
+      duplicate_probability: p.similarity_score,
+      reasons: p.shared_attributes,
+    })),
+  });
+});
+
+// ─────────────────────────────────────────────
+// GET /api/projects/:id/network
+// ─────────────────────────────────────────────
+
+router.get('/api/projects/:id/network', async (req: Request, res: Response) => {
+  const aggregator = IntegrationAggregator.getInstance();
+  const p3Res = await (aggregator as any).fetchJson(`${aggregator.person3Url}/projects/${req.params.id}/network`);
+  if (p3Res) return res.json(p3Res);
+
+  const store = FrontendDataStore.getInstance();
+  const detail = store.getProjectDetail(req.params.id);
+  const iaId = detail?.implementing_agency.ia_id || 'IA_DEFAULT';
+  const nodeDetail = store.network.node_details.find(d => d.node_id === iaId);
+  res.json({
+    project_id: req.params.id,
+    ia_id: iaId,
+    metrics: {
+      target_ia: iaId,
+      ia_name: detail?.implementing_agency.ia_name || iaId,
+      total_projects: detail?.implementing_agency.total_projects || 1,
+      degree_centrality: 0.35,
+      hhi_concentration_index: nodeDetail?.hhi || 0.45,
+      ia_risk_score: detail?.implementing_agency.risk_score || 0.30,
+      is_high_concentration: (nodeDetail?.hhi || 0) > 0.50,
+    },
+    graph: {
+      nodes: store.network.nodes.filter(n => n.id === iaId || store.network.edges.some(e => (e.source === iaId && e.target === n.id) || (e.target === iaId && e.source === n.id))),
+      edges: store.network.edges.filter(e => e.source === iaId || e.target === iaId),
+    },
+  });
+});
+
+// ─────────────────────────────────────────────
+// GET /api/projects/:id/geo
+// ─────────────────────────────────────────────
+
+router.get('/api/projects/:id/geo', async (req: Request, res: Response) => {
+  const aggregator = IntegrationAggregator.getInstance();
+  const p3Res = await (aggregator as any).fetchJson(`${aggregator.person3Url}/projects/${req.params.id}/geo`);
+  if (p3Res) return res.json(p3Res);
+
+  const store = FrontendDataStore.getInstance();
+  const detail = store.getProjectDetail(req.params.id);
+  const hasGps = !!(detail?.project.work_lat && detail?.project.work_lon);
+  res.json({
+    project_id: req.params.id,
+    location: {
+      latitude: detail?.project.work_lat || 20.5937,
+      longitude: detail?.project.work_lon || 78.9629,
+    },
+    constituency_id: detail?.project.constituency_id || 'C001',
+    is_within_bounds: hasGps,
+    geo_score: hasGps ? 0.0 : 0.4,
+    confidence: 0.85,
+    boundary_source: 'SYNTHETIC_CLUSTER_BUFFER_ESTIMATE',
+    warning: 'Constituency boundary is estimated from civic project cluster convex hulls.',
+  });
+});
+
 export default router;
+

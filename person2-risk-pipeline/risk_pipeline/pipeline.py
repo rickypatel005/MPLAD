@@ -27,8 +27,8 @@ class RiskPipeline:
         self.utilization = utilization
         self.explanation_engine = explanation_engine
 
-    def run(self, trace: bool = False) -> Sequence[RiskResult]:
-        records = self.validator.validate(self.source.get_projects())
+    def score_records(self, raw_records: Sequence, trace: bool = False) -> Sequence[RiskResult]:
+        records = self.validator.validate(raw_records)
         if self.cost_anomaly is not None:
             self.cost_anomaly.fit(records)
         if trace:
@@ -83,3 +83,7 @@ class RiskPipeline:
             results.append(replace(result, explanation=self.explainer.explain(result)))
         logger.info("Pipeline completed: records=%d", len(results))
         return results
+
+    def run(self, trace: bool = False) -> Sequence[RiskResult]:
+        return self.score_records(self.source.get_projects(), trace=trace)
+

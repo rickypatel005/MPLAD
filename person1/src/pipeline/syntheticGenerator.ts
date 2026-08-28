@@ -649,7 +649,7 @@ function computeRiskVector(
     ia_score: parseFloat(iaScore.toFixed(2)),
     geo_score: parseFloat(geoScore.toFixed(2)),
     evidence_score: parseFloat(evidenceScore.toFixed(2)),
-    model_version: 'v2.6-Ensemble-IsoForest-XGB',
+    model_version: 'HEURISTIC_BASELINE_V1',
     scored_at: '2026-08-26T10:00:00Z',
     reasons: reasons,
     feature_contributions: [

@@ -13,11 +13,12 @@
  *    it accidentally could.
  */
 
-/** Base URL. `/api` in mock mode; the FastAPI origin in live mode. */
+/** Base URL. `/api` in local proxy mode; the backend origin in live integrated mode. */
 export const API_BASE_URL = (process.env.NEXT_PUBLIC_API_BASE_URL ?? '/api').replace(/\/+$/, '');
 
-/** True when running against the bundled mock handlers rather than FastAPI. */
-export const IS_MOCK_MODE = API_BASE_URL === '/api' || API_BASE_URL.endsWith('/api');
+/** True only when explicitly configured via NEXT_PUBLIC_MOCK_MODE=true. Defaults to false. */
+export const IS_MOCK_MODE = process.env.NEXT_PUBLIC_MOCK_MODE === 'true';
+
 
 /** Request timeout. Long enough for a cold FastAPI start, short enough to fail visibly. */
 const REQUEST_TIMEOUT_MS = 20_000;

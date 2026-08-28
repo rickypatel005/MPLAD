@@ -103,7 +103,7 @@ app.get('/api/auth/me', requireAuth, (req, res) => {
 // ----------------------------------------------------
 // 1. Health & Pipeline Endpoints (Phase 5 PostgreSQL)
 // ----------------------------------------------------
-app.get('/api/health', async (_req, res) => {
+const healthHandler = async (_req: any, res: any) => {
   const dbHealth = await checkDatabaseConnection();
   const appDb = AppDatabase.getInstance();
   const feStore = FrontendDataStore.getInstance();
@@ -111,6 +111,7 @@ app.get('/api/health', async (_req, res) => {
   if (!dbHealth.connected) {
     return res.status(200).json({
       status: 'healthy',
+      version: '1.0.0',
       mode: 'in-memory',
       timestamp: new Date().toISOString(),
       service: 'SIH26102 MPLADS Audit Intelligence API',
@@ -137,6 +138,7 @@ app.get('/api/health', async (_req, res) => {
     const validationPassed = validation?.passed === true;
     res.status(validationPassed ? 200 : 503).json({
       status: validationPassed ? 'healthy' : 'degraded',
+      version: '1.0.0',
       timestamp: new Date().toISOString(),
       service: 'SIH26102 MPLADS Audit Intelligence API',
       database: {
@@ -155,15 +157,12 @@ app.get('/api/health', async (_req, res) => {
       } : { status: 'missing' },
     });
   } catch (err: any) {
-    res.status(500).json({
-      status: 'error',
-      error: {
-        code: 'DATABASE_QUERY_ERROR',
-        message: err.message,
-      },
-    });
+    res.status(500).json({ status: 'unhealthy', error: err.message });
   }
-});
+};
+
+app.get('/api/health', healthHandler);
+app.get('/health', healthHandler);
 
 app.get('/api/pipeline/status', async (_req, res) => {
   const stats = await dbQueries.getHealthDbStats();

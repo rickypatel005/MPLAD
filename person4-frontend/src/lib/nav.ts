@@ -31,8 +31,17 @@ export const NAV_ITEMS: readonly NavItem[] = [
     description:
       'National, state and district overview of analysed MPLADS works, ranked by risk.',
     icon: 'dashboard',
+  },
+  {
+    href: '/projects',
+    label: 'Projects',
+    title: 'Projects Directory',
+    description:
+      'Filterable, risk-ranked directory of all civic works.',
+    icon: 'dashboard',
     matchPrefixes: ['/project'],
   },
+
   {
     href: '/network',
     label: 'Network',
