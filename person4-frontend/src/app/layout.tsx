@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from 'next';
 import type { ReactNode } from 'react';
 
-import { Outfit, Cormorant_Garamond, JetBrains_Mono } from 'next/font/google';
+import { Inter, Source_Serif_4, JetBrains_Mono } from 'next/font/google';
 
 import '@/app/globals.css';
 
@@ -12,24 +12,24 @@ import { AppHeader } from '@/components/shell/AppHeader';
 import { MainNav } from '@/components/shell/MainNav';
 import { PRODUCT_NAME, PRODUCT_TAGLINE } from '@/lib/copy';
 
-const outfit = Outfit({
+const inter = Inter({
   subsets: ['latin'],
-  weight: ['400', '500', '600', '700', '800'],
-  variable: '--font-outfit',
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-inter',
   display: 'swap',
 });
 
-const cormorant = Cormorant_Garamond({
+const sourceSerif = Source_Serif_4({
   subsets: ['latin'],
   weight: ['400', '600', '700'],
   style: ['normal', 'italic'],
-  variable: '--font-cormorant',
+  variable: '--font-source-serif',
   display: 'swap',
 });
 
 const jetbrainsMono = JetBrains_Mono({
   subsets: ['latin'],
-  weight: ['400', '600'],
+  weight: ['400', '500', '600'],
   variable: '--font-jetbrains',
   display: 'swap',
 });
@@ -70,7 +70,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html
       lang="en-IN"
-      className={`${outfit.variable} ${cormorant.variable} ${jetbrainsMono.variable}`}
+      className={`${inter.variable} ${sourceSerif.variable} ${jetbrainsMono.variable}`}
     >
       <body className="flex min-h-screen flex-col font-sans bg-surface-page text-ink antialiased">
         <QueryProvider>
