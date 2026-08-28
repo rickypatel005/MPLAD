@@ -17,6 +17,9 @@ import {
   requireAuth,
   requireRole,
 } from './src/middleware/auth.ts';
+import frontendRoutes from './src/routes/frontendRoutes.ts';
+import { FrontendDataStore } from './src/db/frontendData.ts';
+import { AppDatabase } from './src/db/database.ts';
 
 dotenv.config();
 
@@ -24,6 +27,20 @@ const app = express();
 const PORT = process.env.PORT ? parseInt(process.env.PORT, 10) : 3000;
 
 app.use(express.json());
+
+// CORS middleware for cross-origin frontend dev mode
+app.use((_req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Methods', 'GET, POST, PATCH, PUT, DELETE, OPTIONS');
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
+  if (_req.method === 'OPTIONS') {
+    return res.sendStatus(204);
+  }
+  next();
+});
+
+// Mount frontend-compatible routes BEFORE auth middleware so they take priority
+app.use(frontendRoutes);
 
 // Gemini API Lazy Client
 let genAiClient: GoogleGenAI | null = null;
@@ -908,13 +925,37 @@ app.get('/api/export/projects', async (_req, res) => {
 // 14. Vite Middleware / Production Static Serve
 // ----------------------------------------------------
 async function startServer() {
+  // Initialize the in-memory data engine (no PostgreSQL required)
+  console.log('[SIH26102 Backend] Initializing in-memory AppDatabase...');
+  try {
+    const db = AppDatabase.getInstance();
+    console.log(`[SIH26102 Backend] AppDatabase ready: ${db.projects.length} projects, ${db.payments.length} payments`);
+  } catch (err: any) {
+    console.error(`[SIH26102 Backend] AppDatabase initialization failed: ${err.message}`);
+  }
+
+  // Build all frontend-compatible derived views
+  console.log('[SIH26102 Backend] Building FrontendDataStore derived views...');
+  try {
+    const feStore = FrontendDataStore.getInstance();
+    feStore.initialize();
+    console.log(`[SIH26102 Backend] FrontendDataStore ready:`);
+    console.log(`  → ${feStore.records.length} project records`);
+    console.log(`  → ${feStore.alerts.length} alerts`);
+    console.log(`  → ${feStore.duplicatePairs.length} duplicate pairs`);
+    console.log(`  → ${feStore.network.nodes.length} network nodes, ${feStore.network.edges.length} edges`);
+    console.log(`  → ${feStore.compliance.states.length} state compliance summaries`);
+  } catch (err: any) {
+    console.error(`[SIH26102 Backend] FrontendDataStore initialization failed: ${err.message}`);
+  }
+
+  // Check PostgreSQL connectivity (optional — server starts regardless)
   console.log('[SIH26102 Backend] Checking PostgreSQL connectivity...');
   const conn = await checkDatabaseConnection();
   if (!conn.connected) {
-    console.error(`\x1b[31m[SIH26102 Fatal Error] PostgreSQL connection failed: ${conn.error}\x1b[0m`);
-    console.error('[SIH26102 Fatal Error] Please ensure PostgreSQL + PostGIS container is running:');
-    console.error('  docker-compose up -d postgres');
-    console.error('  npm run migrate && npm run seed\n');
+    console.warn(`\x1b[33m[SIH26102 Warning] PostgreSQL connection failed: ${conn.error}\x1b[0m`);
+    console.warn('[SIH26102 Warning] Server will continue with in-memory database only.');
+    console.warn('[SIH26102 Warning] PostgreSQL-dependent endpoints may return 503. Frontend-compatible endpoints work normally.');
   } else {
     console.log(`[SIH26102 Backend] Connected to PostgreSQL (${conn.version?.split(' ')[0] || '15+'})`);
   }
@@ -934,7 +975,8 @@ async function startServer() {
   }
 
   app.listen(PORT, '0.0.0.0', () => {
-    console.log(`[SIH26102 Backend] Server running on http://0.0.0.0:${PORT}`);
+    console.log(`\n[SIH26102 Backend] ✅ Server running on http://0.0.0.0:${PORT}`);
+    console.log(`[SIH26102 Backend] Frontend-compatible API: http://0.0.0.0:${PORT}/api/dashboard`);
     console.log(`[SIH26102 Backend] Swagger UI available at http://0.0.0.0:${PORT}/api/docs`);
   });
 }
