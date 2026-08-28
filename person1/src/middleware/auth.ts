@@ -266,11 +266,15 @@ export function requireRole(...allowedRoles: UserRole[]) {
     }
 
     const userRole = req.user.role;
-    
-    const normalizedUserRoles = [userRole];
-    if (userRole === 'ADMIN') normalizedUserRoles.push('AUDITOR', 'REVIEWER', 'VIEWER');
+    const roleHierarchy: Record<UserRole, UserRole[]> = {
+      ADMIN: ['ADMIN', 'AUDITOR', 'REVIEWER', 'VIEWER'],
+      AUDITOR: ['AUDITOR', 'REVIEWER', 'VIEWER'],
+      REVIEWER: ['REVIEWER', 'VIEWER'],
+      VIEWER: ['VIEWER'],
+    };
+    const effectiveRoles = roleHierarchy[userRole] || [userRole];
 
-    const hasPermission = allowedRoles.some((role) => normalizedUserRoles.includes(role));
+    const hasPermission = allowedRoles.some((role) => effectiveRoles.includes(role));
 
     if (!hasPermission) {
       return res.status(403).json({

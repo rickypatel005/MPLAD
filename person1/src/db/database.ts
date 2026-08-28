@@ -13,6 +13,7 @@ import { generateSyntheticDataset } from '../pipeline/syntheticGenerator.ts';
 import { runValidationSuite } from '../pipeline/validationSuite.ts';
 import {
   AuditLog,
+  ComplianceRuleEntity,
   ConstituencyEntity,
   DashboardSummary,
   DistrictEntity,
@@ -44,6 +45,7 @@ export class AppDatabase {
   public duplicateClusters: DuplicateCluster[] = [];
   public reviewActions: ReviewAction[] = [];
   public auditLogs: AuditLog[] = [];
+  public rules: ComplianceRuleEntity[] = [];
 
   public rawCsvRowTotal: number = 0;
   public rawCsvRecords: any[] = [];
@@ -160,6 +162,76 @@ export class AppDatabase {
       },
     };
 
+    // Seed rules
+    this.rules = [
+      {
+        rule_code: 'RULE_FIN_01',
+        rule_name: 'Payment vs Progress Divergence',
+        description: 'Financial utilization exceeds physical execution by more than allowable threshold',
+        severity: 'CRITICAL',
+        category: 'FINANCIAL',
+        threshold_config: { divergence_threshold_pct: 25, advance_limit_pct: 40 },
+        active: true,
+        created_at: '2026-08-26T00:00:00Z',
+        updated_at: '2026-08-26T00:00:00Z',
+      },
+      {
+        rule_code: 'RULE_TIME_01',
+        rule_name: 'Milestone Delay / Project Stall',
+        description: 'Work remains incomplete or stalled past scheduled statutory completion milestone',
+        severity: 'HIGH',
+        category: 'TIMELINE',
+        threshold_config: { stall_threshold_days: 180, max_milestone_variance: 0.3 },
+        active: true,
+        created_at: '2026-08-26T00:00:00Z',
+        updated_at: '2026-08-26T00:00:00Z',
+      },
+      {
+        rule_code: 'RULE_COST_01',
+        rule_name: 'Schedule of Rates (SOR) Exceedance',
+        description: 'Sanctioned unit cost significantly exceeds CPWD/State PWD Schedule of Rates',
+        severity: 'HIGH',
+        category: 'COST',
+        threshold_config: { max_sor_multiplier: 2.5 },
+        active: true,
+        created_at: '2026-08-26T00:00:00Z',
+        updated_at: '2026-08-26T00:00:00Z',
+      },
+      {
+        rule_code: 'RULE_IA_01',
+        rule_name: 'Implementing Agency Concentration',
+        description: 'Implementing Agency controls disproportionate market share in constituency (HHI)',
+        severity: 'HIGH',
+        category: 'AGENCY',
+        threshold_config: { hhi_threshold: 2500, market_share_limit_pct: 50 },
+        active: true,
+        created_at: '2026-08-26T00:00:00Z',
+        updated_at: '2026-08-26T00:00:00Z',
+      },
+      {
+        rule_code: 'RULE_SCST_01',
+        rule_name: 'SC/ST Statutory Allocation Mandate',
+        description: 'Mandatory 15% SC and 7.5% ST target developmental allocation compliance',
+        severity: 'MEDIUM',
+        category: 'COMPLIANCE',
+        threshold_config: { sc_target_pct: 15.0, st_target_pct: 7.5 },
+        active: true,
+        created_at: '2026-08-26T00:00:00Z',
+        updated_at: '2026-08-26T00:00:00Z',
+      },
+      {
+        rule_code: 'RULE_DOCS_01',
+        rule_name: 'Statutory Clearance & Approvals',
+        description: 'Mandatory District Collectorate sanction, structural stability, and audit sign-offs',
+        severity: 'HIGH',
+        category: 'COMPLIANCE',
+        threshold_config: { required_documents: ['ADMIN_SANCTION', 'STRUCTURAL_CERT'] },
+        active: true,
+        created_at: '2026-08-26T00:00:00Z',
+        updated_at: '2026-08-26T00:00:00Z',
+      },
+    ];
+
     // Rebuild Indexes
     this.rebuildIndexes();
 
@@ -232,8 +304,8 @@ export class AppDatabase {
         this.auditLogs.push({
           audit_id: `AUD-RISK-${pid}`,
           project_id: pid,
-          actor_id: 'RISK_ENGINE_V2',
-          actor_name: 'IsoForest ML Scorer',
+          actor_id: 'SYSTEM_PIPELINE',
+          actor_name: 'Heuristic Baseline Rule Engine',
           action: 'RISK_FLAGS_RAISED',
           payload_json: {
             overall_score: proj.risk_score.overall_score,
@@ -337,6 +409,36 @@ export class AppDatabase {
       review_status: this.getLatestReviewStatus(projectId),
       review_count: (this.reviewByProject.get(projectId) || []).length,
     };
+  }
+
+  public getPaymentsForProject(projectId: string, page: number = 1, pageSize: number = 50) {
+    const proj = this.projectIndexById.get(projectId);
+    if (!proj) return null;
+    const payments = this.paymentsByProject.get(projectId) || [];
+    const total = payments.length;
+    const totalPages = Math.max(1, Math.ceil(total / pageSize));
+    const p = Math.max(1, Math.min(page, totalPages));
+    const offset = (p - 1) * pageSize;
+    return {
+      items: payments.slice(offset, offset + pageSize),
+      pagination: {
+        page: p,
+        page_size: pageSize,
+        total_items: total,
+        total_pages: totalPages,
+        has_next: p < totalPages,
+        has_prev: p > 1,
+      },
+    };
+  }
+
+  public getRiskScoreByProjectId(projectId: string): RiskScore | null {
+    const proj = this.projectIndexById.get(projectId);
+    return proj?.risk_score || null;
+  }
+
+  public getComplianceRules(): ComplianceRuleEntity[] {
+    return this.rules;
   }
 
   public getDashboardSummary(): DashboardSummary {
@@ -578,6 +680,9 @@ export class AppDatabase {
     reviewerRole: UserRole,
     comment: string
   ): ReviewAction {
+    const p = this.projectIndexById.get(projectId);
+    const previousState = p?.review_status || 'UNREVIEWED';
+
     const rev: ReviewAction = {
       review_id: `REV-${Date.now()}-${Math.floor(Math.random() * 1000)}`,
       project_id: projectId,
@@ -593,7 +698,7 @@ export class AppDatabase {
     if (!this.reviewByProject.has(projectId)) this.reviewByProject.set(projectId, []);
     this.reviewByProject.get(projectId)!.unshift(rev);
 
-    // Also append to audit log
+    // Also append to audit log with previous and new states
     const audit: AuditLog = {
       audit_id: `AUD-REV-${Date.now()}`,
       project_id: projectId,
@@ -602,6 +707,8 @@ export class AppDatabase {
       action: `REVIEW_DECISION_${action}`,
       payload_json: {
         action: action,
+        previous_state: previousState,
+        new_state: action,
         comment: comment,
       },
       created_at: rev.created_at,
@@ -611,7 +718,6 @@ export class AppDatabase {
     this.auditByProject.get(projectId)!.unshift(audit);
 
     // Update project state in-memory
-    const p = this.projectIndexById.get(projectId);
     if (p) {
       p.review_status = action;
       p.review_count = (p.review_count || 0) + 1;

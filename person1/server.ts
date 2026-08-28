@@ -109,13 +109,14 @@ const healthHandler = async (_req: any, res: any) => {
   const feStore = FrontendDataStore.getInstance();
 
   if (!dbHealth.connected) {
-    return res.status(200).json({
-      status: 'healthy',
+    return res.status(503).json({
+      status: 'degraded',
       version: '1.0.0',
       mode: 'in-memory',
       timestamp: new Date().toISOString(),
       service: 'SIH26102 MPLADS Audit Intelligence API',
       database: {
+        connected: false,
         in_memory: {
           connected: true,
           total_projects: appDb.projects.length,
@@ -209,7 +210,7 @@ app.post('/api/pipeline/run', requireAuth, requireRole('ADMIN'), async (req, res
 // ----------------------------------------------------
 // 2. Projects Endpoints (Phases 7.1, Gap 4 & Gap 8)
 // ----------------------------------------------------
-app.get('/api/projects', async (req, res) => {
+app.get(['/api/projects', '/projects'], async (req, res) => {
   try {
     const page = parseInt(req.query.page as string, 10) || 1;
     const page_size = parseInt(req.query.page_size as string, 10) || 50;
@@ -257,7 +258,7 @@ app.get('/api/projects', async (req, res) => {
 });
 
 // PostGIS Spatial Query Endpoint (Gap 4)
-app.get('/api/projects/spatial', async (req, res) => {
+app.get(['/api/projects/spatial', '/projects/spatial'], async (req, res) => {
   try {
     const lat = parseFloat(req.query.lat as string);
     const lng = parseFloat(req.query.lng as string);
@@ -297,7 +298,7 @@ app.get('/api/projects/spatial', async (req, res) => {
   }
 });
 
-app.get('/api/projects/:id', async (req, res) => {
+app.get(['/api/projects/:id', '/projects/:id'], async (req, res) => {
   try {
     const project = await dbQueries.getProjectById(req.params.id);
     if (!project) {
@@ -319,7 +320,7 @@ app.get('/api/projects/:id', async (req, res) => {
   }
 });
 
-app.get('/api/projects/:id/payments', async (req, res) => {
+app.get(['/api/projects/:id/payments', '/projects/:id/payments'], async (req, res) => {
   const page = Number(req.query.page ?? 1);
   const pageSize = Number(req.query.page_size ?? 50);
   if (!Number.isInteger(page) || page < 1 || !Number.isInteger(pageSize) || pageSize < 1 || pageSize > 100) {
@@ -339,7 +340,7 @@ app.get('/api/projects/:id/payments', async (req, res) => {
 // ----------------------------------------------------
 // 3. Dashboard Endpoints (Phase 7.2)
 // ----------------------------------------------------
-app.get('/api/dashboard/summary', async (_req, res) => {
+app.get(['/api/dashboard/summary', '/dashboard/summary'], async (_req, res) => {
   try {
     const summary = await dbQueries.getDashboardSummary();
     res.json(summary);
@@ -353,7 +354,7 @@ app.get('/api/dashboard/summary', async (_req, res) => {
   }
 });
 
-app.get('/api/dashboard/state/:id', async (req, res) => {
+app.get(['/api/dashboard/state/:id', '/dashboard/state/:id'], async (req, res) => {
   try {
     const stateData = await dbQueries.getStateDashboard(req.params.id);
     if (!stateData) {
@@ -378,7 +379,7 @@ app.get('/api/dashboard/state/:id', async (req, res) => {
 // ----------------------------------------------------
 // 4. Risk Endpoints (Phase 7.3 & Phase 8 Person 2 Integration)
 // ----------------------------------------------------
-app.get('/api/risk/top', async (req, res) => {
+app.get(['/api/risk/top', '/risk/top'], async (req, res) => {
   try {
     const limit = parseInt(req.query.limit as string, 10) || 25;
     const top = await dbQueries.getTopRiskProjects(limit);
@@ -393,20 +394,7 @@ app.get('/api/risk/top', async (req, res) => {
   }
 });
 
-app.get('/api/alerts', async (req, res) => {
-  const limit = Number(req.query.limit ?? 25);
-  if (!Number.isInteger(limit) || limit < 1 || limit > 100) {
-    return res.status(400).json({ error: { code: 'INVALID_LIMIT', message: 'limit must be an integer between 1 and 100.' } });
-  }
-  try {
-    const alerts = await dbQueries.getTopRiskProjects(limit);
-    res.json({ alerts, count: alerts.length });
-  } catch (err: any) {
-    res.status(500).json({ error: { code: 'QUERY_ERROR', message: err.message } });
-  }
-});
-
-app.get('/api/risk/:id', async (req, res) => {
+app.get(['/api/risk/:id', '/risk/:id'], async (req, res) => {
   try {
     const score = await dbQueries.getRiskScoreByProjectId(req.params.id);
     if (!score) {
@@ -553,7 +541,7 @@ app.post('/api/risk/flags', requireAuth, requireRole('ADMIN', 'AUDITOR'), async 
 // ----------------------------------------------------
 // 5. Duplicates Endpoints (Phase 7.4 & Phase 8 Person 3 Integration)
 // ----------------------------------------------------
-app.get('/api/duplicates/:id', async (req, res) => {
+app.get(['/api/duplicates/:id', '/duplicates/:id'], async (req, res) => {
   try {
     const duplicates = await dbQueries.getDuplicatesForProject(req.params.id);
     if (!duplicates) {
@@ -617,7 +605,7 @@ app.post('/api/duplicates/submit', requireAuth, requireRole('ADMIN', 'AUDITOR'),
 // ----------------------------------------------------
 // 6. Implementing Agency Endpoint (Phase 7.5)
 // ----------------------------------------------------
-app.get('/api/ia/:id', async (req, res) => {
+app.get(['/api/ia/:id', '/ia/:id'], async (req, res) => {
   try {
     const agencyData = await dbQueries.getAgencyById(req.params.id);
     if (!agencyData) {
@@ -642,7 +630,7 @@ app.get('/api/ia/:id', async (req, res) => {
 // ----------------------------------------------------
 // 7. Feature Extraction Endpoint for Person 2 & 3 ML/NLP
 // ----------------------------------------------------
-app.get('/api/features/projects', async (req, res) => {
+app.get(['/api/features/projects', '/features/projects'], async (req, res) => {
   try {
     const limit = parseInt(req.query.limit as string, 10) || 1000;
     const features = await dbQueries.getFeatureDataset(limit);
@@ -665,7 +653,7 @@ app.get('/api/features/projects', async (req, res) => {
 // Protected: Requires ADMIN, AUDITOR, or REVIEWER.
 // ----------------------------------------------------
 app.post(
-  '/api/review/action',
+  ['/api/review/action', '/review/action'],
   requireAuth,
   requireRole('ADMIN', 'AUDITOR', 'REVIEWER'),
   async (req, res) => {
@@ -732,7 +720,7 @@ app.post(
 // ----------------------------------------------------
 // 9. Audit Trail Endpoint (Phase 7.7)
 // ----------------------------------------------------
-app.get('/api/audit/:id', async (req, res) => {
+app.get(['/api/audit/:id', '/audit/:id'], async (req, res) => {
   try {
     const auditLogs = await dbQueries.getAuditTrailForProject(req.params.id);
     res.json({
@@ -753,7 +741,7 @@ app.get('/api/audit/:id', async (req, res) => {
 // ----------------------------------------------------
 // 10. Evidence Dossier Endpoint (Phase 7.8)
 // ----------------------------------------------------
-app.get('/api/evidence/:id', async (req, res) => {
+app.get(['/api/evidence/:id', '/evidence/:id'], async (req, res) => {
   try {
     const dossier = await dbQueries.getEvidenceDossier(req.params.id);
     if (!dossier) {
@@ -765,6 +753,26 @@ app.get('/api/evidence/:id', async (req, res) => {
       });
     }
     res.json(dossier);
+  } catch (err: any) {
+    res.status(500).json({
+      error: {
+        code: 'QUERY_ERROR',
+        message: err.message,
+      },
+    });
+  }
+});
+
+// ----------------------------------------------------
+// 10.1. Compliance Rules Endpoint
+// ----------------------------------------------------
+app.get(['/api/rules', '/rules'], async (_req, res) => {
+  try {
+    const rules = await dbQueries.getComplianceRules();
+    res.json({
+      count: rules.length,
+      rules,
+    });
   } catch (err: any) {
     res.status(500).json({
       error: {

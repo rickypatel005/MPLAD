@@ -189,8 +189,33 @@ CREATE TABLE IF NOT EXISTS pipeline_runs (
 CREATE INDEX idx_pipeline_runs_completed_at ON pipeline_runs (completed_at DESC);
 
 -- =============================================================================
--- 4. RISK FLAGS TABLE
+-- 4. RISK FLAGS & RULES CONFIGURATION TABLES
 -- =============================================================================
+
+CREATE TABLE IF NOT EXISTS rules (
+    rule_code       VARCHAR(20)  PRIMARY KEY,
+    rule_name       VARCHAR(150) NOT NULL,
+    description     TEXT         NOT NULL,
+    severity        VARCHAR(10)  NOT NULL CHECK (severity IN ('LOW', 'MEDIUM', 'HIGH', 'CRITICAL')),
+    category        VARCHAR(30)  NOT NULL,
+    threshold_config JSONB       NOT NULL DEFAULT '{}',
+    active          BOOLEAN      NOT NULL DEFAULT TRUE,
+    created_at      TIMESTAMPTZ  DEFAULT NOW(),
+    updated_at      TIMESTAMPTZ  DEFAULT NOW()
+);
+
+CREATE INDEX idx_rules_active ON rules (active);
+CREATE INDEX idx_rules_severity ON rules (severity);
+CREATE INDEX idx_rules_category ON rules (category);
+
+INSERT INTO rules (rule_code, rule_name, description, severity, category, threshold_config, active) VALUES
+    ('RULE_FIN_01',  'Payment vs Progress Divergence', 'Financial utilization exceeds physical execution by more than allowable threshold', 'CRITICAL', 'FINANCIAL', '{"divergence_threshold_pct": 25, "advance_limit_pct": 40}', true),
+    ('RULE_TIME_01', 'Milestone Delay / Project Stall', 'Work remains incomplete or stalled past scheduled statutory completion milestone', 'HIGH', 'TIMELINE', '{"stall_threshold_days": 180, "max_milestone_variance": 0.3}', true),
+    ('RULE_COST_01', 'Schedule of Rates (SOR) Exceedance', 'Sanctioned unit cost significantly exceeds CPWD/State PWD Schedule of Rates', 'HIGH', 'COST', '{"max_sor_multiplier": 2.5}', true),
+    ('RULE_IA_01',   'Implementing Agency Concentration', 'Implementing Agency controls disproportionate market share in constituency (HHI)', 'HIGH', 'AGENCY', '{"hhi_threshold": 2500, "market_share_limit_pct": 50}', true),
+    ('RULE_SCST_01', 'SC/ST Statutory Allocation Mandate', 'Mandatory 15% SC and 7.5% ST target developmental allocation compliance', 'MEDIUM', 'COMPLIANCE', '{"sc_target_pct": 15.0, "st_target_pct": 7.5}', true),
+    ('RULE_DOCS_01', 'Statutory Clearance & Approvals', 'Mandatory District Collectorate sanction, structural stability, and audit sign-offs', 'HIGH', 'COMPLIANCE', '{"required_documents": ["ADMIN_SANCTION", "STRUCTURAL_CERT"]}', true)
+ON CONFLICT (rule_code) DO NOTHING;
 
 CREATE TABLE IF NOT EXISTS risk_flags (
     flag_id       VARCHAR(40)  PRIMARY KEY,

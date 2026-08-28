@@ -141,6 +141,22 @@ export class IntegrationAggregator {
     reasons: string[];
     isReal: boolean;
   }> {
+    if (process.env.MOCK_MODE === 'true') {
+      const fin = project.financial_progress > project.physical_progress + 25 ? 0.75 : 0.15;
+      const time = project.status === 'STALLED' ? 0.85 : project.physical_progress < 30 ? 0.50 : 0.10;
+      const comp = project.sanction_amount > 50000000 && project.financial_progress > 50 ? 0.40 : 0.10;
+      const anom = project.synthetic_scenario !== 'NORMAL_BENCHMARK' ? 0.65 : 0.10;
+
+      return {
+        financial_score: fin,
+        timeline_score: time,
+        compliance_score: comp,
+        anomaly_score: anom,
+        reasons: project.synthetic_scenario !== 'NORMAL_BENCHMARK' ? [`Synthetic pattern: ${project.synthetic_scenario}`] : [],
+        isReal: false,
+      };
+    }
+
     const payload = {
       project_id: project.project_id,
       sanctioned_amount: project.sanction_amount,
@@ -211,6 +227,19 @@ export class IntegrationAggregator {
     reasons: string[];
     isReal: boolean;
   }> {
+    if (process.env.MOCK_MODE === 'true') {
+      const iaScore = project.synthetic_scenario === 'IA_CONCENTRATION_ANOMALY' ? 0.80 : 0.15;
+      const geoScore = project.synthetic_scenario === 'DUPLICATE_PROJECT_PAIR' ? 0.85 : 0.10;
+      return {
+        ia_score: iaScore,
+        geo_score: geoScore,
+        ia_hhi: 3200,
+        geo_within: true,
+        reasons: project.synthetic_scenario === 'IA_CONCENTRATION_ANOMALY' ? ['High agency concentration detected'] : [],
+        isReal: false,
+      };
+    }
+
     const geoUrl = `${this.person3Url}/projects/${project.project_id}/geo?lon=${project.location.longitude}&lat=${project.location.latitude}&target_constituency=${project.constituency_id}`;
     const networkUrl = `${this.person3Url}/projects/${project.project_id}/network`;
 

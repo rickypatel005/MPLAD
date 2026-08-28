@@ -91,6 +91,18 @@ export interface RiskFlag {
   created_at: string;
 }
 
+export interface ComplianceRuleEntity {
+  rule_code: string;
+  rule_name: string;
+  description: string;
+  severity: RiskLevel;
+  category: string;
+  threshold_config: Record<string, any>;
+  active: boolean;
+  created_at: string;
+  updated_at: string;
+}
+
 export interface RiskScore {
   project_id: string;
   overall_score: number; // 0.00 to 1.00

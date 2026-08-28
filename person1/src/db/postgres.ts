@@ -660,8 +660,8 @@ export async function seedDatabase(options?: {
           [
             `AUD-RISK-${pid}`,
             pid,
-            'RISK_ENGINE_V2',
-            'IsoForest ML Scorer',
+            'SYSTEM_PIPELINE',
+            'Heuristic Baseline Rule Engine',
             'RISK_FLAGS_RAISED',
             JSON.stringify({
               overall_score: proj.risk_score.overall_score,
