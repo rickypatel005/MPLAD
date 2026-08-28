@@ -50,6 +50,7 @@ Authenticate a user and receive a JWT token.
 | :--- | :--- | :--- |
 | `admin` | `admin123` | ADMIN |
 | `auditor` | `audit123` | AUDITOR |
+| `reviewer` | `review123` | REVIEWER |
 | `viewer` | `view123` | VIEWER |
 
 ---

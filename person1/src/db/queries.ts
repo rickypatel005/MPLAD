@@ -251,16 +251,16 @@ export async function getProjects(params: ProjectQueryParams): Promise<Paginated
   // Order By
   const sortField = params.sort_by || 'risk';
   const sortDirection = params.sort_order === 'asc' ? 'ASC' : 'DESC';
-  let orderByClause = 'ORDER BY COALESCE(rs.overall_score, 0) DESC';
+  let orderByClause = 'ORDER BY COALESCE(rs.overall_score, 0) DESC, p.project_id ASC';
 
   if (sortField === 'amount') {
-    orderByClause = `ORDER BY p.sanction_amount ${sortDirection}`;
+    orderByClause = `ORDER BY p.sanction_amount ${sortDirection}, p.project_id ASC`;
   } else if (sortField === 'progress') {
-    orderByClause = `ORDER BY p.physical_progress ${sortDirection}`;
+    orderByClause = `ORDER BY p.physical_progress ${sortDirection}, p.project_id ASC`;
   } else if (sortField === 'date') {
-    orderByClause = `ORDER BY p.sanction_date ${sortDirection}`;
+    orderByClause = `ORDER BY p.sanction_date ${sortDirection}, p.project_id ASC`;
   } else if (sortField === 'risk') {
-    orderByClause = `ORDER BY COALESCE(rs.overall_score, 0) ${sortDirection}`;
+    orderByClause = `ORDER BY COALESCE(rs.overall_score, 0) ${sortDirection}, p.project_id ASC`;
   }
 
   // 1. Total count query
@@ -654,7 +654,17 @@ export async function getDashboardSummary(): Promise<DashboardSummary> {
 /**
  * State-specific dashboard view from PostgreSQL.
  */
-export async function getStateDashboard(stateId: string): Promise<{
+const STATE_CODE_TO_ID: Record<string, string> = {
+  AN: 'ST01', AP: 'ST02', AR: 'ST03', AS: 'ST04', BR: 'ST05', CH: 'ST06',
+  CG: 'ST07', CT: 'ST07', DN: 'ST08', DD: 'ST08', DL: 'ST09', GA: 'ST10',
+  GJ: 'ST11', HR: 'ST12', HP: 'ST13', JK: 'ST14', JH: 'ST15', KA: 'ST16',
+  KL: 'ST17', LA: 'ST18', LD: 'ST19', MP: 'ST20', MH: 'ST21', MN: 'ST22',
+  ML: 'ST23', MZ: 'ST24', NL: 'ST25', OD: 'ST26', OR: 'ST26', PY: 'ST27',
+  PB: 'ST28', RJ: 'ST29', SK: 'ST30', TN: 'ST31', TS: 'ST32', TG: 'ST32',
+  TR: 'ST33', UP: 'ST34', UK: 'ST35', UT: 'ST35', WB: 'ST36',
+};
+
+export async function getStateDashboard(rawStateId: string): Promise<{
   state: StateEntity;
   total_mps: number;
   total_projects: number;
@@ -664,25 +674,33 @@ export async function getStateDashboard(stateId: string): Promise<{
   mps: MPEntity[];
   top_flagged_projects: ProjectEntity[];
 } | null> {
+  const normInput = (rawStateId || '').trim().toUpperCase();
+  const canonicalId = STATE_CODE_TO_ID[normInput] || normInput;
+
   const stateRes = await query<StateEntity>(
     `SELECT state_id, name, normalized_name, state_type, total_mps, total_allocated,
             ST_Y(geom) AS latitude, ST_X(geom) AS longitude
-     FROM states WHERE state_id = $1;`,
-    [stateId]
+     FROM states WHERE state_id = $1 OR UPPER(state_id) = $1 OR UPPER(name) = $1 OR UPPER(normalized_name) = $1;`,
+    [canonicalId]
   );
   if (stateRes.rows.length === 0) return null;
   const state = stateRes.rows[0];
+  const actualDbStateId = state.state_id;
+
+  if (normInput in STATE_CODE_TO_ID) {
+    state.state_id = normInput;
+  }
 
   const mpsRes = await query<MPEntity>(
     `SELECT mp_id, constituency_id, state_id, name, normalized_name, allocated_amount, allocation_quality_flag, source_row
      FROM mps WHERE state_id = $1;`,
-    [stateId]
+    [actualDbStateId]
   );
 
   const iaRes = await query<ImplementingAgencyEntity>(
     `SELECT ia_id, name, normalized_name, agency_type, state_id, projects_count, total_budget_handled, hhi_score, average_risk_score
      FROM implementing_agencies WHERE state_id = $1;`,
-    [stateId]
+    [actualDbStateId]
   );
 
   const statsRes = await query<{
@@ -697,7 +715,7 @@ export async function getStateDashboard(stateId: string): Promise<{
      FROM projects p
      LEFT JOIN risk_scores rs ON p.project_id = rs.project_id
      WHERE p.state_id = $1;`,
-    [stateId]
+    [actualDbStateId]
   );
   const stats = statsRes.rows[0];
 
@@ -722,7 +740,7 @@ export async function getStateDashboard(stateId: string): Promise<{
      WHERE p.state_id = $1 AND rs.risk_level IN ('HIGH', 'CRITICAL')
      ORDER BY rs.overall_score DESC
      LIMIT 10;`,
-    [stateId]
+    [actualDbStateId]
   );
 
   return {

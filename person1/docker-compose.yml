@@ -2,8 +2,6 @@
 # Docker Compose: PostgreSQL 15 + PostGIS 3.3
 # Phase 5: Relational Database Layer
 
-version: "3.9"
-
 services:
   postgres:
     image: postgis/postgis:15-3.3
@@ -17,7 +15,6 @@ services:
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-sih26102_secure_pwd}
     volumes:
       - pgdata:/var/lib/postgresql/data
-      - ./schema.sql:/docker-entrypoint-initdb.d/01-schema.sql:ro
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U mplads_admin -d mplads_audit"]
       interval: 10s

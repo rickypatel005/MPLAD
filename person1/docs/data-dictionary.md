@@ -212,7 +212,7 @@ states (1) ──→ (N) implementing_agencies                  │
 | `project_id` | VARCHAR(10) | **FK → projects** | Reviewed project |
 | `reviewer_id` | VARCHAR(20) | NOT NULL | User performing review |
 | `reviewer_name` | VARCHAR(120) | NOT NULL | Display name |
-| `reviewer_role` | ENUM | `ADMIN` \| `AUDITOR` \| `INVESTIGATOR` \| `VIEWER` | Role at time of decision |
+| `reviewer_role` | ENUM | `ADMIN` \| `AUDITOR` \| `REVIEWER` \| `VIEWER` | Role at time of decision |
 | `action` | ENUM | `ACKNOWLEDGE` \| `INVESTIGATE` \| `ESCALATE` \| `DISMISS` | Decision type |
 | `comment` | TEXT | — | Auditor's notes |
 
@@ -239,7 +239,7 @@ states (1) ──→ (N) implementing_agencies                  │
 | `username` | VARCHAR(60) | UNIQUE | Login username |
 | `password_hash` | VARCHAR(256) | NOT NULL | bcrypt hash (production) |
 | `display_name` | VARCHAR(120) | NOT NULL | Full name |
-| `role` | ENUM | `ADMIN` \| `AUDITOR` \| `INVESTIGATOR` \| `VIEWER` | Access control role |
+| `role` | ENUM | `ADMIN` \| `AUDITOR` \| `REVIEWER` \| `VIEWER` | Access control role |
 | `is_active` | BOOLEAN | DEFAULT TRUE | Account active flag |
 
 ### Project Categories (11)

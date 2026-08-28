@@ -48,7 +48,7 @@ To ensure cohesive end-to-end type safety, ultra-fast reactive user interfaces, 
 │  ┌──────────────────────────────────────┴───────────────────────────────────────────┐  │
 │  │                       Security & RBAC Middleware Layer                           │  │
 │  │  • Salted Scrypt KDF Password Hashing (64-byte derived keys with random salt)   │  │
-│  │  • Role Hierarchy: ADMIN (Superuser) > AUDITOR > REVIEWER / INVESTIGATOR > VIEWER│  │
+│  │  • Role Hierarchy: ADMIN (Superuser) > AUDITOR > REVIEWER > VIEWER              │  │
 │  │  • Constant-time HMAC-SHA256 Token Verification                                  │  │
 │  └──────────────────────────────────────┬───────────────────────────────────────────┘  │
 │                                         │                                              │
@@ -119,7 +119,7 @@ Export: 7 Canonical Datasets to data/processed/ (Parquet / CSV / JSON)
 | `/api/risk/top`, `/api/risk/:id` | GET | Public / All | 200 OK | 200 OK |
 | `/api/evidence/:id`, `/api/audit/:id` | GET | Public / All | 200 OK | 200 OK |
 | `/api/features/projects` | GET | Public / All | 200 OK | 200 OK |
-| `/api/review/action` | POST | `ADMIN`, `AUDITOR`, `REVIEWER`, `INVESTIGATOR` | **401 Unauthorized** | **403 Forbidden** |
+| `/api/review/action` | POST | `ADMIN`, `AUDITOR`, `REVIEWER` | **401 Unauthorized** | **403 Forbidden** |
 | `/api/risk/scores`, `/api/risk/flags` | POST | `ADMIN`, `AUDITOR` | **401 Unauthorized** | **403 Forbidden** |
 | `/api/duplicates/submit` | POST | `ADMIN`, `AUDITOR` | **401 Unauthorized** | **403 Forbidden** |
 | `/api/pipeline/run` | POST | `ADMIN` (Superuser) | **401 Unauthorized** | **403 Forbidden** |

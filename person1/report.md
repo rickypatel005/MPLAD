@@ -27,7 +27,7 @@ The implementation satisfies:
 | **Processed Dataset Export** | Export to `data/processed/` (JSON, CSV, Parquet converter, manifest) | **COMPLETED** | 100% |
 | **PostgreSQL + PostGIS Architecture** | DDL schema (`schema.sql`), Docker Compose (`postgis:15-3.3`), views, triggers | **COMPLETED** | 100% |
 | **REST API Layer** | 14 endpoints for projects, dashboards, risk, duplicates, IA, reviews, audit, evidence, auth, exports | **COMPLETED** | 100% |
-| **Security & Authentication** | JWT auth (`src/middleware/auth.ts`), RBAC (`ADMIN`, `AUDITOR`, `INVESTIGATOR`, `VIEWER`), demo users | **COMPLETED** | 100% |
+| **Security & Authentication** | JWT auth (`src/middleware/auth.ts`), RBAC (`ADMIN`, `AUDITOR`, `REVIEWER`, `VIEWER`), demo users | **COMPLETED** | 100% |
 | **Forensic Analysis & Governance** | Human-in-the-loop review actions, audit logging, Gemini AI forensic dossier | **COMPLETED** | 100% |
 | **Automated Test Suite** | Standalone Vitest files in `tests/unit/` and `tests/integration/` (50+ assertions) | **COMPLETED** | 100% |
 | **Frontend HUD & Integration** | Multi-tab UI (Dashboard, Projects, Duplicates, IA Network, Pipeline Console, Evidence Dossier) | **COMPLETED** | 100% |
@@ -207,11 +207,11 @@ The implementation satisfies:
 ---
 
 ### Phase 9 — Authentication, Roles, Review & Audit
-* **Specification:** User roles (`ADMIN`, `AUDITOR`, `INVESTIGATOR`, `VIEWER`), JWT authentication, human-in-the-loop review decisions, and audit trail generation.
+* **Specification:** User roles (`ADMIN`, `AUDITOR`, `REVIEWER`, `VIEWER`), JWT authentication, human-in-the-loop review decisions, and audit trail generation.
 * **Implementation:** 
   * JWT auth module in [`src/middleware/auth.ts`](file:///d:/person1/MPLAD/src/middleware/auth.ts) with HMAC-SHA256 signature verification, password hashing, and token expiration.
   * Role-based access control middleware (`requireAuth`, `requireRole`, `optionalAuth`).
-  * 4 pre-configured demo users (`admin`, `auditor`, `investigator`, `viewer`).
+  * 4 pre-configured demo users (`admin`, `auditor`, `reviewer`, `viewer`).
   * Review decisions recorded to `review_actions` and synced to `audit_logs`.
   * Chronological audit history queryable via `/api/audit/:id`.
 * **Status:** 🟢 **Complete**

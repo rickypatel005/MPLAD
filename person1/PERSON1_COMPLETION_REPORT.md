@@ -33,7 +33,7 @@ In this final execution cycle, all remaining gaps identified in `PERSON1_REMAINI
    * Provisioned PostgreSQL 15 + PostGIS 3.3 in [`docker-compose.yml`](file:///d:/person1/MPLAD/docker-compose.yml) and [`schema.sql`](file:///d:/person1/MPLAD/schema.sql).
 4. **Security, Password Hashing & Strict RBAC (P0)**:
    * Upgraded password hashing in [`src/middleware/auth.ts`](file:///d:/person1/MPLAD/src/middleware/auth.ts) to **salted `scrypt`** (64-byte derived keys with random salt) with constant-time verification (`crypto.timingSafeEqual`).
-   * Reconciled role hierarchy: `ADMIN` (Superuser), `AUDITOR`, `REVIEWER` (with `INVESTIGATOR` mapped to `REVIEWER`), `VIEWER`.
+   * Canonical role hierarchy: `ADMIN` (Superuser), `AUDITOR`, `REVIEWER`, `VIEWER`.
    * Protected write operations (`POST /api/review/action`, `POST /api/pipeline/run`, `POST /api/risk/scores`, `POST /api/duplicates/submit`) with strict **401 Unauthorized** and **403 Forbidden** enforcement.
 5. **Person 2 (ML) & Person 3 (NLP/Geo) Boundary Separation (P1)**:
    * Separated ground-truth scenario metadata (`synthetic_scenario`) from model detector output (`detector_flagged`, `detector_model_version`, `detector_score`).
@@ -162,7 +162,7 @@ All 14 endpoints verified operational:
 Verified with salted `scrypt` hashing and JWT tokens:
 * **`admin` (`ADMIN`)**: Can execute `/api/pipeline/run`, submit reviews, submit ML scores, access all endpoints.
 * **`auditor` (`AUDITOR`)**: Can submit reviews (`/api/review/action`), submit ML risk scores/flags, access all read endpoints; blocked with **403 Forbidden** on `/api/pipeline/run`.
-* **`reviewer` / `investigator` (`REVIEWER` / `INVESTIGATOR`)**: Can submit reviews (`/api/review/action`); blocked with **403 Forbidden** on pipeline run or ML submission.
+* **`reviewer` (`REVIEWER`)**: Can submit reviews (`/api/review/action`); blocked with **403 Forbidden** on pipeline run or ML submission.
 * **`viewer` (`VIEWER`)**: Read-only transparency access; blocked with **403 Forbidden** on `/api/review/action`.
 * **Unauthenticated Requests**: Blocked with **401 Unauthorized** on all protected write endpoints.
 

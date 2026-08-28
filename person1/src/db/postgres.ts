@@ -2,6 +2,7 @@
  * SIH26102 — PostgreSQL + PostGIS Production Database Adapter (Phase 5)
  * Provides connection pooling, schema migrations, batch loading, and PostGIS spatial queries.
  */
+import crypto from 'crypto';
 import fs from 'fs';
 import path from 'path';
 import pg, { Pool, PoolClient, QueryResult, QueryResultRow } from 'pg';
@@ -142,9 +143,9 @@ export async function runMigrations(): Promise<{
       );
     `);
 
-    // 2. Check if initial schema migration already applied
+    // 2. Check if initial schema migration has already been applied
     const existing = await client.query(
-      'SELECT version FROM schema_migrations WHERE version = $1;',
+      'SELECT version, checksum FROM schema_migrations WHERE version = $1;',
       ['001_initial_schema']
     );
 
@@ -152,48 +153,31 @@ export async function runMigrations(): Promise<{
 
     if (existing.rows.length === 0) {
       const ddl = getMigrationSql();
+      const checksum = crypto.createHash('sha256').update(ddl, 'utf8').digest('hex');
+
       // Execute the whole DDL bundle
       await client.query(ddl);
 
+      // Verify schema creation succeeded by checking core tables
+      const verification = await client.query<{ table_name: string }>(`
+        SELECT table_name FROM information_schema.tables
+        WHERE table_schema = 'public' AND table_name IN (
+          'states', 'districts', 'constituencies', 'mps', 'implementing_agencies',
+          'projects', 'payments', 'risk_scores', 'risk_flags', 'duplicate_clusters',
+          'duplicate_matches', 'users', 'review_actions', 'audit_logs', 'evidence_items',
+          'pipeline_runs'
+        );
+      `);
+
+      if (verification.rows.length < 16) {
+        throw new Error(`Schema verification failed: only ${verification.rows.length}/16 core tables found.`);
+      }
+
       await client.query(
-        'INSERT INTO schema_migrations (version, checksum) VALUES ($1, $2);',
-        ['001_initial_schema', 'initial_schema_v2.6']
+        'INSERT INTO schema_migrations (version, applied_at, checksum) VALUES ($1, NOW(), $2);',
+        ['001_initial_schema', checksum]
       );
       applied.push('001_initial_schema');
-    }
-
-    // Keep already-created developer databases compatible with the current
-    // schema. Fresh databases receive these definitions from schema.sql.
-    const upgrade = await client.query(
-      'SELECT version FROM schema_migrations WHERE version = $1;',
-      ['002_pipeline_validation_and_roles']
-    );
-    if (upgrade.rows.length === 0) {
-      await client.query(`
-        CREATE TABLE IF NOT EXISTS pipeline_runs (
-          run_id BIGSERIAL PRIMARY KEY,
-          completed_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
-          project_count INTEGER NOT NULL,
-          payment_count INTEGER NOT NULL,
-          checks_run INTEGER NOT NULL,
-          checks_passed INTEGER NOT NULL,
-          validation_passed BOOLEAN NOT NULL,
-          failure_summary JSONB NOT NULL DEFAULT '[]'::jsonb
-        );
-        CREATE INDEX IF NOT EXISTS idx_pipeline_runs_completed_at
-          ON pipeline_runs (completed_at DESC);
-        ALTER TABLE users DROP CONSTRAINT IF EXISTS users_role_check;
-        UPDATE users SET role = 'REVIEWER', username = 'reviewer',
-          display_name = 'Audit Review Officer'
-          WHERE role = 'INVESTIGATOR';
-        ALTER TABLE users ADD CONSTRAINT users_role_check
-          CHECK (role IN ('ADMIN', 'AUDITOR', 'REVIEWER', 'VIEWER'));
-      `);
-      await client.query(
-        'INSERT INTO schema_migrations (version, checksum) VALUES ($1, $2);',
-        ['002_pipeline_validation_and_roles', 'pipeline_validation_and_canonical_roles_v1']
-      );
-      applied.push('002_pipeline_validation_and_roles');
     }
 
     await client.query('COMMIT;');
