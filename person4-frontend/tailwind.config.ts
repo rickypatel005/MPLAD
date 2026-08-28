@@ -43,6 +43,23 @@ const config: Config = {
           DEFAULT: '#DC2626',
         },
 
+        // ---- Stitch Material/Institutional tokens ----
+        'primary-container': '#131b2e',
+        'on-primary': '#ffffff',
+        'on-primary-container': '#7c839b',
+        'secondary-container': '#316bf3',
+        'on-secondary-container': '#fefcff',
+        'surface-dim': '#d8dadc',
+        'surface-bright': '#f7f9fb',
+        'surface-container-lowest': '#ffffff',
+        'surface-container-low': '#f2f4f6',
+        'surface-container': '#eceef0',
+        'surface-container-high': '#e6e8ea',
+        'surface-container-highest': '#e0e3e5',
+        'on-surface': '#191c1e',
+        'on-surface-variant': '#45464d',
+        'border-subtle': '#E2E8F0',
+
         // ---- Institutional neutrals (document-like, official feel) ----
         ink: {
           DEFAULT: '#1B2430',
@@ -92,7 +109,9 @@ const config: Config = {
       },
       fontFamily: {
         sans: [
+          'var(--font-inter)',
           'var(--font-outfit)',
+          'Inter',
           'Outfit',
           'ui-sans-serif',
           'system-ui',
@@ -102,12 +121,34 @@ const config: Config = {
           'Roboto',
           'sans-serif',
         ],
-        display: [
+        serif: [
+          'var(--font-source-serif)',
           'var(--font-cormorant)',
+          'Source Serif 4',
           'Cormorant Garamond',
           'Georgia',
           'Times New Roman',
           'serif',
+        ],
+        display: [
+          'var(--font-source-serif)',
+          'var(--font-cormorant)',
+          'Source Serif 4',
+          'Cormorant Garamond',
+          'Georgia',
+          'serif',
+        ],
+        headline: [
+          'var(--font-source-serif)',
+          'Source Serif 4',
+          'Georgia',
+          'serif',
+        ],
+        body: [
+          'var(--font-inter)',
+          'Inter',
+          'ui-sans-serif',
+          'sans-serif',
         ],
         mono: [
           'var(--font-jetbrains)',

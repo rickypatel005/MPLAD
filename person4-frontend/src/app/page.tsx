@@ -10,6 +10,8 @@ import { RankedProjectTable } from '@/components/RankedProjectTable';
 import { RiskBadge } from '@/components/RiskBadge';
 import { PageHeader } from '@/components/shell/PageHeader';
 import { EmptyState, ErrorState, TableSkeleton, CardsSkeleton, BlockSkeleton } from '@/components/states';
+import { IndiaNationalRiskMap } from '@/components/map/IndiaNationalRiskMap';
+import { RiskTrendChart } from '@/components/RiskTrendChart';
 import { RefreshIcon } from '@/components/icons';
 import { useUrlSearch, useUrlState } from '@/hooks/useUrlState';
 import { useAnalyze, useDashboard } from '@/lib/api/hooks';
@@ -131,110 +133,73 @@ function DashboardContent() {
           </KPIRow>
         )}
 
-        {/* Top 10 High Risk Section & Quick Highlights */}
-        <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
-          {/* Left Column: Top-10 Critical Works List */}
-          <section className="panel lg:col-span-1" aria-label="Top 10 highest-risk works">
-            <div className="panel-header">
-              <h2 className="panel-title">Top-10 Highest Risk Works</h2>
-              <span className="eyebrow text-amber-700 bg-amber-100/80 px-2 py-0.5 rounded border border-amber-300">Action Priority</span>
-            </div>
-            <div className="divide-y divide-slate-100 font-sans">
-              {topProjects.slice(0, 10).map((proj: RankedProject, idx) => (
-                <Link
-                  key={proj.project_id}
-                  href={`/project/${encodeURIComponent(proj.project_id)}`}
-                  className="group flex items-start justify-between gap-3 px-5 py-3.5 transition-all duration-150 hover:bg-amber-500/10"
-                >
-                  <div className="min-w-0 flex-1">
-                    <div className="flex items-center gap-2">
-                      <span className="font-mono text-xs font-bold text-amber-600 bg-amber-100/60 px-1.5 py-0.5 rounded">#{idx + 1}</span>
-                      <span className="font-mono text-xs font-bold text-slate-800 group-hover:text-amber-700 group-hover:underline">
-                        {proj.project_id}
-                      </span>
-                    </div>
-                    <p className="mt-1 truncate text-xs font-medium text-slate-900">{proj.work_type}</p>
-                    <p className="mt-0.5 text-[0.7rem] text-slate-500 font-sans">
-                      {proj.district_name}, {proj.state_name}
-                    </p>
-                  </div>
-                  <RiskBadge level={proj.risk_level} score={proj.overall_risk} size="sm" />
-                </Link>
-              ))}
-            </div>
-          </section>
+        {/* India National State Risk Map Section */}
+        <IndiaNationalRiskMap
+          statesData={(data?.state_risk ?? []).map((sr) => ({
+            state_id: sr.state_id,
+            state_name: sr.state_name,
+            risk_score: sr.mean_risk,
+            risk_level: sr.risk_level,
+            project_count: sr.project_count,
+            critical_count: sr.counts_by_risk_level?.CRITICAL ?? 0,
+            high_count: sr.counts_by_risk_level?.HIGH ?? 0,
+            total_outlay_lakhs: (sr as any).total_estimated_cost_lakhs ?? (sr.project_count * 25.5),
+          }))}
+          selectedState={currentState}
+          onSelectState={(stateId) => urlState.set({ state: stateId || undefined, page: 1 })}
+          isLoading={isFetching}
+        />
 
-          {/* Right Column: Visualization Panel */}
-          <section className="panel lg:col-span-2 flex flex-col" aria-label="Risk distribution">
-            <div className="panel-header">
-              <div>
-                <h2 className="panel-title">Risk Distribution</h2>
-                <p className="panel-hint font-sans">Aggregated risk across states and sectors</p>
-              </div>
-              <div className="flex items-center gap-1 rounded-lg border border-slate-200 bg-slate-100 p-1 font-sans">
-                <button
-                  type="button"
-                  onClick={() => setActiveView('state')}
-                  className={`rounded-md px-3 py-1 text-xs font-semibold transition-all ${
-                    activeView === 'state' ? 'bg-white text-slate-900 shadow-sm border border-slate-200' : 'text-slate-600 hover:text-slate-900'
-                  }`}
-                >
-                  By State
-                </button>
-                <button
-                  type="button"
-                  onClick={() => setActiveView('treemap')}
-                  className={`rounded-md px-3 py-1 text-xs font-semibold transition-all ${
-                    activeView === 'treemap' ? 'bg-white text-slate-900 shadow-sm border border-slate-200' : 'text-slate-600 hover:text-slate-900'
-                  }`}
-                >
-                  Sector Treemap
-                </button>
-              </div>
-            </div>
+        {/* Temporal Risk Trajectory & Top High-Risk Section */}
+        <div className="grid grid-cols-1 gap-6 lg:grid-cols-12">
+          {/* Risk Trend Chart (8 cols) */}
+          <div className="lg:col-span-8">
+            <RiskTrendChart onRetry={() => refetch()} />
+          </div>
 
-            <div className="flex-1 min-h-[300px] p-5">
-              {activeView === 'treemap' && data?.work_type_risk ? (
-                <div className="h-[320px] w-full">
-                  <ResponsiveContainer width="100%" height="100%">
-                    <Treemap
-                      data={data.work_type_risk.map((item) => ({
-                        name: item.name,
-                        size: item.project_count,
-                        mean_risk: item.mean_risk,
-                        risk_level: item.risk_level,
-                        fill: RISK_LEVEL_META[item.risk_level].hex,
-                      }))}
-                      dataKey="size"
-                      aspectRatio={4 / 3}
-                      stroke="#ffffff"
-                      content={<CustomTreemapContent />}
-                    />
-                  </ResponsiveContainer>
+          {/* Top-10 Critical Works List (4 cols) */}
+          <section className="bg-surface-container-lowest border border-border-subtle rounded-xl p-5 shadow-sm lg:col-span-4 flex flex-col justify-between" aria-label="Top 10 highest-risk works">
+            <div>
+              <div className="flex items-center justify-between pb-3 border-b border-border-subtle mb-3">
+                <div className="flex items-center gap-2">
+                  <span className="h-2 w-2 rounded-full bg-risk-critical" />
+                  <h3 className="font-headline text-base font-bold text-primary">Top Priority Works</h3>
                 </div>
-              ) : (
-                <div className="grid grid-cols-2 gap-3.5 md:grid-cols-3">
-                  {(data?.state_risk ?? []).slice(0, 9).map((sr) => (
-                    <button
-                      key={sr.state_id}
-                      type="button"
-                      onClick={() => urlState.set({ state: sr.state_id })}
-                      className="flex flex-col justify-between rounded-xl border border-slate-200 p-4 text-left font-sans transition-all duration-150 hover:border-amber-400 hover:shadow-md bg-white hover:bg-amber-500/10"
-                    >
-                      <div className="flex items-center justify-between">
-                        <span className="text-sm font-bold text-slate-900">{sr.state_name}</span>
-                        <RiskBadge level={sr.risk_level} size="sm" />
-                      </div>
-                      <div className="mt-4 flex items-center justify-between text-xs text-slate-500 font-sans">
-                        <span className="font-semibold text-slate-700">{formatCount(sr.project_count)} works</span>
-                        <span className="font-mono font-bold text-red-600">
-                          {sr.counts_by_risk_level.CRITICAL} critical
+                <span className="font-mono text-[10px] font-bold text-risk-critical bg-risk-critical/10 px-2 py-0.5 rounded border border-risk-critical/20">
+                  Critical
+                </span>
+              </div>
+              <div className="divide-y divide-border-subtle font-sans max-h-[300px] overflow-y-auto pr-1">
+                {topProjects.slice(0, 6).map((proj: RankedProject, idx) => (
+                  <Link
+                    key={proj.project_id}
+                    href={`/project/${encodeURIComponent(proj.project_id)}`}
+                    className="group flex items-start justify-between gap-3 py-2.5 transition-all duration-150 hover:bg-slate-50 px-1 rounded"
+                  >
+                    <div className="min-w-0 flex-1">
+                      <div className="flex items-center gap-1.5">
+                        <span className="font-mono text-[11px] font-bold text-outline">#{idx + 1}</span>
+                        <span className="font-mono text-xs font-bold text-primary group-hover:text-secondary group-hover:underline">
+                          {proj.project_id}
                         </span>
                       </div>
-                    </button>
-                  ))}
-                </div>
-              )}
+                      <p className="mt-0.5 truncate text-xs font-medium text-slate-800">{proj.work_type}</p>
+                      <p className="text-[10px] text-outline">
+                        {proj.district_name}, {proj.state_name}
+                      </p>
+                    </div>
+                    <RiskBadge level={proj.risk_level} score={proj.overall_risk} size="sm" />
+                  </Link>
+                ))}
+              </div>
+            </div>
+            <div className="pt-3 border-t border-border-subtle mt-2">
+              <Link
+                href="/projects?risk=CRITICAL"
+                className="w-full text-center block text-xs font-semibold text-secondary hover:text-secondary-container hover:underline py-1"
+              >
+                View all critical works →
+              </Link>
             </div>
           </section>
         </div>

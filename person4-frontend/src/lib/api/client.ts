@@ -13,11 +13,13 @@
  *    it accidentally could.
  */
 
-/** Base URL. `/api` in local proxy mode; the backend origin in live integrated mode. */
-export const API_BASE_URL = (process.env.NEXT_PUBLIC_API_BASE_URL ?? '/api').replace(/\/+$/, '');
+import { APP_CONFIG, API_BASE_URL as CONFIG_BASE_URL, IS_MOCK_MODE as CONFIG_MOCK_MODE } from '@/lib/config';
 
-/** True only when explicitly configured via NEXT_PUBLIC_MOCK_MODE=true. Defaults to false. */
-export const IS_MOCK_MODE = process.env.NEXT_PUBLIC_MOCK_MODE === 'true';
+/** Base URL. `/api` in local proxy mode; the backend origin in live integrated mode. */
+export const API_BASE_URL = CONFIG_BASE_URL;
+
+/** True only when explicitly configured via NEXT_PUBLIC_API_MODE=mock or default fallback. */
+export const IS_MOCK_MODE = CONFIG_MOCK_MODE;
 
 
 /** Request timeout. Long enough for a cold FastAPI start, short enough to fail visibly. */
